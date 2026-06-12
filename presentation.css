@@ -591,3 +591,41 @@
   width: 42px !important;
   min-width: 42px !important;
 }
+.apv2-about {
+  width: 240px !important;
+  max-width: 240px !important;
+  padding: 16px 18px !important;
+  justify-self: end !important;
+}
+
+.apv2-about-heading {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 8px !important;
+  margin: 0 0 18px 0 !important;
+  color: #111047 !important;
+  font: 700 15px Arial, sans-serif !important;
+  text-transform: uppercase !important;
+  white-space: nowrap !important;
+}
+
+.apv2-about-heading:before,
+.apv2-about-heading:after {
+  content: "";
+  width: 46px !important;
+  height: 1px !important;
+  background: #d8d3f1 !important;
+  flex: 0 0 46px !important;
+}
+
+.apv2-about-heading span {
+  display: inline-block !important;
+  white-space: nowrap !important;
+  flex: 0 0 auto !important;
+}
+
+.apv2-about-text {
+  color: #514ca0 !important;
+  line-height: 1.7 !important;
+}
