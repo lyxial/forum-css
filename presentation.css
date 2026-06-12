@@ -273,7 +273,7 @@
     #ffffff !important;
   color: #514ca0 !important;
   line-height: 1.9 !important;
-  overflow: auto;
+  overflow: auto !important;
 }
 
 .apv2-quote-box {
