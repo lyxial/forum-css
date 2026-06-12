@@ -509,3 +509,16 @@
     height:100% !important;
     max-width:none !important;
 }
+
+.apv2-imgbox{
+    width:100%;
+    height:320px;
+    overflow:hidden;
+}
+
+.apv2-imgbox img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
+}
