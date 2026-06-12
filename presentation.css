@@ -523,3 +523,67 @@
 .post.apv2-fiche-post .signature_div {
   display: none !important;
 }
+
+/* CORRECTIF FICHE APV2 DANS LES MESSAGES - garde le profil membre */
+
+.post.apv2-fiche-post {
+  display: grid !important;
+  grid-template-columns: 310px 1fr !important;
+  grid-template-rows: 92px auto 1fr auto !important;
+  width: 940px !important;
+  max-width: 96% !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  background: #51475c !important;
+  border: 1px solid #453a51 !important;
+  overflow: hidden !important;
+}
+
+.post.apv2-fiche-post .aurora-profile-strip {
+  display: grid !important;
+}
+
+.post.apv2-fiche-post .postprofile {
+  display: block !important;
+  grid-column: 1 !important;
+  grid-row: 2 / 5 !important;
+}
+
+.post.apv2-fiche-post .post-head {
+  display: grid !important;
+  grid-column: 2 !important;
+  grid-row: 2 !important;
+  width: 100% !important;
+  min-height: 82px !important;
+  padding: 24px 12px 0 24px !important;
+  background: #51475c !important;
+  border-bottom: 1px solid #453a51 !important;
+  box-sizing: border-box !important;
+}
+
+.post.apv2-fiche-post .postbody {
+  display: block !important;
+  grid-column: 2 !important;
+  grid-row: 3 !important;
+  width: 100% !important;
+  min-height: 0 !important;
+  padding: 18px 0 18px 0 !important;
+  background: transparent !important;
+  box-sizing: border-box !important;
+}
+
+.post.apv2-fiche-post .postbody .content {
+  width: 100% !important;
+  padding: 0 !important;
+  text-align: initial !important;
+}
+
+.post.apv2-fiche-post .apv2-fiche {
+  width: 700px !important;
+  max-width: 100% !important;
+  margin: 0 auto !important;
+}
+
+.post.apv2-fiche-post .signature_div {
+  display: none !important;
+}
