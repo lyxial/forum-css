@@ -478,3 +478,67 @@
   font-size: 18px;
   font-weight: normal;
 }
+
+
+/* APV2 - correction alignement dans le post */
+
+.post.apv2-fiche-post {
+  width: 940px !important;
+  max-width: 96% !important;
+  grid-template-columns: 310px 1fr !important;
+  overflow: hidden !important;
+}
+
+.post.apv2-fiche-post .postbody {
+  grid-column: 2 !important;
+  width: 100% !important;
+  padding: 18px 0 28px 0 !important;
+  margin: 0 !important;
+  overflow: hidden !important;
+}
+
+.post.apv2-fiche-post .postbody .content {
+  width: 100% !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  text-align: left !important;
+  overflow: hidden !important;
+}
+
+.post.apv2-fiche-post .apv2-fiche {
+  width: 600px !important;
+  max-width: 600px !important;
+  min-width: 0 !important;
+  margin: 0 0 0 0 !important;
+  padding: 10px !important;
+  float: none !important;
+  clear: both !important;
+  transform: none !important;
+}
+
+/* Empêche les retours ligne Forumactif de casser les grilles */
+.post.apv2-fiche-post .apv2-fiche br {
+  display: none !important;
+}
+
+/* Reforce les blocs internes à gauche */
+.post.apv2-fiche-post .apv2-card,
+.post.apv2-fiche-post .apv2-tabs,
+.post.apv2-fiche-post .apv2-panels,
+.post.apv2-fiche-post .apv2-panel {
+  width: 100% !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+.post.apv2-fiche-post .apv2-grid-info {
+  display: grid !important;
+  grid-template-columns: 210px 1fr !important;
+  gap: 28px !important;
+}
+
+.post.apv2-fiche-post .apv2-two {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+  gap: 28px !important;
+}
