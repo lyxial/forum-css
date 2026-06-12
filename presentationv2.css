@@ -1,0 +1,223 @@
+/* APV2 PRESENTATION - VERSION PROPRE 700PX */
+
+/* Forumactif */
+.post.apv2-fiche-post{
+  display:block!important;
+  width:960px!important;
+  max-width:96%!important;
+  margin:auto!important;
+}
+
+.post.apv2-fiche-post .aurora-profile-strip,
+.post.apv2-fiche-post .postprofile,
+.post.apv2-fiche-post .signature_div{
+  display:none!important;
+}
+
+.post.apv2-fiche-post .postbody,
+.post.apv2-fiche-post .postbody .content{
+  width:100%!important;
+  margin:0!important;
+  padding:0!important;
+  background:transparent!important;
+}
+
+/* Fiche */
+.apv2-fiche{
+  width:700px;
+  max-width:700px;
+  margin:30px auto;
+  padding:12px;
+  background:#070622;
+  color:#17164e;
+  font-family:Georgia,"Times New Roman",serif;
+  box-sizing:border-box;
+}
+
+.apv2-fiche *{box-sizing:border-box;}
+
+.apv2-card{
+  background:#fff;
+  border:1px solid #dedaf4;
+  border-radius:16px;
+  padding:22px;
+}
+
+.apv2-top{text-align:center;}
+
+.apv2-label{
+  color:#817bc8;
+  font:700 12px Arial,sans-serif;
+  text-transform:uppercase;
+}
+
+.apv2-name{
+  margin:8px 0;
+  color:#111047;
+  font-family:"Great Vibes",cursive;
+  font-size:58px;
+  line-height:.9;
+}
+
+.apv2-citation{
+  font-size:12px;
+  letter-spacing:2px;
+  text-transform:uppercase;
+}
+
+/* Onglets */
+.apv2-tabs input{display:none;}
+
+.apv2-nav{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:4px;
+  margin-top:28px;
+}
+
+.apv2-nav label{
+  position:relative;
+  height:52px;
+  border:1px solid #d8d3f1;
+  border-radius:8px 8px 0 0;
+  background:#f1effb;
+  color:#5f59a9;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  font:700 11px Arial,sans-serif;
+  text-transform:uppercase;
+  cursor:pointer;
+}
+
+#apv2-info:checked ~ .apv2-nav label[for="apv2-info"],
+#apv2-facts:checked ~ .apv2-nav label[for="apv2-facts"],
+#apv2-story:checked ~ .apv2-nav label[for="apv2-story"]{
+  background:linear-gradient(135deg,#15104e,#2a1a82);
+  color:#fff;
+}
+
+.apv2-panels{
+  border:1px solid #d8d3f1;
+  border-radius:0 0 10px 10px;
+  padding:30px;
+}
+
+.apv2-panel{display:none;}
+
+#apv2-info:checked ~ .apv2-panels .apv2-panel-info,
+#apv2-facts:checked ~ .apv2-panels .apv2-panel-facts,
+#apv2-story:checked ~ .apv2-panels .apv2-panel-story{
+  display:block;
+}
+
+/* Titres */
+.apv2-title{
+  text-align:center;
+  margin:0 0 25px;
+  color:#111047;
+  font:700 16px Arial,sans-serif;
+  text-transform:uppercase;
+}
+
+/* Onglet Informations */
+.apv2-grid-info{
+  display:grid;
+  grid-template-columns:220px 1fr;
+  gap:28px;
+}
+
+.apv2-imgbox{
+  min-height:260px;
+  border:1px dashed #c9c4ec;
+  border-radius:8px;
+  background:#fbfaff;
+}
+
+.apv2-fields{
+  display:grid;
+  gap:10px;
+}
+
+.apv2-field{
+  display:grid;
+  grid-template-columns:22px auto 1fr;
+  gap:8px;
+  padding-bottom:7px;
+  border-bottom:1px dashed #ddd9f2;
+  color:#514ca0;
+}
+
+/* Facts */
+.apv2-two{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:28px;
+}
+
+.apv2-lines,
+.apv2-about{
+  border:1px solid #d8d3f1;
+  border-radius:8px;
+  padding:22px;
+  color:#514ca0;
+}
+
+.apv2-lines{
+  min-height:420px;
+  line-height:1.8;
+}
+
+.apv2-about{
+  min-height:420px;
+}
+
+/* Histoire */
+.apv2-quote-box{
+  margin-bottom:25px;
+  padding:25px;
+  border:1px solid #d8d3f1;
+  border-radius:8px;
+  background:#f6f4fc;
+  text-align:center;
+  color:#514ca0;
+}
+
+.apv2-story-text{
+  border:1px solid #d8d3f1;
+  border-radius:8px;
+  padding:25px;
+  line-height:1.8;
+  color:#514ca0;
+  margin-bottom:25px;
+}
+
+.apv2-gallery{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:20px;
+}
+
+.apv2-gallery .apv2-imgbox{
+  min-height:180px;
+}
+
+.apv2-footer{
+  margin-top:16px;
+  text-align:center;
+  color:#b7b2e7;
+}
+
+/* Responsive */
+@media(max-width:760px){
+  .apv2-fiche{
+    width:100%;
+    max-width:100%;
+  }
+
+  .apv2-grid-info,
+  .apv2-two,
+  .apv2-gallery{
+    grid-template-columns:1fr;
+  }
+}
