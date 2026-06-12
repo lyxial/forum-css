@@ -1,4 +1,143 @@
-@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+/* CORRECTIF FICHE APV2 DANS LES MESSAGES */
+
+.post.apv2-fiche-post {
+  display: block !important;
+  width: 760px !important;
+  max-width: 96% !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  background: #51475c !important;
+  border: 1px solid #453a51 !important;
+  overflow: visible !important;
+}
+
+.post.apv2-fiche-post .aurora-profile-strip,
+.post.apv2-fiche-post .postprofile {
+  display: none !important;
+}
+
+.post.apv2-fiche-post .post-head {
+  display: grid !important;
+  width: 100% !important;
+  min-height: 54px !important;
+  padding: 8px 12px !important;
+  background: #51475c !important;
+  border-bottom: 1px solid #453a51 !important;
+  box-sizing: border-box !important;
+}
+
+.post.apv2-fiche-post .postbody {
+  display: block !important;
+  width: 100% !important;
+  min-height: 0 !important;
+  padding: 0 0 18px 0 !important;
+  background: transparent !important;
+  box-sizing: border-box !important;
+}
+
+.post.apv2-fiche-post .postbody .content {
+  width: 100% !important;
+  padding: 0 !important;
+  text-align: initial !important;
+}
+
+.post.apv2-fiche-post .signature_div {
+  display: none !important;
+}
+
+/* Supprime les br que Forumactif ajoute entre les blocs de la fiche */
+
+.apv2-fiche-content > br,
+.apv2-fiche > br,
+.apv2-card > br,
+.apv2-top > br,
+.apv2-tabs > br,
+.apv2-nav > br,
+.apv2-panels > br,
+.apv2-panel > br,
+.apv2-grid-info > br,
+.apv2-two > br,
+.apv2-fields > br,
+.apv2-bars > br,
+.apv2-bar > br {
+  display: none !important;
+}
+
+/* Reforce la largeur et le placement de la fiche */
+
+.apv2-fiche {
+  display: block !important;
+  width: 700px !important;
+  max-width: 700px !important;
+  min-width: 0 !important;
+  margin: 18px auto !important;
+  padding: 12px !important;
+  float: none !important;
+  clear: both !important;
+  text-align: initial !important;
+}
+
+.apv2-card,
+.apv2-tabs,
+.apv2-panels,
+.apv2-panel {
+  width: 100% !important;
+  max-width: 100% !important;
+  float: none !important;
+  clear: both !important;
+}
+
+/* Onglets bien alignes */
+
+.apv2-nav {
+  display: grid !important;
+  grid-template-columns: repeat(3, 1fr) !important;
+  gap: 4px !important;
+}
+
+.apv2-nav label {
+  width: auto !important;
+  margin: 0 !important;
+}
+
+/* Contenu des onglets replace correctement */
+
+.apv2-grid-info {
+  display: grid !important;
+  grid-template-columns: 210px 1fr !important;
+  gap: 28px !important;
+  align-items: start !important;
+}
+
+.apv2-grid-info > .apv2-imgbox {
+  grid-column: 1 !important;
+  grid-row: 1 !important;
+}
+
+.apv2-grid-info > .apv2-fields {
+  grid-column: 2 !important;
+  grid-row: 1 !important;
+}
+
+.apv2-two {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+  gap: 28px !important;
+  align-items: start !important;
+}
+
+.apv2-imgbox,
+.apv2-fields,
+.apv2-lines,
+.apv2-list,
+.apv2-bars,
+.apv2-about,
+.apv2-quote-box {
+  float: none !important;
+  clear: none !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
 
 .apv2-fiche {
   width: 700px;
