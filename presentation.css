@@ -103,7 +103,7 @@
 #apv2-info:checked ~ .apv2-nav label[for="apv2-info"],
 #apv2-facts:checked ~ .apv2-nav label[for="apv2-facts"],
 #apv2-story:checked ~ .apv2-nav label[for="apv2-story"] {
-  background: linear-gradient(135deg, #15104e, #2a1a82) !important;
+  background: #6aa6cf !important;
   color: #ffffff !important;
 }
 
