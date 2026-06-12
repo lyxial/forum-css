@@ -1,225 +1,110 @@
-/* CORRECTIF FICHE APV2 DANS LES MESSAGES */
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
 
-.post.apv2-fiche-post {
-  display: block !important;
-  width: 760px !important;
-  max-width: 96% !important;
-  margin-left: auto !important;
-  margin-right: auto !important;
-  background: #51475c !important;
-  border: 1px solid #453a51 !important;
-  overflow: visible !important;
-}
-
-.post.apv2-fiche-post .aurora-profile-strip,
-.post.apv2-fiche-post .postprofile {
-  display: none !important;
-}
-
-.post.apv2-fiche-post .post-head {
-  display: grid !important;
-  width: 100% !important;
-  min-height: 54px !important;
-  padding: 8px 12px !important;
-  background: #51475c !important;
-  border-bottom: 1px solid #453a51 !important;
-  box-sizing: border-box !important;
-}
-
-.post.apv2-fiche-post .postbody {
-  display: block !important;
-  width: 100% !important;
-  min-height: 0 !important;
-  padding: 0 0 18px 0 !important;
-  background: transparent !important;
-  box-sizing: border-box !important;
-}
-
-.post.apv2-fiche-post .postbody .content {
-  width: 100% !important;
-  padding: 0 !important;
-  text-align: initial !important;
-}
-
-.post.apv2-fiche-post .signature_div {
-  display: none !important;
-}
-
-/* Supprime les br que Forumactif ajoute entre les blocs de la fiche */
-
-.apv2-fiche-content > br,
-.apv2-fiche > br,
-.apv2-card > br,
-.apv2-top > br,
-.apv2-tabs > br,
-.apv2-nav > br,
-.apv2-panels > br,
-.apv2-panel > br,
-.apv2-grid-info > br,
-.apv2-two > br,
-.apv2-fields > br,
-.apv2-bars > br,
-.apv2-bar > br {
-  display: none !important;
-}
-
-/* Reforce la largeur et le placement de la fiche */
+/* =========================
+   APV2 - FICHE PRESENTATION
+========================= */
 
 .apv2-fiche {
-  display: block !important;
   width: 700px !important;
-  max-width: 700px !important;
+  max-width: 100% !important;
   min-width: 0 !important;
-  margin: 18px auto !important;
+  margin: 30px auto !important;
   padding: 12px !important;
-  float: none !important;
-  clear: both !important;
+  background: #070622 !important;
+  color: #17164e !important;
+  font-family: Georgia, "Times New Roman", serif !important;
+  box-sizing: border-box !important;
   text-align: initial !important;
 }
 
-.apv2-card,
-.apv2-tabs,
-.apv2-panels,
-.apv2-panel {
-  width: 100% !important;
-  max-width: 100% !important;
-  float: none !important;
-  clear: both !important;
+.apv2-fiche *,
+.apv2-fiche *:before,
+.apv2-fiche *:after {
+  box-sizing: border-box !important;
 }
 
-/* Onglets bien alignes */
-
-.apv2-nav {
-  display: grid !important;
-  grid-template-columns: repeat(3, 1fr) !important;
-  gap: 4px !important;
-}
-
-.apv2-nav label {
-  width: auto !important;
-  margin: 0 !important;
-}
-
-/* Contenu des onglets replace correctement */
-
-.apv2-grid-info {
-  display: grid !important;
-  grid-template-columns: 210px 1fr !important;
-  gap: 28px !important;
-  align-items: start !important;
-}
-
-.apv2-grid-info > .apv2-imgbox {
-  grid-column: 1 !important;
-  grid-row: 1 !important;
-}
-
-.apv2-grid-info > .apv2-fields {
-  grid-column: 2 !important;
-  grid-row: 1 !important;
-}
-
-.apv2-two {
-  display: grid !important;
-  grid-template-columns: 1fr 1fr !important;
-  gap: 28px !important;
-  align-items: start !important;
-}
-
-.apv2-imgbox,
-.apv2-fields,
-.apv2-lines,
-.apv2-list,
-.apv2-bars,
-.apv2-about,
-.apv2-quote-box {
-  float: none !important;
-  clear: none !important;
-  margin-left: 0 !important;
-  margin-right: 0 !important;
-}
-
-.apv2-fiche {
-  width: 700px;
-  max-width: 700px;
-  margin: 30px auto;
-  padding: 12px;
-  background: #070622;
-  color: #17164e;
-  font-family: Georgia, "Times New Roman", serif;
-  box-sizing: border-box;
-}
-
-.apv2-fiche * {
-  box-sizing: border-box;
+.apv2-fiche br {
+  display: none !important;
 }
 
 .apv2-card {
-  background: #ffffff;
-  border: 1px solid #dedaf4;
-  border-radius: 16px;
-  padding: 22px 18px 18px;
+  width: 100% !important;
+  background: #ffffff !important;
+  border: 1px solid #dedaf4 !important;
+  border-radius: 16px !important;
+  padding: 22px 18px 18px !important;
+  overflow: hidden !important;
 }
 
 .apv2-top {
-  text-align: center;
+  text-align: center !important;
 }
 
 .apv2-label {
-  color: #817bc8;
-  font: 700 12px Arial, sans-serif;
-  text-transform: uppercase;
-  letter-spacing: 1px;
+  color: #817bc8 !important;
+  font: 700 12px Arial, sans-serif !important;
+  text-transform: uppercase !important;
+  letter-spacing: 1px !important;
 }
 
 .apv2-name {
-  margin: 8px 0 4px;
-  color: #111047;
-  font-family: "Great Vibes", cursive;
-  font-size: 58px;
-  line-height: .9;
+  margin: 8px 0 4px !important;
+  color: #111047 !important;
+  font-family: "Great Vibes", cursive !important;
+  font-size: 58px !important;
+  line-height: .9 !important;
+  font-weight: normal !important;
+  text-align: center !important;
 }
 
 .apv2-citation {
-  color: #111047;
-  font-size: 12px;
-  font-weight: bold;
-  letter-spacing: 2px;
-  text-transform: uppercase;
+  color: #111047 !important;
+  font-size: 12px !important;
+  font-weight: bold !important;
+  letter-spacing: 2px !important;
+  text-transform: uppercase !important;
+  text-align: center !important;
 }
 
+/* ONGLET */
+
 .apv2-tabs input {
-  display: none;
+  display: none !important;
 }
 
 .apv2-nav {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 4px;
-  margin-top: 28px;
+  width: 100% !important;
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  gap: 4px !important;
+  margin-top: 28px !important;
 }
 
 .apv2-nav label {
-  position: relative;
-  height: 52px;
-  border: 1px solid #d8d3f1;
-  border-radius: 8px 8px 0 0;
-  background: #f1effb;
-  color: #5f59a9;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  font: 700 11px Arial, sans-serif;
-  text-transform: uppercase;
-  cursor: pointer;
+  position: relative !important;
+  height: 52px !important;
+  margin: 0 !important;
+  padding: 0 6px !important;
+  border: 1px solid #d8d3f1 !important;
+  border-radius: 8px 8px 0 0 !important;
+  background: #f1effb !important;
+  color: #5f59a9 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 8px !important;
+  font: 700 11px Arial, sans-serif !important;
+  text-align: center !important;
+  text-transform: uppercase !important;
+  white-space: nowrap !important;
+  cursor: pointer !important;
 }
 
 #apv2-info:checked ~ .apv2-nav label[for="apv2-info"],
 #apv2-facts:checked ~ .apv2-nav label[for="apv2-facts"],
 #apv2-story:checked ~ .apv2-nav label[for="apv2-story"] {
-  background: linear-gradient(135deg, #15104e, #2a1a82);
-  color: #ffffff;
+  background: linear-gradient(135deg, #15104e, #2a1a82) !important;
+  color: #ffffff !important;
 }
 
 #apv2-info:checked ~ .apv2-nav label[for="apv2-info"]:after,
@@ -227,45 +112,62 @@
 #apv2-story:checked ~ .apv2-nav label[for="apv2-story"]:after {
   content: "";
   position: absolute;
+  left: 50%;
   bottom: -10px;
+  transform: translateX(-50%);
   border-left: 10px solid transparent;
   border-right: 10px solid transparent;
   border-top: 10px solid #21156d;
 }
 
+/* PANELS */
+
 .apv2-panels {
-  border: 1px solid #d8d3f1;
-  border-radius: 0 0 10px 10px;
-  padding: 34px 26px;
+  width: 100% !important;
+  border: 1px solid #d8d3f1 !important;
+  border-radius: 0 0 10px 10px !important;
+  padding: 34px 26px !important;
+  background: #ffffff !important;
 }
 
 .apv2-panel {
-  display: none;
+  display: none !important;
+  width: 100% !important;
 }
 
 #apv2-info:checked ~ .apv2-panels .apv2-panel-info,
 #apv2-facts:checked ~ .apv2-panels .apv2-panel-facts,
 #apv2-story:checked ~ .apv2-panels .apv2-panel-story {
-  display: block;
+  display: block !important;
 }
 
+/* TITRES */
+
 .apv2-title {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 14px;
-  margin: 6px 0 26px;
-  color: #111047;
-  font: 700 16px Arial, sans-serif;
-  text-transform: uppercase;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 14px !important;
+  margin: 6px 0 26px !important;
+  color: #111047 !important;
+  font: 700 16px Arial, sans-serif !important;
+  text-align: center !important;
+  text-transform: uppercase !important;
+  white-space: nowrap !important;
 }
 
 .apv2-title:before,
 .apv2-title:after {
   content: "";
-  width: 130px;
-  height: 1px;
-  background: #d8d3f1;
+  width: 130px !important;
+  height: 1px !important;
+  background: #d8d3f1 !important;
+  flex: 1 1 auto !important;
+}
+
+.apv2-title span {
+  flex: 0 0 auto !important;
+  white-space: nowrap !important;
 }
 
 .apv2-title span:before,
@@ -276,103 +178,114 @@
 }
 
 .apv2-intro {
-  margin: -10px auto 26px;
-  color: #4f4aa0;
-  text-align: center;
-  font-style: italic;
-  line-height: 1.6;
+  margin: -10px auto 26px !important;
+  color: #4f4aa0 !important;
+  text-align: center !important;
+  font-style: italic !important;
+  line-height: 1.6 !important;
 }
 
+/* GRILLES */
+
 .apv2-grid-info {
-  display: grid;
-  grid-template-columns: 210px 1fr;
-  gap: 28px;
+  display: grid !important;
+  grid-template-columns: 210px minmax(0, 1fr) !important;
+  gap: 28px !important;
+  align-items: start !important;
 }
 
 .apv2-two {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 28px;
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  gap: 28px !important;
+  align-items: start !important;
 }
 
+/* IMAGES */
+
 .apv2-imgbox {
-  min-height: 260px;
-  border: 1px dashed #c9c4ec;
-  border-radius: 8px;
-  background: #fbfaff;
-  color: #817bc8;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  font: 700 13px Arial, sans-serif;
-  text-transform: uppercase;
+  min-height: 260px !important;
+  border: 1px dashed #c9c4ec !important;
+  border-radius: 8px !important;
+  background: #fbfaff !important;
+  color: #817bc8 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-align: center !important;
+  font: 700 13px Arial, sans-serif !important;
+  text-transform: uppercase !important;
 }
 
 .apv2-imgbox small {
-  display: block;
-  margin-top: 7px;
-  color: #6e68b5;
-  font: italic 14px Georgia, serif;
-  text-transform: none;
+  display: block !important;
+  margin-top: 7px !important;
+  color: #6e68b5 !important;
+  font: italic 14px Georgia, serif !important;
+  text-transform: none !important;
 }
 
 .apv2-imgicon {
-  display: block;
-  margin-bottom: 10px;
-  font-size: 44px;
+  display: block !important;
+  margin-bottom: 10px !important;
+  font-size: 44px !important;
 }
 
+/* CHAMPS */
+
 .apv2-fields {
-  display: grid;
-  gap: 10px;
+  display: grid !important;
+  gap: 10px !important;
 }
 
 .apv2-field {
-  display: grid;
-  grid-template-columns: 22px auto 1fr;
-  gap: 8px;
-  align-items: center;
-  padding-bottom: 7px;
-  border-bottom: 1px dashed #ddd9f2;
-  color: #514ca0;
-  font-size: 13px;
+  display: grid !important;
+  grid-template-columns: 22px auto 1fr !important;
+  gap: 8px !important;
+  align-items: center !important;
+  padding-bottom: 7px !important;
+  border-bottom: 1px dashed #ddd9f2 !important;
+  color: #514ca0 !important;
+  font-size: 13px !important;
+  text-align: left !important;
 }
 
 .apv2-field i {
-  color: #817bc8;
-  font-style: normal;
+  color: #817bc8 !important;
+  font-style: normal !important;
 }
 
 .apv2-field b {
-  color: #111047;
-  font-family: Arial, sans-serif;
-  text-transform: uppercase;
+  color: #111047 !important;
+  font-family: Arial, sans-serif !important;
+  text-transform: uppercase !important;
 }
 
+/* BLOCS TEXTE */
+
 .apv2-lines {
-  min-height: 265px;
-  border: 1px solid #d8d3f1;
-  border-radius: 8px;
-  padding: 28px 24px;
+  min-height: 265px !important;
+  border: 1px solid #d8d3f1 !important;
+  border-radius: 8px !important;
+  padding: 28px 24px !important;
   background:
     repeating-linear-gradient(to bottom, transparent 0 34px, #e7e4f7 35px),
-    #ffffff;
-  color: #514ca0;
-  line-height: 1.9;
+    #ffffff !important;
+  color: #514ca0 !important;
+  line-height: 1.9 !important;
 }
 
 .apv2-quote-box {
-  position: relative;
-  margin: 20px 0 38px;
-  padding: 28px 70px;
-  border: 1px solid #d8d3f1;
-  border-radius: 8px;
-  background: #f6f4fc;
-  color: #514ca0;
-  text-align: center;
-  font-size: 16px;
-  line-height: 1.7;
+  position: relative !important;
+  margin: 20px 0 38px !important;
+  padding: 28px 70px !important;
+  border: 1px solid #d8d3f1 !important;
+  border-radius: 8px !important;
+  background: #f6f4fc !important;
+  color: #514ca0 !important;
+  text-align: center !important;
+  font-size: 16px !important;
+  line-height: 1.7 !important;
 }
 
 .apv2-quote-box:before,
@@ -394,18 +307,20 @@
   bottom: 8px;
 }
 
+/* FACTS */
+
 .apv2-list {
-  margin: 0;
-  padding: 0;
-  list-style: none;
+  margin: 0 !important;
+  padding: 0 !important;
+  list-style: none !important;
 }
 
 .apv2-list li {
-  position: relative;
-  padding: 7px 0 7px 28px;
-  border-bottom: 1px dashed #ddd9f2;
-  color: #514ca0;
-  font-size: 14px;
+  position: relative !important;
+  padding: 7px 0 7px 28px !important;
+  border-bottom: 1px dashed #ddd9f2 !important;
+  color: #514ca0 !important;
+  font-size: 14px !important;
 }
 
 .apv2-list li:before {
@@ -415,177 +330,60 @@
   color: #817bc8;
 }
 
+/* BULLETIN */
+
 .apv2-bars {
-  display: grid;
-  gap: 14px;
+  display: grid !important;
+  gap: 14px !important;
 }
 
 .apv2-bar {
-  display: grid;
-  grid-template-columns: 38px 1fr 38px;
-  gap: 12px;
-  align-items: center;
+  display: grid !important;
+  grid-template-columns: 38px minmax(0, 1fr) 38px !important;
+  gap: 12px !important;
+  align-items: center !important;
 }
 
 .apv2-bar-icon {
-  width: 36px;
-  height: 36px;
-  border-radius: 6px;
-  background: #111047;
-  color: #fff;
-  display: grid;
-  place-items: center;
+  width: 36px !important;
+  height: 36px !important;
+  border-radius: 6px !important;
+  background: #111047 !important;
+  color: #ffffff !important;
+  display: grid !important;
+  place-items: center !important;
 }
 
 .apv2-bar-label {
-  color: #111047;
-  font: 700 12px Arial, sans-serif;
-  text-transform: uppercase;
+  color: #111047 !important;
+  font: 700 12px Arial, sans-serif !important;
+  text-transform: uppercase !important;
 }
 
 .apv2-track {
-  height: 10px;
-  margin-top: 5px;
-  border-radius: 20px;
-  background: #eceaf3;
-  overflow: hidden;
+  height: 10px !important;
+  margin-top: 5px !important;
+  border-radius: 20px !important;
+  background: #eceaf3 !important;
+  overflow: hidden !important;
 }
 
 .apv2-fill {
-  height: 100%;
-  border-radius: 20px;
-  background: linear-gradient(90deg, #8b82d5, #b6adeb);
+  height: 100% !important;
+  border-radius: 20px !important;
+  background: linear-gradient(90deg, #8b82d5, #b6adeb) !important;
 }
 
-.apv2-about {
-  border: 1px solid #d8d3f1;
-  border-radius: 8px;
-  padding: 22px;
-  color: #514ca0;
-  line-height: 1.7;
-}
+/* A PROPOS */
 
-.apv2-footer {
-  margin-top: 16px;
-  color: #b7b2e7;
-  text-align: center;
-  font-size: 15px;
-}
-
-.apv2-footer strong {
-  display: block;
-  margin-top: 6px;
-  font-size: 18px;
-  font-weight: normal;
-}
-
-
-/* APV2 FORUMACTIF */
-
-.post.apv2-fiche-post{
-  display:block!important;
-  width:100%!important;
-  max-width:100%!important;
-}
-
-.post.apv2-fiche-post .postbody,
-.post.apv2-fiche-post .postbody .content{
-  width:100%!important;
-  margin:0!important;
-  padding:0!important;
-  overflow:visible!important;
-}
-
-.post.apv2-fiche-post .content{
-  display:flex!important;
-  justify-content:center!important;
-}
-
-.post.apv2-fiche-post .apv2-fiche{
-  width:700px!important;
-  max-width:700px!important;
-  margin:20px auto!important;
-}
-
-/* Empêche les retours ligne Forumactif de casser les grilles */
-.post.apv2-fiche-post .apv2-fiche br {
-  display: none !important;
-}
-
-/* Reforce les blocs internes à gauche */
-.post.apv2-fiche-post .apv2-card,
-.post.apv2-fiche-post .apv2-tabs,
-.post.apv2-fiche-post .apv2-panels,
-.post.apv2-fiche-post .apv2-panel {
-  width: 100% !important;
-  margin-left: 0 !important;
-  margin-right: 0 !important;
-}
-
-.post.apv2-fiche-post .apv2-grid-info {
-  display: grid !important;
-  grid-template-columns: 210px 1fr !important;
-  gap: 28px !important;
-}
-
-.post.apv2-fiche-post .apv2-two {
-  display: grid !important;
-  grid-template-columns: 1fr 1fr !important;
-  gap: 28px !important;
-}
-
-
-.apv2-about {
-  width: 220px !important;
-  padding: 16px !important;
-}
-
-.apv2-about .apv2-title span {
-  white-space: nowrap !important;
-}
-
-.apv2-about .apv2-title {
-  gap: 6px !important;
-  margin-top: 0 !important;
-}
-
-.apv2-about .apv2-title:before,
-.apv2-about .apv2-title:after {
-  width: 45px !important;
-}
-
-.apv2-about {
-  width: 260px !important;
-  max-width: 260px !important;
-  padding: 16px 18px !important;
-  justify-self: end !important;
-}
-
-.apv2-about > .apv2-title {
-  display: flex !important;
-  flex-wrap: nowrap !important;
-  white-space: nowrap !important;
-  gap: 6px !important;
-  margin: 0 0 18px 0 !important;
-  font-size: 15px !important;
-}
-
-.apv2-about > .apv2-title span {
-  display: inline-block !important;
-  white-space: nowrap !important;
-  flex: 0 0 auto !important;
-}
-
-.apv2-about > .apv2-title:before,
-.apv2-about > .apv2-title:after {
-  flex: 0 0 42px !important;
-  width: 42px !important;
-  min-width: 42px !important;
-}
 .apv2-about {
   width: 240px !important;
   max-width: 240px !important;
   padding: 16px 18px !important;
+  border: 1px solid #d8d3f1 !important;
+  border-radius: 8px !important;
+  color: #514ca0 !important;
+  line-height: 1.7 !important;
   justify-self: end !important;
 }
 
@@ -619,4 +417,44 @@
 .apv2-about-text {
   color: #514ca0 !important;
   line-height: 1.7 !important;
+}
+
+/* FOOTER */
+
+.apv2-footer {
+  margin-top: 16px !important;
+  color: #b7b2e7 !important;
+  text-align: center !important;
+  font-size: 15px !important;
+}
+
+.apv2-footer strong {
+  display: block !important;
+  margin-top: 6px !important;
+  font-size: 18px !important;
+  font-weight: normal !important;
+}
+
+/* FORUMACTIF - DANS UN MESSAGE */
+
+.postbody .content .apv2-fiche {
+  text-align: initial !important;
+}
+
+.apv2-fiche,
+.apv2-card,
+.apv2-tabs,
+.apv2-panels,
+.apv2-panel,
+.apv2-grid-info,
+.apv2-two,
+.apv2-fields,
+.apv2-imgbox,
+.apv2-lines,
+.apv2-list,
+.apv2-bars,
+.apv2-about,
+.apv2-quote-box {
+  float: none !important;
+  clear: none !important;
 }
