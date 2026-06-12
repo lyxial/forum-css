@@ -485,3 +485,18 @@
 .apv2-imgbox.apv2-has-image .apv2-img-placeholder {
   display: none !important;
 }
+
+.apv2-imgbox{
+    height:320px !important;
+}
+
+.apv2-imgbox.apv2-has-image{
+    overflow:hidden !important;
+}
+
+.apv2-imgbox.apv2-has-image img{
+    width:100% !important;
+    height:100% !important;
+    object-fit:cover !important;
+    display:block !important;
+}
