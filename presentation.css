@@ -562,3 +562,32 @@
 .apv2-about .apv2-title:after {
   width: 45px !important;
 }
+
+.apv2-about {
+  width: 260px !important;
+  max-width: 260px !important;
+  padding: 16px 18px !important;
+  justify-self: end !important;
+}
+
+.apv2-about > .apv2-title {
+  display: flex !important;
+  flex-wrap: nowrap !important;
+  white-space: nowrap !important;
+  gap: 6px !important;
+  margin: 0 0 18px 0 !important;
+  font-size: 15px !important;
+}
+
+.apv2-about > .apv2-title span {
+  display: inline-block !important;
+  white-space: nowrap !important;
+  flex: 0 0 auto !important;
+}
+
+.apv2-about > .apv2-title:before,
+.apv2-about > .apv2-title:after {
+  flex: 0 0 42px !important;
+  width: 42px !important;
+  min-width: 42px !important;
+}
