@@ -458,3 +458,30 @@
   float: none !important;
   clear: none !important;
 }
+/* Images personnalisées dans les zones image */
+
+.apv2-imgbox {
+  overflow: hidden !important;
+  padding: 0 !important;
+}
+
+.apv2-imgbox.apv2-has-image {
+  border-style: solid !important;
+  background: #ffffff !important;
+}
+
+.apv2-imgbox.apv2-has-image img {
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+}
+
+.apv2-imgbox.apv2-contain img {
+  object-fit: contain !important;
+  background: #fbfaff !important;
+}
+
+.apv2-imgbox.apv2-has-image .apv2-img-placeholder {
+  display: none !important;
+}
