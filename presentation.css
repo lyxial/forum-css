@@ -542,3 +542,23 @@
   grid-template-columns: 1fr 1fr !important;
   gap: 28px !important;
 }
+
+
+.apv2-about {
+  width: 220px !important;
+  padding: 16px !important;
+}
+
+.apv2-about .apv2-title span {
+  white-space: nowrap !important;
+}
+
+.apv2-about .apv2-title {
+  gap: 6px !important;
+  margin-top: 0 !important;
+}
+
+.apv2-about .apv2-title:before,
+.apv2-about .apv2-title:after {
+  width: 45px !important;
+}
