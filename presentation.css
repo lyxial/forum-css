@@ -500,3 +500,12 @@
     object-fit:cover !important;
     display:block !important;
 }
+
+.apv2-imgbox img{
+    max-width:none !important;
+}
+
+.apv2-imgbox.apv2-has-image img{
+    height:100% !important;
+    max-width:none !important;
+}
