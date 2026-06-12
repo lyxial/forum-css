@@ -539,7 +539,7 @@
 }
 
 .apv2-imgbox{
-    width:220px!important;
+    width:200px!important;
     height:320px!important;
     overflow:hidden!important;
     border:1px solid #d8d3f1!important;
@@ -562,7 +562,7 @@
     border-radius:8px!important;
 }
 
-.apv2-imgbox2 img2{
+.apv2-imgbox2 img{
     width:100%!important;
     height:100%!important;
     object-fit:cover!important;
