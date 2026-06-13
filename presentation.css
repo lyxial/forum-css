@@ -457,6 +457,17 @@
   float: none !important;
   clear: none !important;
 }
+
+.apv2-card > br,
+.apv2-tabs > br,
+.apv2-panels > br,
+.apv2-panel > br {
+  display:none !important;
+}
+
+.apv2-lines{
+    white-space:pre-line !important;
+}
 /* Images personnalisées dans les zones image */
 
 .apv2-imgbox.apv2-has-image {
