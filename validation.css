@@ -1,0 +1,234 @@
+/* ==========================
+   FICHE DE VALIDATION AURORA
+========================== */
+
+.aurora-validation{
+    width:700px;
+    margin:30px auto;
+    padding:25px;
+    box-sizing:border-box;
+
+    background:
+    radial-gradient(circle at top,
+    #1a1833 0%,
+    #090816 70%);
+
+    border:1px solid #574a7c;
+    color:#d7cdef;
+    font-family:"Roboto", serif;
+    position:relative;
+}
+
+
+/* ==========================
+           TITRE
+========================== */
+
+.av-title{
+    text-align:center;
+    font-family:"Times New Roman", serif;
+    font-size:46px;
+    color:#c7b0ff;
+    letter-spacing:3px;
+    margin-bottom:25px;
+}
+
+
+/* ==========================
+        PARTIE HAUTE
+========================== */
+
+.av-top{
+    display:grid;
+    grid-template-columns:1.5fr 1fr;
+    gap:15px;
+}
+
+
+/* ==========================
+         BLOCS
+========================== */
+
+.av-info,
+.av-rank-player,
+.av-rank{
+    border:1px solid #4d4370;
+    background:rgba(15,10,35,0.6);
+    position:relative;
+}
+
+
+.av-box-title{
+    background:
+    linear-gradient(
+    90deg,
+    #52416f,
+    #2d2648);
+    
+    color:#d8c4ff;
+    padding:12px 15px;
+    font-size:20px;
+    font-family:"Times New Roman", serif;
+    letter-spacing:1px;
+}
+
+
+.av-text{
+    padding:20px;
+    min-height:250px;
+    font-size:15px;
+    line-height:1.8;
+    color:#d3cae8;
+}
+
+
+/* ==========================
+       RANG JOUEUR
+========================== */
+
+.av-rank-player{
+    margin-bottom:15px;
+}
+
+
+.av-player-text{
+    margin:25px;
+    padding:12px;
+
+    border:1px solid #54457b;
+    text-align:center;
+    color:#b7a9d7;
+}
+
+
+/* ==========================
+       RANG ACCORDÉ
+========================== */
+
+.av-rank{
+    text-align:center;
+}
+
+
+.av-rank-image{
+    width:170px;
+    height:170px;
+    margin:25px auto;
+
+    border:1px dashed #7c6cb4;
+    border-radius:50%;
+
+    overflow:hidden;
+}
+
+
+.av-rank-image img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+
+.av-rank-description{
+    padding:0 20px 25px;
+    line-height:1.5;
+    font-size:14px;
+}
+
+
+/* ==========================
+       SECTION RECENSER
+========================== */
+
+
+.av-register-title{
+    text-align:center;
+    margin:25px 0 15px;
+
+    font-family:
+    "Times New Roman", serif;
+
+    font-size:32px;
+    color:#c8b2ff;
+}
+
+
+/* grille */
+
+.av-register{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(4,1fr);
+
+    gap:10px;
+}
+
+
+/* cases */
+
+.av-item{
+
+    border:1px solid #4d4370;
+
+    background:
+    rgba(15,10,35,0.5);
+
+    text-align:center;
+
+    padding:15px 10px;
+}
+
+
+/* image cliquable */
+
+.av-item a{
+    display:block;
+}
+
+
+.av-item img{
+
+    width:75px;
+    height:75px;
+
+    object-fit:contain;
+
+    transition:0.3s;
+}
+
+
+.av-item img:hover{
+
+    transform:
+    scale(1.12);
+
+    filter:
+    drop-shadow(0 0 8px #b896ff);
+}
+
+
+/* textes */
+
+.av-item-title{
+
+    margin-top:12px;
+
+    font-family:
+    "Times New Roman", serif;
+
+    font-size:22px;
+
+    color:#d4bcff;
+}
+
+
+.av-item-text{
+
+    margin-top:5px;
+
+    font-size:13px;
+
+    color:#b7acd4;
+}
