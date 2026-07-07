@@ -87,7 +87,7 @@
   margin: 12px 0 4px;
   color: var(--apf-purple);
   font-family: "Great Vibes", cursive;
-  font-size: 72px;
+  font-size: 58px !important;
   font-weight: 400;
   line-height: .9;
 }
