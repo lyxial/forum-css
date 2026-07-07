@@ -1,0 +1,158 @@
+  border-radius: 50%;
+  background: #fff;
+  display: grid;
+  place-items: center;
+  font-size: 17px;
+}
+
+.apf-bar-label {
+  font: 700 12px Arial, sans-serif;
+  text-transform: uppercase;
+}
+
+.apf-bar-track {
+  height: 9px;
+  margin-top: 5px;
+  overflow: hidden;
+  border-radius: 20px;
+  background: #e8e4f3;
+}
+
+.apf-bar-fill {
+  height: 100%;
+  border-radius: 20px;
+  background: var(--apf-blue);
+}
+
+.apf-score {
+  text-align: right;
+  font-size: 13px;
+}
+
+.apf-writing-section + .apf-writing-section {
+  margin-top: 34px;
+}
+
+.apf-writing-box {
+  min-height: 225px;
+  padding: 22px;
+  border: 1px solid var(--apf-line);
+  border-radius: 16px;
+  background:
+    repeating-linear-gradient(to bottom, transparent 0 31px, rgba(81, 76, 160, .11) 32px),
+    #fff;
+  color: var(--apf-purple);
+  line-height: 2;
+}
+
+.apf-links-intro {
+  margin: -8px auto 24px;
+  max-width: 520px;
+  font-size: 15px;
+  font-style: italic;
+  line-height: 1.6;
+  text-align: center;
+}
+
+.apf-link-list {
+  display: grid;
+  gap: 10px;
+}
+
+.apf-link-card {
+  display: grid !important;
+  grid-template-columns: 66px 150px minmax(0, 1fr);
+  gap: 16px;
+  align-items: center;
+  min-height: 82px;
+  padding: 10px 18px;
+  border: 1px solid var(--apf-line);
+  border-radius: 15px;
+  background: #fff;
+}
+
+.apf-link-avatar {
+  width: 66px;
+  height: 66px;
+  padding: 4px;
+  overflow: hidden;
+  border: 1px solid var(--apf-blue);
+  border-radius: 50%;
+  background: var(--apf-pale);
+}
+
+.apf-link-identity {
+  padding-right: 14px;
+  border-right: 1px dotted var(--apf-line);
+}
+
+.apf-link-name {
+  font: 700 13px Arial, sans-serif;
+  text-transform: uppercase;
+}
+
+.apf-link-type {
+  margin-top: 6px;
+  font-size: 12px;
+  font-style: italic;
+  text-transform: uppercase;
+}
+
+.apf-link-description {
+  font-size: 13px;
+  line-height: 1.55;
+}
+
+.apf-footer {
+  position: relative;
+  width: 86px;
+  height: 54px;
+  margin: -24px auto 0;
+  border: 1px solid var(--apf-blue);
+  border-radius: 50%;
+  background: #fff;
+  display: grid;
+  place-items: center;
+  color: var(--apf-purple);
+  font-size: 27px;
+}
+
+/* Protection contre les styles globaux de Forumactif. */
+.postbody .content .apf-sheet {
+  float: none !important;
+  clear: both !important;
+  text-align: initial !important;
+}
+
+@media screen and (max-width: 720px) {
+  .apf-header {
+    grid-template-columns: 115px minmax(0, 1fr) 90px;
+  }
+
+  .apf-hero-image {
+    width: 115px;
+    height: 115px;
+  }
+
+  .apf-moon-image {
+    width: 90px;
+    height: 90px;
+  }
+
+  .apf-name {
+    font-size: 42px;
+  }
+
+  .apf-tabbar label {
+    font-size: 9px;
+  }
+
+  .apf-info-grid {
+    grid-template-columns: 145px minmax(0, 1fr) !important;
+  }
+
+  .apf-info-image {
+    width: 145px;
+    height: 190px;
+  }
+}
