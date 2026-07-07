@@ -133,8 +133,10 @@
   grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
   grid-template-areas: "information character links";
   width: 100%;
-  border: 1px solid var(--apf-line);
-  border-radius: 10px 10px 0 0;
+  gap: 3px;
+  border: 0;
+  border-bottom: 1px solid var(--apf-line);
+  border-radius: 0;
   overflow: visible;
 }
 
@@ -144,8 +146,10 @@
   height: 54px;
   margin: 0;
   padding: 0 8px;
-  border-right: 1px solid var(--apf-line);
-  background: #fff !important;
+  border: 1px solid var(--apf-line) !important;
+  border-bottom: 0 !important;
+  border-radius: 9px 9px 0 0 !important;
+  background: linear-gradient(180deg, #f7f6ff 0%, #f0eefb 100%) !important;
   color: var(--apf-purple);
   display: flex !important;
   align-items: center;
@@ -155,10 +159,11 @@
   text-align: center;
   text-transform: uppercase;
   cursor: pointer;
+  transition: background-color .2s ease, color .2s ease;
 }
 
 .apf-tabbar label:last-child {
-  border-right: 0;
+  border-right: 1px solid var(--apf-line) !important;
 }
 
 .apf-tabbar label[for="apf-information"] { grid-area: information; }
@@ -174,6 +179,7 @@
 #apf-character:checked ~ .apf-tabbar label[for="apf-character"],
 #apf-links:checked ~ .apf-tabbar label[for="apf-links"] {
   z-index: 2;
+  border-color: var(--apf-blue) !important;
   background: var(--apf-blue) !important;
   color: #fff !important;
 }
@@ -197,7 +203,7 @@
   border: 1px solid var(--apf-line);
   border-top: 0;
   border-radius: 0 0 18px 18px;
-  background: #f1effb !important;
+  background: #fff;
 }
 
 .apf-panel {
@@ -208,7 +214,6 @@
 #apf-character:checked ~ .apf-panels .apf-panel-character,
 #apf-links:checked ~ .apf-panels .apf-panel-links {
   display: block;
-  background: #6aa6cf !important;
 }
 
 .apf-section-title {
@@ -248,7 +253,7 @@
 
 .apf-info-image {
   width: 180px;
-  height: 400px;
+  height: 420px;
   overflow: hidden;
   border: 1px solid var(--apf-line);
   border-radius: 14px;
@@ -457,4 +462,3 @@
     height: 190px;
   }
 }
- 
