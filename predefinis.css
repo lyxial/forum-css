@@ -174,7 +174,7 @@
 #apf-character:checked ~ .apf-tabbar label[for="apf-character"],
 #apf-links:checked ~ .apf-tabbar label[for="apf-links"] {
   z-index: 2;
-  background: var(--apf-blue);
+  background: var(--apf-blue) !important;
   color: #fff !important;
 }
 
@@ -197,7 +197,7 @@
   border: 1px solid var(--apf-line);
   border-top: 0;
   border-radius: 0 0 18px 18px;
-  background: #fff !important;
+  background: #f1effb !important;
 }
 
 .apf-panel {
@@ -208,6 +208,7 @@
 #apf-character:checked ~ .apf-panels .apf-panel-character,
 #apf-links:checked ~ .apf-panels .apf-panel-links {
   display: block;
+  background: #6aa6cf !important;
 }
 
 .apf-section-title {
