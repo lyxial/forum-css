@@ -1,3 +1,303 @@
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+
+/* Fiche predefini - classes isolees pour Forumactif */
+.apf-sheet {
+  --apf-blue: #6aa6cf;
+  --apf-purple: #514ca0;
+  --apf-pale: #f4f1ff;
+  --apf-line: #d9d4ef;
+  position: relative;
+  width: 700px;
+  max-width: 100%;
+  margin: 28px auto;
+  padding: 18px;
+  overflow: hidden;
+  border: 2px solid var(--apf-purple);
+  border-radius: 34px;
+  background: #fff;
+  color: var(--apf-purple);
+  box-shadow: inset 0 0 0 5px #fff, inset 0 0 0 7px rgba(81, 76, 160, .32);
+  font-family: Georgia, "Times New Roman", serif;
+  text-align: initial;
+  box-sizing: border-box;
+}
+
+.apf-sheet *,
+.apf-sheet *::before,
+.apf-sheet *::after {
+  box-sizing: border-box;
+}
+
+.apf-header {
+  display: grid;
+  grid-template-columns: 185px minmax(0, 1fr) 145px;
+  gap: 18px;
+  align-items: center;
+  min-height: 230px;
+  padding: 12px 10px 24px;
+  background:
+    radial-gradient(circle at 55% 28%, rgba(106, 166, 207, .13) 0 2px, transparent 3px),
+    radial-gradient(circle at 69% 62%, rgba(81, 76, 160, .12) 0 2px, transparent 3px);
+}
+
+.apf-hero-image {
+  width: 185px;
+  height: 185px;
+  padding: 7px;
+  border: 1px solid var(--apf-purple);
+  border-radius: 50%;
+  background: #fff;
+}
+
+.apf-hero-image img,
+.apf-moon-image img,
+.apf-info-image img,
+.apf-link-avatar img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.apf-hero-image img,
+.apf-link-avatar img {
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.apf-moon-image {
+  width: 145px;
+  height: 145px;
+}
+
+.apf-moon-image img {
+  object-fit: contain;
+}
+
+.apf-heading {
+  text-align: center;
+}
+
+.apf-kicker {
+  font: 700 13px Arial, sans-serif;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+.apf-name {
+  margin: 12px 0 4px;
+  color: var(--apf-purple);
+  font-family: "Great Vibes", cursive;
+  font-size: 58px;
+  font-weight: 400;
+  line-height: .9;
+}
+
+.apf-quote {
+  margin: 24px 0 0;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.apf-heading-line {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 22px;
+}
+
+.apf-heading-line::before,
+.apf-heading-line::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: var(--apf-line);
+}
+
+.apf-heading-line span {
+  color: var(--apf-blue);
+  font-size: 20px;
+}
+
+.apf-tabs > input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.apf-tabbar {
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  grid-template-areas: "information character links";
+  width: 100%;
+  border: 1px solid var(--apf-line);
+  border-radius: 10px 10px 0 0;
+  overflow: visible;
+}
+
+.apf-tabbar label {
+  position: relative;
+  min-width: 0;
+  height: 54px;
+  margin: 0;
+  padding: 0 8px;
+  border-right: 1px solid var(--apf-line);
+  background: #fff;
+  color: var(--apf-purple);
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  font: 700 11px Arial, sans-serif;
+  text-align: center;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.apf-tabbar label:last-child {
+  border-right: 0;
+}
+
+.apf-tabbar label[for="apf-information"] { grid-area: information; }
+.apf-tabbar label[for="apf-character"] { grid-area: character; }
+.apf-tabbar label[for="apf-links"] { grid-area: links; }
+
+.apf-tab-icon {
+  font-size: 17px;
+  line-height: 1;
+}
+
+#apf-information:checked ~ .apf-tabbar label[for="apf-information"],
+#apf-character:checked ~ .apf-tabbar label[for="apf-character"],
+#apf-links:checked ~ .apf-tabbar label[for="apf-links"] {
+  z-index: 2;
+  background: var(--apf-blue);
+  color: #fff;
+}
+
+#apf-information:checked ~ .apf-tabbar label[for="apf-information"]::after,
+#apf-character:checked ~ .apf-tabbar label[for="apf-character"]::after,
+#apf-links:checked ~ .apf-tabbar label[for="apf-links"]::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -12px;
+  transform: translateX(-50%);
+  border-left: 12px solid transparent;
+  border-right: 12px solid transparent;
+  border-top: 12px solid var(--apf-blue);
+}
+
+.apf-panels {
+  min-height: 650px;
+  padding: 34px 26px 50px;
+  border: 1px solid var(--apf-line);
+  border-top: 0;
+  border-radius: 0 0 18px 18px;
+  background: #fff;
+}
+
+.apf-panel {
+  display: none;
+}
+
+#apf-information:checked ~ .apf-panels .apf-panel-information,
+#apf-character:checked ~ .apf-panels .apf-panel-character,
+#apf-links:checked ~ .apf-panels .apf-panel-links {
+  display: block;
+}
+
+.apf-section-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin: 8px 0 24px;
+  color: var(--apf-purple);
+  font: 700 17px Arial, sans-serif;
+  text-align: center;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.apf-section-title::before,
+.apf-section-title::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: var(--apf-line);
+}
+
+.apf-section-title span::before,
+.apf-section-title span::after {
+  content: "✦";
+  margin: 0 9px;
+  color: var(--apf-blue);
+}
+
+.apf-info-grid {
+  display: grid !important;
+  grid-template-columns: 180px minmax(0, 1fr) !important;
+  gap: 24px;
+  align-items: start;
+}
+
+.apf-info-image {
+  width: 180px;
+  height: 225px;
+  overflow: hidden;
+  border: 1px solid var(--apf-line);
+  border-radius: 14px;
+  background: var(--apf-pale);
+}
+
+.apf-info-image img {
+  object-fit: cover;
+}
+
+.apf-fields {
+  display: grid;
+  gap: 11px;
+}
+
+.apf-field {
+  display: grid;
+  grid-template-columns: max-content minmax(0, 1fr);
+  gap: 9px;
+  align-items: center;
+  padding: 0 0 7px;
+  border-bottom: 1px dotted var(--apf-line);
+  font-size: 13px;
+}
+
+.apf-field strong {
+  font-family: Arial, sans-serif;
+  text-transform: uppercase;
+}
+
+.apf-school {
+  margin-top: 32px;
+}
+
+.apf-bars {
+  display: grid;
+  gap: 14px;
+}
+
+.apf-bar {
+  display: grid;
+  grid-template-columns: 38px minmax(0, 1fr) 42px;
+  gap: 12px;
+  align-items: center;
+}
+
+.apf-bar-icon {
+  width: 38px;
+  height: 38px;
+  border: 1px solid var(--apf-line);
   border-radius: 50%;
   background: #fff;
   display: grid;
