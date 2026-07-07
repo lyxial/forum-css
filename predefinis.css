@@ -175,7 +175,7 @@
 #apf-links:checked ~ .apf-tabbar label[for="apf-links"] {
   z-index: 2;
   background: var(--apf-blue);
-  color: #fff;
+  color: #fff !important;
 }
 
 #apf-information:checked ~ .apf-tabbar label[for="apf-information"]::after,
