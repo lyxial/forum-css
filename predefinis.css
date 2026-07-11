@@ -167,9 +167,9 @@
   border-right: 1px solid var(--apf-line) !important;
 }
 
-.apf-tabbar label[for="apf-information"] { grid-area: information; }
-.apf-tabbar label[for="apf-character"] { grid-area: character; }
-.apf-tabbar label[for="apf-links"] { grid-area: links; }
+.apf-tabbar label[for^="apf-information"] { grid-area: information; }
+.apf-tabbar label[for^="apf-character"] { grid-area: character; }
+.apf-tabbar label[for^="apf-links"] { grid-area: links; }
 
 .apf-tab-icon {
   color: #514ca0 !important;
@@ -177,37 +177,36 @@
   line-height: 1;
 }
 
-#apf-information:checked ~ .apf-tabbar label[for="apf-information"],
-#apf-character:checked ~ .apf-tabbar label[for="apf-character"],
-#apf-links:checked ~ .apf-tabbar label[for="apf-links"] {
+/* Style complet de l'onglet actif */
+.apf-tabs input[id^="apf-information"]:checked
+~ .apf-tabbar label[for^="apf-information"],
+.apf-tabs input[id^="apf-character"]:checked
+~ .apf-tabbar label[for^="apf-character"],
+.apf-tabs input[id^="apf-links"]:checked
+~ .apf-tabbar label[for^="apf-links"] {
   z-index: 2;
   border-color: var(--apf-blue) !important;
   background: var(--apf-blue) !important;
   color: #fff !important;
 }
-.apf-tabs input[id^="apf-information-"]:checked
-~ .apf-tabbar label[for^="apf-information-"] {
+
+/* Étoile blanche dans l'onglet actif */
+.apf-tabs input[id^="apf-information"]:checked
+~ .apf-tabbar label[for^="apf-information"] .apf-tab-icon,
+.apf-tabs input[id^="apf-character"]:checked
+~ .apf-tabbar label[for^="apf-character"] .apf-tab-icon,
+.apf-tabs input[id^="apf-links"]:checked
+~ .apf-tabbar label[for^="apf-links"] .apf-tab-icon {
   color: #fff !important;
 }
 
-.apf-tabs input[id^="apf-character-"]:checked
-~ .apf-tabbar label[for^="apf-character-"] {
-  color: #fff !important;
-}
-
-.apf-tabs input[id^="apf-links-"]:checked
-~ .apf-tabbar label[for^="apf-links-"] {
-  color: #fff !important;
-}
-#apf-information:checked ~ .apf-tabbar label[for="apf-information"] .apf-tab-icon,
-#apf-character:checked ~ .apf-tabbar label[for="apf-character"] .apf-tab-icon,
-#apf-links:checked ~ .apf-tabbar label[for="apf-links"] .apf-tab-icon {
-  color: #fff !important;
-}
-
-#apf-information:checked ~ .apf-tabbar label[for="apf-information"]::after,
-#apf-character:checked ~ .apf-tabbar label[for="apf-character"]::after,
-#apf-links:checked ~ .apf-tabbar label[for="apf-links"]::after {
+/* Petit triangle sous l'onglet actif */
+.apf-tabs input[id^="apf-information"]:checked
+~ .apf-tabbar label[for^="apf-information"]::after,
+.apf-tabs input[id^="apf-character"]:checked
+~ .apf-tabbar label[for^="apf-character"]::after,
+.apf-tabs input[id^="apf-links"]:checked
+~ .apf-tabbar label[for^="apf-links"]::after {
   content: "";
   position: absolute;
   left: 50%;
@@ -234,21 +233,21 @@
   color: #514ca0 !important;
 }
 
-.apf-tabs input[id^="apf-information-"]:checked
+.apf-tabs input[id^="apf-information"]:checked
 ~ .apf-panels
 .apf-panel-information {
   display: block;
   background: #fff !important;
 }
 
-.apf-tabs input[id^="apf-character-"]:checked
+.apf-tabs input[id^="apf-character"]:checked
 ~ .apf-panels
 .apf-panel-character {
   display: block;
   background: #fff !important;
 }
 
-.apf-tabs input[id^="apf-links-"]:checked
+.apf-tabs input[id^="apf-links"]:checked
 ~ .apf-panels
 .apf-panel-links {
   display: block;
