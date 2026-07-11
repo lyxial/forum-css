@@ -185,7 +185,20 @@
   background: var(--apf-blue) !important;
   color: #fff !important;
 }
+.apf-tabs input[id^="apf-information-"]:checked
+~ .apf-tabbar label[for^="apf-information-"] {
+  color: #fff !important;
+}
 
+.apf-tabs input[id^="apf-character-"]:checked
+~ .apf-tabbar label[for^="apf-character-"] {
+  color: #fff !important;
+}
+
+.apf-tabs input[id^="apf-links-"]:checked
+~ .apf-tabbar label[for^="apf-links-"] {
+  color: #fff !important;
+}
 #apf-information:checked ~ .apf-tabbar label[for="apf-information"] .apf-tab-icon,
 #apf-character:checked ~ .apf-tabbar label[for="apf-character"] .apf-tab-icon,
 #apf-links:checked ~ .apf-tabbar label[for="apf-links"] .apf-tab-icon {
@@ -221,9 +234,23 @@
   color: #514ca0 !important;
 }
 
-#apf-information:checked ~ .apf-panels .apf-panel-information,
-#apf-character:checked ~ .apf-panels .apf-panel-character,
-#apf-links:checked ~ .apf-panels .apf-panel-links {
+.apf-tabs input[id^="apf-information-"]:checked
+~ .apf-panels
+.apf-panel-information {
+  display: block;
+  background: #fff !important;
+}
+
+.apf-tabs input[id^="apf-character-"]:checked
+~ .apf-panels
+.apf-panel-character {
+  display: block;
+  background: #fff !important;
+}
+
+.apf-tabs input[id^="apf-links-"]:checked
+~ .apf-panels
+.apf-panel-links {
   display: block;
   background: #fff !important;
 }
