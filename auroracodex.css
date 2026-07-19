@@ -1,111 +1,3 @@
-.switcheroo {
-  color: var(--color-text);
-  font-size: 16px;
-}
-.switcheroo[position="static"] {
-  position: relative;
-}
-.switcheroo[position="top"] {
-  position: fixed;
-  top:50px;
-  right: 0;
-  z-index: 100;
-}
-.switcheroo[position="bottom"] {
-  position: fixed;
-  bottom: 0;
-  right: 0;
-  z-index: 100;
-}
-.switcheroo[direction="horizontal"] {
-  width: 100%;
-}
-.switcheroo[direction="vertical"] {
-  height: 100%;
-}
-
-.switcheroo__squircles {
-  display: flex;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  padding: var(--gap-size);
-  gap: var(--gap-size);
-}
-.switcheroo[direction="horizontal"] .switcheroo__squircles {
-  flex-direction: row;
-}
-.switcheroo[direction="vertical"] .switcheroo__squircles {
-  flex-direction: column;
-}
-
-/* squircle */
-.switcheroo[theme="discord"] .switcheroo__squircle {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: none;
-  padding-bottom: 5px;
-}
-.switcheroo[theme="discord"] .switcheroo__squircle {
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
-  cursor: pointer;
- 
-}
-
-.switcheroo[theme="discord"][direction="vertical"] .switcheroo__squircle:before {
-  content: "";
-  width: 100%;
-  height: 100%;
-  display: block;
-  background-color: var(--color1);
-  position: absolute;
-  border-radius: 4px;
-  top: 50%;
-  
-  pointer-events: none;
-  opacity: 0;
-}
-.switcheroo[theme="discord"][direction="horizontal"] .switcheroo__squircle:before {
-  content: "";
-  width: 100%;
-  height: 100%;
-  display: block;
-  background-color: var(--color-1);
-  position: absolute;
-  border-radius: 4px;
-  left: 50%;
- 
-  pointer-events: none;
-  opacity: 0;
-}
-.switcheroo[theme="discord"] .switcheroo__squircle.active {
-  border-radius: 36%;
-  cursor: default;
-}
-.switcheroo[theme="discord"][direction="vertical"] .switcheroo__squircle:hover:before {
-  opacity: 1;
-  transform: translate(-100%, -50%) scale(0.5);
-}
-.switcheroo[theme="discord"][direction="horizontal"] .switcheroo__squircle:hover:before {
-  opacity: 1;
-  transform: translate(-50%, -100%) scale(0.5);
-}
-
-.switcheroo[theme="discord"][direction="vertical"] .switcheroo__squircle.active:before {
-  opacity: 1;
-  transform: translate(-85%, -50%) scale(0.2);
-  border-radius: 50%;
-}
-.switcheroo[theme="discord"][direction="horizontal"] .switcheroo__squircle.active:before {
-  opacity: 1;
-  transform: translate(-50%, -85%) scale(0.2);
-  border-radius: 50%;
-}
-
 
 /* Images temporaires l?g?res : remplace ces variables par tes URL plus tard. */
 :root{
@@ -126,7 +18,7 @@ html.theme-dark{--fa-img-temp:var(--fa-img-temp-dark)}
 .logo{font:32px Georgia,serif;letter-spacing:.16em;color:var(--purple)} .logo small{display:block;font:9px Arial;letter-spacing:.45em;margin-left:42px;color:var(--muted)}
 .menu{display:flex;justify-content:center;gap:28px;font-size:11px;text-transform:uppercase;letter-spacing:.11em}.menu span:first-child{color:var(--purple);font-weight:bold}
 .tools{display:flex;gap:10px}.tool{height:40px;min-width:40px;border:1px solid var(--line);border-radius:12px;background:white;display:grid;place-items:center;font-size:12px}.mode{padding:0 12px;display:flex;gap:8px;align-items:center}.switch{width:34px;height:18px;border-radius:20px;background:var(--night);position:relative}.switch:after{content:"";position:absolute;right:2px;top:2px;width:14px;height:14px;border-radius:50%;background:#f5d9ff}
-.banner{height:420px;border-radius:28px;overflow:hidden;position:relative;background-image:url("https://www.zupimages.net/up/26/29/377c.png") center/cover;box-shadow:var(--shadow)}
+.banner{height:420px;border-radius:28px;overflow:hidden;position:relative;background:var(--fa-img-temp) center/cover;box-shadow:var(--shadow)}
 .banner:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(28,19,35,.82),rgba(28,19,35,.15) 58%,transparent)}
 .banner-copy{position:absolute;z-index:2;left:58px;top:75px;width:430px;color:#fff}.banner-copy .over{font-size:11px;letter-spacing:.22em;text-transform:uppercase}.banner-copy h1{font:64px/1 Georgia,serif;margin:16px 0 18px}.banner-copy p{line-height:1.7;color:#eee4f1}.banner-copy button{margin-top:12px;border:1px solid rgba(255,255,255,.6);color:white;background:rgba(255,255,255,.08);padding:13px 18px;border-radius:10px}
 .pa{margin:20px 0 55px;background:rgba(255,255,255,.82);border:1px solid var(--line);border-radius:24px;padding:18px;display:grid;grid-template-columns:1.35fr .7fr .8fr .9fr 1.1fr;gap:14px}
@@ -8635,6 +8527,167 @@ html.theme-dark select:focus-visible{
   color: var(--muted);
   font-size: 10px;
 }
+
+/* ==========================================================
+   SWITCHEROO - repris et placé dans la carte profil
+   Les images viennent normalement des avatars des comptes liés.
+   En attendant, tu peux remplacer les variables ci-dessous.
+   ========================================================== */
+:root {
+  --gap-size: 6px;
+  --color-text: var(--ink);
+  --color1: var(--purple);
+  --color-1: var(--purple);
+  --switcheroo-img-1: var(--fa-img-temp);
+  --switcheroo-img-2: var(--fa-img-temp);
+  --switcheroo-img-3: var(--fa-img-temp);
+  --switcheroo-img-4: var(--fa-img-temp);
+}
+
+.profile-dropdown .switcheroo {
+  color: var(--color-text);
+  font-size: 16px;
+}
+
+.profile-dropdown .switcheroo:empty::before {
+  content: "Comptes liés en attente.";
+  display: block;
+  padding: 10px;
+  border: 1px dashed var(--line);
+  border-radius: 11px;
+  color: var(--muted);
+  font-size: 10px;
+}
+
+.profile-dropdown .switcheroo[position="static"] {
+  position: relative;
+}
+
+.profile-dropdown .switcheroo[position="top"] {
+  position: fixed;
+  top: 50px;
+  right: 0;
+  z-index: 100;
+}
+
+.profile-dropdown .switcheroo[position="bottom"] {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  z-index: 100;
+}
+
+.profile-dropdown .switcheroo[direction="horizontal"] {
+  width: 100%;
+}
+
+.profile-dropdown .switcheroo[direction="vertical"] {
+  height: auto;
+}
+
+.profile-dropdown .switcheroo__squircles {
+  display: flex;
+  margin: 0;
+  padding: var(--gap-size);
+  list-style: none;
+  gap: var(--gap-size);
+}
+
+.profile-dropdown .switcheroo[direction="horizontal"] .switcheroo__squircles {
+  flex-direction: row;
+}
+
+.profile-dropdown .switcheroo[direction="vertical"] .switcheroo__squircles {
+  flex-direction: column;
+}
+
+.profile-dropdown .switcheroo[theme="discord"] .switcheroo__squircle {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--fa-img-temp) center/cover;
+  padding-bottom: 5px;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  cursor: pointer;
+  overflow: hidden;
+  border: 2px solid #fff;
+  box-shadow: 0 0 0 1px var(--line);
+  transition: .18s ease;
+}
+
+.profile-dropdown .switcheroo[theme="discord"] .switcheroo__squircle img {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: inherit;
+}
+
+.profile-dropdown .switcheroo[theme="discord"][direction="vertical"] .switcheroo__squircle:before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  display: block;
+  background-color: var(--color1);
+  position: absolute;
+  border-radius: 4px;
+  top: 50%;
+  pointer-events: none;
+  opacity: 0;
+  transition: .18s ease;
+}
+
+.profile-dropdown .switcheroo[theme="discord"][direction="horizontal"] .switcheroo__squircle:before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  display: block;
+  background-color: var(--color-1);
+  position: absolute;
+  border-radius: 4px;
+  left: 50%;
+  pointer-events: none;
+  opacity: 0;
+  transition: .18s ease;
+}
+
+.profile-dropdown .switcheroo[theme="discord"] .switcheroo__squircle.active {
+  border-radius: 36%;
+  cursor: default;
+}
+
+.profile-dropdown .switcheroo[theme="discord"][direction="vertical"] .switcheroo__squircle:hover:before {
+  opacity: 1;
+  transform: translate(-100%, -50%) scale(0.5);
+}
+
+.profile-dropdown .switcheroo[theme="discord"][direction="horizontal"] .switcheroo__squircle:hover:before {
+  opacity: 1;
+  transform: translate(-50%, -100%) scale(0.5);
+}
+
+.profile-dropdown .switcheroo[theme="discord"][direction="vertical"] .switcheroo__squircle.active:before {
+  opacity: 1;
+  transform: translate(-85%, -50%) scale(0.2);
+  border-radius: 50%;
+}
+
+.profile-dropdown .switcheroo[theme="discord"][direction="horizontal"] .switcheroo__squircle.active:before {
+  opacity: 1;
+  transform: translate(-50%, -85%) scale(0.2);
+  border-radius: 50%;
+}
+
+/* Images temporaires si Switcheroo ne remplit pas encore les avatars. */
+.profile-dropdown .switcheroo__squircle:nth-child(1) { background-image: var(--switcheroo-img-1); }
+.profile-dropdown .switcheroo__squircle:nth-child(2) { background-image: var(--switcheroo-img-2); }
+.profile-dropdown .switcheroo__squircle:nth-child(3) { background-image: var(--switcheroo-img-3); }
+.profile-dropdown .switcheroo__squircle:nth-child(4) { background-image: var(--switcheroo-img-4); }
 
 .fa-last-topics a {
   display: block;
