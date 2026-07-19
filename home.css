@@ -1,5 +1,15 @@
 /*
 =============================================================
+ AURORA — CSS DE BASE NETTOYÉ
+ Les anciens styles index_box et leurs correctifs responsive
+ ont été retirés afin de reconstruire les catégories proprement.
+=============================================================
+*/
+
+@import url("https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400&display=swap");
+
+/*
+=============================================================
  AURORA V76 — CSS MODERNBB PROPRE
  À coller dans :
  Affichage > Images et Couleurs > Couleurs > Feuille de style CSS
@@ -884,25 +894,7 @@ html.theme-dark #modernbb .pa{
   font-size:22px;
 }
 
-/* ---------- Index ---------- */
-
-#modernbb .aurora-index-tools{
-  margin:0 0 22px;
-  display:flex;
-  justify-content:flex-end;
-  flex-wrap:wrap;
-  gap:7px;
-}
-
-#modernbb .aurora-index-tools a{
-  padding:6px 10px;
-  border:1px solid var(--au-line);
-  border-radius:999px;
-  background:var(--au-surface);
-  color:var(--au-muted)!important;
-  font-size:9px;
-  text-decoration:none;
-}
+/* ---------- Index : styles retirés pour reconstruction propre ---------- */
 
 /* ---------- QEEL ---------- */
 
@@ -1244,8 +1236,7 @@ html.theme-dark #modernbb .pa{
     opacity .22s ease;
 }
 
-#modernbb .pa-card:hover,
-#modernbb .aurora-fa-card:hover{
+#modernbb .pa-card:hover{
   border-color:rgba(182,139,80,.4);
 }
 
@@ -1267,13 +1258,6 @@ html.theme-dark #modernbb .pa{
     justify-content:flex-end;
   }
 
-  #modernbb .aurora-fa-card{
-    grid-template-columns:minmax(0,1fr) 145px;
-  }
-
-  #modernbb .aurora-lastpost{
-    grid-column:1/-1;
-  }
 
   #modernbb .footer{
     grid-template-columns:1fr 1fr;
@@ -1309,22 +1293,6 @@ html.theme-dark #modernbb .pa{
     grid-template-columns:1fr;
   }
 
-  #modernbb .aurora-fa-card{
-    grid-template-columns:1fr;
-  }
-
-  #modernbb .aurora-forum-stats{
-    grid-template-columns:1fr 1fr;
-  }
-
-  #modernbb .aurora-stat{
-    border-top:1px solid var(--au-line);
-    border-left:0;
-  }
-
-  #modernbb .cat-title-wrap h2{
-    font-size:42px;
-  }
 
   #modernbb .qgrid{
     grid-template-columns:1fr;
@@ -1391,13 +1359,6 @@ html.theme-dark #modernbb .pa{
     grid-template-columns:1fr 1fr;
   }
 
-  #modernbb .cat-title-wrap{
-    padding:10px 30px;
-  }
-
-  #modernbb .cat-title-wrap h2{
-    font-size:34px;
-  }
 
   #modernbb .qeel-toolbar{
     justify-content:center;
@@ -1433,9 +1394,6 @@ html.theme-dark #modernbb .pa{
     transition:none!important;
   }
 }
-
-@import url("https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400&display=swap");
-
 
 
 /*
