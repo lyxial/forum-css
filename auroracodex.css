@@ -1,3 +1,111 @@
+.switcheroo {
+  color: var(--color-text);
+  font-size: 16px;
+}
+.switcheroo[position="static"] {
+  position: relative;
+}
+.switcheroo[position="top"] {
+  position: fixed;
+  top:50px;
+  right: 0;
+  z-index: 100;
+}
+.switcheroo[position="bottom"] {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  z-index: 100;
+}
+.switcheroo[direction="horizontal"] {
+  width: 100%;
+}
+.switcheroo[direction="vertical"] {
+  height: 100%;
+}
+
+.switcheroo__squircles {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  padding: var(--gap-size);
+  gap: var(--gap-size);
+}
+.switcheroo[direction="horizontal"] .switcheroo__squircles {
+  flex-direction: row;
+}
+.switcheroo[direction="vertical"] .switcheroo__squircles {
+  flex-direction: column;
+}
+
+/* squircle */
+.switcheroo[theme="discord"] .switcheroo__squircle {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: none;
+  padding-bottom: 5px;
+}
+.switcheroo[theme="discord"] .switcheroo__squircle {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  cursor: pointer;
+ 
+}
+
+.switcheroo[theme="discord"][direction="vertical"] .switcheroo__squircle:before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  display: block;
+  background-color: var(--color1);
+  position: absolute;
+  border-radius: 4px;
+  top: 50%;
+  
+  pointer-events: none;
+  opacity: 0;
+}
+.switcheroo[theme="discord"][direction="horizontal"] .switcheroo__squircle:before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  display: block;
+  background-color: var(--color-1);
+  position: absolute;
+  border-radius: 4px;
+  left: 50%;
+ 
+  pointer-events: none;
+  opacity: 0;
+}
+.switcheroo[theme="discord"] .switcheroo__squircle.active {
+  border-radius: 36%;
+  cursor: default;
+}
+.switcheroo[theme="discord"][direction="vertical"] .switcheroo__squircle:hover:before {
+  opacity: 1;
+  transform: translate(-100%, -50%) scale(0.5);
+}
+.switcheroo[theme="discord"][direction="horizontal"] .switcheroo__squircle:hover:before {
+  opacity: 1;
+  transform: translate(-50%, -100%) scale(0.5);
+}
+
+.switcheroo[theme="discord"][direction="vertical"] .switcheroo__squircle.active:before {
+  opacity: 1;
+  transform: translate(-85%, -50%) scale(0.2);
+  border-radius: 50%;
+}
+.switcheroo[theme="discord"][direction="horizontal"] .switcheroo__squircle.active:before {
+  opacity: 1;
+  transform: translate(-50%, -85%) scale(0.2);
+  border-radius: 50%;
+}
+
 
 /* Images temporaires l?g?res : remplace ces variables par tes URL plus tard. */
 :root{
