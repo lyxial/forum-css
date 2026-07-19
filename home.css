@@ -8437,3 +8437,341 @@ html.theme-dark select:focus-visible{
     transition-duration:.001ms!important;
   }
 }
+
+
+/* =========================================================
+   AURORA V75 — PONT D’INTÉGRATION FORUMACTIF MODERNBB
+   ========================================================= */
+
+body#modernbb{
+  min-height:100vh;
+}
+
+.aurora-main-content{
+  width:100%;
+  min-width:0;
+}
+
+.aurora-layout{
+  width:100%;
+}
+
+.aurora-widgets-left,
+.aurora-widgets-right{
+  display:none;
+}
+
+/* Barre de navigation générée par Forumactif */
+.nav .menu{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-wrap:wrap;
+}
+
+.nav .menu a,
+.nav .menu a.mainmenu{
+  position:relative;
+  display:inline-flex;
+  align-items:center;
+  min-height:42px;
+  padding:0 10px;
+  color:var(--ink);
+  text-decoration:none;
+  font-size:11px;
+  letter-spacing:.07em;
+  text-transform:uppercase;
+}
+
+.nav .menu a::after,
+.nav .menu a.mainmenu::after{
+  content:"";
+  position:absolute;
+  right:50%;
+  bottom:5px;
+  left:50%;
+  height:1px;
+  background:var(--purple);
+  transition:.24s ease;
+}
+
+.nav .menu a:hover::after,
+.nav .menu a.mainmenu:hover::after{
+  right:10px;
+  left:10px;
+}
+
+.nav .menu img{
+  display:none!important;
+}
+
+/* Profil connecté */
+.profile-avatar-large .aurora-avatar-variable{
+  display:block;
+  width:100%;
+  height:100%;
+  overflow:hidden;
+  border-radius:50%;
+  font-size:0;
+}
+
+.profile-avatar-large .aurora-avatar-variable img{
+  width:100%!important;
+  height:100%!important;
+  object-fit:cover!important;
+  border-radius:50%!important;
+}
+
+.aurora-profile-login{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  width:170px;
+  min-height:48px;
+  color:var(--ink);
+  text-decoration:none;
+}
+
+/* Bandeau */
+header.banner{
+  margin-bottom:38px;
+}
+
+/* Message d’accueil */
+.aurora-admin-message{
+  margin-top:15px;
+  font-size:12px;
+  line-height:1.65;
+}
+
+.aurora-admin-message:empty{
+  display:none;
+}
+
+.pa-links a{
+  display:inline-flex;
+  color:inherit;
+  text-decoration:none;
+}
+
+/* Catégories dynamiques */
+.aurora-index-tools{
+  display:flex;
+  justify-content:flex-end;
+  flex-wrap:wrap;
+  gap:8px;
+  margin:0 0 24px;
+  font-size:10px;
+}
+
+.aurora-index-tools a{
+  padding:7px 11px;
+  border:1px solid var(--line);
+  border-radius:999px;
+  color:var(--muted);
+  text-decoration:none;
+}
+
+.aurora-category-list{
+  width:100%;
+}
+
+.category.aurora-fa-category{
+  position:relative;
+}
+
+.aurora-fa-forums{
+  display:grid;
+  gap:15px;
+}
+
+.aurora-fa-card{
+  display:grid!important;
+  grid-template-columns:minmax(0,1fr) 155px 280px!important;
+  gap:18px!important;
+  align-items:stretch!important;
+}
+
+.aurora-forum-main{
+  min-width:0;
+}
+
+.aurora-forum-description{
+  margin-top:8px;
+}
+
+.aurora-forum-description img{
+  max-width:100%;
+  height:auto;
+}
+
+.aurora-subforums{
+  margin-top:12px;
+}
+
+.aurora-subforums:empty{
+  display:none;
+}
+
+.aurora-subforums > a{
+  display:inline-flex;
+  margin:3px 5px 3px 0;
+  padding:5px 9px;
+  border:1px solid var(--line);
+  border-radius:999px;
+  color:var(--muted);
+  font-size:9px;
+  text-decoration:none;
+}
+
+.aurora-forum-stats{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:8px;
+  align-content:center;
+}
+
+.aurora-stat{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  min-height:78px;
+  border-left:1px solid var(--line);
+}
+
+.aurora-stat strong{
+  color:var(--purple);
+  font:24px/1 Georgia,serif;
+}
+
+.aurora-stat span{
+  margin-top:5px;
+  color:var(--muted);
+  font-size:9px;
+  text-transform:uppercase;
+}
+
+.aurora-lastpost{
+  display:grid;
+  grid-template-columns:58px minmax(0,1fr);
+  gap:12px;
+  align-items:center;
+}
+
+.aurora-lastpost .last-avatar{
+  width:58px!important;
+  height:58px!important;
+  margin:0!important;
+}
+
+.aurora-lastpost .last-avatar img{
+  width:100%!important;
+  height:100%!important;
+  object-fit:cover!important;
+  border-radius:50%!important;
+}
+
+.aurora-lastpost .ulast-rich{
+  min-width:0;
+}
+
+.aurora-last-meta{
+  margin-top:5px;
+  color:var(--muted);
+  font-size:10px;
+  line-height:1.45;
+}
+
+.forum-status-icon{
+  position:absolute;
+  top:17px;
+  right:17px;
+  width:18px!important;
+  height:18px!important;
+  object-fit:contain;
+  opacity:.55;
+}
+
+/* QEEL dynamique */
+.aurora-qeel-stat{
+  font-size:11px;
+  line-height:1.65;
+}
+
+.aurora-qeel-stat + .aurora-qeel-stat{
+  margin-top:10px;
+}
+
+.aurora-qeel-label{
+  display:block;
+  margin-bottom:5px;
+  color:var(--purple);
+  font-family:var(--font-tarot);
+  font-size:17px;
+}
+
+.aurora-group-legend{
+  margin-top:15px;
+  line-height:1.8;
+}
+
+.qeel-character{
+  pointer-events:none;
+}
+
+/* Footer */
+.footer .partner,
+.footer .heart,
+.footer .av{
+  overflow:hidden;
+}
+
+.footer .partner img,
+.footer .heart img,
+.footer .av img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+/* Éléments natifs ModernBB qui pourraient doubler le thème */
+#page-header,
+#page-footer,
+.navbar,
+.headerbar{
+  background:transparent;
+}
+
+#picture_legend{
+  display:none;
+}
+
+@media(max-width:980px){
+  .aurora-fa-card{
+    grid-template-columns:minmax(0,1fr) 130px!important;
+  }
+
+  .aurora-lastpost{
+    grid-column:1/-1;
+  }
+}
+
+@media(max-width:720px){
+  .aurora-fa-card{
+    grid-template-columns:1fr!important;
+  }
+
+  .aurora-forum-stats{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .aurora-stat{
+    border-left:0;
+    border-top:1px solid var(--line);
+  }
+
+  .aurora-lastpost{
+    grid-column:auto;
+  }
+}
