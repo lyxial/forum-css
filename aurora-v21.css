@@ -1445,6 +1445,135 @@ body button:focus-visible{
 
 @import url("https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400&display=swap");
 
+/*
+=============================================================
+ AURORA — CORRECTIF EN-TÊTE V22
+ À ajouter tout en bas de home.css
+=============================================================
+*/
+
+/* Navigation sur une seule ligne */
+body#modernbb .aurora-page-header .nav{
+  grid-template-columns:110px minmax(0,1fr) auto;
+  gap:12px;
+  min-height:74px;
+  padding:8px 12px;
+}
+
+body#modernbb .aurora-page-header #modernbb-nav-menu{
+  min-width:0;
+  margin:0!important;
+  padding:0!important;
+  display:flex!important;
+  align-items:center;
+  justify-content:center;
+  flex-wrap:nowrap!important;
+  gap:0;
+  list-style:none!important;
+  overflow:hidden;
+}
+
+body#modernbb .aurora-page-header #modernbb-nav-menu > li{
+  min-width:0;
+  margin:0!important;
+  padding:0!important;
+  display:flex!important;
+  align-items:center;
+  justify-content:center;
+  flex-wrap:nowrap!important;
+  gap:0;
+  list-style:none!important;
+  white-space:nowrap;
+}
+
+body#modernbb .aurora-page-header #modernbb-nav-menu > li::before,
+body#modernbb .aurora-page-header #modernbb-nav-menu > li::after{
+  display:none!important;
+  content:none!important;
+}
+
+body#modernbb .aurora-page-header #modernbb-nav-menu a,
+body#modernbb .aurora-page-header #modernbb-nav-menu a.mainmenu{
+  min-height:38px;
+  padding:0 6px;
+  flex:0 0 auto;
+  font-size:8px;
+  letter-spacing:.025em;
+  white-space:nowrap;
+}
+
+body#modernbb .aurora-page-header .nav-actions{
+  flex-wrap:nowrap;
+  gap:5px;
+}
+
+/* Bouton de la bannière */
+body#modernbb .aurora-banner-button,
+body#modernbb .banner .aurora-banner-button{
+  min-width:165px;
+  min-height:40px;
+  margin-top:18px;
+  padding:0 18px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  border:1px solid rgba(255,255,255,.55)!important;
+  border-radius:999px!important;
+  background:rgba(255,255,255,.13)!important;
+  color:#fff!important;
+  box-shadow:0 8px 24px rgba(18,10,28,.18);
+  backdrop-filter:blur(8px);
+  font:700 9px/1 Arial,Helvetica,sans-serif!important;
+  letter-spacing:.14em;
+  text-decoration:none!important;
+  text-transform:uppercase;
+}
+
+body#modernbb .aurora-banner-button:hover,
+body#modernbb .banner .aurora-banner-button:hover{
+  border-color:#fff!important;
+  background:rgba(255,255,255,.24)!important;
+  color:#fff!important;
+  box-shadow:0 10px 30px rgba(18,10,28,.28);
+}
+
+/* Ajustements pour les écrans plus étroits */
+@media(max-width:1050px){
+  body#modernbb .aurora-page-header .nav{
+    grid-template-columns:90px minmax(0,1fr) auto;
+    gap:8px;
+  }
+
+  body#modernbb .aurora-page-header #modernbb-nav-menu a,
+  body#modernbb .aurora-page-header #modernbb-nav-menu a.mainmenu{
+    padding:0 4px;
+    font-size:7px;
+  }
+
+  body#modernbb .aurora-page-header .tool,
+  body#modernbb .aurora-page-header .search-btn,
+  body#modernbb .aurora-page-header .notification-btn,
+  body#modernbb .aurora-page-header .icon-mode{
+    min-width:36px;
+    height:36px;
+  }
+
+  body#modernbb .aurora-page-header .icon-mode{
+    min-width:76px;
+  }
+}
+
+@media(max-width:820px){
+  body#modernbb .aurora-page-header #modernbb-nav-menu{
+    overflow-x:auto;
+    justify-content:flex-start;
+    scrollbar-width:none;
+  }
+
+  body#modernbb .aurora-page-header #modernbb-nav-menu::-webkit-scrollbar{
+    display:none;
+  }
+}
 
 
 /*
