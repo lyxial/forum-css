@@ -1455,3 +1455,7 @@ hébergées avec des URL HTTPS complètes.
   opacity:.9;
   pointer-events:none;
 }
+
+body{
+  outline:10px solid red!important;
+}
