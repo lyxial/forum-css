@@ -9152,3 +9152,378 @@ html.theme-dark select:focus-visible{
     padding-right: 0;
   }
 }
+
+/* ==========================================================
+   V LIVE - CORRECTIONS APRES TEST SUR FORUMACTIF
+   ========================================================== */
+
+:root {
+  --cat-img-1: var(--fa-img-temp-dark);
+  --cat-img-2: var(--fa-img-temp);
+  --cat-img-3: var(--fa-img-temp-dark);
+  --qeel-deco-img: var(--fa-img-temp);
+}
+
+/* Navigation : meme esprit de survol que les liens du footer */
+.nav .menu a {
+  position: relative;
+  color: var(--ink);
+  transition: color .18s ease, text-shadow .18s ease;
+}
+
+.nav .menu a::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -9px;
+  width: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #d8b56f, transparent);
+  transform: translateX(-50%);
+  transition: width .18s ease;
+}
+
+.nav .menu a:hover,
+.nav .menu a:focus-visible {
+  color: #7a568a;
+  text-shadow: 0 0 12px rgba(216,181,111,.45);
+}
+
+.nav .menu a:hover::after,
+.nav .menu a:focus-visible::after {
+  width: 100%;
+}
+
+/* Switcheroo : plus de faux bouton casse ; le plugin injecte ses propres actions */
+.profile-dropdown .switcheroo-add {
+  display: none !important;
+}
+
+.profile-dropdown .switcheroo:empty::before {
+  content: "Switcheroo se chargera ici.";
+}
+
+/* PA : retire les traits bleus herites des liens/focus navigateur */
+.pa a,
+.pa a:link,
+.pa a:visited,
+.pa button,
+.pa input,
+.pa textarea,
+.pa select,
+.fa-last-topics a,
+.posts-wide a {
+  outline: 0 !important;
+  box-shadow: none !important;
+  border-color: rgba(118,87,137,.18) !important;
+}
+
+.fa-last-topics a,
+.posts-wide a,
+.posts a {
+  border-bottom: 1px solid rgba(118,87,137,.16) !important;
+}
+
+.fa-last-topics a:last-child,
+.posts-wide a:last-child,
+.posts a:last-child {
+  border-bottom: 0 !important;
+}
+
+/* Categories : les blocs ne fusionnent plus et chaque categorie a sa silhouette */
+.fa-category {
+  width: 100% !important;
+  max-width: 100% !important;
+  margin: 82px 0 !important;
+  clear: both !important;
+}
+
+.fa-category .fa-category-layout {
+  display: grid !important;
+  align-items: stretch;
+  gap: 20px !important;
+}
+
+.fa-category:nth-of-type(1) .fa-category-layout {
+  grid-template-columns: minmax(280px, .95fr) minmax(360px, 1.05fr) !important;
+}
+
+.fa-category:nth-of-type(2) .fa-category-layout {
+  grid-template-columns: minmax(390px, 1.12fr) minmax(240px, .72fr) !important;
+}
+
+.fa-category:nth-of-type(2) .cover {
+  order: 2;
+  min-height: 360px !important;
+  border-radius: 22px 58px 22px 22px !important;
+}
+
+.fa-category:nth-of-type(2) .forums {
+  order: 1;
+  grid-template-columns: 1fr !important;
+}
+
+.fa-category:nth-of-type(3n) .fa-category-layout {
+  grid-template-columns: 1fr !important;
+}
+
+.fa-category:nth-of-type(3n) .forums {
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+}
+
+.fa-category:nth-of-type(1) .cover {
+  background-image: linear-gradient(180deg, transparent 38%, rgba(31,22,40,.85)), var(--cat-img-1) !important;
+}
+
+.fa-category:nth-of-type(2) .cover {
+  background-image: linear-gradient(180deg, transparent 38%, rgba(31,22,40,.82)), var(--cat-img-2) !important;
+}
+
+.fa-category:nth-of-type(3) .cover {
+  background-image: linear-gradient(180deg, transparent 38%, rgba(31,22,40,.85)), var(--cat-img-3) !important;
+}
+
+.fa-category .cover {
+  background-position: center !important;
+  background-size: cover !important;
+}
+
+.fa-cat-desc-slot {
+  color: var(--muted);
+}
+
+/* Forums : l'image new/no new/lock vient de Forumactif et reste en petit rond */
+.forum {
+  min-height: 168px !important;
+}
+
+.forum-status,
+.forum-status a {
+  position: absolute !important;
+  right: 12px !important;
+  bottom: 10px !important;
+  width: 34px !important;
+  height: 34px !important;
+  border-radius: 50% !important;
+  display: grid !important;
+  place-items: center !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  font-size: 0 !important;
+  line-height: 0 !important;
+  text-decoration: none !important;
+  overflow: hidden !important;
+}
+
+.forum-status img,
+.forum-status a img {
+  width: 30px !important;
+  height: 30px !important;
+  max-width: 30px !important;
+  max-height: 30px !important;
+  object-fit: contain !important;
+}
+
+.forum-side-image {
+  font-size: 0 !important;
+  color: transparent !important;
+}
+
+.forum-side-image a {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.forum-side-image a[href^="http"] {
+  font-size: 0 !important;
+  color: transparent !important;
+}
+
+/* Dernier posteur : le rond reste un avatar, pas le lien "voir le dernier message" */
+.last-rich {
+  display: grid !important;
+  grid-template-columns: 44px minmax(0, 1fr) !important;
+  align-items: center !important;
+  gap: 10px !important;
+  left: 14px !important;
+  right: 48px !important;
+  bottom: 12px !important;
+  min-height: 50px !important;
+  padding: 7px 9px !important;
+}
+
+.last-rich .last-avatar {
+  width: 40px !important;
+  height: 40px !important;
+  min-width: 40px !important;
+  pointer-events: none !important;
+}
+
+.last-rich > div:not(.last-avatar) {
+  min-width: 0 !important;
+  overflow: hidden !important;
+}
+
+.last-rich b,
+.last-rich span,
+.last-rich small {
+  display: block !important;
+  max-width: 100% !important;
+  white-space: nowrap !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+}
+
+.last-rich b a {
+  pointer-events: auto;
+}
+
+/* QEEL : bloc plus proche de la maquette et mieux structure */
+.qeel.qeel-with-character {
+  max-width: 100% !important;
+  margin: 70px 0 34px !important;
+  padding: 34px 34px 118px !important;
+  border-radius: 34px !important;
+  background:
+    radial-gradient(circle at 14% 0%, rgba(216,181,111,.18), transparent 34%),
+    linear-gradient(135deg, #211729 0%, #30213b 52%, #18111e 100%) !important;
+  border: 1px solid rgba(216,181,111,.22) !important;
+  box-shadow: 0 24px 55px rgba(44,29,55,.18) !important;
+  overflow: hidden !important;
+}
+
+.qeel.qeel-with-character::after {
+  content: "";
+  position: absolute;
+  right: -18px;
+  bottom: -18px;
+  width: 230px;
+  height: 230px;
+  background: var(--qeel-deco-img) center/cover;
+  opacity: .55;
+  border-radius: 44px 0 34px 0;
+  filter: saturate(.9);
+}
+
+.qeel.qeel-with-character h2 {
+  font: 44px/1 Georgia, serif !important;
+  color: #fff !important;
+  margin: 10px 0 22px !important;
+  text-transform: uppercase;
+  letter-spacing: 0;
+}
+
+.qeel .qeel-toolbar {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 8px !important;
+  margin-bottom: 18px !important;
+}
+
+.qeel .qeel-toolbar a {
+  background: rgba(255,255,255,.09) !important;
+  border: 1px solid rgba(255,255,255,.13) !important;
+}
+
+.qeel .qgrid {
+  grid-template-columns: 1.2fr 1fr .95fr !important;
+}
+
+.qeel .qbox {
+  min-height: 154px !important;
+  background: rgba(255,255,255,.07) !important;
+}
+
+.qeel .groups-icons {
+  max-width: calc(100% - 230px);
+}
+
+/* Footer partenaires : meme largeur que le QEEL, plus de bloc geant */
+.index-content > .footer,
+.forum-wrapper > .footer {
+  width: 100% !important;
+  max-width: 100% !important;
+  margin: 32px 0 !important;
+  padding: 24px !important;
+  border-radius: 28px !important;
+  grid-template-columns: 1.35fr .85fr .7fr .7fr !important;
+  gap: 16px !important;
+}
+
+.footer .partners {
+  grid-template-columns: repeat(8, 38px) !important;
+  gap: 7px !important;
+}
+
+.footer .partner {
+  width: 38px !important;
+  height: 38px !important;
+}
+
+.footer .heart {
+  height: 30px !important;
+}
+
+.footer .winner .av {
+  width: 52px !important;
+  height: 52px !important;
+}
+
+.footer-credits {
+  grid-column: 1 / -1 !important;
+  padding: 12px 14px !important;
+  min-height: 0 !important;
+}
+
+.admin-panel-link a,
+.admin-panel-link {
+  color: #f0d79d !important;
+  text-transform: uppercase;
+  letter-spacing: .12em;
+  font-size: 10px;
+}
+
+/* Footer Forumactif obligatoire : compact et discret, sans le casser */
+#page-footer,
+#wrapfooter,
+.copyright,
+.footerbar-system,
+.genmed {
+  max-width: 100% !important;
+}
+
+#page-footer,
+#wrapfooter {
+  margin-top: 0 !important;
+  padding-top: 8px !important;
+  font-size: 10px !important;
+  line-height: 1.6 !important;
+}
+
+@media (max-width: 900px) {
+  .fa-category .fa-category-layout,
+  .fa-category:nth-of-type(1) .fa-category-layout,
+  .fa-category:nth-of-type(2) .fa-category-layout,
+  .fa-category:nth-of-type(3n) .fa-category-layout {
+    grid-template-columns: 1fr !important;
+  }
+
+  .fa-category:nth-of-type(2) .cover,
+  .fa-category:nth-of-type(2) .forums {
+    order: initial;
+  }
+
+  .qeel .qgrid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .qeel .groups-icons {
+    max-width: 100%;
+  }
+
+  .index-content > .footer,
+  .forum-wrapper > .footer {
+    grid-template-columns: 1fr !important;
+  }
+}
