@@ -8775,3 +8775,152 @@ header.banner{
     grid-column:auto;
   }
 }
+
+/*
+=============================================================
+ AURORA V75 — IMAGES À REMPLACER
+ Colle ce bloc TOUT EN BAS de la feuille CSS Forumactif.
+ Remplace chaque URL_IMAGE_... par une URL HTTPS complète.
+=============================================================
+*/
+
+/* 1 — BANNIÈRE */
+.banner{
+  background-image:url("https://www.zupimages.net/up/26/29/377c.png")!important;
+  background-position:center!important;
+  background-size:cover!important;
+}
+
+/* 2 — ÉVÉNEMENT */
+.event.event-large{
+  background-image:url("https://www.zupimages.net/up/26/29/zx96.png")!important;
+  background-position:center!important;
+  background-size:cover!important;
+}
+
+/* 3 — PRÉDÉFINIS */
+.pred-big.pb1{
+  background-image:url("https://www.zupimages.net/up/26/29/zx96.png")!important;
+}
+.pred-big.pb2{
+  background-image:url("https://www.zupimages.net/up/26/29/zx96.png")!important;
+}
+.pred-big.pb3{
+  background-image:url("https://www.zupimages.net/up/26/29/zx96.png")!important;
+}
+.pred-big.pb4{
+  background-image:url("https://www.zupimages.net/up/26/29/zx96.png")!important;
+}
+
+/* 4 — STAFF */
+.staff-large-photo.sl1{
+  background-image:url("https://www.zupimages.net/up/26/29/zx96.png")!important;
+}
+.staff-large-photo.sl2{
+  background-image:url("https://www.zupimages.net/up/26/29/zx96.png")!important;
+}
+.staff-large-photo.sl3{
+  background-image:url("https://www.zupimages.net/up/26/29/zx96.png")!important;
+}
+
+/* 5 — ILLUSTRATION À DROITE DU STAFF */
+.staff-side-image{
+  background-image:url("https://www.zupimages.net/up/26/29/zx96.png")!important;
+  background-position:right bottom!important;
+  background-size:contain!important;
+  background-repeat:no-repeat!important;
+}
+
+/* 6 — TOP PARTENAIRES */
+.pa-partner-1{
+  background-image:url("https://www.zupimages.net/up/26/29/zx96.png")!important;
+}
+.pa-partner-2{
+  background-image:url("https://www.zupimages.net/up/26/29/zx96.png")!important;
+}
+.pa-partner-3{
+  background-image:url("https://www.zupimages.net/up/26/29/zx96.png")!important;
+}
+.pa-partner-4{
+  background-image:url("https://www.zupimages.net/up/26/29/zx96.png")!important;
+}
+.pa-partner-5{
+  background-image:url("https://www.zupimages.net/up/26/29/zx96.png")!important;
+}
+
+.pa-partner{
+  background-position:center!important;
+  background-size:cover!important;
+  background-repeat:no-repeat!important;
+  font-size:0!important;
+}
+
+/* 7 — FONDS DES FORUMS / CATÉGORIES (OPTIONNEL) */
+.aurora-fa-card:nth-child(1){
+  background-image:url("https://www.zupimages.net/up/26/29/zx96.png")!important;
+}
+.aurora-fa-card:nth-child(2){
+  background-image:url("https://www.zupimages.net/up/26/29/zx96.png")!important;
+}
+.aurora-fa-card:nth-child(3){
+  background-image:url("https://www.zupimages.net/up/26/29/zx96.png")!important;
+}
+.aurora-fa-card:nth-child(4){
+  background-image:url("https://www.zupimages.net/up/26/29/zx96.png")!important;
+}
+.aurora-fa-card:nth-child(5){
+  background-image:url("https://www.zupimages.net/up/26/29/zx96.png")!important;
+}
+.aurora-fa-card:nth-child(6){
+  background-image:url("https://www.zupimages.net/up/26/29/zx96.png")!important;
+}
+
+.aurora-fa-card{
+  background-position:center!important;
+  background-size:cover!important;
+  background-repeat:no-repeat!important;
+}
+
+/* 8 — PARTENAIRES DU FOOTER */
+.footer .partner:nth-child(1){
+  background-image:url("https://www.zupimages.net/up/26/29/zx96.png")!important;
+}
+.footer .partner:nth-child(2){
+  background-image:url("https://www.zupimages.net/up/26/29/zx96.png")!important;
+}
+.footer .partner:nth-child(3){
+  background-image:url("https://www.zupimages.net/up/26/29/zx96.png")!important;
+}
+.footer .partner:nth-child(4){
+  background-image:url("https://www.zupimages.net/up/26/29/zx96.png")!important;
+}
+.footer .partner:nth-child(5){
+  background-image:url("https://www.zupimages.net/up/26/29/zx96.png")!important;
+}
+.footer .partner:nth-child(6){
+  background-image:url("https://www.zupimages.net/up/26/29/zx96.png")!important;
+}
+.footer .partner:nth-child(7){
+  background-image:url("https://www.zupimages.net/up/26/29/zx96.png")!important;
+}
+.footer .partner:nth-child(8){
+  background-image:url("https://www.zupimages.net/up/26/29/zx96.png")!important;
+}
+
+/* 9 — COUPS DE CŒUR */
+.footer .heart:nth-child(1){
+  background-image:url("https://www.zupimages.net/up/26/29/zx96.png")!important;
+}
+.footer .heart:nth-child(2){
+  background-image:url("https://www.zupimages.net/up/26/29/zx96.png")!important;
+}
+.footer .heart:nth-child(3){
+  background-image:url("https://www.zupimages.net/up/26/29/zx96.png")!important;
+}
+
+.footer .partner,
+.footer .heart{
+  background-position:center!important;
+  background-size:cover!important;
+  background-repeat:no-repeat!important;
+}
