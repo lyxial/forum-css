@@ -1625,3 +1625,63 @@ html.theme-dark #modernbb .pa{
     transition:none!important;
   }
 }
+
+/*
+AURORA V76 — IMAGES OPTIONNELLES
+Colle ce bloc APRÈS le CSS principal, uniquement lorsque tes images sont
+hébergées avec des URL HTTPS complètes.
+*/
+
+.banner{
+  background-image:url("https://www.zupimages.net/up/26/29/377c.png")!important;
+  background-position:center!important;
+  background-size:cover!important;
+}
+
+.event.event-large{
+  background-image:url("https://www.zupimages.net/up/26/29/zx96.png")!important;
+  background-position:center!important;
+  background-size:cover!important;
+}
+
+.pred-big.pb1{background-image:url("https://www.zupimages.net/up/26/29/zx96.png")!important}
+.pred-big.pb2{background-image:url("https://www.zupimages.net/up/26/29/zx96.png")!important}
+.pred-big.pb3{background-image:url("https://www.zupimages.net/up/26/29/zx96.png")!important}
+.pred-big.pb4{background-image:url("https://www.zupimages.net/up/26/29/zx96.png")!important}
+
+.pred-big{
+  background-position:center!important;
+  background-size:cover!important;
+}
+
+.staff-large-photo.sl1{background-image:url("https://www.zupimages.net/up/26/29/zx96.png")!important}
+.staff-large-photo.sl2{background-image:url("https://www.zupimages.net/up/26/29/zx96.png")!important}
+.staff-large-photo.sl3{background-image:url("https://www.zupimages.net/up/26/29/zx96.png")!important}
+
+.staff-large-photo{
+  background-position:center top!important;
+  background-size:cover!important;
+}
+
+.staff-side-image{
+  position:absolute;
+  inset:0;
+  background-image:url("https://www.zupimages.net/up/26/29/zx96.png")!important;
+  background-position:right bottom!important;
+  background-size:contain!important;
+  background-repeat:no-repeat!important;
+}
+
+.qeel-character{
+  position:absolute;
+  right:-15px;
+  bottom:0;
+  width:330px;
+  height:430px;
+  background-image:url("https://www.zupimages.net/up/26/29/zx96.png")!important;
+  background-position:right bottom!important;
+  background-size:contain!important;
+  background-repeat:no-repeat!important;
+  opacity:.9;
+  pointer-events:none;
+}
