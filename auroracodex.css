@@ -8845,3 +8845,310 @@ html.theme-dark select:focus-visible{
     grid-template-columns: 1fr;
   }
 }
+
+/* ==========================================================
+   CORRECTIONS FORUMACTIF - PROFIL, CATEGORIES, QEEL, IMAGES
+   ========================================================== */
+
+/* Profil : le panneau reste ferme tant que la vraie boite profil n'est pas survolee */
+.nav .profile-switch-card {
+  position: relative;
+  overflow: visible;
+}
+
+.nav .profile-switch-card .profile-dropdown {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  z-index: 9999;
+  width: 292px;
+  max-width: calc(100vw - 24px);
+  display: block !important;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateY(-8px);
+  transition: opacity .16s ease, transform .16s ease, visibility .16s ease;
+}
+
+.nav .profile-switch-card:hover .profile-dropdown {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+.nav .profile-switch-card:not(:hover) .profile-dropdown {
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+}
+
+.switcheroo-add {
+  cursor: default;
+  user-select: none;
+}
+
+/* Switcheroo : garde le plugin dans le menu profil, comme sur la maquette */
+.profile-dropdown #switcheroo.switcheroo,
+.profile-dropdown .switcheroo {
+  position: relative !important;
+  top: auto !important;
+  right: auto !important;
+  bottom: auto !important;
+  width: 100% !important;
+  height: auto !important;
+}
+
+.profile-dropdown .switcheroo__squircles {
+  display: flex !important;
+  flex-direction: row !important;
+  flex-wrap: wrap;
+  gap: 8px !important;
+  padding: 8px 0 !important;
+}
+
+.profile-dropdown .switcheroo__squircle {
+  width: 38px !important;
+  height: 38px !important;
+  padding: 0 !important;
+}
+
+/* Footer pleine largeur */
+.forum-wrapper > .footer,
+.forum-wrapper > .aurora-footer-immersive,
+.index-content > .footer,
+.index-content > .aurora-footer-immersive {
+  width: 100vw !important;
+  max-width: 100vw !important;
+  margin-left: calc(50% - 50vw) !important;
+  margin-right: calc(50% - 50vw) !important;
+}
+
+.aurora-footer-immersive .aurora-footer-content,
+.aurora-footer-immersive .footer-gold-line {
+  width: min(1200px, calc(100% - 48px));
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Categories : chaque categorie reste independante */
+.fa-categories {
+  display: block;
+  width: 100%;
+}
+
+.fa-category {
+  display: block;
+  clear: both;
+  margin: 76px 0;
+  isolation: isolate;
+}
+
+.fa-category + .fa-category {
+  margin-top: 96px;
+}
+
+.fa-category .editorial,
+.fa-category .presentation,
+.fa-category .uniform-grid {
+  width: 100%;
+}
+
+.fa-category .forums {
+  min-width: 0;
+}
+
+/* Images reglables dans les descriptions / champ adresse de l'image */
+.fa-cat-settings,
+.fa-forum-settings,
+.fa-cat-settings-source,
+.fa-cat-image,
+.fa-forum-image {
+  display: none !important;
+}
+
+.forum {
+  overflow: hidden;
+}
+
+.forum-side-image {
+  position: absolute;
+  right: 14px;
+  top: 14px;
+  width: 78px;
+  height: 78px;
+  border-radius: 16px;
+  overflow: hidden;
+  background: var(--fa-img-temp) center/cover;
+  border: 1px solid var(--line);
+  box-shadow: 0 8px 18px rgba(42,30,52,.12);
+}
+
+.forum-side-image:empty {
+  display: none;
+}
+
+.forum-side-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.forum.has-forum-image h4,
+.forum.has-forum-image .forum-description,
+.forum:has(.forum-side-image img) h4,
+.forum:has(.forum-side-image img) .forum-description {
+  padding-right: 90px;
+}
+
+.forum-description {
+  font-size: 12px;
+  line-height: 1.55;
+  color: var(--muted);
+}
+
+.forum-description br:first-child {
+  display: none;
+}
+
+/* Avatar du dernier posteur dans le rond */
+.last-avatar {
+  overflow: visible;
+  border-radius: 50%;
+  background: var(--fa-img-temp) center/cover;
+}
+
+.last-avatar a,
+.last-avatar span {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+}
+
+.last-avatar img {
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+  min-width: 100%;
+  min-height: 100%;
+  border-radius: 50% !important;
+  object-fit: cover !important;
+}
+
+/* Icones new / no new / lock de Forumactif */
+.forum-status {
+  display: grid !important;
+  place-items: center;
+  overflow: visible;
+  background: rgba(255,255,255,.9);
+}
+
+.forum-status img {
+  display: block !important;
+  width: 28px !important;
+  height: 28px !important;
+  object-fit: contain !important;
+  position: relative;
+  z-index: 2;
+}
+
+.forum-status.has-status-img::before,
+.forum-status.has-status-img::after,
+.forum-status:has(img)::before,
+.forum-status:has(img)::after {
+  content: none !important;
+  display: none !important;
+}
+
+/* QEEL plus proche de la maquette */
+.qeel.qeel-with-character {
+  width: 100%;
+  background: var(--night);
+  border-radius: 34px;
+  padding: 34px;
+  position: relative;
+  overflow: hidden;
+  color: #fff;
+}
+
+.qeel .qeel-content {
+  position: relative;
+  z-index: 1;
+}
+
+.qeel .qgrid {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr .9fr;
+  gap: 16px;
+}
+
+.qeel .qbox {
+  min-height: 170px;
+  padding: 20px;
+  border: 1px solid rgba(255,255,255,.14);
+  border-radius: 18px;
+  background: rgba(255,255,255,.08);
+}
+
+.qeel .names {
+  color: #eadff0;
+  font: 17px Georgia, serif;
+  line-height: 1.85;
+}
+
+.qeel-count-line {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+}
+
+.qeel-count-line strong {
+  color: var(--purple2);
+  font: 34px Georgia, serif;
+  transition: .18s ease;
+}
+
+.qeel-count-line:hover strong {
+  color: #f2d99b;
+  text-shadow: 0 0 18px rgba(242,217,155,.8);
+}
+
+.qeel .groups-icons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.qeel .group-icon-item {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  color: transparent;
+  background: currentColor;
+  box-shadow: 0 0 0 4px rgba(255,255,255,.08);
+}
+
+@media (max-width: 900px) {
+  .qeel .qgrid {
+    grid-template-columns: 1fr;
+  }
+
+  .forum-side-image {
+    position: static;
+    margin-bottom: 10px;
+  }
+
+  .forum.has-forum-image h4,
+  .forum.has-forum-image .forum-description,
+  .forum:has(.forum-side-image img) h4,
+  .forum:has(.forum-side-image img) .forum-description {
+    padding-right: 0;
+  }
+}
