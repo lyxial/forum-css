@@ -11570,7 +11570,7 @@ body > [class*="monomer"][class*="popup"] {
 
                          
 /* ==========================================================
-   CORRECTIF V73G - QEEL + statistiques + categories
+   CORRECTIF V73H - QEEL + statistiques + categories
    A coller tout en bas de la feuille CSS Forumactif.
    ========================================================== */
 
@@ -11584,12 +11584,12 @@ body > [class*="monomer"][class*="popup"] {
   --cat-img-6: var(--fa-img-temp);
 
   /* Image exterieure collee a cote de la categorie */
-  --cat-side-img-1: none;
-  --cat-side-img-2: none;
-  --cat-side-img-3: none;
-  --cat-side-img-4: none;
-  --cat-side-img-5: none;
-  --cat-side-img-6: none;
+  --cat-side-img-1: var(--cat-img-1);
+  --cat-side-img-2: var(--cat-img-2);
+  --cat-side-img-3: var(--cat-img-3);
+  --cat-side-img-4: var(--cat-img-4);
+  --cat-side-img-5: var(--cat-img-5);
+  --cat-side-img-6: var(--cat-img-6);
 
   /* Grande image decorative du QEEL */
   --qeel-character-img: var(--qeel-deco-img);
@@ -11901,5 +11901,134 @@ body > [class*="monomer"][class*="popup"] {
 
   .fa-category::before {
     opacity: .22 !important;
+  }
+}
+
+/* ==========================================================
+   V73H - ajustements demandes apres test live
+   ========================================================== */
+
+/* Groupes QEEL : deux lignes lisibles, 4 icones puis 3 icones */
+.qeel-groups {
+  width: min(430px, 100%) !important;
+  max-width: 430px !important;
+  display: grid !important;
+  grid-template-columns: repeat(4, 74px) !important;
+  justify-content: space-between !important;
+  justify-items: center !important;
+  align-items: center !important;
+  row-gap: 22px !important;
+  column-gap: 22px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding-left: 0 !important;
+  padding-right: min(430px, 36%) !important;
+}
+
+/* Titres de categories : retour a un rendu plus elegant et proche maquette */
+.fa-category .cathead {
+  min-height: 92px !important;
+  grid-template-columns: 76px minmax(0, 1fr) 126px !important;
+  border-color: rgba(216,181,111,.22) !important;
+  background:
+    radial-gradient(circle at 92% 22%, rgba(216,181,111,.12), transparent 18%),
+    linear-gradient(90deg, rgba(18,10,24,.08), rgba(44,31,55,.24), rgba(18,10,24,.08)) !important;
+}
+
+.fa-category .cathead h2 {
+  color: #dcd8e3 !important;
+  font-size: clamp(56px, 6.2vw, 84px) !important;
+  line-height: .86 !important;
+  text-shadow:
+    0 0 24px rgba(198,164,218,.14),
+    0 1px 0 rgba(255,255,255,.22),
+    0 3px 0 rgba(0,0,0,.28) !important;
+}
+
+.fa-category .cathead::before {
+  background: linear-gradient(90deg, transparent, rgba(216,181,111,.82)) !important;
+}
+
+.fa-category .cathead::after {
+  content: "*  .  *  .  *" !important;
+  color: rgba(216,181,111,.82) !important;
+  text-shadow: 0 0 12px rgba(216,181,111,.22) !important;
+}
+
+/* Images de categories : toujours a l'exterieur, jamais dans la carte */
+.fa-category::before {
+  z-index: 6 !important;
+  top: 158px !important;
+  width: 390px !important;
+  height: 470px !important;
+  background-image: var(--cat-side-img-local, var(--cat-side-img-1)) !important;
+  background-size: contain !important;
+  background-position: center bottom !important;
+  background-repeat: no-repeat !important;
+}
+
+.fa-category:nth-of-type(1)::before { background-image: var(--cat-side-img-local, var(--cat-side-img-1)) !important; }
+.fa-category:nth-of-type(2)::before { background-image: var(--cat-side-img-local, var(--cat-side-img-2)) !important; }
+.fa-category:nth-of-type(3)::before { background-image: var(--cat-side-img-local, var(--cat-side-img-3)) !important; }
+.fa-category:nth-of-type(4)::before { background-image: var(--cat-side-img-local, var(--cat-side-img-4)) !important; }
+.fa-category:nth-of-type(5)::before { background-image: var(--cat-side-img-local, var(--cat-side-img-5)) !important; }
+.fa-category:nth-of-type(6)::before { background-image: var(--cat-side-img-local, var(--cat-side-img-6)) !important; }
+
+.fa-category:nth-of-type(odd)::before {
+  left: max(-175px, calc((100% - 1050px) / 2 - 175px)) !important;
+  right: auto !important;
+  transform: none !important;
+}
+
+.fa-category:nth-of-type(even)::before {
+  right: max(-175px, calc((100% - 1050px) / 2 - 175px)) !important;
+  left: auto !important;
+  transform: none !important;
+}
+
+.fa-category .fa-cat-settings-source,
+.fa-category .fa-cat-side-img,
+.fa-category [data-cat-side-img],
+.fa-category [data-cat-side-image] {
+  display: none !important;
+}
+
+@media (max-width: 1050px) {
+  .qeel-groups {
+    width: min(380px, 100%) !important;
+    grid-template-columns: repeat(4, 64px) !important;
+    padding-right: 0 !important;
+    row-gap: 18px !important;
+  }
+
+  .qeel-groups .group-icon-item {
+    width: 64px !important;
+    height: 64px !important;
+  }
+
+  .fa-category::before {
+    top: 126px !important;
+    width: 260px !important;
+    height: 335px !important;
+    opacity: .5 !important;
+  }
+
+  .fa-category:nth-of-type(odd)::before {
+    left: -72px !important;
+  }
+
+  .fa-category:nth-of-type(even)::before {
+    right: -72px !important;
+  }
+}
+
+@media (max-width: 700px) {
+  .qeel-groups {
+    width: min(260px, 100%) !important;
+    grid-template-columns: repeat(3, 64px) !important;
+  }
+
+  .fa-category::before {
+    opacity: .24 !important;
   }
 }
