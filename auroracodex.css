@@ -11569,3 +11569,337 @@ body > [class*="monomer"][class*="popup"] {
 }
 
                          
+/* ==========================================================
+   CORRECTIF V73G - QEEL + statistiques + categories
+   A coller tout en bas de la feuille CSS Forumactif.
+   ========================================================== */
+
+:root {
+  /* Image principale dans la grande vignette de categorie */
+  --cat-img-1: var(--fa-img-temp-dark);
+  --cat-img-2: var(--fa-img-temp);
+  --cat-img-3: var(--fa-img-temp-dark);
+  --cat-img-4: var(--fa-img-temp);
+  --cat-img-5: var(--fa-img-temp-dark);
+  --cat-img-6: var(--fa-img-temp);
+
+  /* Image exterieure collee a cote de la categorie */
+  --cat-side-img-1: none;
+  --cat-side-img-2: none;
+  --cat-side-img-3: none;
+  --cat-side-img-4: none;
+  --cat-side-img-5: none;
+  --cat-side-img-6: none;
+
+  /* Grande image decorative du QEEL */
+  --qeel-character-img: var(--qeel-deco-img);
+}
+
+.forum-wrapper,
+.index-content,
+.fa-categories,
+.fa-category,
+.qeel,
+.qeel-content,
+.qeel-layout {
+  overflow: visible !important;
+  clip-path: none !important;
+  contain: none !important;
+}
+
+/* QEEL : l'image depasse du cadre comme sur la maquette */
+.qeel.qeel-with-character {
+  position: relative !important;
+  isolation: isolate !important;
+  overflow: visible !important;
+  padding-right: 34px !important;
+}
+
+.qeel.qeel-with-character .qeel-content {
+  position: relative !important;
+  z-index: 3 !important;
+}
+
+.qeel.qeel-with-character .qeel-layout {
+  padding-right: min(430px, 36%) !important;
+}
+
+.qeel.qeel-with-character::after {
+  content: "" !important;
+  display: block !important;
+  position: absolute !important;
+  z-index: 2 !important;
+  right: -118px !important;
+  bottom: -74px !important;
+  left: auto !important;
+  top: auto !important;
+  width: min(610px, 48vw) !important;
+  height: 575px !important;
+  border-radius: 0 !important;
+  background: var(--qeel-character-img) right bottom / contain no-repeat !important;
+  opacity: 1 !important;
+  pointer-events: none !important;
+  filter: drop-shadow(0 28px 42px rgba(0,0,0,.34)) !important;
+}
+
+/* Statistiques : uniquement le libelle + le nombre */
+.qeel-stats-card {
+  position: relative !important;
+  z-index: 4 !important;
+}
+
+.qeel-stat {
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  gap: 8px !important;
+}
+
+.qeel-stat span,
+.qeel-stat .qeel-stat-label {
+  display: block !important;
+  color: rgba(255,255,255,.72) !important;
+  font: 700 10px/1.25 Arial, sans-serif !important;
+  letter-spacing: .16em !important;
+  text-transform: uppercase !important;
+}
+
+.qeel-stat strong {
+  display: block !important;
+  margin: 0 !important;
+  color: #d6a5e7 !important;
+  font: 44px/1 Georgia, serif !important;
+}
+
+.qeel-stat small,
+.qeel-stat-raw,
+.qeel-stat .qeel-stat-raw,
+.qeel-stat .qeel-stat-raw * {
+  display: none !important;
+}
+
+/* Groupes : image seule, sans contour */
+.qeel-groups {
+  padding-right: min(430px, 36%) !important;
+  padding-left: 0 !important;
+  gap: 28px !important;
+}
+
+.qeel-groups .group-icon-item {
+  width: 74px !important;
+  height: 74px !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  outline: 0 !important;
+  background-color: transparent !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  background-size: contain !important;
+  box-shadow: none !important;
+  filter: drop-shadow(0 12px 18px rgba(0,0,0,.24)) !important;
+}
+
+.qeel-groups .group-icon-item:hover {
+  transform: translateY(-4px) scale(1.06) !important;
+  box-shadow: none !important;
+}
+
+/* Categories : titre plus proche de la maquette */
+.fa-category {
+  position: relative !important;
+  isolation: isolate !important;
+  margin: 82px auto 112px !important;
+  overflow: visible !important;
+}
+
+.fa-category + .fa-category {
+  margin-top: 118px !important;
+}
+
+.fa-category .cathead {
+  position: relative !important;
+  z-index: 6 !important;
+  width: min(1035px, calc(100% - 82px)) !important;
+  min-height: 98px !important;
+  margin: 0 auto 34px !important;
+  padding: 0 42px !important;
+  display: grid !important;
+  grid-template-columns: 64px minmax(0, 1fr) 136px !important;
+  align-items: center !important;
+  gap: 24px !important;
+  border: 1px solid rgba(216,181,111,.18) !important;
+  border-radius: 8px !important;
+  background: linear-gradient(90deg, rgba(18,10,24,.16), rgba(37,29,48,.22), rgba(18,10,24,.12)) !important;
+  box-shadow: none !important;
+  text-align: center !important;
+}
+
+.fa-category .cathead::before {
+  content: "" !important;
+  width: 100% !important;
+  height: 1px !important;
+  display: block !important;
+  background: rgba(216,181,111,.72) !important;
+  border: 0 !important;
+  box-shadow: none !important;
+}
+
+.fa-category .cathead::after {
+  content: "*  .  *  .  *" !important;
+  display: block !important;
+  color: rgba(216,181,111,.8) !important;
+  font: 18px/1 Georgia, serif !important;
+  letter-spacing: .24em !important;
+  text-align: right !important;
+  background: none !important;
+  border: 0 !important;
+  box-shadow: none !important;
+}
+
+.fa-category .cat-title-wrap {
+  min-width: 0 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.fa-category .cathead h2 {
+  margin: 0 !important;
+  padding: 0 !important;
+  color: #d8d4df !important;
+  font: 82px/.82 var(--font-tarot) !important;
+  letter-spacing: 0 !important;
+  text-transform: uppercase !important;
+  white-space: nowrap !important;
+  text-shadow: 0 0 18px rgba(255,255,255,.16), 0 2px 0 rgba(0,0,0,.28) !important;
+  background: none !important;
+  border: 0 !important;
+  box-shadow: none !important;
+}
+
+.fa-category .cathead p,
+.fa-category .fa-cat-desc-slot {
+  display: none !important;
+}
+
+/* Categories : image exterieure, pas dans la carte */
+.fa-category::before {
+  content: "" !important;
+  position: absolute !important;
+  z-index: 5 !important;
+  top: 168px !important;
+  bottom: auto !important;
+  width: 350px !important;
+  height: 430px !important;
+  display: block !important;
+  background-position: center bottom !important;
+  background-repeat: no-repeat !important;
+  background-size: contain !important;
+  opacity: 1 !important;
+  pointer-events: none !important;
+  filter: drop-shadow(0 24px 32px rgba(0,0,0,.32)) !important;
+}
+
+.fa-category:nth-of-type(odd)::before {
+  left: calc((100% - 1050px) / 2) !important;
+  right: auto !important;
+  transform: translateX(-58%) !important;
+}
+
+.fa-category:nth-of-type(even)::before {
+  right: calc((100% - 1050px) / 2) !important;
+  left: auto !important;
+  transform: translateX(58%) !important;
+}
+
+.fa-category:nth-of-type(1)::before { background-image: var(--cat-side-img-local, var(--cat-side-img-1)) !important; }
+.fa-category:nth-of-type(2)::before { background-image: var(--cat-side-img-local, var(--cat-side-img-2)) !important; }
+.fa-category:nth-of-type(3)::before { background-image: var(--cat-side-img-local, var(--cat-side-img-3)) !important; }
+.fa-category:nth-of-type(4)::before { background-image: var(--cat-side-img-local, var(--cat-side-img-4)) !important; }
+.fa-category:nth-of-type(5)::before { background-image: var(--cat-side-img-local, var(--cat-side-img-5)) !important; }
+.fa-category:nth-of-type(6)::before { background-image: var(--cat-side-img-local, var(--cat-side-img-6)) !important; }
+
+.fa-category .fa-category-layout,
+.fa-category .editorial {
+  position: relative !important;
+  z-index: 3 !important;
+}
+
+.fa-category .cover {
+  z-index: 2 !important;
+}
+
+.fa-category.has-cat-side-img .cover,
+.fa-category:nth-of-type(1) .cover,
+.fa-category:nth-of-type(2) .cover,
+.fa-category:nth-of-type(3) .cover,
+.fa-category:nth-of-type(4) .cover,
+.fa-category:nth-of-type(5) .cover,
+.fa-category:nth-of-type(6) .cover {
+  background-position: center !important;
+  background-size: cover !important;
+}
+
+@media (max-width: 1050px) {
+  .qeel.qeel-with-character .qeel-layout,
+  .qeel-groups {
+    padding-right: 0 !important;
+  }
+
+  .qeel.qeel-with-character::after {
+    right: -74px !important;
+    bottom: -54px !important;
+    width: 380px !important;
+    height: 390px !important;
+    opacity: .32 !important;
+  }
+
+  .fa-category .cathead {
+    width: 100% !important;
+    grid-template-columns: 42px minmax(0, 1fr) 82px !important;
+    min-height: 78px !important;
+    padding: 0 22px !important;
+  }
+
+  .fa-category .cathead h2 {
+    font-size: 52px !important;
+  }
+
+  .fa-category::before {
+    top: 132px !important;
+    width: 250px !important;
+    height: 320px !important;
+    opacity: .42 !important;
+  }
+
+  .fa-category:nth-of-type(odd)::before {
+    left: -34px !important;
+    transform: none !important;
+  }
+
+  .fa-category:nth-of-type(even)::before {
+    right: -34px !important;
+    transform: none !important;
+  }
+}
+
+@media (max-width: 700px) {
+  .fa-category .cathead {
+    grid-template-columns: 1fr !important;
+    min-height: 70px !important;
+  }
+
+  .fa-category .cathead::before,
+  .fa-category .cathead::after {
+    display: none !important;
+  }
+
+  .fa-category .cathead h2 {
+    font-size: 38px !important;
+    white-space: normal !important;
+  }
+
+  .fa-category::before {
+    opacity: .22 !important;
+  }
+}
