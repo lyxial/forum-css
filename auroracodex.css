@@ -2939,7 +2939,7 @@ button,
 
 /* Ã‰toiles dÃ©coratives */
 .cathead::after{
-  content:"âœ¦  Â·  âœ§  Â·  âœ¦";
+  content: "*  .  *  .  *";
   position:absolute;
   right:34px;
   top:19px;
@@ -2995,7 +2995,7 @@ button,
 .cathead h2::after,
 .cat-title-wrap h2::after,
 .cat-title-wrap-right h2::after{
-  content:"âœ¦";
+  content: "*  .  *  .  *";
   display:inline-block;
   margin-left:18px;
   font:22px/1 Georgia,serif;
@@ -3152,7 +3152,7 @@ button,
 }
 
 .pa.pa-complete::before{
-  content:"âœ¦  AURORA  âœ¦";
+  content: "*  AURORA  *";
   position:absolute;
   top:-17px;
   left:50%;
@@ -3283,7 +3283,7 @@ button,
 }
 
 .pa-kicker::before{
-  content:"âœ¦";
+  content: "*  .  *  .  *";
   color:#b98b50;
 }
 
@@ -3336,7 +3336,7 @@ button,
 }
 
 .posts a::before{
-  content:"âœ¦";
+  content: "*  .  *  .  *";
   position:absolute;
   left:5px;
   top:11px;
@@ -3364,7 +3364,7 @@ button,
 }
 
 .pred::after{
-  content:"DÃ©couvrir";
+  content: "Decouvrir";
   position:absolute;
   inset:auto 0 0;
   padding:8px 10px;
@@ -4711,7 +4711,7 @@ background:linear-gradient(90deg,transparent,#d6ae66 18%,#d6ae66 82%,transparent
 }
 
 .footer .winner:nth-last-child(-n+2)::before{
-content:"âœ¦"!important;
+content: "*" !important;
 position:absolute!important;
 bottom:-7px!important;
 left:50%!important;
@@ -6154,7 +6154,7 @@ input[type="button"]:hover{
 
 /* Petite Ã©toile qui tourne autour de l'avatar */
 .lastpost-avatar::after{
-  content:"âœ¦"!important;
+  content: "*  .  *  .  *" !important;
   position:absolute!important;
   z-index:4!important;
   left:50%!important;
@@ -6243,7 +6243,7 @@ input[type="button"]:hover{
 
 /* Ã‰toile en rotation */
 .last-avatar::after{
-  content:"âœ¦"!important;
+  content: "*  .  *  .  *" !important;
   position:absolute!important;
   z-index:5!important;
   left:50%!important;
@@ -8567,7 +8567,7 @@ html.theme-dark select:focus-visible{
 }
 
 .switcheroo-list:empty::before {
-  content: "Switcheroo apparaÃ®tra ici.";
+  content: "Switcheroo se chargera ici.";
   display: block;
   padding: 10px;
   border: 1px dashed var(--line);
@@ -8587,7 +8587,7 @@ html.theme-dark select:focus-visible{
 }
 
 .profile-dropdown .switcheroo:empty::before {
-  content: "Comptes liÃ©s en attente.";
+  content: "Comptes lies en attente.";
   display: block;
   padding: 10px;
   border: 1px dashed var(--line);
@@ -8804,20 +8804,20 @@ html.theme-dark select:focus-visible{
 
 .forum-status:empty::before,
 .forum-status img[src=""] + *::before {
-  content: "â˜¾";
+  content: "*  .  *  .  *";
   color: var(--purple);
 }
 
 .forum.folder_new .forum-status::after,
 .forum[class*="new"] .forum-status::after {
-  content: "â˜…";
+  content: "*  .  *  .  *";
   color: var(--purple);
   font-size: 15px;
 }
 
 .forum.folder_locked .forum-status::after,
 .forum[class*="lock"] .forum-status::after {
-  content: "â˜¾";
+  content: "*  .  *  .  *";
   color: var(--purple);
   font-size: 17px;
 }
@@ -10123,5 +10123,691 @@ html.theme-dark select:focus-visible{
   .weather-icon {
     grid-column: 1 !important;
     grid-row: auto !important;
+  }
+}
+
+/* ==========================================================
+   V73B - correctifs finaux demandes
+   ========================================================== */
+
+.fa-native-navbar {
+  position: absolute !important;
+  left: -9999px !important;
+  top: auto !important;
+  width: 1px !important;
+  height: 1px !important;
+  overflow: hidden !important;
+}
+
+.forumactif-system-footer {
+  display: none !important;
+}
+
+.nav .menu a,
+.footer-navigation a {
+  position: relative !important;
+  color: var(--aurora-text, var(--ink)) !important;
+  text-decoration: none !important;
+  transition: color .2s ease !important;
+}
+
+.nav .menu a::after,
+.footer-navigation a::after {
+  content: "" !important;
+  position: absolute !important;
+  left: 50% !important;
+  right: 50% !important;
+  bottom: -8px !important;
+  height: 1px !important;
+  background: #d8b56f !important;
+  transition: left .22s ease, right .22s ease !important;
+}
+
+.nav .menu a:hover,
+.footer-navigation a:hover {
+  color: var(--purple) !important;
+}
+
+.nav .menu a:hover::after,
+.footer-navigation a:hover::after {
+  left: 0 !important;
+  right: 0 !important;
+}
+
+.profile-switch-card {
+  position: relative !important;
+}
+
+.profile-switch-card .profile-dropdown {
+  visibility: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+  transform: translateY(10px) !important;
+  transition: opacity .18s ease, transform .18s ease, visibility .18s ease !important;
+}
+
+.profile-switch-card:hover .profile-dropdown,
+.profile-switch-card:focus-within .profile-dropdown {
+  visibility: visible !important;
+  opacity: 1 !important;
+  pointer-events: auto !important;
+  transform: translateY(0) !important;
+}
+
+.profile-maquette {
+  width: 290px !important;
+  padding: 12px !important;
+  border-radius: 0 0 16px 16px !important;
+}
+
+.profile-maquette .profile-stats,
+.switcheroo-add {
+  display: none !important;
+}
+
+.profile-maquette .profile-quick-stats {
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  gap: 10px !important;
+}
+
+.profile-maquette .profile-stat-card {
+  min-height: 56px !important;
+  border-radius: 10px !important;
+}
+
+.profile-maquette .profile-topics {
+  grid-column: 1 / -1 !important;
+}
+
+.profile-dropdown #switcheroo.switcheroo,
+.profile-dropdown .switcheroo {
+  width: 100% !important;
+  min-height: 36px !important;
+  height: auto !important;
+  color: var(--ink) !important;
+}
+
+.profile-dropdown .switcheroo__squircles {
+  width: 100% !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 8px !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.profile-dropdown .switcheroo__squircle {
+  width: 100% !important;
+  height: 48px !important;
+  border-radius: 11px !important;
+  background-color: rgba(238,228,242,.9) !important;
+  background-image: none !important;
+}
+
+.profile-dropdown .switcheroo__squircle img {
+  width: 34px !important;
+  height: 34px !important;
+  object-fit: cover !important;
+}
+
+.profile-dropdown .switcheroo:empty::before {
+  content: "Switcheroo se chargera ici." !important;
+  display: block !important;
+  width: 100% !important;
+  padding: 12px !important;
+  border: 1px dashed rgba(118,87,137,.35) !important;
+  border-radius: 11px !important;
+  color: var(--muted) !important;
+  font-size: 11px !important;
+  text-align: left !important;
+}
+
+.fa-categories {
+  display: block !important;
+  width: 100% !important;
+}
+
+.fa-category {
+  display: block !important;
+  clear: both !important;
+  width: 100% !important;
+  margin: 72px 0 !important;
+  overflow: visible !important;
+}
+
+.fa-category::after {
+  content: "" !important;
+  display: block !important;
+  clear: both !important;
+}
+
+.fa-category + .fa-category {
+  margin-top: 96px !important;
+}
+
+.fa-category:nth-of-type(odd) .fa-category-layout {
+  grid-template-columns: 1.06fr .94fr !important;
+}
+
+.fa-category:nth-of-type(even) .fa-category-layout {
+  grid-template-columns: .92fr 1.08fr !important;
+}
+
+.fa-category:nth-of-type(even) .cover {
+  order: 2 !important;
+  min-height: 360px !important;
+  border-radius: 22px 58px 22px 22px !important;
+}
+
+.fa-category:nth-of-type(even) .forums {
+  order: 1 !important;
+}
+
+.fa-category:nth-of-type(1) .cover { background-image: linear-gradient(180deg, transparent 38%, rgba(31,22,40,.85)), var(--cat-img-1) !important; }
+.fa-category:nth-of-type(2) .cover { background-image: linear-gradient(180deg, transparent 38%, rgba(31,22,40,.85)), var(--cat-img-2) !important; }
+.fa-category:nth-of-type(3) .cover { background-image: linear-gradient(180deg, transparent 38%, rgba(31,22,40,.85)), var(--cat-img-3) !important; }
+.fa-category:nth-of-type(4) .cover { background-image: linear-gradient(180deg, transparent 38%, rgba(31,22,40,.85)), var(--cat-img-4) !important; }
+.fa-category:nth-of-type(5) .cover { background-image: linear-gradient(180deg, transparent 38%, rgba(31,22,40,.85)), var(--cat-img-5) !important; }
+.fa-category:nth-of-type(6) .cover { background-image: linear-gradient(180deg, transparent 38%, rgba(31,22,40,.85)), var(--cat-img-6) !important; }
+
+.forum-side-image {
+  display: none !important;
+}
+
+.forum-status {
+  position: absolute !important;
+  right: 12px !important;
+  bottom: 12px !important;
+  width: 34px !important;
+  height: 34px !important;
+  display: grid !important;
+  place-items: center !important;
+  border-radius: 50% !important;
+  background: rgba(255,255,255,.94) !important;
+  border: 1px solid rgba(118,87,137,.2) !important;
+  overflow: hidden !important;
+  z-index: 4 !important;
+  font-size: 0 !important;
+}
+
+.forum-status img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: contain !important;
+  display: block !important;
+}
+
+.last-rich {
+  display: grid !important;
+  grid-template-columns: 38px minmax(0,1fr) !important;
+  gap: 10px !important;
+  align-items: center !important;
+  padding-right: 42px !important;
+}
+
+.last-rich .last-avatar {
+  width: 34px !important;
+  height: 34px !important;
+  border-radius: 50% !important;
+  position: relative !important;
+  overflow: visible !important;
+  background: linear-gradient(145deg,#efe6f3,#b99dcc) !important;
+}
+
+.last-rich .last-avatar img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  border-radius: 50% !important;
+  display: block !important;
+}
+
+.last-rich .last-avatar::after {
+  content: "*" !important;
+  position: absolute !important;
+  left: 50% !important;
+  top: 50% !important;
+  width: 44px !important;
+  height: 44px !important;
+  margin: -22px 0 0 -22px !important;
+  color: #d8b56f !important;
+  font: 14px/1 Georgia, serif !important;
+  animation: fa-avatar-orbit 4.8s linear infinite !important;
+  pointer-events: none !important;
+}
+
+@keyframes fa-avatar-orbit {
+  from { transform: rotate(0deg) translateX(22px) rotate(0deg); }
+  to { transform: rotate(360deg) translateX(22px) rotate(-360deg); }
+}
+
+.pa h2,
+.pa h3,
+.pa-card h3,
+.posts-wide h3,
+.qeel h2,
+.qeel h3,
+.footer h3 {
+  border-color: rgba(216,181,111,.28) !important;
+  box-shadow: none !important;
+}
+
+.pa h2::before,
+.pa h2::after,
+.pa h3::before,
+.pa h3::after,
+.pa-card h3::before,
+.pa-card h3::after,
+.posts-wide h3::before,
+.posts-wide h3::after,
+.qeel h2::before,
+.qeel h2::after,
+.qeel h3::before,
+.qeel h3::after {
+  background: none !important;
+  box-shadow: none !important;
+  border-color: rgba(216,181,111,.28) !important;
+}
+
+.pa-links {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 9px !important;
+}
+
+.pa-links a {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  min-height: 30px !important;
+  padding: 8px 13px !important;
+  border-radius: 999px !important;
+  border: 1px solid rgba(216,181,111,.42) !important;
+  background: rgba(255,255,255,.1) !important;
+  color: #f1d99e !important;
+  font: 10px/1 Arial, sans-serif !important;
+  text-transform: lowercase !important;
+}
+
+.weather-card-v22 {
+  grid-template-columns: minmax(0,1fr) 90px !important;
+  grid-template-rows: auto 1fr auto !important;
+  align-items: center !important;
+}
+
+.weather-title {
+  display: block !important;
+  grid-column: 1 / -1 !important;
+  font: 22px/1 var(--font-tarot) !important;
+  color: #d8b56f !important;
+  text-transform: uppercase !important;
+}
+
+.weather-icon {
+  display: block !important;
+  grid-column: 2 !important;
+  grid-row: 2 / 4 !important;
+  width: 82px !important;
+  height: 82px !important;
+  background: var(--img-weather) center/cover !important;
+  border-radius: 22px !important;
+  position: relative !important;
+}
+
+.weather-sun,
+.weather-cloud {
+  display: block !important;
+}
+
+.qeel.qeel-with-character {
+  width: min(var(--forum-width), 100%) !important;
+  margin: 72px auto 34px !important;
+  padding: 34px !important;
+  border-radius: 30px !important;
+  background:
+    radial-gradient(circle at 14% 0%, rgba(216,181,111,.14), transparent 32%),
+    linear-gradient(135deg,#261a2f 0%,#3b2946 54%,#17101d 100%) !important;
+  color: #fff !important;
+  position: relative !important;
+  overflow: hidden !important;
+}
+
+.qeel.qeel-with-character::after {
+  content: "" !important;
+  position: absolute !important;
+  right: -26px !important;
+  bottom: -26px !important;
+  width: 210px !important;
+  height: 210px !important;
+  background: var(--qeel-deco-img) center/cover !important;
+  opacity: .42 !important;
+  border-radius: 38px !important;
+  pointer-events: none !important;
+}
+
+.qeel-content {
+  position: relative !important;
+  z-index: 2 !important;
+}
+
+.qeel-toolbar {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 10px !important;
+  margin: 0 0 18px !important;
+  padding: 12px 14px !important;
+  border-radius: 18px !important;
+  background: rgba(255,255,255,.92) !important;
+  border: 1px solid rgba(255,255,255,.5) !important;
+}
+
+.qeel-toolbar a {
+  min-height: 30px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 0 14px !important;
+  border-radius: 999px !important;
+  background: rgba(122,88,141,.1) !important;
+  color: #4c3957 !important;
+  font: 10px/1 Arial, sans-serif !important;
+  letter-spacing: .12em !important;
+  text-transform: uppercase !important;
+}
+
+.qeel-main-title {
+  margin: 12px 0 24px !important;
+  font: 48px/1 var(--font-tarot) !important;
+  color: #fff !important;
+  text-transform: uppercase !important;
+}
+
+.qeel-layout {
+  display: grid !important;
+  grid-template-columns: minmax(0,1fr) 330px !important;
+  gap: 16px !important;
+  align-items: stretch !important;
+}
+
+.qeel-panels {
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0,1fr)) !important;
+  gap: 16px !important;
+}
+
+.qeel .qbox,
+.qeel-stats-card {
+  min-height: 330px !important;
+  padding: 22px !important;
+  border-radius: 18px !important;
+  background: rgba(255,255,255,.08) !important;
+  border: 1px solid rgba(255,255,255,.16) !important;
+}
+
+.qeel .qbox h3,
+.qeel-stats-card h3 {
+  margin: 0 0 16px !important;
+  padding: 0 0 10px !important;
+  border-bottom: 1px solid rgba(216,181,111,.35) !important;
+  color: #d8b56f !important;
+  font: 18px/1 var(--font-tarot) !important;
+  text-transform: uppercase !important;
+}
+
+.qeel-text {
+  color: #efe8f4 !important;
+  font: 13px/1.85 Arial, sans-serif !important;
+}
+
+.qeel-stats-card {
+  position: relative !important;
+  overflow: hidden !important;
+}
+
+.qeel-stat {
+  position: relative !important;
+  z-index: 2 !important;
+  margin: 0 0 20px !important;
+}
+
+.qeel-stat span {
+  display: block !important;
+  font-size: 10px !important;
+  letter-spacing: .16em !important;
+  text-transform: uppercase !important;
+  color: rgba(255,255,255,.68) !important;
+}
+
+.qeel-stat strong {
+  display: block !important;
+  margin-top: 4px !important;
+  color: #c59ad8 !important;
+  font: 44px/1 Georgia, serif !important;
+  transition: color .18s ease, text-shadow .18s ease !important;
+}
+
+.qeel-stat-raw {
+  display: none !important;
+}
+
+.qeel-stat:hover strong {
+  color: #f2d99b !important;
+  text-shadow: 0 0 18px rgba(242,217,155,.78) !important;
+}
+
+.qeel-newest {
+  position: relative !important;
+  z-index: 2 !important;
+  display: grid !important;
+  grid-template-columns: 62px minmax(0,1fr) !important;
+  align-items: center !important;
+  gap: 12px !important;
+  margin-top: 16px !important;
+  padding-top: 16px !important;
+  border-top: 1px solid rgba(255,255,255,.14) !important;
+}
+
+.qeel-newest-avatar {
+  width: 62px !important;
+  height: 62px !important;
+  border-radius: 50% !important;
+  background: linear-gradient(145deg,#efe6f3,#b99dcc) !important;
+  border: 3px solid rgba(255,255,255,.78) !important;
+  overflow: hidden !important;
+}
+
+.qeel-newest-avatar img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  display: block !important;
+}
+
+.qeel-newest span {
+  display: block !important;
+  font-size: 10px !important;
+  color: rgba(255,255,255,.7) !important;
+}
+
+.qeel-newest-name,
+.qeel-newest-name a {
+  display: block !important;
+  margin-top: 4px !important;
+  color: #fff !important;
+  font: 18px/1.15 Georgia, serif !important;
+}
+
+.qeel-groups {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  justify-content: center !important;
+  gap: 14px !important;
+  margin-top: 22px !important;
+  padding-top: 18px !important;
+  border-top: 1px solid rgba(255,255,255,.1) !important;
+  font-size: 0 !important;
+}
+
+.qeel-groups .group-icon-item {
+  width: 42px !important;
+  height: 42px !important;
+  display: inline-grid !important;
+  place-items: center !important;
+  border-radius: 50% !important;
+  background: currentColor !important;
+  box-shadow: inset 0 0 0 2px rgba(255,255,255,.55), 0 8px 20px rgba(0,0,0,.18) !important;
+  font-size: 0 !important;
+  transition: transform .18s ease, box-shadow .18s ease !important;
+}
+
+.qeel-groups .group-icon-item:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: inset 0 0 0 2px rgba(255,255,255,.75), 0 12px 24px rgba(0,0,0,.24) !important;
+}
+
+.footer,
+.aurora-footer-immersive {
+  width: min(var(--forum-width), 100%) !important;
+  max-width: var(--forum-width) !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+.admin-panel-link a {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  min-height: 28px !important;
+  padding: 0 12px !important;
+  border-radius: 999px !important;
+  border: 1px solid rgba(216,181,111,.36) !important;
+  color: #f2d99b !important;
+  text-transform: uppercase !important;
+  letter-spacing: .12em !important;
+  font-size: 10px !important;
+}
+
+@media (max-width: 900px) {
+  .fa-category:nth-of-type(odd) .fa-category-layout,
+  .fa-category:nth-of-type(even) .fa-category-layout,
+  .qeel-layout,
+  .qeel-panels {
+    grid-template-columns: 1fr !important;
+  }
+
+  .fa-category:nth-of-type(even) .cover,
+  .fa-category:nth-of-type(even) .forums {
+    order: initial !important;
+  }
+
+  .qeel.qeel-with-character {
+    padding: 22px !important;
+  }
+}
+
+/* ==========================================================
+   V73C - QEEL en colonnes maquette + corrections live
+   ========================================================== */
+
+.qeel .qeel-left {
+  display: contents !important;
+}
+
+.qeel-toolbar {
+  align-items: center !important;
+}
+
+.qeel-toolbar-title {
+  min-height: 30px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 0 12px !important;
+  border-radius: 999px !important;
+  background: rgba(216,181,111,.18) !important;
+  color: #6c4b7c !important;
+  font: 700 10px/1 Arial, sans-serif !important;
+  letter-spacing: .16em !important;
+  text-transform: uppercase !important;
+}
+
+.qeel-layout {
+  grid-template-columns: 1fr !important;
+}
+
+.qeel-left > h2,
+.qeel-main-title {
+  grid-column: 1 / -1 !important;
+}
+
+.qeel-panels {
+  grid-column: 1 / -1 !important;
+}
+
+.qeel-stats-card {
+  grid-column: 1 / -1 !important;
+  min-height: 0 !important;
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(260px, .9fr) !important;
+  gap: 16px !important;
+  align-items: stretch !important;
+}
+
+.qeel-stats-card h3 {
+  grid-column: 1 / -1 !important;
+}
+
+.qeel-stats-card::after {
+  display: none !important;
+}
+
+.qeel-stat,
+.qeel-newest {
+  min-height: 132px !important;
+  margin: 0 !important;
+  padding: 18px !important;
+  border: 1px solid rgba(255,255,255,.13) !important;
+  border-radius: 16px !important;
+  background: rgba(255,255,255,.06) !important;
+}
+
+.qeel-newest {
+  grid-template-columns: 72px minmax(0,1fr) !important;
+  margin-top: 0 !important;
+  padding-top: 18px !important;
+  border-top: 1px solid rgba(255,255,255,.13) !important;
+}
+
+.qeel-newest-avatar {
+  width: 72px !important;
+  height: 72px !important;
+  background-image: none !important;
+}
+
+.qeel-newest-avatar.has-avatar {
+  background: transparent !important;
+}
+
+.qeel-groups {
+  grid-column: 1 / -1 !important;
+}
+
+.forum-side-image,
+.forum-side-image[data-forum-image-src*="fenetres.png"],
+.forum .forum-side-image img[src*="fenetres.png"] {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+
+@media (max-width: 900px) {
+  .qeel-stats-card {
+    grid-template-columns: 1fr !important;
   }
 }
