@@ -8,9 +8,9 @@
   --fa-img-temp-dark: linear-gradient(135deg,#2f243b 0%,#6c4b7c 48%,#1e1728 100%);
 
   /* Images de la navigation / PA */
-  --img-banner: var(--fa-img-temp-dark);
+  --img-banner: url("https://zupimages.net/up/26/29/377c.png");
   --img-pa-intro-deco: var(--fa-img-temp);
-  --img-pa-event: var(--fa-img-temp-dark);
+  --img-pa-event: url("https://zupimages.net/up/26/29/zx96.png");
   --img-weather: var(--fa-img-temp);
   --img-staff-1: var(--fa-img-temp);
   --img-staff-2: var(--fa-img-temp);
@@ -21,15 +21,37 @@
   --img-preset-4: var(--fa-img-temp);
 
   /* Images collees aux categories */
-  --cat-img-1: var(--fa-img-temp-dark);
-  --cat-img-2: var(--fa-img-temp);
-  --cat-img-3: var(--fa-img-temp-dark);
+  --cat-img-1: url("https://www.zupimages.net/up/26/29/k04r.png");
+  --cat-img-2: url("https://zupimages.net/up/26/30/wi52.png");
+  --cat-img-3: url("https://zupimages.net/up/26/30/lwx1.png");
   --cat-img-4: var(--fa-img-temp);
   --cat-img-5: var(--fa-img-temp-dark);
   --cat-img-6: var(--fa-img-temp);
+  --cat-side-img-1: none;
+  --cat-side-img-2: none;
+  --cat-side-img-3: none;
+  --cat-side-img-4: none;
+  --cat-side-img-5: none;
+  --cat-side-img-6: none;
+
+  /* Petites images des liens utiles du QEEL */
+  --qeel-link-img-new: url("https://www.zupimages.net/up/26/29/j02r.png");
+  --qeel-link-img-unanswered: url("https://www.zupimages.net/up/26/29/j02r.png");
+  --qeel-link-img-top: url("https://www.zupimages.net/up/26/29/j02r.png");
+  --qeel-link-img-cookies: url("https://www.zupimages.net/up/26/29/j02r.png");
+
+  /* Images des groupes du QEEL */
+  --group-img-1: url("https://www.zupimages.net/up/26/29/tj35.png");
+  --group-img-2: url("https://www.zupimages.net/up/26/29/tj35.png");
+  --group-img-3: url("https://www.zupimages.net/up/26/29/tj35.png");
+  --group-img-4: url("https://www.zupimages.net/up/26/29/tj35.png");
+  --group-img-5: url("https://www.zupimages.net/up/26/29/tj35.png");
+  --group-img-6: url("https://www.zupimages.net/up/26/29/tj35.png");
+  --group-img-7: url("https://www.zupimages.net/up/26/29/tj35.png");
 
   /* Images QEEL / footer */
-  --qeel-deco-img: var(--fa-img-temp);
+  --qeel-deco-img: url("https://zupimages.net/up/26/29/d5tn.png");
+  --qeel-character-img: var(--qeel-deco-img);
   --footer-partner-img: var(--fa-img-temp);
   --footer-heart-img: var(--fa-img-temp-dark);
   --footer-winner-img: var(--fa-img-temp);
@@ -420,7 +442,7 @@ html.theme-dark{--fa-img-temp:var(--fa-img-temp-dark)}
 }
 
 
-/* DÃ©corations cÃ©lestes des titres de catÃ©gories */
+/* Dcorations clestes des titres de catgories */
 .cat-title-wrap{
   display:flex;
   align-items:center;
@@ -506,7 +528,7 @@ body > *,
   width:235px!important;
 }
 
-/* Le contenu Switcheroo est affichÃ© en overlay */
+/* Le contenu Switcheroo est affich en overlay */
 .profile-stats,
 .switcheroo-title,
 .switcheroo-list,
@@ -555,10 +577,10 @@ body > *,
 }
 
 
-/* === V10 : largeur rÃ©elle, Switcheroo propre et thÃ¨me Ã  icÃ´nes === */
+/* === V10 : largeur relle, Switcheroo propre et thme  icnes === */
 
-/* La maquette entiÃ¨re mesure rÃ©ellement 1200 px maximum,
-   avec une marge de sÃ©curitÃ© sur les petits Ã©crans. */
+/* La maquette entire mesure rellement 1200 px maximum,
+   avec une marge de scurit sur les petits crans. */
 html, body{
   width:100%;
   overflow-x:hidden;
@@ -581,7 +603,7 @@ body{
   max-width:100%;
 }
 
-/* La barre reste sur une seule ligne et aucun Ã©lÃ©ment ne la pousse. */
+/* La barre reste sur une seule ligne et aucun lment ne la pousse. */
 .nav{
   grid-template-columns:190px minmax(0,1fr) auto!important;
   width:100%;
@@ -630,7 +652,7 @@ body{
   min-height:46px;
 }
 
-/* Un seul vÃ©ritable panneau blanc pour tout Switcheroo. */
+/* Un seul vritable panneau blanc pour tout Switcheroo. */
 .profile-dropdown{
   display:block;
   position:absolute;
@@ -715,7 +737,7 @@ body{
   gap:4px;
 }
 
-/* Supprime totalement l'ancien faux panneau fragmentÃ©. */
+/* Supprime totalement l'ancien faux panneau fragment. */
 .profile-stats,
 .switcheroo-title,
 .switcheroo-list,
@@ -753,7 +775,7 @@ body{
 }
 
 
-/* === V11 : top-sites sous forme d'icÃ´nes === */
+/* === V11 : top-sites sous forme d'icnes === */
 .topsites-icons-card{
   min-height:170px;
 }
@@ -801,7 +823,7 @@ body{
 }
 
 
-/* === V12 : largeur du forum fixÃ©e Ã  1200 px === */
+/* === V12 : largeur du forum fixe  1200 px === */
 html{
   width:100%;
 }
@@ -811,7 +833,7 @@ body{
   padding:0 20px!important;
 }
 
-/* Le conteneur global du forum fait exactement 1200 px sur grand Ã©cran. */
+/* Le conteneur global du forum fait exactement 1200 px sur grand cran. */
 body > .page{
   width:1200px!important;
   max-width:calc(100vw - 40px)!important;
@@ -833,7 +855,7 @@ body > .page > .footer{
   margin-right:0!important;
 }
 
-/* Ã‰vite qu'une grille ou une image agrandisse le forum. */
+/* vite qu'une grille ou une image agrandisse le forum. */
 body > .page *{
   min-width:0;
 }
@@ -842,7 +864,7 @@ body > .page img{
 }
 
 
-/* === V14 : navigation et index strictement alignÃ©s sur 1200 px === */
+/* === V14 : navigation et index strictement aligns sur 1200 px === */
 html, body{
   width:100%;
 }
@@ -859,7 +881,7 @@ body{
   padding-bottom:40px;
 }
 
-/* La barre et tout l'index utilisent exactement la mÃªme largeur */
+/* La barre et tout l'index utilisent exactement la mme largeur */
 .nav,
 .index-content{
   width:100%!important;
@@ -894,7 +916,7 @@ body{
   margin-top:28px!important;
 }
 
-/* SÃ©curitÃ© contre les dÃ©bordements */
+/* Scurit contre les dbordements */
 .page *,
 .index-content *{
   min-width:0;
@@ -917,7 +939,7 @@ body{
   background:var(--bg);
 }
 
-/* Unique largeur de rÃ©fÃ©rence pour tout le forum */
+/* Unique largeur de rfrence pour tout le forum */
 .forum-wrapper{
   width:1200px;
   max-width:calc(100vw - 48px);
@@ -926,7 +948,7 @@ body{
   box-sizing:border-box;
 }
 
-/* Tous les grands blocs hÃ©ritent exactement de cette largeur */
+/* Tous les grands blocs hritent exactement de cette largeur */
 .forum-wrapper > .nav,
 .forum-wrapper > .banner,
 .forum-wrapper > .pa,
@@ -965,7 +987,7 @@ body{
   margin-top:0!important;
 }
 
-/* Suppression de tout comportement qui pourrait Ã©tirer un bloc */
+/* Suppression de tout comportement qui pourrait tirer un bloc */
 .forum-wrapper *,
 .forum-wrapper *::before,
 .forum-wrapper *::after{
@@ -976,7 +998,7 @@ body{
   max-width:100%;
 }
 
-/* Navigation et banniÃ¨re parfaitement alignÃ©es */
+/* Navigation et bannire parfaitement alignes */
 .forum-wrapper > .nav,
 .forum-wrapper > .banner{
   border-radius:20px;
@@ -991,7 +1013,7 @@ body{
 }
 
 
-/* === V16 : correction structurelle rÃ©elle === */
+/* === V16 : correction structurelle relle === */
 .forum-wrapper{
   width:1200px!important;
   max-width:calc(100vw - 48px)!important;
@@ -1008,7 +1030,7 @@ body{
 }
 
 
-/* === V17 : nouvelles dÃ©corations de catÃ©gories fournies === */
+/* === V17 : nouvelles dcorations de catgories fournies === */
 .cat-deco{
   object-fit:contain!important;
   filter:none!important;
@@ -1032,7 +1054,7 @@ body{
 }
 
 
-/* === V19 : titres de catÃ©gories sur une seule ligne === */
+/* === V19 : titres de catgories sur une seule ligne === */
 .cathead h2{
   white-space:nowrap!important;
   line-height:1!important;
@@ -1049,7 +1071,7 @@ body{
 }
 
 
-/* === V20 : suppression des images dÃ©coratives inutiles sous les catÃ©gories === */
+/* === V20 : suppression des images dcoratives inutiles sous les catgories === */
 .cathead{
   margin-bottom:22px!important;
 }
@@ -1059,7 +1081,7 @@ body{
 }
 
 
-/* === V21 : correction des icÃ´nes recherche et notifications === */
+/* === V21 : correction des icnes recherche et notifications === */
 .search-btn,
 .notification-btn{
   width:40px!important;
@@ -1100,7 +1122,7 @@ body{
 }
 
 
-/* === V22 : mÃ©tÃ©o illustrÃ©e et pÃ©riode RP === */
+/* === V22 : mto illustre et priode RP === */
 .weather-card-v22{
   display:flex;
   flex-direction:column;
@@ -1157,9 +1179,9 @@ body{
 }
 
 
-/* === V23 : top-sites Ã  la place du staff, staff agrandi Ã  la place de la galerie === */
+/* === V23 : top-sites  la place du staff, staff agrandi  la place de la galerie === */
 
-/* Le bloc top-sites occupe maintenant la petite case Ã  cÃ´tÃ© de la mÃ©tÃ©o. */
+/* Le bloc top-sites occupe maintenant la petite case  ct de la mto. */
 .pa.pa-complete{
   grid-template-areas:
     "intro intro event event"
@@ -1176,7 +1198,7 @@ body{
   grid-area:stafflarge!important;
 }
 
-/* Top-sites compacts dans la case anciennement rÃ©servÃ©e au staff. */
+/* Top-sites compacts dans la case anciennement rserve au staff. */
 .topsites-icons-card .topsites-head{
   align-items:flex-start;
 }
@@ -1197,7 +1219,7 @@ body{
   height:54px;
 }
 
-/* Grand bloc staff Ã  la place de DÃ©couvrir la capitale / groupes / scÃ©narios. */
+/* Grand bloc staff  la place de Dcouvrir la capitale / groupes / scnarios. */
 .staff-card-large{
   padding:18px!important;
 }
@@ -1288,7 +1310,7 @@ body{
 }
 
 
-/* === V24 : staff rÃ©duit de moitiÃ© + image dans l'autre moitiÃ© === */
+/* === V24 : staff rduit de moiti + image dans l'autre moiti === */
 .pa.pa-complete{
   grid-template-areas:
     "intro intro event event"
@@ -1385,7 +1407,7 @@ body{
 }
 
 
-/* === V25 : image personnage dans la moitiÃ© droite du staff === */
+/* === V25 : image personnage dans la moiti droite du staff === */
 .staff-side-image{
   background:
     linear-gradient(180deg,rgba(246,240,249,.15),rgba(74,48,88,.18)),
@@ -1409,7 +1431,7 @@ body{
 }
 
 
-/* === V26 : image seule, centrÃ©e dans la moitiÃ© droite de la PA === */
+/* === V26 : image seule, centre dans la moiti droite de la PA === */
 .staff-side-visual{
   display:flex!important;
   align-items:center!important;
@@ -1437,7 +1459,7 @@ body{
 }
 
 
-/* === V27 : personnage sans encadrÃ©, collÃ© en bas Ã  droite de la PA === */
+/* === V27 : personnage sans encadr, coll en bas  droite de la PA === */
 .staff-visual-row{
   position:relative;
   overflow:visible!important;
@@ -1449,7 +1471,7 @@ body{
   z-index:2;
 }
 
-/* Le bloc image ne ressemble plus Ã  une carte */
+/* Le bloc image ne ressemble plus  une carte */
 .staff-side-visual{
   position:relative!important;
   padding:0!important;
@@ -1462,7 +1484,7 @@ body{
   border-radius:0!important;
 }
 
-/* L'image est ancrÃ©e dans l'angle infÃ©rieur droit */
+/* L'image est ancre dans l'angle infrieur droit */
 .staff-side-image{
   position:absolute!important;
   right:-8px!important;
@@ -1480,7 +1502,7 @@ body{
   pointer-events:none;
 }
 
-/* Supprime tout contour Ã©ventuel hÃ©ritÃ© des cartes PA */
+/* Supprime tout contour ventuel hrit des cartes PA */
 .staff-side-visual::before,
 .staff-side-visual::after,
 .staff-side-image::before,
@@ -1499,13 +1521,13 @@ body{
 }
 
 
-/* === V28 : personnages collÃ©s au bord des catÃ©gories === */
+/* === V28 : personnages colls au bord des catgories === */
 .category-with-character{
   position:relative!important;
   overflow:visible!important;
 }
 
-/* Le contenu passe devant les personnages si nÃ©cessaire. */
+/* Le contenu passe devant les personnages si ncessaire. */
 .category-with-character > .cathead,
 .category-with-character > .presentation,
 .category-with-character > .uniform-grid{
@@ -1523,7 +1545,7 @@ body{
   filter:drop-shadow(0 14px 24px rgba(73,48,87,.12));
 }
 
-/* Zone administrative : fille de dos collÃ©e Ã  gauche. */
+/* Zone administrative : fille de dos colle  gauche. */
 .category-admin-character{
   padding-left:150px!important;
 }
@@ -1535,7 +1557,7 @@ body{
   object-position:left bottom;
 }
 
-/* PrÃ©sentations : fille en kimono collÃ©e Ã  droite. */
+/* Prsentations : fille en kimono colle  droite. */
 .category-presentations-character{
   padding-right:165px!important;
 }
@@ -1547,7 +1569,7 @@ body{
   object-position:right bottom;
 }
 
-/* Zone HRP : homme avec fleurs collÃ© Ã  gauche. */
+/* Zone HRP : homme avec fleurs coll  gauche. */
 .category-hrp-character{
   padding-left:170px!important;
 }
@@ -1559,8 +1581,8 @@ body{
   object-position:left bottom;
 }
 
-/* Les personnages restent visuellement attachÃ©s Ã  la catÃ©gorie,
-   sans crÃ©er d'encadrÃ© ni de fond supplÃ©mentaire. */
+/* Les personnages restent visuellement attachs  la catgorie,
+   sans crer d'encadr ni de fond supplmentaire. */
 .category-with-character::before,
 .category-with-character::after{
   pointer-events:none;
@@ -1599,7 +1621,7 @@ body{
 }
 
 
-/* === V29 : trois catÃ©gories RP distinctes, sans personnage latÃ©ral === */
+/* === V29 : trois catgories RP distinctes, sans personnage latral === */
 .rp-category{
   position:relative;
   overflow:visible;
@@ -1633,7 +1655,7 @@ body{
 }
 
 
-/* === V30 : petites dÃ©corations Ã  cÃ´tÃ© des titres RP === */
+/* === V30 : petites dcorations  ct des titres RP === */
 .rp-title-decorated{
   display:flex!important;
   align-items:center!important;
@@ -1675,9 +1697,9 @@ body{
 }
 
 
-/* === V31 : dÃ©coration administration + grande illustration QEEL === */
+/* === V31 : dcoration administration + grande illustration QEEL === */
 
-/* Petite dÃ©coration supplÃ©mentaire pour Ã©quilibrer le titre administratif. */
+/* Petite dcoration supplmentaire pour quilibrer le titre administratif. */
 .admin-title-mini-deco{
   display:inline-grid;
   place-items:center;
@@ -1690,8 +1712,8 @@ body{
   flex:0 0 auto;
 }
 
-/* Le QEEL accueille dÃ©sormais le personnage comme les catÃ©gories. */
-.qeel.qeÐµÐ»-with-character{
+/* Le QEEL accueille dsormais le personnage comme les catgories. */
+.qeel.qeel-with-character-old-disabled{
   position:relative!important;
   overflow:visible!important;
   min-height:500px;
@@ -1718,21 +1740,21 @@ body{
   filter:drop-shadow(0 18px 30px rgba(28,17,37,.25));
 }
 
-/* Le contenu reste lisible Ã  cÃ´tÃ© de la grande illustration. */
-.qeel.qeÐµÐ»-with-character .qgrid{
+/* Le contenu reste lisible  ct de la grande illustration. */
+.qeel.qeel-with-character-old-disabled .qgrid{
   grid-template-columns:1fr 1fr!important;
 }
 
-.qeel.qeÐµÐ»-with-character .qbox:last-child{
+.qeel.qeel-with-character-old-disabled .qbox:last-child{
   grid-column:1 / -1;
 }
 
-.qeel.qeÐµÐ»-with-character .groups{
+.qeel.qeel-with-character-old-disabled .groups{
   max-width:100%;
 }
 
 @media(max-width:1000px){
-  .qeel.qeÐµÐ»-with-character{
+  .qeel.qeel-with-character-old-disabled{
     padding-right:285px!important;
   }
 
@@ -1743,7 +1765,7 @@ body{
 }
 
 @media(max-width:760px){
-  .qeel.qeÐµÐ»-with-character{
+  .qeel.qeel-with-character-old-disabled{
     padding:28px!important;
     padding-bottom:300px!important;
   }
@@ -1756,13 +1778,13 @@ body{
     opacity:.82;
   }
 
-  .qeel.qeÐµÐ»-with-character .qgrid{
+  .qeel.qeel-with-character-old-disabled .qgrid{
     grid-template-columns:1fr!important;
   }
 }
 
 
-/* === V32 : raccourcis et statistiques complÃ¨tes du QEEL === */
+/* === V32 : raccourcis et statistiques compltes du QEEL === */
 .qeel-toolbar{
   display:grid;
   grid-template-columns:repeat(7, minmax(0,1fr));
@@ -1868,9 +1890,9 @@ body{
 }
 
 
-/* === V33 : QEEL allÃ©gÃ© et compteurs regroupÃ©s === */
+/* === V33 : QEEL allg et compteurs regroups === */
 
-/* Raccourcis : icÃ´nes seules, sans fond, en violet */
+/* Raccourcis : icnes seules, sans fond, en violet */
 .qeel-toolbar{
   display:flex!important;
   align-items:center;
@@ -1912,7 +1934,7 @@ body{
   opacity:.75;
 }
 
-/* Ancien bloc de statistiques supprimÃ© */
+/* Ancien bloc de statistiques supprim */
 .qeel-stats-summary{
   display:none!important;
 }
@@ -1985,9 +2007,9 @@ body{
 }
 
 
-/* === V34 : QEEL finalisÃ© === */
+/* === V34 : QEEL finalis === */
 
-/* Barre de liens utiles inspirÃ©e de l'exemple, adaptÃ©e aux couleurs du forum */
+/* Barre de liens utiles inspire de l'exemple, adapte aux couleurs du forum */
 .qeel-toolbar{
   display:flex!important;
   align-items:center!important;
@@ -2088,7 +2110,7 @@ body{
   color:rgba(255,255,255,.62)!important;
 }
 
-/* Groupes : icÃ´nes seules avec texte en dessous */
+/* Groupes : icnes seules avec texte en dessous */
 .groups-icons{
   display:grid!important;
   grid-template-columns:repeat(6,1fr);
@@ -2148,9 +2170,9 @@ body{
 }
 
 
-/* === V35 : nettoyage des anciens groupes et icÃ´nes agrandies === */
+/* === V35 : nettoyage des anciens groupes et icnes agrandies === */
 
-/* Cache d'Ã©ventuels anciens groupes textuels encore prÃ©sents dans le QEEL */
+/* Cache d'ventuels anciens groupes textuels encore prsents dans le QEEL */
 .qeel .group-list,
 .qeel .group-chips,
 .qeel .old-groups,
@@ -2158,7 +2180,7 @@ body{
   display:none!important;
 }
 
-/* IcÃ´nes des groupes plus grandes et plus prÃ©sentes */
+/* Icnes des groupes plus grandes et plus prsentes */
 .groups-icons{
   grid-template-columns:repeat(6,1fr)!important;
   gap:24px!important;
@@ -2203,7 +2225,7 @@ body{
 }
 
 
-/* === V36 : suppression dÃ©finitive des anciennes cartes de groupes === */
+/* === V36 : suppression dfinitive des anciennes cartes de groupes === */
 .qeel .group[data-name]{
   display:none!important;
 }
@@ -2243,13 +2265,13 @@ body{
 }
 
 
-/* === V38 : sept groupes et footer de mÃªme largeur que le QEEL === */
+/* === V38 : sept groupes et footer de mme largeur que le QEEL === */
 .groups-icons{
   grid-template-columns:repeat(7, minmax(0,1fr))!important;
   gap:18px!important;
 }
 
-/* QEEL et footer partagent exactement la mÃªme largeur. */
+/* QEEL et footer partagent exactement la mme largeur. */
 .forum-wrapper > .qeel,
 .forum-wrapper > .footer{
   width:100%!important;
@@ -2276,10 +2298,10 @@ body{
 }
 
 
-/* === V39 : footer strictement alignÃ© sur le QEEL === */
+/* === V39 : footer strictement align sur le QEEL === */
 
-/* Largeur explicite identique au conteneur du QEEL, mÃªme si le navigateur
-   rÃ©interprÃ¨te certaines anciennes balises HTML. */
+/* Largeur explicite identique au conteneur du QEEL, mme si le navigateur
+   rinterprte certaines anciennes balises HTML. */
 footer.footer{
   width:1200px!important;
   max-width:calc(100vw - 48px)!important;
@@ -2290,7 +2312,7 @@ footer.footer{
   transform:none!important;
 }
 
-/* Le QEEL utilise la mÃªme rÃ©fÃ©rence exacte. */
+/* Le QEEL utilise la mme rfrence exacte. */
 section.qeel{
   width:1200px!important;
   max-width:calc(100vw - 48px)!important;
@@ -2299,7 +2321,7 @@ section.qeel{
   box-sizing:border-box!important;
 }
 
-/* EmpÃªche les contenus internes du footer de l'Ã©largir. */
+/* Empche les contenus internes du footer de l'largir. */
 footer.footer > section{
   min-width:0!important;
 }
@@ -2309,9 +2331,9 @@ footer.footer .partners{
 }
 
 
-/* === V40 : liens PrÃ©sentations + crÃ©dits du forum === */
+/* === V40 : liens Prsentations + crdits du forum === */
 
-/* Deux accÃ¨s rapides sous le titre PrÃ©sentations */
+/* Deux accs rapides sous le titre Prsentations */
 .presentation-quick-links{
   display:flex;
   align-items:center;
@@ -2343,7 +2365,7 @@ footer.footer .partners{
   transform:translateY(-1px);
 }
 
-/* Zone de crÃ©dits intÃ©grÃ©e au footer */
+/* Zone de crdits intgre au footer */
 .footer-credits{
   grid-column:1 / -1;
   display:grid;
@@ -2386,14 +2408,14 @@ footer.footer .partners{
 }
 
 
-/* === V41 : liens dans le forum PrÃ©sentations + zone de texte crÃ©dits === */
+/* === V41 : liens dans le forum Prsentations + zone de texte crdits === */
 
-/* Les liens ne sont plus dans le titre de la catÃ©gorie. */
+/* Les liens ne sont plus dans le titre de la catgorie. */
 .cathead-presentations .presentation-quick-links{
   display:none!important;
 }
 
-/* Liens intÃ©grÃ©s directement au forum PrÃ©sentations. */
+/* Liens intgrs directement au forum Prsentations. */
 .presentation-forum-links{
   display:flex;
   align-items:center;
@@ -2423,7 +2445,7 @@ footer.footer .partners{
   transform:translateY(-1px);
 }
 
-/* Petite zone de texte dÃ©diÃ©e aux crÃ©dits du forum. */
+/* Petite zone de texte ddie aux crdits du forum. */
 .footer-credits{
   grid-column:1 / -1;
   display:grid;
@@ -2483,7 +2505,7 @@ footer.footer .partners{
   }
 }
 
-/* === V42 : liens PrÃ©sentations positionnÃ©s en bas Ã  droite === */
+/* === V42 : liens Prsentations positionns en bas  droite === */
 .category-presentations-character article.picforum.big{
   position:relative!important;
   padding-bottom:52px!important;
@@ -2529,7 +2551,7 @@ footer.footer .partners{
   display:none!important;
 }
 
-/* Resserre les espacements laissÃ©s par les textes supprimÃ©s. */
+/* Resserre les espacements laisss par les textes supprims. */
 .cathead{
   gap:6px!important;
 }
@@ -2543,7 +2565,7 @@ footer.footer .partners{
   margin-bottom:16px!important;
 }
 
-/* === V45 : vraie banniÃ¨re Aurora intÃ©grÃ©e dans la maquette UI === */
+/* === V45 : vraie bannire Aurora intgre dans la maquette UI === */
 header.banner {
   position: relative !important;
   height: 420px !important;
@@ -2569,7 +2591,7 @@ header.banner .banner-copy {
 }
 
 
-/* === V46 : suppression totale de l'effet sombre sur la banniÃ¨re === */
+/* === V46 : suppression totale de l'effet sombre sur la bannire === */
 header.banner{
   filter:none!important;
   opacity:1!important;
@@ -2602,7 +2624,7 @@ header.banner .banner-copy{
   min-width:0!important;
 }
 
-/* Bloc partenaires placÃ© Ã  gauche du personnage */
+/* Bloc partenaires plac  gauche du personnage */
 .pa-top-partners{
   position:absolute;
   left:22px;
@@ -2663,7 +2685,7 @@ header.banner .banner-copy{
   font-weight:300!important;
 }
 
-/* DÃ©cale lÃ©gÃ¨rement le personnage vers la droite pour libÃ©rer les partenaires */
+/* Dcale lgrement le personnage vers la droite pour librer les partenaires */
 .staff-side-image{
   right:-42px!important;
   width:82%!important;
@@ -2710,14 +2732,14 @@ header.banner .banner-copy{
   }
 }
 
-/* === V48 : cinquiÃ¨me top partenaire === */
+/* === V48 : cinquime top partenaire === */
 .pa-partner-5{
   background:linear-gradient(145deg,#e5d9ec,#8f76a1);
   color:#fff;
 }
 
 /* === V49 : police Tarot sur les titres et textes importants === */
-/* Titres principaux et titres de catÃ©gories */
+/* Titres principaux et titres de catgories */
 .logo,
 .brand,
 nav a,
@@ -2763,7 +2785,7 @@ button,
   letter-spacing:.035em;
 }
 
-/* Ajustements pour conserver une bonne lisibilitÃ© */
+/* Ajustements pour conserver une bonne lisibilit */
 .cathead h2,
 .cat-title-wrap h2{
   letter-spacing:.07em!important;
@@ -2788,7 +2810,7 @@ button,
     font-style:normal;
     font-display:swap;
 }
-/* === V51 : police Tarot embarquÃ©e directement dans le HTML === */
+/* === V51 : police Tarot embarque directement dans le HTML === */
 .cathead h2,
 .cat-title-wrap h2,
 .category h2,
@@ -2818,7 +2840,7 @@ button,
 }
 
 
-/* === V52 : agrandissement des titres de catÃ©gories === */
+/* === V52 : agrandissement des titres de catgories === */
 .cathead h2,
 .cat-title-wrap h2,
 .category > h2{
@@ -2844,7 +2866,7 @@ button,
 }
 
 
-/* === V53 : titres de catÃ©gories encore plus grands === */
+/* === V53 : titres de catgories encore plus grands === */
 .cathead h2,
 .cat-title-wrap h2,
 .category > h2{
@@ -2870,7 +2892,7 @@ button,
 }
 
 
-/* === V54 : titres de catÃ©gories XXL sur la maquette UI === */
+/* === V54 : titres de catgories XXL sur la maquette UI === */
 .cathead h2,
 .cat-title-wrap h2,
 .category > h2{
@@ -2898,7 +2920,7 @@ button,
 
 
 /* =========================================================
-   AURORA V55 â€” REFONTE VISUELLE DES CATÃ‰GORIES
+   AURORA V55  REFONTE VISUELLE DES CATGORIES
    ========================================================= */
 
 /* Plus de respiration entre les grandes sections */
@@ -2927,7 +2949,7 @@ button,
   overflow:hidden;
 }
 
-/* Double liserÃ© intÃ©rieur */
+/* Double liser intrieur */
 .cathead::before{
   content:"";
   position:absolute;
@@ -2937,7 +2959,7 @@ button,
   pointer-events:none;
 }
 
-/* Ã‰toiles dÃ©coratives */
+/* toiles dcoratives */
 .cathead::after{
   content: "*  .  *  .  *";
   position:absolute;
@@ -2961,7 +2983,7 @@ button,
   max-width:100%!important;
 }
 
-/* Trait dÃ©coratif Ã  gauche du titre */
+/* Trait dcoratif  gauche du titre */
 .cat-title-wrap::before,
 .cat-title-wrap-right::before{
   content:"";
@@ -2991,7 +3013,7 @@ button,
     0 10px 24px rgba(74,48,87,.15);
 }
 
-/* Petite Ã©toile aprÃ¨s chaque titre */
+/* Petite toile aprs chaque titre */
 .cathead h2::after,
 .cat-title-wrap h2::after,
 .cat-title-wrap-right h2::after{
@@ -3004,7 +3026,7 @@ button,
   text-shadow:0 0 12px rgba(203,166,105,.45);
 }
 
-/* Masque les anciens Ã©lÃ©ments dÃ©coratifs trop redondants */
+/* Masque les anciens lments dcoratifs trop redondants */
 .cat-deco{
   display:none!important;
 }
@@ -3047,7 +3069,7 @@ button,
   letter-spacing:.02em!important;
 }
 
-/* SÃ©parateur discret sous les titres de forums */
+/* Sparateur discret sous les titres de forums */
 .piccopy h4::after,
 .forum-title::after,
 .editorial h3::after,
@@ -3132,7 +3154,7 @@ button,
 
 
 /* =========================================================
-   AURORA V56 â€” REFONTE PREMIUM DE LA PAGE D'ACCUEIL
+   AURORA V56  REFONTE PREMIUM DE LA PAGE D'ACCUEIL
    ========================================================= */
 
 /* Ensemble de la PA */
@@ -3310,7 +3332,7 @@ button,
   border-color:rgba(185,142,80,.52)!important;
 }
 
-/* MÃ©tÃ©o */
+/* Mto */
 .weather{
   background:
     radial-gradient(circle at 82% 24%,rgba(255,226,155,.4),transparent 24%),
@@ -3349,7 +3371,7 @@ button,
   background:rgba(237,225,242,.58);
 }
 
-/* PrÃ©dÃ©finis */
+/* Prdfinis */
 .preds{
   gap:11px!important;
 }
@@ -3541,10 +3563,10 @@ button,
 
 
 /* =========================================================
-   AURORA V59 â€” RETOUR AU STYLE INITIAL DES PARTENAIRES
+   AURORA V59  RETOUR AU STYLE INITIAL DES PARTENAIRES
    ========================================================= */
 
-/* Retour au bloc sans encadrement supplÃ©mentaire */
+/* Retour au bloc sans encadrement supplmentaire */
 .staff-side-visual{
   position:relative!important;
   min-height:100%!important;
@@ -3556,7 +3578,7 @@ button,
     linear-gradient(145deg,rgba(255,255,255,.95),rgba(241,232,245,.88))!important;
 }
 
-/* Suppression de la carte blanche ajoutÃ©e autour des partenaires */
+/* Suppression de la carte blanche ajoute autour des partenaires */
 .staff-side-visual .pa-top-partners{
   position:absolute!important;
   z-index:5!important;
@@ -3595,7 +3617,7 @@ button,
   border-radius:11px!important;
 }
 
-/* Personnage replacÃ© comme dans la version prÃ©cÃ©dente */
+/* Personnage replac comme dans la version prcdente */
 .staff-side-visual .staff-side-image{
   position:absolute!important;
   z-index:1!important;
@@ -3614,7 +3636,7 @@ button,
   pointer-events:none!important;
 }
 
-/* Voile lÃ©ger conservÃ© pour la lisibilitÃ©, sans encadrement */
+/* Voile lger conserv pour la lisibilit, sans encadrement */
 .staff-side-visual::after{
   content:"";
   display:block!important;
@@ -3676,7 +3698,7 @@ button,
 }
 
 
-/* === V61 : suppression complÃ¨te du contour fin autour des partenaires === */
+/* === V61 : suppression complte du contour fin autour des partenaires === */
 .staff-side-visual .pa-top-partners{
   border:none!important;
   box-shadow:none!important;
@@ -3761,7 +3783,7 @@ button,
 
 
 /* =========================================================
-   AURORA V62C â€” CORRECTION DU HALO / BORDER-RADIUS DU QEEL
+   AURORA V62C  CORRECTION DU HALO / BORDER-RADIUS DU QEEL
    ========================================================= */
 
 .qeel{
@@ -3772,7 +3794,7 @@ button,
   clip-path:inset(0 round 30px)!important;
 }
 
-/* L'effet d'aurore reste entiÃ¨rement Ã  l'intÃ©rieur du QEEL */
+/* L'effet d'aurore reste entirement  l'intrieur du QEEL */
 .qeel::after{
   content:""!important;
   position:absolute!important;
@@ -3801,7 +3823,7 @@ button,
   z-index:1;
 }
 
-/* Petites lueurs discrÃ¨tes intÃ©grÃ©es au fond, sans dÃ©passer */
+/* Petites lueurs discrtes intgres au fond, sans dpasser */
 .qeel::before{
   content:""!important;
   position:absolute!important;
@@ -3828,11 +3850,11 @@ button,
 
 
 /* =========================================================
-   AURORA V62D â€” IMAGE DU QEEL REMISE Ã€ SA POSITION D'ORIGINE
+   AURORA V62D  IMAGE DU QEEL REMISE  SA POSITION D'ORIGINE
    ========================================================= */
 
-/* Le QEEL laisse de nouveau dÃ©passer le personnage comme sur la V61. */
-.qeel.qeÐµÐ»-with-character{
+/* Le QEEL laisse de nouveau dpasser le personnage comme sur la V61. */
+.qeel.qeel-with-character-old-disabled{
   overflow:visible!important;
   clip-path:none!important;
 }
@@ -3843,7 +3865,7 @@ button,
   z-index:1;
 }
 
-/* Position exacte du personnage de la V61 validÃ©e. */
+/* Position exacte du personnage de la V61 valide. */
 .qeel-character{
   position:absolute!important;
   z-index:3!important;
@@ -3857,7 +3879,7 @@ button,
   margin:0!important;
 }
 
-/* L'aurore reste bornÃ©e par son propre arrondi, sans couper le personnage. */
+/* L'aurore reste borne par son propre arrondi, sans couper le personnage. */
 .qeel::after{
   overflow:hidden!important;
   border-radius:0 0 30px 30px!important;
@@ -3881,7 +3903,7 @@ button,
 
 
 /* =========================================================
-   AURORA V64 â€” FOOTER IMMERSIF CIEL NOCTURNE
+   AURORA V64  FOOTER IMMERSIF CIEL NOCTURNE
    ========================================================= */
 
 .aurora-footer-immersive{
@@ -4205,7 +4227,7 @@ button,
 }
 
 
-/* V64A correction lune coupÃ©e */
+/* V64A correction lune coupe */
 .aurora-footer-immersive{
   overflow:visible!important;
 }
@@ -4233,7 +4255,7 @@ button,
 }
 
 
-/* V64C â€” rapprochement visible entre la lune et le trait */
+/* V64C  rapprochement visible entre la lune et le trait */
 .aurora-footer-immersive{
   padding-top:72px!important;
 }
@@ -4258,7 +4280,7 @@ button,
 }
 
 
-/* V64D â€” ligne rÃ©ellement fixÃ©e juste sous la lune */
+/* V64D  ligne rellement fixe juste sous la lune */
 .aurora-footer-immersive{
   padding-top:165px!important;
 }
@@ -4267,7 +4289,7 @@ button,
   top:-58px!important;
 }
 
-/* La ligne sort du flux et reÃ§oit une position prÃ©cise */
+/* La ligne sort du flux et reoit une position prcise */
 .footer-gold-line{
   position:absolute!important;
   z-index:4!important;
@@ -4278,7 +4300,7 @@ button,
   transform:translateX(-50%)!important;
 }
 
-/* Le contenu commence aprÃ¨s la ligne */
+/* Le contenu commence aprs la ligne */
 .aurora-footer-content{
   margin-top:0!important;
 }
@@ -4299,12 +4321,12 @@ button,
 }
 
 
-/* V64E â€” ligne descendue prÃ©cisÃ©ment sous la lune */
+/* V64E  ligne descendue prcisment sous la lune */
 .footer-gold-line{
   top:158px!important;
 }
 
-/* Sur mobile, conserver le mÃªme Ã©cart visuel */
+/* Sur mobile, conserver le mme cart visuel */
 @media(max-width:760px){
   .footer-gold-line{
     top:150px!important;
@@ -4313,7 +4335,7 @@ button,
 
 
 /* =========================================================
-   AURORA V64F â€” CORRECTION RÃ‰ELLE DE L'ESPACE DU FOOTER
+   AURORA V64F  CORRECTION RELLE DE L'ESPACE DU FOOTER
    La lueur et les nuages repassent en position absolue :
    ils ne poussent plus le titre Aurora vers le bas.
    ========================================================= */
@@ -4341,7 +4363,7 @@ button,
   top:22px!important;
 }
 
-/* Lune et ligne regroupÃ©es dans la partie haute */
+/* Lune et ligne regroupes dans la partie haute */
 .footer-moon-wrap{
   position:absolute!important;
   top:-58px!important;
@@ -4382,7 +4404,7 @@ button,
 
 
 /* =========================================================
-   AURORA V65D â€” ANIMATION DES IMAGES PARTENAIRES DU FOOTER
+   AURORA V65D  ANIMATION DES IMAGES PARTENAIRES DU FOOTER
    Cible exacte : .footer .partners .partner
    ========================================================= */
 
@@ -4465,8 +4487,8 @@ button,
 
 
 /* =========================================================
-   AURORA V65F â€” ANIMATION RÃ‰ELLE DES COUPS DE CÅ’UR
-   Cible exacte trouvÃ©e dans le HTML : .footer .hearts .heart
+   AURORA V65F  ANIMATION RELLE DES COUPS DE CUR
+   Cible exacte trouve dans le HTML : .footer .hearts .heart
    ========================================================= */
 
 .footer .hearts{
@@ -4546,7 +4568,7 @@ button,
 
 
 /* =========================================================
-   AURORA V65G â€” COUPS DE CÅ’UR AGRANDIS
+   AURORA V65G  COUPS DE CUR AGRANDIS
    ========================================================= */
 
 .footer .hearts{
@@ -4559,7 +4581,7 @@ button,
   min-height:56px!important;
 }
 
-/* Conserve une belle proportion sur les Ã©crans plus Ã©troits */
+/* Conserve une belle proportion sur les crans plus troits */
 @media(max-width:900px){
   .footer .hearts .heart{
     width:250px!important;
@@ -4577,7 +4599,7 @@ button,
 
 
 /* =========================================================
-   AURORA V65H â€” COUPS DE CÅ’UR LÃ‰GÃˆREMENT RÃ‰TRÃ‰CIS
+   AURORA V65H  COUPS DE CUR LGREMENT RTRCIS
    ========================================================= */
 
 .footer .hearts .heart{
@@ -4596,7 +4618,7 @@ button,
 
 
 /* =========================================================
-   AURORA V65I â€” MEILLEUR MEMBRE / MEILLEUR RP CENTRÃ‰S
+   AURORA V65I  MEILLEUR MEMBRE / MEILLEUR RP CENTRS
    ========================================================= */
 
 .footer .winner{
@@ -4626,8 +4648,8 @@ button,
 
 
 /* =========================================================
-   AURORA V65K â€” VRAIE LIGNE SÃ‰PARATRICE SOUS LES MEILLEURS
-   Ã‰lÃ©ment HTML ajoutÃ© directement dans la grille du footer.
+   AURORA V65K  VRAIE LIGNE SPARATRICE SOUS LES MEILLEURS
+   lment HTML ajout directement dans la grille du footer.
    ========================================================= */
 
 .footer-winners-separator{
@@ -4673,7 +4695,7 @@ button,
   text-shadow:0 0 8px rgba(214,174,102,.4)!important;
 }
 
-/* La sÃ©paration des crÃ©dits devient plus lÃ©gÃ¨re pour Ã©viter deux traits */
+/* La sparation des crdits devient plus lgre pour viter deux traits */
 .footer .footer-credits{
   margin-top:0!important;
   padding-top:18px!important;
@@ -4681,7 +4703,7 @@ button,
 }
 
 
-/* V65L - sÃ©parateur uniquement sous les deux colonnes de droite */
+/* V65L - sparateur uniquement sous les deux colonnes de droite */
 .footer-winners-only{
 display:flex;
 justify-content:center;
@@ -4722,12 +4744,12 @@ color:#d6ae66!important;
 text-shadow:0 0 8px rgba(214,174,102,.35)!important;
 }
 
-/* dÃ©sactive l'ancien sÃ©parateur global */
+/* dsactive l'ancien sparateur global */
 .footer-winners-separator{display:none!important;}
 
 
 /* =========================================================
-   AURORA V65M â€” UN SEUL SÃ‰PARATEUR COMMUN SOUS LES 2 GAGNANTS
+   AURORA V65M  UN SEUL SPARATEUR COMMUN SOUS LES 2 GAGNANTS
    ========================================================= */
 
 /* Neutralise les anciens traits individuels */
@@ -4790,7 +4812,7 @@ text-shadow:0 0 8px rgba(214,174,102,.35)!important;
   text-shadow:0 0 8px rgba(226,184,95,.5)!important;
 }
 
-/* Le bloc crÃ©dits reste sur toute la largeur */
+/* Le bloc crdits reste sur toute la largeur */
 .footer .footer-credits{
   grid-column:1 / -1!important;
 }
@@ -4805,7 +4827,7 @@ text-shadow:0 0 8px rgba(214,174,102,.35)!important;
 
 
 /* =========================================================
-   AURORA V65N â€” REMONTE LE SÃ‰PARATEUR DES GAGNANTS
+   AURORA V65N  REMONTE LE SPARATEUR DES GAGNANTS
    ========================================================= */
 
 .footer-winners-line{
@@ -4820,7 +4842,7 @@ text-shadow:0 0 8px rgba(214,174,102,.35)!important;
 
 
 /* =========================================================
-   AURORA V65O â€” SÃ‰PARATEUR COLLÃ‰ SOUS LES DEUX GAGNANTS
+   AURORA V65O  SPARATEUR COLL SOUS LES DEUX GAGNANTS
    ========================================================= */
 
 .footer-winners-line{
@@ -4835,7 +4857,7 @@ text-shadow:0 0 8px rgba(214,174,102,.35)!important;
 
 
 /* =========================================================
-   AURORA V65P â€” COUPS DE CÅ’UR ALIGNÃ‰S SUR LA DERNIÃˆRE LIGNE
+   AURORA V65P  COUPS DE CUR ALIGNS SUR LA DERNIRE LIGNE
    ========================================================= */
 
 .footer .hearts{
@@ -4848,7 +4870,7 @@ text-shadow:0 0 8px rgba(214,174,102,.35)!important;
   min-height:48px!important;
 }
 
-/* Garde exactement trois lignes sans dÃ©passer la grille partenaires */
+/* Garde exactement trois lignes sans dpasser la grille partenaires */
 .footer .hearts{
   align-content:start!important;
 }
@@ -4863,8 +4885,8 @@ text-shadow:0 0 8px rgba(214,174,102,.35)!important;
 
 
 /* =========================================================
-   AURORA V66 â€” EFFET SOULIGNÃ‰ SUR LA BARRE DE NAVIGATION
-   InspirÃ© de l'exemple fourni : trait dorÃ© fin sous le lien.
+   AURORA V66  EFFET SOULIGN SUR LA BARRE DE NAVIGATION
+   Inspir de l'exemple fourni : trait dor fin sous le lien.
    ========================================================= */
 
 .nav .menu span{
@@ -4908,7 +4930,7 @@ text-shadow:0 0 8px rgba(214,174,102,.35)!important;
   opacity:1!important;
 }
 
-/* Accueil affichÃ© comme onglet actif, comme sur l'image d'exemple */
+/* Accueil affich comme onglet actif, comme sur l'image d'exemple */
 .nav .menu span:first-child{
   color:#fff!important;
 }
@@ -4935,7 +4957,7 @@ text-shadow:0 0 8px rgba(214,174,102,.35)!important;
 
 
 /* =========================================================
-   AURORA V66B â€” TEXTE VIOLET AU SURVOL DE LA NAVIGATION
+   AURORA V66B  TEXTE VIOLET AU SURVOL DE LA NAVIGATION
    ========================================================= */
 
 .nav .menu span:hover{
@@ -4943,7 +4965,7 @@ text-shadow:0 0 8px rgba(214,174,102,.35)!important;
   text-shadow:0 0 8px rgba(141,106,163,.28)!important;
 }
 
-/* L'onglet actif reste violet pour Ãªtre lisible sur fond clair */
+/* L'onglet actif reste violet pour tre lisible sur fond clair */
 .nav .menu span:first-child,
 .nav .menu span.active,
 .nav .menu a.active{
@@ -4952,11 +4974,11 @@ text-shadow:0 0 8px rgba(214,174,102,.35)!important;
 
 
 /* =========================================================
-   AURORA V67 â€” MICRO-INTERACTIONS GLOBALES CHOISIES
-   Structure inchangÃ©e, uniquement des effets subtils.
+   AURORA V67  MICRO-INTERACTIONS GLOBALES CHOISIES
+   Structure inchange, uniquement des effets subtils.
    ========================================================= */
 
-/* 1) CatÃ©gories : lÃ©gÃ¨re montÃ©e, halo et bordure plus lumineuse */
+/* 1) Catgories : lgre monte, halo et bordure plus lumineuse */
 .category,
 .forum-category,
 .cat-row,
@@ -4981,7 +5003,7 @@ text-shadow:0 0 8px rgba(214,174,102,.35)!important;
     0 0 18px rgba(141,106,163,.11)!important;
 }
 
-/* Petite rotation dÃ©corative si une lune/Ã©toile est prÃ©sente */
+/* Petite rotation dcorative si une lune/toile est prsente */
 .category:hover .moon,
 .forum-category:hover .moon,
 .cat-row:hover .moon,
@@ -4996,7 +5018,7 @@ text-shadow:0 0 8px rgba(214,174,102,.35)!important;
   transition:transform .34s ease!important;
 }
 
-/* 2) Avatars : mÃªme langage visuel que les partenaires */
+/* 2) Avatars : mme langage visuel que les partenaires */
 .avatar,
 .av,
 .lastpost-avatar,
@@ -5063,7 +5085,7 @@ text-shadow:0 0 8px rgba(214,174,102,.35)!important;
   }
 }
 
-/* 5) Quelques Ã©toiles : scintillement lent et dÃ©synchronisÃ© */
+/* 5) Quelques toiles : scintillement lent et dsynchronis */
 .star,
 .footer-star,
 .sparkle,
@@ -5155,7 +5177,7 @@ text-shadow:0 0 8px rgba(214,174,102,.35)!important;
   }
 }
 
-/* 7) Boutons et liens importants : transitions uniformisÃ©es */
+/* 7) Boutons et liens importants : transitions uniformises */
 button,
 .button,
 .btn,
@@ -5182,7 +5204,7 @@ input[type="button"]:hover{
   box-shadow:0 8px 16px rgba(43,28,54,.14)!important;
 }
 
-/* AccessibilitÃ© : dÃ©sactive les animations si demandÃ© par le systÃ¨me */
+/* Accessibilit : dsactive les animations si demand par le systme */
 @media(prefers-reduced-motion:reduce){
   *,
   *::before,
@@ -5196,13 +5218,13 @@ input[type="button"]:hover{
 
 
 /* =========================================================
-   AURORA V67B â€” AJUSTEMENTS APRÃˆS RETOUR
-   ValidÃ© : avatars + transitions boutons/liens
-   RetirÃ© : effet de remontÃ©e/halo sur les catÃ©gories
-   CorrigÃ© : QEEL, lune, Ã©toiles et logo
+   AURORA V67B  AJUSTEMENTS APRS RETOUR
+   Valid : avatars + transitions boutons/liens
+   Retir : effet de remonte/halo sur les catgories
+   Corrig : QEEL, lune, toiles et logo
    ========================================================= */
 
-/* 1) Suppression complÃ¨te de l'effet sur les catÃ©gories */
+/* 1) Suppression complte de l'effet sur les catgories */
 .category,
 .forum-category,
 .cat-row,
@@ -5257,7 +5279,7 @@ input[type="button"]:hover{
     0 0 18px rgba(141,106,163,.34)!important;
 }
 
-/* 3) La lune reste parfaitement centrÃ©e.
+/* 3) La lune reste parfaitement centre.
       L'animation passe sur le disque, pas sur le conteneur. */
 .footer-moon-wrap{
   animation:none!important;
@@ -5282,7 +5304,7 @@ input[type="button"]:hover{
   }
 }
 
-/* 4) Ã‰toiles de la lune : cible exacte et scintillement visible */
+/* 4) toiles de la lune : cible exacte et scintillement visible */
 .footer-moon-star{
   animation:auroraFooterStarTwinkle 3.8s ease-in-out infinite!important;
   transform-origin:center!important;
@@ -5373,7 +5395,7 @@ input[type="button"]:hover{
 
 
 /* =========================================================
-   AURORA V67C â€” AJUSTEMENTS QEEL / LUNE / LOGO
+   AURORA V67C  AJUSTEMENTS QEEL / LUNE / LOGO
    ========================================================= */
 
 /* 1) Statistiques QEEL :
@@ -5404,8 +5426,8 @@ input[type="button"]:hover{
     0 0 14px rgba(141,106,163,.24)!important;
 }
 
-/* 2) Lune : respiration lÃ©gÃ¨rement plus marquÃ©e,
-      sans dÃ©placer son centrage */
+/* 2) Lune : respiration lgrement plus marque,
+      sans dplacer son centrage */
 .footer-moon-disc{
   animation:auroraMoonBreathVisibleV2 6.5s ease-in-out infinite!important;
 }
@@ -5426,7 +5448,7 @@ input[type="button"]:hover{
 }
 
 /* 3) Logo AURORA :
-      le reflet se joue au chargement ET au survol pour Ãªtre observable */
+      le reflet se joue au chargement ET au survol pour tre observable */
 .nav .logo{
   position:relative!important;
   display:inline-flex!important;
@@ -5502,8 +5524,8 @@ input[type="button"]:hover{
 
 
 /* =========================================================
-   AURORA V67D â€” EFFET DU LOGO RENDU CLAIREMENT VISIBLE
-   Le reflet est dÃ©sormais testable au survol du mot AURORA.
+   AURORA V67D  EFFET DU LOGO RENDU CLAIREMENT VISIBLE
+   Le reflet est dsormais testable au survol du mot AURORA.
    ========================================================= */
 
 .nav .logo{
@@ -5522,7 +5544,7 @@ input[type="button"]:hover{
     letter-spacing .35s ease!important;
 }
 
-/* Halo discret derriÃ¨re le texte */
+/* Halo discret derrire le texte */
 .nav .logo::before{
   content:""!important;
   position:absolute!important;
@@ -5547,7 +5569,7 @@ input[type="button"]:hover{
   pointer-events:none!important;
 }
 
-/* Reflet qui traverse rÃ©ellement le texte */
+/* Reflet qui traverse rellement le texte */
 .nav .logo::after{
   content:"AURORA"!important;
   position:absolute!important;
@@ -5595,7 +5617,7 @@ input[type="button"]:hover{
   animation:auroraLogoTextSweep 1.05s ease-out 1!important;
 }
 
-/* Une fois au chargement, mais avec un dÃ©lai suffisant pour Ãªtre remarquÃ© */
+/* Une fois au chargement, mais avec un dlai suffisant pour tre remarqu */
 .nav .logo{
   animation:auroraLogoArrival .9s .35s cubic-bezier(.2,.8,.25,1) both!important;
 }
@@ -5645,8 +5667,8 @@ input[type="button"]:hover{
 
 
 /* =========================================================
-   AURORA V67E â€” SUPPRESSION DE LA LUEUR SOUS LE LOGO
-   Le reflet sur les lettres est conservÃ©.
+   AURORA V67E  SUPPRESSION DE LA LUEUR SOUS LE LOGO
+   Le reflet sur les lettres est conserv.
    ========================================================= */
 
 .nav .logo::before{
@@ -5661,7 +5683,7 @@ input[type="button"]:hover{
 
 
 /* =========================================================
-   AURORA V67F â€” LOGO SANS AUCUN REFLET NI LUEUR
+   AURORA V67F  LOGO SANS AUCUN REFLET NI LUEUR
    ========================================================= */
 
 .nav .logo,
@@ -5672,7 +5694,7 @@ input[type="button"]:hover{
   overflow:visible!important;
 }
 
-/* Supprime dÃ©finitivement tous les effets dÃ©coratifs du logo */
+/* Supprime dfinitivement tous les effets dcoratifs du logo */
 .nav .logo::before,
 .nav .logo::after,
 .nav .logo:hover::before,
@@ -5699,10 +5721,10 @@ input[type="button"]:hover{
 
 
 /* =========================================================
-   AURORA V68 â€” PROFIL, NOTIFICATIONS ET MESSAGERIE
+   AURORA V68  PROFIL, NOTIFICATIONS ET MESSAGERIE
    ========================================================= */
 
-/* Liens Profil / ParamÃ¨tres / DÃ©connexion */
+/* Liens Profil / Paramtres / Dconnexion */
 .profile-links a{
   display:flex!important;
   align-items:center!important;
@@ -5754,7 +5776,7 @@ input[type="button"]:hover{
   cursor:pointer!important;
 }
 
-/* FenÃªtre de notifications */
+/* Fentre de notifications */
 .notification-panel{
   position:absolute!important;
   z-index:1000!important;
@@ -5898,8 +5920,8 @@ input[type="button"]:hover{
 
 
 /* =========================================================
-   AURORA V68B â€” ENCARTS NOTIFICATIONS / MESSAGES PRIVÃ‰S
-   Refonte plus Ã©lÃ©gante et plus cohÃ©rente avec la maquette.
+   AURORA V68B  ENCARTS NOTIFICATIONS / MESSAGES PRIVS
+   Refonte plus lgante et plus cohrente avec la maquette.
    ========================================================= */
 
 .profile-stats{
@@ -6041,7 +6063,7 @@ input[type="button"]:hover{
 
 
 /* =========================================================
-   AURORA V68C â€” ENCARTS SUR TOUTE LA LARGEUR DU MENU PROFIL
+   AURORA V68C  ENCARTS SUR TOUTE LA LARGEUR DU MENU PROFIL
    ========================================================= */
 
 .profile-dropdown .profile-stats{
@@ -6067,7 +6089,7 @@ input[type="button"]:hover{
 
 
 /* =========================================================
-   AURORA V68D â€” LIENS PROFIL SANS POLICE TAROT
+   AURORA V68D  LIENS PROFIL SANS POLICE TAROT
    Agrandissement simple au survol.
    ========================================================= */
 
@@ -6095,7 +6117,7 @@ input[type="button"]:hover{
 
 
 /* =========================================================
-   AURORA V68E â€” LIENS PROFIL SUR TOUTE LA LARGEUR
+   AURORA V68E  LIENS PROFIL SUR TOUTE LA LARGEUR
    ========================================================= */
 
 .profile-links{
@@ -6127,7 +6149,7 @@ input[type="button"]:hover{
 
 
 /* =========================================================
-   AURORA V69 â€” Ã‰TOILE EN ORBITE AUTOUR DU DERNIER POSTEUR
+   AURORA V69  TOILE EN ORBITE AUTOUR DU DERNIER POSTEUR
    ========================================================= */
 
 /* L'avatar devient le point d'ancrage de l'orbite */
@@ -6137,7 +6159,7 @@ input[type="button"]:hover{
   isolation:isolate!important;
 }
 
-/* Cercle d'orbite trÃ¨s discret */
+/* Cercle d'orbite trs discret */
 .lastpost-avatar::before{
   content:""!important;
   position:absolute!important;
@@ -6152,7 +6174,7 @@ input[type="button"]:hover{
   pointer-events:none!important;
 }
 
-/* Petite Ã©toile qui tourne autour de l'avatar */
+/* Petite toile qui tourne autour de l'avatar */
 .lastpost-avatar::after{
   content: "*  .  *  .  *" !important;
   position:absolute!important;
@@ -6185,12 +6207,12 @@ input[type="button"]:hover{
   }
 }
 
-/* L'Ã©toile accÃ©lÃ¨re trÃ¨s lÃ©gÃ¨rement au survol */
+/* L'toile acclre trs lgrement au survol */
 .lastpost-avatar:hover::after{
   animation-duration:4.8s!important;
 }
 
-/* Mobile : orbite un peu plus resserrÃ©e */
+/* Mobile : orbite un peu plus resserre */
 @media(max-width:700px){
   .lastpost-avatar::before{
     width:calc(100% + 10px)!important;
@@ -6209,7 +6231,7 @@ input[type="button"]:hover{
 
 
 /* =========================================================
-   AURORA V69B â€” Ã‰TOILE SUR LA VRAIE CLASSE DES DERNIERS POSTS
+   AURORA V69B  TOILE SUR LA VRAIE CLASSE DES DERNIERS POSTS
    La maquette utilise .last-avatar, pas .lastpost-avatar.
    ========================================================= */
 
@@ -6219,7 +6241,7 @@ input[type="button"]:hover{
   isolation:isolate!important;
 }
 
-/* DÃ©sactive l'essai prÃ©cÃ©dent sur une classe inexistante */
+/* Dsactive l'essai prcdent sur une classe inexistante */
 .lastpost-avatar::before,
 .lastpost-avatar::after{
   content:none!important;
@@ -6241,7 +6263,7 @@ input[type="button"]:hover{
   pointer-events:none!important;
 }
 
-/* Ã‰toile en rotation */
+/* toile en rotation */
 .last-avatar::after{
   content: "*  .  *  .  *" !important;
   position:absolute!important;
@@ -6279,7 +6301,7 @@ input[type="button"]:hover{
 
 
 /* =========================================================
-   AURORA V69C â€” HEURE DES DERNIERS MESSAGES
+   AURORA V69C  HEURE DES DERNIERS MESSAGES
    ========================================================= */
 
 .last-rich small,
@@ -6300,7 +6322,7 @@ input[type="button"]:hover{
 
 
 /* =========================================================
-   AURORA V69E â€” LIEN DIRECT VERS LE DERNIER MESSAGE
+   AURORA V69E  LIEN DIRECT VERS LE DERNIER MESSAGE
    ========================================================= */
 
 .last-rich>div:last-child,
@@ -6340,7 +6362,7 @@ input[type="button"]:hover{
   transform:scale(.95) rotate(0deg)!important;
 }
 
-/* Petit repÃ¨re visuel lorsque la cible est atteinte */
+/* Petit repre visuel lorsque la cible est atteinte */
 .last-rich:target,
 .ulast-rich:target{
   animation:auroraLastMessageTarget 1.5s ease!important;
@@ -6357,7 +6379,7 @@ input[type="button"]:hover{
   }
 }
 
-/* v69F - Ã©toile inline dans le titre */
+/* v69F - toile inline dans le titre */
 .last-rich b,
 .ulast-rich b{
   display:flex!important;
@@ -6373,7 +6395,7 @@ input[type="button"]:hover{
 
 
 /* =========================================================
-   AURORA V70 â€” MODE CLAIR / SOMBRE FONCTIONNEL
+   AURORA V70  MODE CLAIR / SOMBRE FONCTIONNEL
    ========================================================= */
 
 html{
@@ -6624,7 +6646,7 @@ html.theme-dark .qeel-character{
   filter:brightness(.78) saturate(.88);
 }
 
-/* Ã‰vite les animations fortes pour les personnes concernÃ©es */
+/* vite les animations fortes pour les personnes concernes */
 @media (prefers-reduced-motion:reduce){
   body,
   .nav,
@@ -6644,8 +6666,8 @@ html.theme-dark .qeel-character{
 
 
 /* =========================================================
-   AURORA V71 â€” MODE SOMBRE COMPLET
-   Toutes les surfaces claires sont remplacÃ©es dans le thÃ¨me nuit.
+   AURORA V71  MODE SOMBRE COMPLET
+   Toutes les surfaces claires sont remplaces dans le thme nuit.
    ========================================================= */
 html.theme-dark{
   --aurora-bg:#120e17;
@@ -6660,7 +6682,7 @@ html.theme-dark{
   --aurora-shadow:0 20px 50px rgba(0,0,0,.38);
 }
 
-/* Fond gÃ©nÃ©ral */
+/* Fond gnral */
 html.theme-dark body{
   background:
     radial-gradient(circle at 12% 4%,rgba(121,80,146,.2),transparent 27%),
@@ -6732,7 +6754,7 @@ html.theme-dark :is(
   color:var(--aurora-text)!important;
 }
 
-/* PA complÃ¨te */
+/* PA complte */
 html.theme-dark .pa.pa-complete{
   background:
     radial-gradient(circle at 8% 8%,rgba(218,179,104,.07),transparent 26%),
@@ -6748,7 +6770,7 @@ html.theme-dark .pa.pa-complete::before{
   border-color:rgba(223,187,117,.36)!important;
 }
 
-/* En-tÃªtes et zones de catÃ©gories */
+/* En-ttes et zones de catgories */
 html.theme-dark :is(
   .cathead,
   .cathead-roleplay,
@@ -6925,7 +6947,7 @@ html.theme-dark :is(input,textarea,select)::placeholder{
   color:#928497!important;
 }
 
-/* Ã‰lÃ©ments visuels qui gardaient un voile blanc */
+/* lments visuels qui gardaient un voile blanc */
 html.theme-dark :is(
   .pa-card::before,
   .pa-intro::before,
@@ -7014,7 +7036,7 @@ html.theme-dark :is(.last-avatar,.av,.profile-avatar-large,.switcheroo-avatar){
   box-shadow:0 0 0 1px rgba(211,174,225,.24)!important;
 }
 
-/* Neutralisation finale des blancs rÃ©siduels les plus frÃ©quents */
+/* Neutralisation finale des blancs rsiduels les plus frquents */
 html.theme-dark [style*="background:#fff"],
 html.theme-dark [style*="background: #fff"],
 html.theme-dark [style*="background:white"],
@@ -7029,10 +7051,10 @@ html.theme-dark [style*="color: #291f31"]{
 
 
 /* =========================================================
-   AURORA V71C â€” CORRECTIONS CIBLÃ‰ES SANS CASSER LES CATÃ‰GORIES
+   AURORA V71C  CORRECTIONS CIBLES SANS CASSER LES CATGORIES
    ========================================================= */
 
-/* Retire uniquement le grand fond extÃ©rieur des catÃ©gories.
+/* Retire uniquement le grand fond extrieur des catgories.
    Les dimensions, marges, paddings et structures restent intactes. */
 html.theme-dark .category{
   background:transparent!important;
@@ -7040,8 +7062,8 @@ html.theme-dark .category{
   box-shadow:none!important;
 }
 
-/* Conserve les en-tÃªtes et les grilles tels quels pour Ã©viter
-   de casser la mise en page des catÃ©gories. */
+/* Conserve les en-ttes et les grilles tels quels pour viter
+   de casser la mise en page des catgories. */
 
 /* PA : blocs encore trop clairs */
 html.theme-dark .pred-showcase{
@@ -7146,7 +7168,7 @@ html.theme-dark .footer-bottom{
   border-top-color:rgba(213,176,226,.1)!important;
 }
 
-/* Cartes de forums : harmonisation sombre, sans toucher Ã  leur gÃ©omÃ©trie */
+/* Cartes de forums : harmonisation sombre, sans toucher  leur gomtrie */
 html.theme-dark .forum,
 html.theme-dark .uniform-card,
 html.theme-dark .rp-zone-card,
@@ -7176,7 +7198,7 @@ html.theme-dark .ulast-rich{
   box-shadow:none!important;
 }
 
-/* RÃ©duit les contrastes des blocs secondaires */
+/* Rduit les contrastes des blocs secondaires */
 html.theme-dark .qbox,
 html.theme-dark .panel,
 html.theme-dark .qeel .bloc{
@@ -7187,7 +7209,7 @@ html.theme-dark .qeel .bloc{
 
 
 /* =========================================================
-   AURORA V71D â€” SUPPRESSION DES DERNIÃˆRES ZONES CLAIRES
+   AURORA V71D  SUPPRESSION DES DERNIRES ZONES CLAIRES
    ========================================================= */
 
 /* Bouton clair/sombre : la capsule blanche devient sombre */
@@ -7216,7 +7238,7 @@ html.theme-dark .nav-actions button:hover{
   background:#281e30!important;
 }
 
-/* Bandes claires de la PA : fondues dans le fond gÃ©nÃ©ral */
+/* Bandes claires de la PA : fondues dans le fond gnral */
 html.theme-dark .pred-showcase,
 html.theme-dark .staff-side-visual,
 html.theme-dark .topsites-icons-card,
@@ -7235,7 +7257,7 @@ html.theme-dark .pred-wide::before{
   border-color:rgba(218,177,106,.06)!important;
 }
 
-/* Cartes internes moins contrastÃ©es pour supprimer l'effet de bandes */
+/* Cartes internes moins contrastes pour supprimer l'effet de bandes */
 html.theme-dark .pred-big{
   background:#201726!important;
   border-color:rgba(196,159,212,.12)!important;
@@ -7294,7 +7316,7 @@ html.theme-dark .footer-bottom{
   border-top:1px solid rgba(213,176,226,.08)!important;
 }
 
-/* QEEL : enlÃ¨ve les aplats plus clairs en forme de bande */
+/* QEEL : enlve les aplats plus clairs en forme de bande */
 html.theme-dark .qeel-content,
 html.theme-dark .qgrid,
 html.theme-dark .qbox{
@@ -7306,7 +7328,7 @@ html.theme-dark .qbox{
   border-color:rgba(210,174,224,.1)!important;
 }
 
-/* SÃ©curitÃ© : neutralise les deux blancs les plus probables */
+/* Scurit : neutralise les deux blancs les plus probables */
 html.theme-dark .search-btn,
 html.theme-dark .notification-btn{
   background:#1c1522!important;
@@ -7338,7 +7360,7 @@ html.theme-dark .forum:hover{
 
 
 /* =========================================================
-   AURORA V71E â€” SUPPRESSION DES BANDES VISUELLES RÃ‰SIDUELLES
+   AURORA V71E  SUPPRESSION DES BANDES VISUELLES RSIDUELLES
    Modifications uniquement sur la maquette UI.
    ========================================================= */
 
@@ -7370,7 +7392,7 @@ html.theme-dark .footer-credits-textarea{
   border:1px solid rgba(209,171,222,.15)!important;
 }
 
-/* --- TITRES DE CATÃ‰GORIES : retire la grande barre derriÃ¨re le titre --- */
+/* --- TITRES DE CATGORIES : retire la grande barre derrire le titre --- */
 html.theme-dark .cathead,
 html.theme-dark .cat-title-wrap,
 html.theme-dark .cathead-roleplay,
@@ -7391,12 +7413,12 @@ html.theme-dark .cathead-presentations{
   border:0!important;
 }
 
-/* garde seulement le dÃ©cor fin autour du texte */
+/* garde seulement le dcor fin autour du texte */
 html.theme-dark .cat-title-wrap{
   border-color:rgba(205,166,220,.12)!important;
 }
 
-/* --- PA : PrÃ©dÃ©finis / Staff / Top-sites sans sÃ©paration en bande --- */
+/* --- PA : Prdfinis / Staff / Top-sites sans sparation en bande --- */
 html.theme-dark .pred-wide,
 html.theme-dark .pred-showcase,
 html.theme-dark .staff-side-visual,
@@ -7478,13 +7500,13 @@ html.theme-dark .profile-stat-link{
   border-color:rgba(203,165,218,.14)!important;
 }
 
-/* Ã©vite la bande blanche du bloc d'ajout */
+/* vite la bande blanche du bloc d'ajout */
 html.theme-dark .profile-dropdown .switcheroo-add{
   background:#1d1623!important;
   border-color:rgba(203,165,218,.18)!important;
 }
 
-/* --- NAVIGATION : aucun fond blanc rÃ©siduel autour des outils --- */
+/* --- NAVIGATION : aucun fond blanc rsiduel autour des outils --- */
 html.theme-dark .nav-actions,
 html.theme-dark .tools{
   background:transparent!important;
@@ -7512,7 +7534,7 @@ html.theme-dark .footer-credits::after{
   box-shadow:none!important;
 }
 
-/* mÃªme tonalitÃ© partout pour supprimer l'effet de bande */
+/* mme tonalit partout pour supprimer l'effet de bande */
 html.theme-dark .pa-card,
 html.theme-dark .footer,
 html.theme-dark .aurora-footer-content{
@@ -7521,7 +7543,7 @@ html.theme-dark .aurora-footer-content{
 
 
 /* =========================================================
-   AURORA V71F â€” DERNIERS BLOCS CLAIRS CORRIGÃ‰S
+   AURORA V71F  DERNIERS BLOCS CLAIRS CORRIGS
    ========================================================= */
 
 /* FOOTER : bandes totalement fondues dans le fond */
@@ -7542,7 +7564,7 @@ html.theme-dark .footer-bottom{
   border-top:1px solid rgba(205,166,220,.07)!important;
 }
 
-/* CRÃ‰DITS : retire le grand rectangle plus clair */
+/* CRDITS : retire le grand rectangle plus clair */
 html.theme-dark .footer-credits{
   background:transparent!important;
   background-image:none!important;
@@ -7557,7 +7579,7 @@ html.theme-dark .footer-credits-textarea{
   box-shadow:none!important;
 }
 
-/* PRÃ‰DÃ‰FINIS : retire le fond clair derriÃ¨re les quatre cartes */
+/* PRDFINIS : retire le fond clair derrire les quatre cartes */
 html.theme-dark .pred-showcase{
   background:transparent!important;
   background-image:none!important;
@@ -7615,7 +7637,7 @@ html.theme-dark .profile-stat-link{
   box-shadow:none!important;
 }
 
-/* Ã‰vite toute bande parasite crÃ©Ã©e par pseudo-Ã©lÃ©ments */
+/* vite toute bande parasite cre par pseudo-lments */
 html.theme-dark .footer-navigation::before,
 html.theme-dark .footer-navigation::after,
 html.theme-dark .footer-bottom::before,
@@ -7632,7 +7654,7 @@ html.theme-dark .profile-dropdown::after{
 
 
 /* =========================================================
-   AURORA V71G â€” SUPPRESSION FORCÃ‰E DES BANDES RESTANTES
+   AURORA V71G  SUPPRESSION FORCE DES BANDES RESTANTES
    ========================================================= */
 
 /* FOOTER IMMERSIF : un seul fond continu */
@@ -7664,7 +7686,7 @@ html.theme-dark .footer-bottom{
   border-top:1px solid rgba(205,166,220,.06)!important;
 }
 
-/* FOOTER CRÃ‰DITS : un seul fond continu */
+/* FOOTER CRDITS : un seul fond continu */
 html.theme-dark .footer,
 html.theme-dark .footer-credits{
   background:#100c14!important;
@@ -7686,7 +7708,7 @@ html.theme-dark .footer-credits-textarea{
   box-shadow:none!important;
 }
 
-/* PRÃ‰DÃ‰FINIS : retire la bande derriÃ¨re les cartes */
+/* PRDFINIS : retire la bande derrire les cartes */
 html.theme-dark .pred-wide{
   background:#17111c!important;
   background-image:none!important;
@@ -7739,7 +7761,7 @@ html.theme-dark .profile-stat-link{
   box-shadow:none!important;
 }
 
-/* Neutralise tout pseudo-Ã©lÃ©ment pouvant recrÃ©er une bande */
+/* Neutralise tout pseudo-lment pouvant recrer une bande */
 html.theme-dark .aurora-footer-content::before,
 html.theme-dark .aurora-footer-content::after,
 html.theme-dark .footer-navigation::before,
@@ -7764,10 +7786,10 @@ html.theme-dark .profile-dropdown::after{
 
 
 /* =========================================================
-   AURORA V71H â€” CORRECTION ULTRA CIBLÃ‰E DES BANDES
+   AURORA V71H  CORRECTION ULTRA CIBLE DES BANDES
    ========================================================= */
 
-/* FOOTER : neutralisation avec forte spÃ©cificitÃ© */
+/* FOOTER : neutralisation avec forte spcificit */
 html.theme-dark body footer.aurora-footer-immersive,
 html.theme-dark body footer.aurora-footer-immersive .aurora-footer-content,
 html.theme-dark body footer.aurora-footer-immersive .aurora-footer-content nav.footer-navigation,
@@ -7784,7 +7806,7 @@ html.theme-dark body footer.aurora-footer-immersive .aurora-footer-content .foot
   border-top:1px solid rgba(205,166,220,.06)!important;
 }
 
-/* CRÃ‰DITS : suppression du grand rectangle extÃ©rieur */
+/* CRDITS : suppression du grand rectangle extrieur */
 html.theme-dark body footer.footer,
 html.theme-dark body footer.footer .footer-credits,
 html.theme-dark body footer.footer .footer-credits-heading{
@@ -7803,7 +7825,7 @@ html.theme-dark body footer.footer .footer-credits-textarea{
   box-shadow:none!important;
 }
 
-/* QEEL : barre LIENS UTILES retirÃ©e */
+/* QEEL : barre LIENS UTILES retire */
 html.theme-dark body .qeel .qeel-content .qeel-toolbar,
 html.theme-dark body .qeel .qeel-content .qeel-toolbar-title{
   background:transparent!important;
@@ -7814,7 +7836,7 @@ html.theme-dark body .qeel .qeel-content .qeel-toolbar-title{
   outline:none!important;
 }
 
-/* PRÃ‰DÃ‰FINIS : aucune bande derriÃ¨re ou autour des cartes */
+/* PRDFINIS : aucune bande derrire ou autour des cartes */
 html.theme-dark body .pa.pa-complete article.pa-card.pred-wide,
 html.theme-dark body .pa.pa-complete article.pa-card.pred-wide .pred-showcase{
   background:transparent!important;
@@ -7832,7 +7854,7 @@ html.theme-dark body .pa.pa-complete article.pa-card.pred-wide .pred-showcase .p
   box-shadow:none!important;
 }
 
-/* PROFIL : aucune bande extÃ©rieure ou intermÃ©diaire */
+/* PROFIL : aucune bande extrieure ou intermdiaire */
 html.theme-dark body nav.nav .profile-switch-card,
 html.theme-dark body nav.nav .profile-switch-card .profile-main,
 html.theme-dark body nav.nav .profile-switch-card .profile-dropdown,
@@ -7862,7 +7884,7 @@ html.theme-dark body nav.nav .profile-switch-card .profile-dropdown .switcheroo-
   box-shadow:none!important;
 }
 
-/* Pseudo-Ã©lÃ©ments responsables de bandes Ã©ventuelles */
+/* Pseudo-lments responsables de bandes ventuelles */
 html.theme-dark body footer.aurora-footer-immersive *,
 html.theme-dark body footer.footer *,
 html.theme-dark body .qeel .qeel-toolbar *,
@@ -7889,12 +7911,12 @@ html.theme-dark body nav.nav .profile-dropdown::after{
 
 
 /* =========================================================
-   AURORA V71I â€” RESTAURATION DES FONDS UTILES
+   AURORA V71I  RESTAURATION DES FONDS UTILES
    ========================================================= */
 
 /* FOOTER PRINCIPAL :
-   remet un vrai panneau sombre derriÃ¨re partenaires, coups de cÅ“ur,
-   meilleur membre, meilleur RP et crÃ©dits, sans recrÃ©er une bande plate. */
+   remet un vrai panneau sombre derrire partenaires, coups de cur,
+   meilleur membre, meilleur RP et crdits, sans recrer une bande plate. */
 html.theme-dark body footer.footer{
   background:
     radial-gradient(circle at 18% 0%,rgba(116,77,137,.11),transparent 31%),
@@ -7912,14 +7934,14 @@ html.theme-dark body footer.footer .footer-credits{
   box-shadow:none!important;
 }
 
-/* Le champ crÃ©dits reste lÃ©gÃ¨rement distinct et lisible */
+/* Le champ crdits reste lgrement distinct et lisible */
 html.theme-dark body footer.footer .footer-credits-textarea{
   background:#100c14!important;
   border:1px solid rgba(205,166,220,.15)!important;
   box-shadow:inset 0 0 0 1px rgba(255,255,255,.015)!important;
 }
 
-/* QEEL â€” LIENS UTILES :
+/* QEEL  LIENS UTILES :
    remet le fond arrondi du bandeau, mais sans le grand aplat clair. */
 html.theme-dark body .qeel .qeel-content .qeel-toolbar{
   background:
@@ -7938,7 +7960,7 @@ html.theme-dark body .qeel .qeel-content .qeel-toolbar-title{
   color:#efe4f3!important;
 }
 
-/* Les icÃ´nes restent dans le mÃªme panneau */
+/* Les icnes restent dans le mme panneau */
 html.theme-dark body .qeel .qeel-content .qeel-toolbar .qeel-tool{
   background:#6f4f80!important;
   border-color:rgba(225,194,236,.15)!important;
@@ -7951,10 +7973,10 @@ html.theme-dark body .qeel .qeel-content .qeel-toolbar .qeel-tool:hover{
 
 
 /* =========================================================
-   AURORA V71J â€” INFOBULLES ET BOÃŽTE DES PRÃ‰DÃ‰FINIS
+   AURORA V71J  INFOBULLES ET BOTE DES PRDFINIS
    ========================================================= */
 
-/* Liens utiles : aucune infobulle native sous les icÃ´nes */
+/* Liens utiles : aucune infobulle native sous les icnes */
 html.theme-dark .qeel-tool{
   position:relative!important;
 }
@@ -7965,7 +7987,7 @@ html.theme-dark .qeel-tool::after{
   display:none!important;
 }
 
-/* PrÃ©dÃ©finis : restauration du panneau principal sombre */
+/* Prdfinis : restauration du panneau principal sombre */
 html.theme-dark body .pa.pa-complete article.pa-card.pred-wide{
   background:
     radial-gradient(circle at 10% 0%,rgba(128,85,149,.09),transparent 30%),
@@ -8003,7 +8025,7 @@ html.theme-dark body .pa.pa-complete article.pa-card.pred-wide .pred-big{
 
 
 /* =========================================================
-   AURORA V71K â€” LIENS UTILES SANS EFFET PARASITE
+   AURORA V71K  LIENS UTILES SANS EFFET PARASITE
    ========================================================= */
 
 .qeel-toolbar .qeel-tool{
@@ -8049,10 +8071,10 @@ html.theme-dark .qeel-toolbar .qeel-tool:focus-visible{
 
 
 /* =========================================================
-   AURORA V71L â€” SUPPRESSION DU DÃ‰CALAGE AU SURVOL
+   AURORA V71L  SUPPRESSION DU DCALAGE AU SURVOL
    ========================================================= */
 
-/* Le bouton ne bouge plus et ne dÃ©passe plus du panneau */
+/* Le bouton ne bouge plus et ne dpasse plus du panneau */
 .qeel-toolbar .qeel-tool,
 .qeel-toolbar .qeel-tool:hover,
 .qeel-toolbar .qeel-tool:focus,
@@ -8066,7 +8088,7 @@ html.theme-dark .qeel-toolbar .qeel-tool:focus-visible{
   outline:none!important;
 }
 
-/* Lâ€™icÃ´ne ne se soulÃ¨ve plus non plus */
+/* Licne ne se soulve plus non plus */
 .qeel-toolbar .qeel-tool-icon,
 .qeel-toolbar .qeel-tool:hover .qeel-tool-icon,
 .qeel-toolbar .qeel-tool:focus .qeel-tool-icon,
@@ -8075,20 +8097,20 @@ html.theme-dark .qeel-toolbar .qeel-tool:focus-visible{
   translate:none!important;
 }
 
-/* Survol limitÃ© Ã  un simple changement de teinte */
+/* Survol limit  un simple changement de teinte */
 html.theme-dark .qeel-toolbar .qeel-tool:hover,
 html.theme-dark .qeel-toolbar .qeel-tool:focus-visible{
   background:#816092!important;
 }
 
-/* Garantit que rien ne dÃ©passe du bandeau */
+/* Garantit que rien ne dpasse du bandeau */
 .qeel-toolbar{
   overflow:hidden!important;
 }
 
 
 /* =========================================================
-   AURORA V72 â€” PASSE DE FINITION UI/UX
+   AURORA V72  PASSE DE FINITION UI/UX
    ========================================================= */
 
 /* ---------- Variables de finition ---------- */
@@ -8099,7 +8121,7 @@ html.theme-dark{
   --ui-shadow-card:0 16px 36px rgba(0,0,0,.30);
 }
 
-/* ---------- CohÃ©rence gÃ©nÃ©rale ---------- */
+/* ---------- Cohrence gnrale ---------- */
 *,
 *::before,
 *::after{
@@ -8199,7 +8221,7 @@ html.theme-dark select:focus-visible{
   text-wrap:pretty;
 }
 
-/* ---------- PrÃ©dÃ©finis ---------- */
+/* ---------- Prdfinis ---------- */
 .pred-showcase{
   align-items:stretch!important;
 }
@@ -8216,7 +8238,7 @@ html.theme-dark select:focus-visible{
   align-items:flex-end!important;
 }
 
-/* ---------- CatÃ©gories ---------- */
+/* ---------- Catgories ---------- */
 .category{
   isolation:isolate;
 }
@@ -8327,7 +8349,7 @@ html.theme-dark select:focus-visible{
   line-height:1.5!important;
 }
 
-/* ---------- Micro-interactions sans dÃ©placement parasite ---------- */
+/* ---------- Micro-interactions sans dplacement parasite ---------- */
 .qeel-tool,
 .profile-stat-link,
 .switcheroo-character,
@@ -8467,7 +8489,7 @@ html.theme-dark select:focus-visible{
   }
 }
 
-/* ---------- RÃ©duction des animations ---------- */
+/* ---------- Rduction des animations ---------- */
 @media (prefers-reduced-motion:reduce){
   html{
     scroll-behavior:auto;
@@ -8483,7 +8505,7 @@ html.theme-dark select:focus-visible{
 }
 /* ==========================================================
    RACCORDS FORUMACTIF - MAQUETTE EXACTE
-   Ces rÃ¨gles gardent le rendu original tout en acceptant les variables FA.
+   Ces rgles gardent le rendu original tout en acceptant les variables FA.
    ========================================================== */
 
 #wrap, #page-body, .page-body, .container, .forabg, .forumbg, .panel, .module {
@@ -8577,8 +8599,8 @@ html.theme-dark select:focus-visible{
 }
 
 /* ==========================================================
-   SWITCHEROO - repris et placÃ© dans la carte profil
-   Les images viennent normalement des avatars des comptes liÃ©s.
+   SWITCHEROO - repris et plac dans la carte profil
+   Les images viennent normalement des avatars des comptes lis.
    En attendant, tu peux remplacer les variables ci-dessous.
    ========================================================== */
 .profile-dropdown .switcheroo {
@@ -10811,3 +10833,260 @@ html.theme-dark select:focus-visible{
     grid-template-columns: 1fr !important;
   }
 }
+
+/* ==========================================================
+   V73D - QEEL images, groupes images, categories sans lignes bleues
+   ========================================================== */
+
+.qeel.qeel-with-character {
+  padding: 34px 34px 34px 34px !important;
+}
+
+.qeel.qeel-with-character::after {
+  display: block !important;
+  left: 0 !important;
+  right: auto !important;
+  bottom: 0 !important;
+  width: 235px !important;
+  height: 150px !important;
+  background: var(--qeel-character-img) left bottom / contain no-repeat !important;
+  border-radius: 0 34px 0 30px !important;
+  opacity: .5 !important;
+}
+
+.qeel-toolbar {
+  min-height: 58px !important;
+  display: flex !important;
+  justify-content: flex-start !important;
+  align-items: center !important;
+  gap: 10px !important;
+  padding: 10px 12px !important;
+}
+
+.qeel-toolbar-title {
+  order: 99 !important;
+  margin-left: auto !important;
+  min-width: 160px !important;
+  background: transparent !important;
+  color: #6c4b7c !important;
+  font: 18px/1 var(--font-tarot) !important;
+  letter-spacing: .04em !important;
+  text-transform: uppercase !important;
+}
+
+.qeel-toolbar .qeel-tool {
+  width: 40px !important;
+  height: 40px !important;
+  min-width: 40px !important;
+  padding: 0 !important;
+  border-radius: 10px !important;
+  background: rgba(122,88,141,.88) !important;
+  border: 1px solid rgba(255,255,255,.18) !important;
+  font-size: 0 !important;
+  overflow: hidden !important;
+}
+
+.qeel-tool-img {
+  width: 100% !important;
+  height: 100% !important;
+  display: block !important;
+  background: var(--fa-img-temp) center / cover no-repeat !important;
+}
+
+.qeel-tool-new .qeel-tool-img { background-image: var(--qeel-link-img-new) !important; }
+.qeel-tool-unanswered .qeel-tool-img { background-image: var(--qeel-link-img-unanswered) !important; }
+.qeel-tool-top .qeel-tool-img { background-image: var(--qeel-link-img-top) !important; }
+.qeel-tool-cookies .qeel-tool-img { background-image: var(--qeel-link-img-cookies) !important; }
+
+.qeel-tool-label {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  overflow: hidden !important;
+  clip: rect(0 0 0 0) !important;
+}
+
+.qeel .qbox {
+  min-height: 190px !important;
+}
+
+.qeel-stats-card {
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(250px, .95fr) !important;
+  padding: 16px !important;
+}
+
+.qeel-stat {
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+}
+
+.qeel-stat span:first-child {
+  order: 1 !important;
+}
+
+.qeel-stat strong {
+  order: 2 !important;
+}
+
+.qeel-stat small {
+  order: 3 !important;
+  display: block !important;
+  margin-top: 8px !important;
+  color: rgba(255,255,255,.72) !important;
+  font: 700 10px/1.3 Arial, sans-serif !important;
+  letter-spacing: .14em !important;
+  text-transform: uppercase !important;
+}
+
+.qeel-stat-raw,
+.qeel-stat span.qeel-stat-raw,
+.qeel-stat .qeel-stat-raw * {
+  display: none !important;
+}
+
+.qeel-newest {
+  min-height: 132px !important;
+}
+
+.qeel-newest-avatar {
+  flex: 0 0 72px !important;
+}
+
+.qeel-groups {
+  justify-content: center !important;
+  padding-left: 190px !important;
+}
+
+.qeel-groups .group-icon-item {
+  position: relative !important;
+  width: 42px !important;
+  height: 42px !important;
+  color: transparent !important;
+  background-color: rgba(122,88,141,.45) !important;
+  background-image: var(--group-img-1) !important;
+  background-position: center !important;
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
+  overflow: visible !important;
+  text-indent: -9999px !important;
+}
+
+.qeel-groups .group-icon-1 { background-image: var(--group-img-1) !important; }
+.qeel-groups .group-icon-2 { background-image: var(--group-img-2) !important; }
+.qeel-groups .group-icon-3 { background-image: var(--group-img-3) !important; }
+.qeel-groups .group-icon-4 { background-image: var(--group-img-4) !important; }
+.qeel-groups .group-icon-5 { background-image: var(--group-img-5) !important; }
+.qeel-groups .group-icon-6 { background-image: var(--group-img-6) !important; }
+.qeel-groups .group-icon-7 { background-image: var(--group-img-7) !important; }
+
+.qeel-groups .group-icon-item::after {
+  content: attr(data-group-name) !important;
+  position: absolute !important;
+  left: 50% !important;
+  bottom: calc(100% + 10px) !important;
+  z-index: 50 !important;
+  transform: translate(-50%, 6px) !important;
+  min-width: max-content !important;
+  max-width: 220px !important;
+  padding: 7px 10px !important;
+  border-radius: 4px !important;
+  background: rgba(31,22,39,.96) !important;
+  color: #f4edf7 !important;
+  font: 11px/1.25 Arial, sans-serif !important;
+  text-indent: 0 !important;
+  white-space: nowrap !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+  transition: opacity .16s ease, transform .16s ease !important;
+}
+
+.qeel-groups .group-icon-item:hover::after {
+  opacity: 1 !important;
+  transform: translate(-50%, 0) !important;
+}
+
+.fa-category {
+  position: relative !important;
+}
+
+.fa-category::before {
+  content: "" !important;
+  position: absolute !important;
+  z-index: 0 !important;
+  bottom: -26px !important;
+  width: 230px !important;
+  height: 360px !important;
+  background: transparent center bottom / contain no-repeat !important;
+  pointer-events: none !important;
+}
+
+.fa-category:nth-of-type(odd)::before {
+  left: -120px !important;
+}
+
+.fa-category:nth-of-type(even)::before {
+  right: -120px !important;
+}
+
+.fa-category:nth-of-type(1)::before { background-image: var(--cat-side-img-1) !important; }
+.fa-category:nth-of-type(2)::before { background-image: var(--cat-side-img-2) !important; }
+.fa-category:nth-of-type(3)::before { background-image: var(--cat-side-img-3) !important; }
+.fa-category:nth-of-type(4)::before { background-image: var(--cat-side-img-4) !important; }
+.fa-category:nth-of-type(5)::before { background-image: var(--cat-side-img-5) !important; }
+.fa-category:nth-of-type(6)::before { background-image: var(--cat-side-img-6) !important; }
+
+.fa-category .cathead,
+.fa-category .editorial,
+.fa-category .presentation,
+.fa-category .uniform-grid {
+  position: relative !important;
+  z-index: 2 !important;
+}
+
+.fa-category h2,
+.fa-category h3,
+.fa-category h4,
+.fa-category .covercopy h3,
+.fa-category .forum h4,
+.fa-category .last,
+.fa-category .covercopy {
+  border-color: rgba(216,181,111,.28) !important;
+  border-bottom-color: rgba(216,181,111,.28) !important;
+  box-shadow: none !important;
+}
+
+.fa-category h2::before,
+.fa-category h2::after,
+.fa-category h3::before,
+.fa-category h3::after,
+.fa-category h4::before,
+.fa-category h4::after,
+.fa-category .covercopy::before,
+.fa-category .covercopy::after {
+  border-color: rgba(216,181,111,.28) !important;
+  background: none !important;
+  box-shadow: none !important;
+}
+
+@media (max-width: 900px) {
+  .qeel-toolbar {
+    justify-content: center !important;
+  }
+
+  .qeel-toolbar-title {
+    width: 100% !important;
+    margin-left: 0 !important;
+    text-align: center !important;
+  }
+
+  .qeel-groups {
+    padding-left: 0 !important;
+  }
+
+  .qeel.qeel-with-character::after,
+  .fa-category::before {
+    opacity: .22 !important;
+  }
+}
+
