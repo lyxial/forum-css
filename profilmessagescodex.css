@@ -1,5 +1,5 @@
 /* ==========================================================
-   AURORA / HALLEY V3 - messages + profil de message
+   AURORA / HALLEY V4 - messages + profil de message
    A coller tout en bas du CSS.
    ========================================================== */
 
@@ -127,9 +127,13 @@ body.theme-dark .halley-topic-kicker {
 .halley-topic-header h1 {
   position: relative;
   z-index: 2;
-  margin: 8px 0 5px;
+  margin: 0;
   color: var(--halley-violet);
   font: italic 46px/1 Georgia, "Times New Roman", serif;
+}
+
+.halley-topic-header h1:empty {
+  display: none;
 }
 
 .halley-breadcrumb {
@@ -602,13 +606,35 @@ body.theme-dark .halley-overview-alice small {
   display: block;
 }
 
+.halley-avatar-source a,
+.halley-avatar-source span,
+.halley-avatar-source div,
+.halley-avatar-source center {
+  width: 100% !important;
+  height: 100% !important;
+  min-width: 100% !important;
+  min-height: 100% !important;
+  max-width: 100% !important;
+  max-height: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  display: block !important;
+  border: 0 !important;
+  background: none !important;
+  box-shadow: none !important;
+}
+
 .halley-avatar-ui img {
-  position: relative;
+  position: absolute !important;
+  inset: 0 !important;
   z-index: 2;
   width: 100% !important;
   height: 100% !important;
   display: block;
-  object-fit: cover;
+  max-width: none !important;
+  max-height: none !important;
+  object-fit: cover !important;
+  object-position: center !important;
   border: 0 !important;
   border-radius: 0 !important;
   box-shadow: none !important;
