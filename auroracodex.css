@@ -18062,3 +18062,524 @@ html body .aurora-footer-immersive .admin-panel-link a {
     padding-top: 22px !important;
   }
 }
+
+/* ==========================================================
+   AURORA V89 - pages forum / sous-forums
+   A coller tout en bas du CSS, apres V88.
+   ========================================================== */
+
+:root {
+  /* Image de secours des cartes de sous-forums, si un forum n'a pas d'image. */
+  --img-viewforum-card-fallback: url("https://zupimages.net/up/23/05/00ps.png");
+}
+
+html.aurora-viewforum-page body {
+  background: var(--bg, #eef0f3) !important;
+}
+
+/* Sur les pages /c... et /f..., on ne garde pas la PA/QEEL de l'index. */
+html.aurora-viewforum-page body header.banner,
+html.aurora-viewforum-page body .banner,
+html.aurora-viewforum-page body .pa.pa-complete,
+html.aurora-viewforum-page body #lyxial-pa,
+html.aurora-viewforum-page body .qeel.qeel-with-character,
+html.aurora-viewforum-page body section.qeel,
+html.aurora-viewforum-page body footer.footer,
+html.aurora-viewforum-page body .sub-header,
+html.aurora-viewforum-page body .topic-actions,
+html.aurora-viewforum-page body #info_open,
+html.aurora-viewforum-page body #picture_legend,
+html.aurora-viewforum-page body .jumpbox,
+html.aurora-viewforum-page body form[name="jumpbox"],
+html.aurora-viewforum-page body main.index-content > form,
+html.aurora-viewforum-page body form[action*="/f"],
+html.aurora-viewforum-page body form[action*="/viewforum"],
+html.aurora-viewforum-page body .lyx-hidden-between-banner-pa,
+html.aurora-viewforum-page body div[id^="prebid"],
+html.aurora-viewforum-page body iframe[id^="google_ads_iframe"] {
+  display: none !important;
+  visibility: hidden !important;
+  width: 0 !important;
+  height: 0 !important;
+  min-width: 0 !important;
+  min-height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  overflow: hidden !important;
+  opacity: 0 !important;
+}
+
+html.aurora-viewforum-page body main.index-content {
+  width: 100% !important;
+  max-width: none !important;
+  margin: 0 auto !important;
+  padding: 42px 0 80px !important;
+}
+
+/* Le personnage colle aux categories de l'index, pas aux pages internes. */
+html.aurora-viewforum-page body .fa-category::before,
+html.aurora-viewforum-page body .fa-category::after,
+html.aurora-viewforum-page body .fa-cat-side-img,
+html.aurora-viewforum-page body .category-character,
+html.aurora-viewforum-page body [data-cat-side-img] {
+  display: none !important;
+  content: none !important;
+  background: none !important;
+}
+
+html.aurora-viewforum-page body .fa-category {
+  position: relative !important;
+  z-index: 3 !important;
+  width: min(1168px, calc(100% - 48px)) !important;
+  max-width: 1168px !important;
+  margin: 0 auto 64px !important;
+  padding: 0 !important;
+  display: block !important;
+}
+
+html.aurora-viewforum-page body .fa-category .cathead,
+html.aurora-viewforum-page body .fa-category.fa-category-1 .cathead,
+html.aurora-viewforum-page body .fa-category.fa-category-2 .cathead,
+html.aurora-viewforum-page body .fa-category.fa-category-6 .cathead {
+  position: relative !important;
+  z-index: 4 !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  min-height: 108px !important;
+  margin: 0 0 34px !important;
+  padding: 0 46px !important;
+  display: flex !important;
+  align-items: center !important;
+  border: 1px solid rgba(205,166,93,.42) !important;
+  border-radius: 16px 16px 8px 8px !important;
+  background:
+    radial-gradient(circle at 94% 22%, rgba(205,166,93,.14), transparent 18%),
+    linear-gradient(135deg, rgba(255,255,255,.98), rgba(250,244,252,.96)) !important;
+  box-shadow:
+    0 18px 46px rgba(60,42,72,.12),
+    inset 0 0 0 6px rgba(255,255,255,.34) !important;
+  overflow: hidden !important;
+}
+
+html[data-lyx-theme="dark"].aurora-viewforum-page body .fa-category .cathead,
+html.dark.aurora-viewforum-page body .fa-category .cathead,
+html.aurora-viewforum-page body[data-lyx-theme="dark"] .fa-category .cathead,
+html.aurora-viewforum-page body.theme-dark .fa-category .cathead,
+body.aurora-viewforum-page[data-lyx-theme="dark"] .fa-category .cathead,
+body.aurora-viewforum-page.theme-dark .fa-category .cathead {
+  background:
+    radial-gradient(circle at 94% 22%, rgba(205,166,93,.12), transparent 18%),
+    linear-gradient(135deg, rgba(30,21,38,.98), rgba(22,14,28,.96)) !important;
+  border-color: rgba(205,166,93,.24) !important;
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,.04) !important;
+}
+
+html.aurora-viewforum-page body .fa-category .cathead::before {
+  content: "" !important;
+  display: block !important;
+  width: 62px !important;
+  height: 1px !important;
+  flex: 0 0 62px !important;
+  margin-right: 24px !important;
+  background: linear-gradient(90deg, transparent, #cda65d) !important;
+}
+
+html.aurora-viewforum-page body .fa-category .cathead::after {
+  content: "*  *  *" !important;
+  position: absolute !important;
+  right: 36px !important;
+  top: 25px !important;
+  display: block !important;
+  font: 24px/1 Georgia, serif !important;
+  letter-spacing: 9px !important;
+  color: rgba(185,144,89,.82) !important;
+}
+
+html.aurora-viewforum-page body .fa-category .cat-title-wrap,
+html.aurora-viewforum-page body .fa-category .cat-title-wrap-right {
+  width: 100% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+html.aurora-viewforum-page body .fa-category .cathead h2,
+html.aurora-viewforum-page body .fa-category .cathead h2 a {
+  margin: 0 !important;
+  padding: 0 !important;
+  color: #7d5791 !important;
+  font-family: var(--v77-font-title, Georgia, serif) !important;
+  font-size: clamp(50px, 6vw, 76px) !important;
+  font-weight: 400 !important;
+  line-height: .86 !important;
+  letter-spacing: 0 !important;
+  text-align: center !important;
+  text-transform: uppercase !important;
+  text-decoration: none !important;
+  white-space: nowrap !important;
+  text-shadow: 0 2px 0 rgba(255,255,255,.82), 0 10px 24px rgba(74,48,87,.16) !important;
+}
+
+html[data-lyx-theme="dark"].aurora-viewforum-page body .fa-category .cathead h2,
+html[data-lyx-theme="dark"].aurora-viewforum-page body .fa-category .cathead h2 a,
+html.dark.aurora-viewforum-page body .fa-category .cathead h2,
+html.dark.aurora-viewforum-page body .fa-category .cathead h2 a {
+  color: rgba(231,223,236,.86) !important;
+  text-shadow: 0 1px 0 rgba(255,255,255,.12), 0 10px 24px rgba(0,0,0,.38) !important;
+}
+
+/* Grille de sous-forums : chaque carte a la meme importance sur les pages internes. */
+html.aurora-viewforum-page body .fa-category .fa-forums,
+html.aurora-viewforum-page body .fa-category.fa-category-1 .fa-forums,
+html.aurora-viewforum-page body .fa-category.fa-category-2 .fa-forums,
+html.aurora-viewforum-page body .fa-category.fa-category-3 .fa-forums,
+html.aurora-viewforum-page body .fa-category.fa-category-4 .fa-forums,
+html.aurora-viewforum-page body .fa-category.fa-category-5 .fa-forums,
+html.aurora-viewforum-page body .fa-category.fa-category-6 .fa-forums {
+  width: 100% !important;
+  max-width: 100% !important;
+  margin: 0 !important;
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  gap: 18px !important;
+  align-items: stretch !important;
+}
+
+html.aurora-viewforum-page body .fa-category .fa-forum,
+html.aurora-viewforum-page body .fa-category.fa-category-1 .fa-forum,
+html.aurora-viewforum-page body .fa-category.fa-category-1 .fa-forum:first-child,
+html.aurora-viewforum-page body .fa-category.fa-category-2 .fa-forum,
+html.aurora-viewforum-page body .fa-category.fa-category-2 .fa-forum:first-child,
+html.aurora-viewforum-page body .fa-category.fa-category-3 .fa-forum,
+html.aurora-viewforum-page body .fa-category.fa-category-4 .fa-forum,
+html.aurora-viewforum-page body .fa-category.fa-category-5 .fa-forum,
+html.aurora-viewforum-page body .fa-category.fa-category-6 .fa-forum {
+  position: relative !important;
+  grid-column: auto !important;
+  grid-row: auto !important;
+  width: auto !important;
+  min-width: 0 !important;
+  height: 312px !important;
+  min-height: 312px !important;
+  border-radius: 18px !important;
+  overflow: hidden !important;
+  border: 1px solid rgba(126,89,145,.34) !important;
+  background-image:
+    linear-gradient(180deg, rgba(255,255,255,.08), rgba(31,22,39,.34) 42%, rgba(20,12,26,.92)),
+    var(--vf-card-bg, var(--forum-img, var(--img-viewforum-card-fallback))) !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  background-size: cover !important;
+  box-shadow: 0 22px 40px rgba(42,28,54,.16), inset 0 0 0 1px rgba(255,255,255,.25) !important;
+}
+
+html.aurora-viewforum-page body .fa-category .fa-forum-hit {
+  position: absolute !important;
+  inset: 0 !important;
+  z-index: 5 !important;
+}
+
+html.aurora-viewforum-page body .fa-category .fa-forum-meta {
+  position: absolute !important;
+  z-index: 8 !important;
+  top: 18px !important;
+  left: 20px !important;
+  right: auto !important;
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 8px !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+html.aurora-viewforum-page body .fa-category .fa-forum-meta span {
+  padding: 5px 9px !important;
+  border: 0 !important;
+  border-radius: 999px !important;
+  background: rgba(255,255,255,.14) !important;
+  color: rgba(255,255,255,.9) !important;
+  font: 800 10px/1 Arial, sans-serif !important;
+  text-shadow: 0 1px 5px rgba(0,0,0,.28) !important;
+}
+
+html.aurora-viewforum-page body .fa-category .fa-forum-copy,
+html.aurora-viewforum-page body .fa-category.fa-category-1 .fa-forum:first-child .fa-forum-copy,
+html.aurora-viewforum-page body .fa-category:not(.fa-category-1) .fa-forum.has-last-block .fa-forum-copy {
+  position: absolute !important;
+  z-index: 8 !important;
+  left: 22px !important;
+  right: 22px !important;
+  bottom: 92px !important;
+  top: auto !important;
+}
+
+html.aurora-viewforum-page body .fa-category .fa-forum:not(.has-last-block) .fa-forum-copy {
+  bottom: 28px !important;
+}
+
+html.aurora-viewforum-page body .fa-category .fa-forum-title,
+html.aurora-viewforum-page body .fa-category .fa-forum-title a {
+  margin: 0 !important;
+  color: #fff !important;
+  font-family: var(--v77-font-title, Georgia, serif) !important;
+  font-size: clamp(28px, 2.7vw, 36px) !important;
+  font-weight: 400 !important;
+  line-height: .98 !important;
+  letter-spacing: 0 !important;
+  text-transform: uppercase !important;
+  text-decoration: none !important;
+  text-shadow: 0 2px 12px rgba(0,0,0,.3) !important;
+}
+
+html.aurora-viewforum-page body .fa-category .fa-forum-title::after {
+  content: "" !important;
+  display: block !important;
+  width: 58px !important;
+  height: 1px !important;
+  margin-top: 12px !important;
+  background: linear-gradient(90deg, #cda65d, transparent) !important;
+}
+
+html.aurora-viewforum-page body .fa-category .fa-forum-description {
+  margin-top: 8px !important;
+  max-width: 95% !important;
+  max-height: 46px !important;
+  overflow: hidden !important;
+  color: rgba(255,255,255,.88) !important;
+  font: 12px/1.45 Arial, sans-serif !important;
+}
+
+html.aurora-viewforum-page body .fa-category .fa-forum-links {
+  position: absolute !important;
+  z-index: 9 !important;
+  left: 22px !important;
+  right: 22px !important;
+  bottom: 98px !important;
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 8px !important;
+  max-height: 34px !important;
+  overflow: hidden !important;
+}
+
+html.aurora-viewforum-page body .fa-category .fa-forum.has-last-block .fa-forum-links {
+  bottom: 86px !important;
+}
+
+html.aurora-viewforum-page body .fa-category .fa-forum-links:empty {
+  display: none !important;
+}
+
+html.aurora-viewforum-page body .fa-category .fa-forum-links a,
+html.aurora-viewforum-page body .fa-category .fa-forum-links .gensmall {
+  position: relative !important;
+  z-index: 10 !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  min-height: 28px !important;
+  padding: 0 16px !important;
+  border-radius: 999px !important;
+  background: rgba(255,255,255,.92) !important;
+  color: #7d5791 !important;
+  font: 800 10px/1 Arial, sans-serif !important;
+  text-transform: uppercase !important;
+  text-decoration: none !important;
+}
+
+html.aurora-viewforum-page body .fa-category .last-rich,
+html.aurora-viewforum-page body .fa-category.fa-category-1 .fa-forum:first-child .last-rich,
+html.aurora-viewforum-page body .fa-category:not(.fa-category-1) .fa-forum.has-last-block .last-rich {
+  position: absolute !important;
+  z-index: 9 !important;
+  left: 20px !important;
+  right: 44px !important;
+  bottom: 18px !important;
+  min-height: 64px !important;
+  display: grid !important;
+  grid-template-columns: 46px minmax(0, 1fr) !important;
+  align-items: center !important;
+  gap: 11px !important;
+  padding: 8px 12px !important;
+  border: 1px solid rgba(255,255,255,.5) !important;
+  border-radius: 8px !important;
+  background: rgba(255,255,255,.88) !important;
+  box-shadow: 0 12px 28px rgba(0,0,0,.12) !important;
+}
+
+html[data-lyx-theme="dark"].aurora-viewforum-page body .fa-category .last-rich,
+html.dark.aurora-viewforum-page body .fa-category .last-rich {
+  background: rgba(13,8,17,.88) !important;
+  border-color: rgba(255,255,255,.12) !important;
+}
+
+html.aurora-viewforum-page body .fa-category .last-avatar {
+  width: 46px !important;
+  height: 46px !important;
+  min-width: 46px !important;
+  border-radius: 50% !important;
+  overflow: visible !important;
+  border: 2px solid rgba(255,255,255,.88) !important;
+  background: linear-gradient(145deg, #eadcf4, #704c82) !important;
+}
+
+html.aurora-viewforum-page body .fa-category .last-avatar::after {
+  content: "*" !important;
+  position: absolute !important;
+  left: 50% !important;
+  top: 50% !important;
+  width: 60px !important;
+  height: 60px !important;
+  margin: -30px 0 0 -30px !important;
+  display: block !important;
+  color: #cda65d !important;
+  font: 18px/1 Georgia, serif !important;
+  animation: lyx-v78-orbit 4.2s linear infinite !important;
+  pointer-events: none !important;
+}
+
+html.aurora-viewforum-page body .fa-category .last-avatar img {
+  width: 100% !important;
+  height: 100% !important;
+  display: block !important;
+  object-fit: cover !important;
+  border-radius: 50% !important;
+}
+
+html.aurora-viewforum-page body .fa-category .last-post-content,
+html.aurora-viewforum-page body .fa-category .last-post-content span,
+html.aurora-viewforum-page body .fa-category .last-post-content small {
+  min-width: 0 !important;
+  color: #3f3049 !important;
+  font: 10px/1.25 Arial, sans-serif !important;
+}
+
+html[data-lyx-theme="dark"].aurora-viewforum-page body .fa-category .last-post-content,
+html[data-lyx-theme="dark"].aurora-viewforum-page body .fa-category .last-post-content span,
+html[data-lyx-theme="dark"].aurora-viewforum-page body .fa-category .last-post-content small,
+html.dark.aurora-viewforum-page body .fa-category .last-post-content,
+html.dark.aurora-viewforum-page body .fa-category .last-post-content span,
+html.dark.aurora-viewforum-page body .fa-category .last-post-content small {
+  color: rgba(255,255,255,.78) !important;
+}
+
+html.aurora-viewforum-page body .fa-category .last-post-content b,
+html.aurora-viewforum-page body .fa-category .last-post-content b a {
+  display: block !important;
+  max-width: 100% !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  white-space: nowrap !important;
+  color: #241a2d !important;
+  font: 800 11px/1.2 Arial, sans-serif !important;
+  text-decoration: none !important;
+}
+
+html[data-lyx-theme="dark"].aurora-viewforum-page body .fa-category .last-post-content b,
+html[data-lyx-theme="dark"].aurora-viewforum-page body .fa-category .last-post-content b a,
+html.dark.aurora-viewforum-page body .fa-category .last-post-content b,
+html.dark.aurora-viewforum-page body .fa-category .last-post-content b a {
+  color: #fff !important;
+}
+
+html.aurora-viewforum-page body .fa-category .forum-status,
+html.aurora-viewforum-page body .fa-category .forum-status.has-status-img {
+  position: absolute !important;
+  z-index: 11 !important;
+  right: 16px !important;
+  bottom: 20px !important;
+  width: 32px !important;
+  height: 32px !important;
+  display: block !important;
+  border: 0 !important;
+  background: none !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+}
+
+html.aurora-viewforum-page body .fa-category .forum-status img {
+  width: 32px !important;
+  height: 32px !important;
+  display: block !important;
+  object-fit: contain !important;
+  border: 0 !important;
+  background: none !important;
+  box-shadow: none !important;
+}
+
+/* Les sujets restent accessibles sous les cartes, mais sans le rendu brut ModernBB. */
+html.aurora-viewforum-page body .forumbg.announcement {
+  width: min(1168px, calc(100% - 48px)) !important;
+  margin: 34px auto 0 !important;
+  padding: 22px !important;
+  border: 1px solid rgba(126,89,145,.22) !important;
+  border-radius: 18px !important;
+  background: rgba(255,255,255,.68) !important;
+  box-shadow: 0 18px 40px rgba(60,42,72,.08) !important;
+}
+
+html[data-lyx-theme="dark"].aurora-viewforum-page body .forumbg.announcement,
+html.dark.aurora-viewforum-page body .forumbg.announcement {
+  background: rgba(29,19,37,.72) !important;
+  border-color: rgba(255,255,255,.08) !important;
+}
+
+html.aurora-viewforum-page body .forumbg.announcement .topiclist.topics {
+  background: none !important;
+  border: 0 !important;
+  padding: 0 !important;
+}
+
+html.aurora-viewforum-page body .forumbg.announcement .topiclist.topics:first-child {
+  display: none !important;
+}
+
+html.aurora-viewforum-page body .forumbg.announcement li.row {
+  border: 0 !important;
+  border-radius: 12px !important;
+  background: rgba(255,255,255,.7) !important;
+}
+
+@media (max-width: 980px) {
+  html.aurora-viewforum-page body .fa-category .fa-forums,
+  html.aurora-viewforum-page body .fa-category.fa-category-1 .fa-forums,
+  html.aurora-viewforum-page body .fa-category.fa-category-2 .fa-forums,
+  html.aurora-viewforum-page body .fa-category.fa-category-3 .fa-forums,
+  html.aurora-viewforum-page body .fa-category.fa-category-4 .fa-forums,
+  html.aurora-viewforum-page body .fa-category.fa-category-5 .fa-forums,
+  html.aurora-viewforum-page body .fa-category.fa-category-6 .fa-forums {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+}
+
+@media (max-width: 680px) {
+  html.aurora-viewforum-page body main.index-content {
+    padding-top: 24px !important;
+  }
+
+  html.aurora-viewforum-page body .fa-category {
+    width: min(100% - 24px, 1168px) !important;
+  }
+
+  html.aurora-viewforum-page body .fa-category .cathead {
+    min-height: 82px !important;
+    padding: 0 22px !important;
+  }
+
+  html.aurora-viewforum-page body .fa-category .cathead h2,
+  html.aurora-viewforum-page body .fa-category .cathead h2 a {
+    font-size: clamp(34px, 12vw, 54px) !important;
+    white-space: normal !important;
+  }
+
+  html.aurora-viewforum-page body .fa-category .fa-forums,
+  html.aurora-viewforum-page body .fa-category.fa-category-1 .fa-forums,
+  html.aurora-viewforum-page body .fa-category.fa-category-2 .fa-forums,
+  html.aurora-viewforum-page body .fa-category.fa-category-3 .fa-forums,
+  html.aurora-viewforum-page body .fa-category.fa-category-4 .fa-forums,
+  html.aurora-viewforum-page body .fa-category.fa-category-5 .fa-forums,
+  html.aurora-viewforum-page body .fa-category.fa-category-6 .fa-forums {
+    grid-template-columns: 1fr !important;
+  }
+}
