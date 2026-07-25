@@ -16620,3 +16620,114 @@ body[data-lyx-theme="dark"] .fa-category .cathead::after {
 
 .fa-category:not(.fa-category-1) .fa-forum.has-last-block.has-subforums .fa-forum-copy {
   bottom: 100px !important;
+
+/* ==========================================================
+   LYXIAL V82 - retour images categories + stats QEEL
+   A coller tout en bas du CSS, apres V81.
+   ========================================================== */
+
+/* Le JS V82 remet les classes fa-category-1, 2, 3...
+   Ces regles fonctionnent aussi si elles etaient absentes au chargement. */
+.fa-category {
+  position: relative !important;
+  overflow: visible !important;
+  isolation: isolate !important;
+}
+
+.fa-category.fa-category-1,
+.fa-category.fa-category-2,
+.fa-category.fa-category-6 {
+  overflow: visible !important;
+}
+
+/* Personnages colles aux categories. */
+.fa-category.fa-category-1::before,
+.fa-category.fa-category-2::before,
+.fa-category.fa-category-6::before {
+  content: "" !important;
+  position: absolute !important;
+  z-index: 7 !important;
+  display: block !important;
+  pointer-events: none !important;
+  user-select: none !important;
+  background-repeat: no-repeat !important;
+  background-position: center bottom !important;
+  background-size: contain !important;
+  filter: drop-shadow(0 18px 28px rgba(0,0,0,.24)) !important;
+  opacity: 1 !important;
+}
+
+.fa-category.fa-category-1::before {
+  left: -55px !important;
+  right: auto !important;
+  bottom: 0 !important;
+  width: 245px !important;
+  height: 520px !important;
+  background-image: var(--cat-side-img-local, var(--cat-side-img-1, none)) !important;
+}
+
+.fa-category.fa-category-2::before {
+  left: auto !important;
+  right: -38px !important;
+  bottom: 0 !important;
+  width: 255px !important;
+  height: 560px !important;
+  background-image: var(--cat-side-img-local, var(--cat-side-img-2, none)) !important;
+}
+
+.fa-category.fa-category-6::before {
+  left: -48px !important;
+  right: auto !important;
+  bottom: 0 !important;
+  width: 270px !important;
+  height: 500px !important;
+  background-image: var(--cat-side-img-local, var(--cat-side-img-6, none)) !important;
+}
+
+.fa-category.fa-category-3::before,
+.fa-category.fa-category-4::before,
+.fa-category.fa-category-5::before {
+  display: none !important;
+  content: none !important;
+  background: none !important;
+}
+
+/* Images de forums : on reprend l'image du champ image/description Forumactif
+   que le JS V82 place dans --forum-img. */
+.fa-category .fa-forum {
+  background:
+    linear-gradient(180deg, rgba(255,255,255,.04), rgba(25,18,32,.68) 56%, rgba(18,11,23,.96)),
+    var(--forum-img, var(--cat-current-img, linear-gradient(180deg,#b493c6 0%,#725280 55%,#201328 100%))) center / cover no-repeat !important;
+}
+
+.fa-category.fa-category-1 .fa-forum:first-child {
+  background:
+    linear-gradient(180deg, rgba(255,255,255,.02), rgba(32,22,40,.28) 44%, rgba(28,18,36,.88)),
+    var(--forum-img, var(--cat-img-1, linear-gradient(180deg,#bfa0cf 0%,#8b64a0 52%,#25162f 100%))) center / cover no-repeat !important;
+}
+
+.fa-category.fa-category-1 .fa-forum:not(:first-child) {
+  background: var(--v77-admin-card-bg, rgba(255,255,255,.96)) !important;
+}
+
+html.theme-dark .fa-category.fa-category-1 .fa-forum:not(:first-child),
+html.dark .fa-category.fa-category-1 .fa-forum:not(:first-child),
+html[data-theme="dark"] .fa-category.fa-category-1 .fa-forum:not(:first-child),
+html[data-lyx-theme="dark"] .fa-category.fa-category-1 .fa-forum:not(:first-child),
+body.theme-dark .fa-category.fa-category-1 .fa-forum:not(:first-child),
+body.dark .fa-category.fa-category-1 .fa-forum:not(:first-child),
+body[data-theme="dark"] .fa-category.fa-category-1 .fa-forum:not(:first-child),
+body[data-lyx-theme="dark"] .fa-category.fa-category-1 .fa-forum:not(:first-child) {
+  background: var(--v77-admin-card-bg, rgba(31,21,39,.96)) !important;
+}
+
+.fa-category .fa-forum-description img.fa-v82-forum-img-source,
+.fa-category .fa-forum-description img.fa-hidden-forum-img {
+  display: none !important;
+}
+
+/* QEEL : les chiffres visibles doivent venir des textes Forumactif caches. */
+.qeel-stat .qeel-stat-raw,
+.qeel-stats-card .qeel-stat-raw {
+  display: none !important;
+}
