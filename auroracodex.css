@@ -16522,3 +16522,101 @@ body[data-lyx-theme="dark"] .fa-category .cathead::after {
     bottom: 122px !important;
   }
 }
+
+
+/* ==========================================================
+   LYXIAL V81 - avatar Switcheroo + placement titres forums
+   A coller tout en bas du CSS, apres V80.
+   ========================================================== */
+
+/* Switcheroo : l'avatar du compte reste entier et centre dans une vraie case. */
+.profile-dropdown .switcheroo__squircle:not(.switcheroo__squircle--button),
+.profile-maquette .switcheroo__squircle:not(.switcheroo__squircle--button),
+.switcheroo-list .switcheroo__squircle:not(.switcheroo__squircle--button) {
+  position: relative !important;
+  min-height: 46px !important;
+  height: 46px !important;
+  width: 100% !important;
+  padding: 0 14px 0 60px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  gap: 0 !important;
+  overflow: hidden !important;
+}
+
+.profile-dropdown .switcheroo__squircle:not(.switcheroo__squircle--button) > a,
+.profile-dropdown .switcheroo__squircle:not(.switcheroo__squircle--button) > button,
+.profile-maquette .switcheroo__squircle:not(.switcheroo__squircle--button) > a,
+.profile-maquette .switcheroo__squircle:not(.switcheroo__squircle--button) > button,
+.switcheroo-list .switcheroo__squircle:not(.switcheroo__squircle--button) > a,
+.switcheroo-list .switcheroo__squircle:not(.switcheroo__squircle--button) > button {
+  position: static !important;
+  min-width: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  padding: 0 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  gap: 0 !important;
+}
+
+.profile-dropdown .switcheroo__squircle:not(.switcheroo__squircle--button) img,
+.profile-dropdown .switcheroo__squircle:not(.switcheroo__squircle--button) .switcheroo__avatar,
+.profile-dropdown .switcheroo__squircle:not(.switcheroo__squircle--button) .switcheroo__avatar img,
+.profile-maquette .switcheroo__squircle:not(.switcheroo__squircle--button) img,
+.profile-maquette .switcheroo__squircle:not(.switcheroo__squircle--button) .switcheroo__avatar,
+.profile-maquette .switcheroo__squircle:not(.switcheroo__squircle--button) .switcheroo__avatar img,
+.switcheroo-list .switcheroo__squircle:not(.switcheroo__squircle--button) img,
+.switcheroo-list .switcheroo__squircle:not(.switcheroo__squircle--button) .switcheroo__avatar,
+.switcheroo-list .switcheroo__squircle:not(.switcheroo__squircle--button) .switcheroo__avatar img {
+  position: absolute !important;
+  left: 14px !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  width: 34px !important;
+  height: 34px !important;
+  min-width: 34px !important;
+  min-height: 34px !important;
+  max-width: 34px !important;
+  max-height: 34px !important;
+  margin: 0 !important;
+  display: block !important;
+  object-fit: cover !important;
+  object-position: center !important;
+  border-radius: 50% !important;
+  overflow: hidden !important;
+}
+
+.profile-dropdown .switcheroo__squircle:not(.switcheroo__squircle--button) span,
+.profile-dropdown .switcheroo__squircle:not(.switcheroo__squircle--button) strong,
+.profile-dropdown .switcheroo__squircle:not(.switcheroo__squircle--button) .switcheroo__name,
+.profile-dropdown .switcheroo__squircle:not(.switcheroo__squircle--button) .switcheroo__username,
+.profile-dropdown .switcheroo__squircle:not(.switcheroo__squircle--button) .switcheroo__label,
+.profile-maquette .switcheroo__squircle:not(.switcheroo__squircle--button) span,
+.profile-maquette .switcheroo__squircle:not(.switcheroo__squircle--button) strong,
+.profile-maquette .switcheroo__squircle:not(.switcheroo__squircle--button) .switcheroo__name,
+.profile-maquette .switcheroo__squircle:not(.switcheroo__squircle--button) .switcheroo__username,
+.profile-maquette .switcheroo__squircle:not(.switcheroo__squircle--button) .switcheroo__label,
+.switcheroo-list .switcheroo__squircle:not(.switcheroo__squircle--button) span,
+.switcheroo-list .switcheroo__squircle:not(.switcheroo__squircle--button) strong,
+.switcheroo-list .switcheroo__squircle:not(.switcheroo__squircle--button) .switcheroo__name,
+.switcheroo-list .switcheroo__squircle:not(.switcheroo__squircle--button) .switcheroo__username,
+.switcheroo-list .switcheroo__squircle:not(.switcheroo__squircle--button) .switcheroo__label {
+  margin-left: 0 !important;
+  min-width: 0 !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  white-space: nowrap !important;
+}
+
+/* Forums avec dernier message : V80 remontait trop le titre.
+   V81 le redescend et laisse les sujets/messages visibles. */
+.fa-category:not(.fa-category-1) .fa-forum.has-last-block .fa-forum-copy {
+  bottom: 88px !important;
+  top: auto !important;
+}
+
+.fa-category:not(.fa-category-1) .fa-forum.has-last-block.has-subforums .fa-forum-copy {
+  bottom: 100px !important;
