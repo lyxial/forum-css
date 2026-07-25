@@ -16318,3 +16318,207 @@ body[data-lyx-theme="dark"] .fa-category .fa-forum-links .gensmall {
     bottom: 96px !important;
   }
 }
+
+/* ==========================================================
+   LYXIAL V80 - titres sombres, archives, switcheroo, PA
+   A coller tout en bas du CSS, apres V79.
+   ========================================================== */
+
+/* Titres de categories en mode sombre : fond sombre, texte clair,
+   comme la maquette sombre. */
+html.theme-dark .fa-category .cathead,
+html.dark .fa-category .cathead,
+html[data-theme="dark"] .fa-category .cathead,
+html[data-lyx-theme="dark"] .fa-category .cathead,
+body.theme-dark .fa-category .cathead,
+body.dark .fa-category .cathead,
+body[data-theme="dark"] .fa-category .cathead,
+body[data-lyx-theme="dark"] .fa-category .cathead {
+  background: rgba(17,10,22,.48) !important;
+  border-color: rgba(185,144,89,.2) !important;
+  box-shadow:
+    0 18px 42px rgba(0,0,0,.24),
+    inset 0 0 0 1px rgba(255,255,255,.035) !important;
+}
+
+html.theme-dark .fa-category .cathead h2,
+html.theme-dark .fa-category .cathead h2 a,
+html.dark .fa-category .cathead h2,
+html.dark .fa-category .cathead h2 a,
+html[data-theme="dark"] .fa-category .cathead h2,
+html[data-theme="dark"] .fa-category .cathead h2 a,
+html[data-lyx-theme="dark"] .fa-category .cathead h2,
+html[data-lyx-theme="dark"] .fa-category .cathead h2 a,
+body.theme-dark .fa-category .cathead h2,
+body.theme-dark .fa-category .cathead h2 a,
+body.dark .fa-category .cathead h2,
+body.dark .fa-category .cathead h2 a,
+body[data-theme="dark"] .fa-category .cathead h2,
+body[data-theme="dark"] .fa-category .cathead h2 a,
+body[data-lyx-theme="dark"] .fa-category .cathead h2,
+body[data-lyx-theme="dark"] .fa-category .cathead h2 a {
+  color: #c9c3cf !important;
+  text-shadow:
+    0 2px 0 rgba(255,255,255,.13),
+    0 0 18px rgba(213,199,224,.12) !important;
+}
+
+html.theme-dark .fa-category .cathead::after,
+html.dark .fa-category .cathead::after,
+html[data-theme="dark"] .fa-category .cathead::after,
+html[data-lyx-theme="dark"] .fa-category .cathead::after,
+body.theme-dark .fa-category .cathead::after,
+body.dark .fa-category .cathead::after,
+body[data-theme="dark"] .fa-category .cathead::after,
+body[data-lyx-theme="dark"] .fa-category .cathead::after {
+  color: rgba(210,178,115,.78) !important;
+  text-shadow: 0 0 14px rgba(210,178,115,.18) !important;
+}
+
+/* Les forums avec un bloc dernier message gardent leur titre au-dessus.
+   Cela corrige Archives trop bas et libere la place des sous-forums. */
+.fa-category .fa-forum.has-last-block .fa-forum-copy {
+  bottom: 108px !important;
+  overflow: visible !important;
+}
+
+.fa-category .fa-forum.has-last-block.has-subforums .fa-forum-copy {
+  bottom: 132px !important;
+}
+
+.fa-category .fa-forum.has-last-block .fa-forum-title,
+.fa-category .fa-forum.has-last-block .fa-forum-title a {
+  line-height: .96 !important;
+}
+
+.fa-category .fa-forum.has-last-block .fa-forum-links {
+  margin-top: 11px !important;
+}
+
+.fa-category.fa-category-1 .fa-forum:first-child .fa-forum-copy {
+  bottom: 20px !important;
+}
+
+.fa-category.fa-category-1 .fa-forum:first-child {
+  padding-bottom: 0 !important;
+}
+
+.fa-category .last-rich {
+  z-index: 16 !important;
+}
+
+/* Switcheroo dans le profil : avatar centre et nom moins colle. */
+.profile-dropdown .switcheroo,
+.profile-maquette .switcheroo,
+.switcheroo-list .switcheroo {
+  width: 100% !important;
+  max-width: 100% !important;
+}
+
+.profile-dropdown .switcheroo__squircles,
+.profile-maquette .switcheroo__squircles,
+.switcheroo-list .switcheroo__squircles {
+  width: 100% !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  gap: 8px !important;
+}
+
+.profile-dropdown .switcheroo__squircle,
+.profile-maquette .switcheroo__squircle,
+.switcheroo-list .switcheroo__squircle {
+  box-sizing: border-box !important;
+}
+
+.profile-dropdown .switcheroo__squircle:not(.switcheroo__squircle--button),
+.profile-maquette .switcheroo__squircle:not(.switcheroo__squircle--button),
+.switcheroo-list .switcheroo__squircle:not(.switcheroo__squircle--button) {
+  width: 100% !important;
+  min-width: 0 !important;
+  height: 46px !important;
+  min-height: 46px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  gap: 12px !important;
+  padding: 5px 12px !important;
+  border-radius: 10px !important;
+  text-align: left !important;
+  overflow: hidden !important;
+}
+
+.profile-dropdown .switcheroo__squircle > a,
+.profile-dropdown .switcheroo__squircle > button,
+.profile-maquette .switcheroo__squircle > a,
+.profile-maquette .switcheroo__squircle > button,
+.switcheroo-list .switcheroo__squircle > a,
+.switcheroo-list .switcheroo__squircle > button {
+  width: 100% !important;
+  min-width: 0 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  gap: 12px !important;
+  text-align: left !important;
+}
+
+.profile-dropdown .switcheroo__squircle img,
+.profile-dropdown .switcheroo__avatar,
+.profile-dropdown .switcheroo__avatar img,
+.profile-maquette .switcheroo__squircle img,
+.profile-maquette .switcheroo__avatar,
+.profile-maquette .switcheroo__avatar img,
+.switcheroo-list .switcheroo__squircle img,
+.switcheroo-list .switcheroo__avatar,
+.switcheroo-list .switcheroo__avatar img {
+  flex: 0 0 34px !important;
+  width: 34px !important;
+  height: 34px !important;
+  min-width: 34px !important;
+  min-height: 34px !important;
+  max-width: 34px !important;
+  max-height: 34px !important;
+  display: block !important;
+  margin: 0 10px 0 0 !important;
+  object-fit: cover !important;
+  object-position: center !important;
+  border-radius: 50% !important;
+}
+
+.profile-dropdown .switcheroo__squircle span,
+.profile-dropdown .switcheroo__squircle strong,
+.profile-dropdown .switcheroo__squircle .switcheroo__name,
+.profile-dropdown .switcheroo__squircle .switcheroo__username,
+.profile-dropdown .switcheroo__squircle .switcheroo__label,
+.profile-maquette .switcheroo__squircle span,
+.profile-maquette .switcheroo__squircle strong,
+.profile-maquette .switcheroo__squircle .switcheroo__name,
+.profile-maquette .switcheroo__squircle .switcheroo__username,
+.profile-maquette .switcheroo__squircle .switcheroo__label,
+.switcheroo-list .switcheroo__squircle span,
+.switcheroo-list .switcheroo__squircle strong,
+.switcheroo-list .switcheroo__squircle .switcheroo__name,
+.switcheroo-list .switcheroo__squircle .switcheroo__username,
+.switcheroo-list .switcheroo__squircle .switcheroo__label {
+  min-width: 0 !important;
+  margin-left: 4px !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  white-space: nowrap !important;
+}
+
+.profile-dropdown .switcheroo__squircle--button,
+.profile-maquette .switcheroo__squircle--button,
+.switcheroo-list .switcheroo__squircle--button {
+  width: 100% !important;
+}
+
+@media (max-width: 760px) {
+  .fa-category .fa-forum.has-last-block .fa-forum-copy {
+    bottom: 102px !important;
+  }
+
+  .fa-category .fa-forum.has-last-block.has-subforums .fa-forum-copy {
+    bottom: 122px !important;
+  }
+}
