@@ -18,8 +18,8 @@
   --halley-line: var(--line, #dccfe1);
   --halley-shadow: 0 18px 45px rgba(50,31,57,.13);
   --halley-shadow-soft: 0 10px 25px rgba(50,31,57,.08);
-  --halley-avatar-width: 200px;
-  --halley-avatar-height: 350px;
+  --halley-avatar-width: 275px;
+  --halley-avatar-height: 490px;
 
   /* Degrades raccordes aux couleurs du forum. */
   --halley-topic-gradient:
@@ -145,6 +145,34 @@ body.theme-dark .halley-topic-kicker {
   text-transform: uppercase;
 }
 
+.halley-breadcrumb br {
+  display: none !important;
+}
+
+.halley-breadcrumb *,
+.halley-breadcrumb a,
+.halley-breadcrumb a.nav,
+.halley-breadcrumb .nav {
+  width: auto !important;
+  min-width: 0 !important;
+  max-width: none !important;
+  height: auto !important;
+  min-height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: none !important;
+  box-shadow: none !important;
+  color: inherit !important;
+  font: inherit !important;
+  letter-spacing: inherit !important;
+  text-decoration: none !important;
+  text-transform: inherit !important;
+}
+
 .halley-breadcrumb a,
 .halley-breadcrumb .nav {
   color: inherit !important;
@@ -244,6 +272,10 @@ body.theme-dark .halley-topic-kicker {
     radial-gradient(circle at 0 100%, rgba(181,138,80,.10), transparent 28%),
     var(--halley-surface);
   box-shadow: var(--halley-shadow-soft);
+}
+
+.halley-post-block + .halley-post-block {
+  margin-top: 28px;
 }
 
 .halley-member-overview::after {
@@ -480,7 +512,7 @@ body.theme-dark .halley-overview-alice small {
 
 .halley-post {
   display: grid;
-  grid-template-columns: 260px minmax(0, 1fr);
+  grid-template-columns: 350px minmax(0, 1fr);
   overflow: hidden;
   border: 1px solid var(--halley-line);
   border-radius: 26px;
@@ -731,7 +763,7 @@ body.theme-dark .halley-overview-alice small {
 .halley-message-card {
   min-height: 470px;
   margin-top: 18px;
-  padding: 26px;
+  padding: 34px;
   display: flex;
   flex-direction: column;
   border: 1px solid rgba(181,138,80,.35);
@@ -743,9 +775,7 @@ body.theme-dark .halley-overview-alice small {
 }
 
 .halley-message-heading {
-  display: flex;
-  align-items: center;
-  gap: 14px;
+  display: none !important;
 }
 
 .halley-message-symbol {
@@ -777,11 +807,11 @@ body.theme-dark .halley-overview-alice small {
 
 .halley-message-body {
   flex: 1;
-  margin-top: 22px;
-  padding: 24px;
-  border: 1px solid var(--halley-line);
-  border-radius: 16px;
-  background: var(--halley-surface);
+  margin-top: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
   color: var(--halley-muted);
 }
 
@@ -887,7 +917,7 @@ body.theme-dark .halley-overview-alice small {
 
 .halley-public-card {
   display: grid;
-  grid-template-columns: 260px minmax(0, 1fr);
+  grid-template-columns: 350px minmax(0, 1fr);
   border: 1px solid var(--halley-line);
   border-radius: 26px;
   overflow: hidden;
@@ -944,7 +974,7 @@ body.theme-dark .halley-overview-alice small {
 
   .halley-post,
   .halley-public-card {
-    grid-template-columns: 250px minmax(0, 1fr);
+    grid-template-columns: 350px minmax(0, 1fr);
   }
 }
 
