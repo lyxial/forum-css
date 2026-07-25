@@ -14758,3 +14758,511 @@ html:not(.theme-dark) .fa-category .fa-forum {
   }
 }
 
+/* ==========================================================
+   LYXIAL V76 - reprise finale des categories
+   A coller tout en bas du CSS, apres V75/V74/V73.
+   ========================================================== */
+
+:root {
+  --v76-purple: #78558b;
+  --v76-gold: #b99059;
+  --v76-title-bg: linear-gradient(135deg, rgba(255,255,255,.96), rgba(246,238,250,.9));
+  --v76-title-border: rgba(166,134,94,.34);
+  --v76-card-border: rgba(154,126,169,.3);
+  --v76-shadow: 0 22px 50px rgba(48,33,58,.16);
+  --v76-font-title: var(--font-tarot, "Times New Roman", Georgia, serif);
+
+  /* Fonds de secours uniquement. Les images Forumactif passent avant. */
+  --cat-img-1: linear-gradient(180deg,#ad8dbd 0%,#6d4d7d 56%,#1d1224 100%);
+  --cat-img-2: linear-gradient(180deg,#cbb1d9 0%,#8e69a1 55%,#201328 100%);
+  --cat-img-3: linear-gradient(180deg,#b493c6 0%,#725280 55%,#201328 100%);
+  --cat-img-4: linear-gradient(180deg,#b493c6 0%,#725280 55%,#201328 100%);
+  --cat-img-5: linear-gradient(180deg,#b493c6 0%,#725280 55%,#201328 100%);
+  --cat-img-6: linear-gradient(180deg,#a784b9 0%,#684978 55%,#201328 100%);
+}
+
+/* Reset fort : les classes d'ancienne maquette ne doivent plus decaler les categories. */
+.fa-category.fa-category-1,
+.fa-category.fa-category-2,
+.fa-category.fa-category-3,
+.fa-category.fa-category-4,
+.fa-category.fa-category-5,
+.fa-category.fa-category-6 {
+  width: min(1220px, calc(100% - 32px)) !important;
+  margin: 110px auto 125px !important;
+  position: relative !important;
+  overflow: visible !important;
+  isolation: isolate !important;
+  color: #f8f3fb !important;
+}
+
+.fa-category.fa-category-1 { padding: 0 0 0 150px !important; --cat-current-img: var(--cat-img-1); }
+.fa-category.fa-category-2 { padding: 0 165px 0 0 !important; --cat-current-img: var(--cat-img-2); }
+.fa-category.fa-category-3 { padding: 0 !important; --cat-current-img: var(--cat-img-3); }
+.fa-category.fa-category-4 { padding: 0 !important; --cat-current-img: var(--cat-img-4); }
+.fa-category.fa-category-5 { padding: 0 !important; --cat-current-img: var(--cat-img-5); }
+.fa-category.fa-category-6 { padding: 0 0 0 170px !important; --cat-current-img: var(--cat-img-6); }
+
+.fa-category.fa-category-1 *,
+.fa-category.fa-category-2 *,
+.fa-category.fa-category-3 *,
+.fa-category.fa-category-4 *,
+.fa-category.fa-category-5 *,
+.fa-category.fa-category-6 * {
+  box-sizing: border-box !important;
+}
+
+/* Images de personnages : uniquement 1, 2 et 6. Central Town n'en a pas. */
+.fa-category.fa-category-1::before,
+.fa-category.fa-category-2::before,
+.fa-category.fa-category-6::before {
+  content: "" !important;
+  position: absolute !important;
+  z-index: 7 !important;
+  display: block !important;
+  pointer-events: none !important;
+  user-select: none !important;
+  background-repeat: no-repeat !important;
+  background-position: center bottom !important;
+  background-size: contain !important;
+  filter: drop-shadow(0 18px 28px rgba(0,0,0,.24)) !important;
+  opacity: 1 !important;
+}
+
+.fa-category.fa-category-1::before {
+  left: -55px !important;
+  right: auto !important;
+  bottom: 0 !important;
+  width: 245px !important;
+  height: 520px !important;
+  background-image: var(--cat-side-img-local, var(--cat-side-img-1, none)) !important;
+}
+
+.fa-category.fa-category-2::before {
+  left: auto !important;
+  right: -38px !important;
+  bottom: 0 !important;
+  width: 255px !important;
+  height: 560px !important;
+  background-image: var(--cat-side-img-local, var(--cat-side-img-2, none)) !important;
+}
+
+.fa-category.fa-category-6::before {
+  left: -48px !important;
+  right: auto !important;
+  bottom: 0 !important;
+  width: 270px !important;
+  height: 500px !important;
+  background-image: var(--cat-side-img-local, var(--cat-side-img-6, none)) !important;
+}
+
+.fa-category.fa-category-3::before,
+.fa-category.fa-category-4::before,
+.fa-category.fa-category-5::before {
+  display: none !important;
+  content: none !important;
+  background: none !important;
+}
+
+/* Encadre de titre, plus proche de la maquette. */
+.fa-category .cathead {
+  position: relative !important;
+  z-index: 12 !important;
+  display: flex !important;
+  align-items: center !important;
+  width: 100% !important;
+  min-height: 108px !important;
+  margin: 0 0 34px !important;
+  padding: 0 44px !important;
+  border: 1px solid var(--v76-title-border) !important;
+  border-radius: 18px 18px 10px 10px !important;
+  background:
+    var(--v76-title-bg),
+    radial-gradient(circle at 92% 24%, rgba(232,207,155,.2), transparent 28%) !important;
+  box-shadow:
+    0 18px 46px rgba(60,42,72,.12),
+    inset 0 0 0 6px rgba(255,255,255,.36) !important;
+  overflow: hidden !important;
+}
+
+.fa-category .cathead::before {
+  content: "" !important;
+  position: static !important;
+  display: block !important;
+  width: 62px !important;
+  height: 1px !important;
+  flex: 0 0 62px !important;
+  margin-right: 24px !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: linear-gradient(90deg, transparent, var(--v76-gold)) !important;
+  box-shadow: 0 0 10px rgba(185,144,89,.35) !important;
+}
+
+.fa-category .cathead::after {
+  content: "*   *" !important;
+  position: absolute !important;
+  right: 35px !important;
+  top: 25px !important;
+  font: 24px/1 Georgia, serif !important;
+  letter-spacing: 9px !important;
+  color: rgba(185,144,89,.78) !important;
+  text-shadow: 0 0 13px rgba(203,166,105,.34) !important;
+}
+
+.fa-category .cat-title-wrap {
+  position: relative !important;
+  z-index: 2 !important;
+  display: flex !important;
+  align-items: center !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  gap: 0 !important;
+}
+
+.fa-category .cat-title-wrap::before {
+  display: none !important;
+  content: none !important;
+}
+
+.fa-category.fa-category-2 .cat-title-wrap,
+.fa-category.fa-category-6 .cat-title-wrap {
+  justify-content: flex-end !important;
+}
+
+.fa-category.fa-category-3 .cat-title-wrap,
+.fa-category.fa-category-4 .cat-title-wrap,
+.fa-category.fa-category-5 .cat-title-wrap {
+  justify-content: center !important;
+}
+
+.fa-category .cathead h2,
+.fa-category .cathead h2 a {
+  margin: 0 !important;
+  padding: 0 !important;
+  color: var(--v76-purple) !important;
+  font-family: var(--v76-font-title) !important;
+  font-size: 76px !important;
+  font-weight: 400 !important;
+  line-height: .86 !important;
+  letter-spacing: 0 !important;
+  text-transform: uppercase !important;
+  text-decoration: none !important;
+  white-space: nowrap !important;
+  text-shadow: 0 2px 0 rgba(255,255,255,.82), 0 10px 24px rgba(74,48,87,.15) !important;
+}
+
+.fa-category .cathead h2::after {
+  content: "" !important;
+  display: none !important;
+}
+
+/* Cartes de base. */
+.fa-category .fa-forums {
+  position: relative !important;
+  z-index: 10 !important;
+  width: 100% !important;
+  margin: 0 !important;
+  display: grid !important;
+  gap: 16px !important;
+  align-items: stretch !important;
+}
+
+.fa-category .fa-forum {
+  position: relative !important;
+  min-width: 0 !important;
+  overflow: hidden !important;
+  border: 1px solid var(--v76-card-border) !important;
+  border-radius: 26px !important;
+  background:
+    linear-gradient(180deg, rgba(255,255,255,.04), rgba(25,18,32,.82) 62%, rgba(18,11,23,.96)),
+    var(--forum-img, var(--cat-current-img)) center / cover no-repeat !important;
+  box-shadow: var(--v76-shadow), inset 0 0 0 1px rgba(255,255,255,.24) !important;
+}
+
+.fa-category .fa-forum-copy {
+  position: absolute !important;
+  z-index: 8 !important;
+  left: 22px !important;
+  right: 22px !important;
+  bottom: 20px !important;
+}
+
+.fa-category .fa-forum-title,
+.fa-category .fa-forum-title a {
+  margin: 0 !important;
+  color: #fff !important;
+  font-family: var(--v76-font-title) !important;
+  font-size: 34px !important;
+  font-weight: 400 !important;
+  line-height: 1 !important;
+  letter-spacing: 0 !important;
+  text-transform: uppercase !important;
+  text-decoration: none !important;
+}
+
+.fa-category .fa-forum-title::after {
+  content: "" !important;
+  display: block !important;
+  width: 48px !important;
+  height: 1px !important;
+  margin-top: 9px !important;
+  background: linear-gradient(90deg,#d7b675,transparent) !important;
+}
+
+.fa-category .fa-forum-description {
+  margin-top: 8px !important;
+  max-width: 92% !important;
+  max-height: 48px !important;
+  overflow: hidden !important;
+  color: rgba(255,255,255,.86) !important;
+  font: 12px/1.45 Arial, sans-serif !important;
+}
+
+.fa-category .fa-forum-description img,
+.fa-category .fa-hidden-forum-img {
+  display: none !important;
+}
+
+.fa-category .fa-forum-meta {
+  position: absolute !important;
+  z-index: 9 !important;
+  top: 18px !important;
+  left: 18px !important;
+  display: flex !important;
+  gap: 7px !important;
+}
+
+.fa-category .fa-forum-meta span {
+  padding: 5px 8px !important;
+  border-radius: 999px !important;
+  background: rgba(255,255,255,.1) !important;
+  color: rgba(255,255,255,.78) !important;
+  font: 700 9px/1 Arial, sans-serif !important;
+}
+
+.fa-category .last-rich {
+  position: absolute !important;
+  z-index: 9 !important;
+  left: 18px !important;
+  right: 44px !important;
+  bottom: 18px !important;
+  min-height: 56px !important;
+  display: grid !important;
+  grid-template-columns: 42px minmax(0,1fr) !important;
+  align-items: center !important;
+  gap: 10px !important;
+  padding: 7px 10px !important;
+  border: 1px solid rgba(255,255,255,.13) !important;
+  border-radius: 8px !important;
+  background: rgba(12,8,15,.9) !important;
+}
+
+.fa-category .last-avatar {
+  width: 42px !important;
+  height: 42px !important;
+  border-radius: 50% !important;
+  overflow: hidden !important;
+  border: 2px solid rgba(255,255,255,.72) !important;
+  background: linear-gradient(145deg,#e6d6f1,#754c86) !important;
+}
+
+.fa-category .last-avatar img {
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  border-radius: inherit !important;
+}
+
+.fa-category .last-post-content {
+  min-width: 0 !important;
+  color: rgba(255,255,255,.72) !important;
+  font: 9px/1.25 Arial, sans-serif !important;
+}
+
+.fa-category .last-post-content b,
+.fa-category .last-post-content b a {
+  display: block !important;
+  max-width: 100% !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  white-space: nowrap !important;
+  color: #fff !important;
+  font: 700 10px/1.2 Arial, sans-serif !important;
+  text-decoration: none !important;
+}
+
+.fa-category .forum-status {
+  position: absolute !important;
+  z-index: 11 !important;
+  right: 12px !important;
+  bottom: 22px !important;
+  width: 30px !important;
+  height: 30px !important;
+  display: grid !important;
+  place-items: center !important;
+  border-radius: 50% !important;
+  overflow: hidden !important;
+  background: rgba(245,240,248,.92) !important;
+  text-decoration: none !important;
+}
+
+.fa-category .forum-status img {
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: contain !important;
+}
+
+/* Zone administrative : grand premier forum + blocs unis a droite. */
+.fa-category.fa-category-1 .fa-forums {
+  grid-template-columns: minmax(0,1.28fr) minmax(0,.76fr) minmax(0,.76fr) !important;
+  grid-template-rows: 250px 225px !important;
+  gap: 16px !important;
+}
+
+.fa-category.fa-category-1 .fa-forum {
+  min-height: auto !important;
+}
+
+.fa-category.fa-category-1 .fa-forum:first-child {
+  grid-row: 1 / 3 !important;
+  min-height: 491px !important;
+  background:
+    linear-gradient(180deg, rgba(255,255,255,.04), rgba(25,18,32,.82) 62%, rgba(18,11,23,.96)),
+    var(--forum-img, var(--cat-img-1)) center / cover no-repeat !important;
+}
+
+.fa-category.fa-category-1 .fa-forum:not(:first-child) {
+  background:
+    linear-gradient(180deg, rgba(38,25,47,.98), rgba(19,12,25,.98)) !important;
+  border-radius: 16px !important;
+}
+
+.fa-category.fa-category-1 .fa-forum:not(:first-child) .fa-forum-title,
+.fa-category.fa-category-1 .fa-forum:not(:first-child) .fa-forum-title a {
+  color: #c9b3cf !important;
+  font-family: Georgia, serif !important;
+  font-size: 24px !important;
+  text-transform: none !important;
+}
+
+.fa-category.fa-category-1 .fa-forum:not(:first-child) .fa-forum-description {
+  max-height: 38px !important;
+}
+
+/* Presentations : galerie 1 grand + petites cartes images. */
+.fa-category.fa-category-2 .fa-forums {
+  grid-template-columns: 1.25fr .75fr .75fr !important;
+  grid-template-rows: 250px 225px !important;
+  gap: 15px !important;
+}
+
+.fa-category.fa-category-2 .fa-forum {
+  min-height: auto !important;
+}
+
+.fa-category.fa-category-2 .fa-forum:first-child {
+  grid-row: 1 / 3 !important;
+}
+
+.fa-category.fa-category-2 .last-rich,
+.fa-category.fa-category-2 .forum-status,
+.fa-category.fa-category-2 .fa-forum-meta {
+  display: none !important;
+}
+
+/* RP : pas d'image laterale. */
+.fa-category.fa-category-3 .fa-forums,
+.fa-category.fa-category-4 .fa-forums,
+.fa-category.fa-category-5 .fa-forums {
+  grid-template-columns: repeat(3,minmax(0,1fr)) !important;
+  gap: 16px !important;
+}
+
+.fa-category.fa-category-3 .fa-forum,
+.fa-category.fa-category-4 .fa-forum,
+.fa-category.fa-category-5 .fa-forum {
+  min-height: 315px !important;
+}
+
+/* HRP : meme structure uniform-grid que la maquette, pas 4 colonnes forcees. */
+.fa-category.fa-category-6 .fa-forums {
+  grid-template-columns: repeat(3,minmax(0,1fr)) !important;
+  gap: 16px !important;
+}
+
+.fa-category.fa-category-6 .fa-forum {
+  min-height: 315px !important;
+}
+
+@media (max-width: 1100px) {
+  .fa-category.fa-category-1,
+  .fa-category.fa-category-2,
+  .fa-category.fa-category-3,
+  .fa-category.fa-category-4,
+  .fa-category.fa-category-5,
+  .fa-category.fa-category-6 {
+    width: min(100%, calc(100% - 24px)) !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  .fa-category::before {
+    opacity: .28 !important;
+  }
+
+  .fa-category .cathead h2,
+  .fa-category .cathead h2 a {
+    font-size: 58px !important;
+  }
+
+  .fa-category.fa-category-1 .fa-forums,
+  .fa-category.fa-category-2 .fa-forums,
+  .fa-category.fa-category-3 .fa-forums,
+  .fa-category.fa-category-4 .fa-forums,
+  .fa-category.fa-category-5 .fa-forums,
+  .fa-category.fa-category-6 .fa-forums {
+    grid-template-columns: repeat(2,minmax(0,1fr)) !important;
+    grid-template-rows: auto !important;
+  }
+
+  .fa-category.fa-category-1 .fa-forum:first-child,
+  .fa-category.fa-category-2 .fa-forum:first-child {
+    grid-row: auto !important;
+    grid-column: 1 / -1 !important;
+    min-height: 360px !important;
+  }
+}
+
+@media (max-width: 760px) {
+  .fa-category {
+    margin: 76px auto 90px !important;
+  }
+
+  .fa-category .cathead {
+    min-height: 92px !important;
+    padding: 0 22px !important;
+  }
+
+  .fa-category .cathead::before,
+  .fa-category .cathead::after {
+    display: none !important;
+  }
+
+  .fa-category .cathead h2,
+  .fa-category .cathead h2 a {
+    font-size: 40px !important;
+    white-space: normal !important;
+  }
+
+  .fa-category.fa-category-1 .fa-forums,
+  .fa-category.fa-category-2 .fa-forums,
+  .fa-category.fa-category-3 .fa-forums,
+  .fa-category.fa-category-4 .fa-forums,
+  .fa-category.fa-category-5 .fa-forums,
+  .fa-category.fa-category-6 .fa-forums {
+    grid-template-columns: 1fr !important;
+  }
+}
