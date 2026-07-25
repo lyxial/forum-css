@@ -16908,3 +16908,103 @@ body[data-lyx-theme="dark"] .fa-category.fa-category-1 .fa-forum:not(:first-chil
 .qeel-stats-card .qeel-stat-raw {
   display: none !important;
 }
+
+/* ==========================================================
+   LYXIAL V84 - banniere
+   A coller tout en bas du CSS, apres V83.
+   ========================================================== */
+
+/* La variable --img-banner existe deja sur le forum, mais .banner affichait
+   seulement un degrade. V84 applique vraiment l'image au bloc. */
+.banner,
+header.banner,
+.forum-wrapper > .banner {
+  display: block !important;
+  width: min(1200px, calc(100% - 50px)) !important;
+  min-height: 420px !important;
+  height: 420px !important;
+  margin: 56px auto 70px !important;
+  overflow: hidden !important;
+  border-radius: 32px !important;
+  background-image:
+    linear-gradient(180deg, rgba(31,20,39,.04), rgba(31,20,39,.2)),
+    var(--img-banner, linear-gradient(135deg,#d9c7ea 0%,#9a78ab 48%,#3a274d 100%)) !important;
+  background-position: center, center !important;
+  background-repeat: no-repeat, no-repeat !important;
+  background-size: cover, cover !important;
+  box-shadow: 0 28px 70px rgba(48,33,58,.2) !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+html.theme-dark .banner,
+html.dark .banner,
+html[data-theme="dark"] .banner,
+html[data-lyx-theme="dark"] .banner,
+body.theme-dark .banner,
+body.dark .banner,
+body[data-theme="dark"] .banner,
+body[data-lyx-theme="dark"] .banner {
+  background-image:
+    linear-gradient(180deg, rgba(12,8,17,.08), rgba(12,8,17,.28)),
+    var(--img-banner, linear-gradient(135deg,#3a274d 0%,#26192f 100%)) !important;
+  box-shadow: 0 28px 76px rgba(0,0,0,.34) !important;
+}
+
+/* Si la banniere est une image complete, le texte de secours ne doit pas
+   passer par-dessus. */
+.banner .banner-copy {
+  display: none !important;
+}
+
+/* Profil navigation : l'avatar charge par le JS doit remplacer le rond degrade. */
+.profile-avatar-large {
+  display: grid !important;
+  place-items: center !important;
+  overflow: hidden !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  background-size: cover !important;
+}
+
+.profile-avatar-large.has-avatar {
+  background-image: var(--profile-avatar-src) !important;
+}
+
+.profile-avatar-large img {
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: center !important;
+  border-radius: inherit !important;
+}
+
+/* Le x dans Switcheroo est le bouton de suppression/dissociation du compte.
+   Sur la maquette il ne doit pas etre visible dans la ligne du personnage. */
+.switcheroo [data-action="delete"],
+.switcheroo [data-action="remove"],
+.switcheroo__delete,
+.switcheroo__remove,
+.switcheroo__close,
+.switcheroo__squircle--delete {
+  display: none !important;
+}
+
+.profile-messages strong:empty::before,
+.profile-stat-card.profile-messages strong:empty::before,
+[data-profile-pms]:empty::before {
+  content: "0" !important;
+}
+
+@media (max-width: 760px) {
+  .banner,
+  header.banner,
+  .forum-wrapper > .banner {
+    width: min(100% - 24px, 1200px) !important;
+    height: 260px !important;
+    min-height: 260px !important;
+    margin: 28px auto 46px !important;
+    border-radius: 22px !important;
+  }
+}
