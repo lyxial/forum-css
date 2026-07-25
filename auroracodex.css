@@ -17008,3 +17008,63 @@ body[data-lyx-theme="dark"] .banner {
     border-radius: 22px !important;
   }
 }
+
+/* ==========================================================
+   LYXIAL V85 - banniere ultra-prioritaire
+   A coller tout en bas du CSS.
+   ========================================================== */
+
+html body header.banner,
+html body .forum-wrapper > header.banner,
+html body .forum-wrapper .banner {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  width: min(1200px, calc(100% - 50px)) !important;
+  height: 420px !important;
+  min-height: 420px !important;
+  margin: 56px auto 70px !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+  border-radius: 32px !important;
+  background:
+    linear-gradient(180deg, rgba(31,20,39,.04), rgba(31,20,39,.2)),
+    var(--img-banner, url("https://zupimages.net/up/26/29/377c.png")) center / cover no-repeat !important;
+  background-color: transparent !important;
+  background-position: center, center !important;
+  background-size: cover, cover !important;
+  background-repeat: no-repeat, no-repeat !important;
+  box-shadow: 0 28px 70px rgba(48,33,58,.2) !important;
+}
+
+html.theme-dark body header.banner,
+html.dark body header.banner,
+html[data-theme="dark"] body header.banner,
+html[data-lyx-theme="dark"] body header.banner,
+body.theme-dark header.banner,
+body.dark header.banner,
+body[data-theme="dark"] header.banner,
+body[data-lyx-theme="dark"] header.banner {
+  background:
+    linear-gradient(180deg, rgba(12,8,17,.08), rgba(12,8,17,.28)),
+    var(--img-banner, url("https://zupimages.net/up/26/29/377c.png")) center / cover no-repeat !important;
+  background-position: center, center !important;
+  background-size: cover, cover !important;
+  background-repeat: no-repeat, no-repeat !important;
+}
+
+html body header.banner .banner-copy {
+  display: none !important;
+}
+
+@media (max-width: 760px) {
+  html body header.banner,
+  html body .forum-wrapper > header.banner,
+  html body .forum-wrapper .banner {
+    width: min(100% - 24px, 1200px) !important;
+    height: 260px !important;
+    min-height: 260px !important;
+    margin: 28px auto 46px !important;
+    border-radius: 22px !important;
+  }
+}
