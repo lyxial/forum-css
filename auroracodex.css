@@ -16203,3 +16203,118 @@ body[data-lyx-theme="dark"] .fa-category .fa-forum-links .gensmall {
 .footer .footer-credits * {
   color: #fff !important;
 }
+
+/* ==========================================================
+   LYXIAL V79 - sous-forums, avatars, descriptions admin
+   A coller tout en bas du CSS, apres V78.
+   ========================================================== */
+
+/* Avatar du dernier posteur : l'image reste bien ronde, sans tache en dessous,
+   pendant que l'etoile peut continuer son orbite autour. */
+.fa-category .last-avatar {
+  overflow: visible !important;
+  border-radius: 50% !important;
+  aspect-ratio: 1 / 1 !important;
+  isolation: isolate !important;
+}
+
+.fa-category .last-avatar img {
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+  min-width: 100% !important;
+  min-height: 100% !important;
+  max-width: 100% !important;
+  max-height: 100% !important;
+  object-fit: cover !important;
+  object-position: center !important;
+  border-radius: 50% !important;
+  clip-path: circle(50% at 50% 50%) !important;
+}
+
+/* Le bloc dernier message ne doit pas cacher les sous-forums. */
+.fa-category .fa-forum.has-subforums .fa-forum-copy {
+  bottom: 104px !important;
+}
+
+.fa-category .fa-forum.has-subforums .fa-forum-links {
+  display: flex !important;
+  position: relative !important;
+  z-index: 35 !important;
+  margin-top: 12px !important;
+  pointer-events: auto !important;
+}
+
+.fa-category .fa-forum.has-subforums .fa-forum-links a,
+.fa-category .fa-forum.has-subforums .fa-forum-links .gensmall {
+  position: relative !important;
+  z-index: 36 !important;
+}
+
+.fa-category .fa-forum.has-subforums .last-rich {
+  z-index: 18 !important;
+}
+
+/* Presentations : on remet le bloc dernier message sur Admissions,
+   Predefinis, RP & Liens et Fiches. */
+.fa-category.fa-category-2 .last-rich {
+  display: grid !important;
+  left: 18px !important;
+  right: 18px !important;
+  bottom: 18px !important;
+  min-height: 58px !important;
+  grid-template-columns: 42px minmax(0,1fr) !important;
+  align-items: center !important;
+  gap: 10px !important;
+  padding: 7px 10px !important;
+  border-radius: 11px !important;
+  background: var(--v78-last-bg) !important;
+  border: 1px solid var(--v78-last-border) !important;
+  color: var(--v78-last-text) !important;
+}
+
+.fa-category.fa-category-2 .fa-forum .fa-forum-copy {
+  bottom: 102px !important;
+}
+
+.fa-category.fa-category-2 .fa-forum:first-child .fa-forum-copy {
+  bottom: 108px !important;
+}
+
+.fa-category.fa-category-2 .fa-forum:first-child .fa-forum-links {
+  position: relative !important;
+  right: auto !important;
+  bottom: auto !important;
+  justify-content: flex-start !important;
+  margin-top: 12px !important;
+}
+
+.fa-category.fa-category-2 .fa-forum-description {
+  padding-right: 0 !important;
+}
+
+.fa-category.fa-category-2 .last-post-content,
+.fa-category.fa-category-2 .last-post-content span,
+.fa-category.fa-category-2 .last-post-content small {
+  color: var(--v78-last-muted) !important;
+}
+
+.fa-category.fa-category-2 .last-post-content b,
+.fa-category.fa-category-2 .last-post-content b a {
+  color: var(--v78-last-text) !important;
+}
+
+/* Zone administrative : les descriptions doivent venir du champ Description
+   Forumactif, pas d'un texte force dans le CSS. */
+.fa-category.fa-category-1 .fa-forum:not(:first-child) .fa-forum-description {
+  min-height: 0 !important;
+}
+
+/* En mobile, on evite que les sous-forums remontent trop haut. */
+@media (max-width: 760px) {
+  .fa-category .fa-forum.has-subforums .fa-forum-copy,
+  .fa-category.fa-category-2 .fa-forum .fa-forum-copy,
+  .fa-category.fa-category-2 .fa-forum:first-child .fa-forum-copy {
+    bottom: 96px !important;
+  }
+}
