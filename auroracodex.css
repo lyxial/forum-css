@@ -17398,3 +17398,311 @@ html body .aurora-footer-immersive .admin-panel-link a {
     flex-wrap: wrap !important;
   }
 }
+
+/* ==========================================================
+   AURORA V87 - correctifs prioritaires
+   A coller tout en bas du CSS, apres V86.
+   ========================================================== */
+
+/* Banniere : pas de voile, et espace reduit avant la PA. */
+html body header.banner,
+html body .forum-wrapper > header.banner,
+html body .forum-wrapper .banner,
+html body .banner {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  filter: none !important;
+  width: min(1200px, calc(100% - 50px)) !important;
+  height: 420px !important;
+  min-height: 420px !important;
+  margin: 56px auto 12px !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+  border-radius: 32px !important;
+  background-image: var(--img-banner, url("https://zupimages.net/up/26/29/377c.png")) !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  background-size: cover !important;
+  background-color: transparent !important;
+  box-shadow: 0 24px 52px rgba(48,33,58,.16) !important;
+}
+
+html.theme-dark body header.banner,
+html.dark body header.banner,
+html[data-theme="dark"] body header.banner,
+html[data-lyx-theme="dark"] body header.banner,
+body.theme-dark header.banner,
+body.dark header.banner,
+body[data-theme="dark"] header.banner,
+body[data-lyx-theme="dark"] header.banner,
+html.theme-dark body .banner,
+html.dark body .banner,
+html[data-theme="dark"] body .banner,
+html[data-lyx-theme="dark"] body .banner,
+body.theme-dark .banner,
+body.dark .banner,
+body[data-theme="dark"] .banner,
+body[data-lyx-theme="dark"] .banner {
+  filter: none !important;
+  opacity: 1 !important;
+  background-image: var(--img-banner, url("https://zupimages.net/up/26/29/377c.png")) !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  background-size: cover !important;
+}
+
+html body .banner::before,
+html body .banner::after,
+html body header.banner::before,
+html body header.banner::after,
+html body main.index-content::before,
+html body main.index-content::after,
+html body .pa-complete::before,
+html body .pa-complete::after,
+html body #lyxial-pa::before,
+html body #lyxial-pa::after {
+  content: none !important;
+  display: none !important;
+  opacity: 0 !important;
+  background: none !important;
+}
+
+html body header.banner .banner-copy,
+html body .banner .banner-copy {
+  display: none !important;
+}
+
+html body main.index-content {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+html body .pa-complete,
+html body #lyxial-pa,
+html body main.index-content > .pa {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+/* Bloc vide / pub Forumactif entre la banniere et la PA. */
+html body section.pa-card.fa-admin-message,
+html body .fa-admin-message,
+html body div[id^="prebid"],
+html body iframe[id^="google_ads_iframe"],
+html body .lyx-hidden-between-banner-pa {
+  display: none !important;
+  visibility: hidden !important;
+  width: 0 !important;
+  height: 0 !important;
+  min-width: 0 !important;
+  min-height: 0 !important;
+  max-width: 0 !important;
+  max-height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  overflow: hidden !important;
+  opacity: 0 !important;
+}
+
+/* Navigation : trait de survol centre sous chaque mot. */
+html body .nav .menu a,
+html body nav.nav .menu a {
+  position: relative !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  min-height: 28px !important;
+  padding: 0 0 7px !important;
+  text-align: center !important;
+}
+
+html body .nav .menu a::after,
+html body nav.nav .menu a::after {
+  content: "" !important;
+  position: absolute !important;
+  left: 50% !important;
+  right: auto !important;
+  bottom: -2px !important;
+  width: 0 !important;
+  height: 1px !important;
+  margin: 0 !important;
+  transform: translateX(-50%) !important;
+  transform-origin: center !important;
+  background: #cda65d !important;
+  opacity: 0 !important;
+  transition: width .22s ease, opacity .22s ease !important;
+}
+
+html body .nav .menu a:hover::after,
+html body .nav .menu a:focus-visible::after,
+html body nav.nav .menu a:hover::after,
+html body nav.nav .menu a:focus-visible::after {
+  width: 42px !important;
+  opacity: 1 !important;
+}
+
+/* Switcheroo : vrais avatars ronds, non ovales. */
+html body .profile-dropdown .switcheroo__squircles,
+html body .profile-maquette .switcheroo__squircles,
+html body .switcheroo-list .switcheroo__squircles {
+  width: 100% !important;
+  display: grid !important;
+  grid-template-columns: 1fr !important;
+  gap: 8px !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+html body .profile-dropdown .switcheroo__squircle:not(.switcheroo__squircle--button),
+html body .profile-maquette .switcheroo__squircle:not(.switcheroo__squircle--button),
+html body .switcheroo-list .switcheroo__squircle:not(.switcheroo__squircle--button) {
+  box-sizing: border-box !important;
+  width: 100% !important;
+  min-width: 0 !important;
+  height: 46px !important;
+  min-height: 46px !important;
+  padding: 5px 14px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  gap: 14px !important;
+  overflow: hidden !important;
+}
+
+html body .profile-dropdown .switcheroo__squircle:not(.switcheroo__squircle--button) > a,
+html body .profile-dropdown .switcheroo__squircle:not(.switcheroo__squircle--button) > button,
+html body .profile-maquette .switcheroo__squircle:not(.switcheroo__squircle--button) > a,
+html body .profile-maquette .switcheroo__squircle:not(.switcheroo__squircle--button) > button,
+html body .switcheroo-list .switcheroo__squircle:not(.switcheroo__squircle--button) > a,
+html body .switcheroo-list .switcheroo__squircle:not(.switcheroo__squircle--button) > button {
+  width: 100% !important;
+  min-width: 0 !important;
+  height: 100% !important;
+  padding: 0 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  gap: 14px !important;
+}
+
+html body .profile-dropdown .switcheroo__squircle img,
+html body .profile-dropdown .switcheroo__avatar,
+html body .profile-dropdown .switcheroo__avatar img,
+html body .profile-maquette .switcheroo__squircle img,
+html body .profile-maquette .switcheroo__avatar,
+html body .profile-maquette .switcheroo__avatar img,
+html body .switcheroo-list .switcheroo__squircle img,
+html body .switcheroo-list .switcheroo__avatar,
+html body .switcheroo-list .switcheroo__avatar img {
+  position: relative !important;
+  left: auto !important;
+  right: auto !important;
+  top: auto !important;
+  bottom: auto !important;
+  inset: auto !important;
+  transform: none !important;
+  box-sizing: border-box !important;
+  flex: 0 0 34px !important;
+  width: 34px !important;
+  height: 34px !important;
+  min-width: 34px !important;
+  min-height: 34px !important;
+  max-width: 34px !important;
+  max-height: 34px !important;
+  aspect-ratio: 1 / 1 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  display: block !important;
+  object-fit: cover !important;
+  object-position: center !important;
+  border-radius: 50% !important;
+  overflow: hidden !important;
+}
+
+html body .profile-dropdown .switcheroo__squircle span,
+html body .profile-dropdown .switcheroo__squircle strong,
+html body .profile-dropdown .switcheroo__squircle .switcheroo__name,
+html body .profile-dropdown .switcheroo__squircle .switcheroo__username,
+html body .profile-dropdown .switcheroo__squircle .switcheroo__label,
+html body .profile-maquette .switcheroo__squircle span,
+html body .profile-maquette .switcheroo__squircle strong,
+html body .profile-maquette .switcheroo__squircle .switcheroo__name,
+html body .profile-maquette .switcheroo__squircle .switcheroo__username,
+html body .profile-maquette .switcheroo__squircle .switcheroo__label,
+html body .switcheroo-list .switcheroo__squircle span,
+html body .switcheroo-list .switcheroo__squircle strong,
+html body .switcheroo-list .switcheroo__squircle .switcheroo__name,
+html body .switcheroo-list .switcheroo__squircle .switcheroo__username,
+html body .switcheroo-list .switcheroo__squircle .switcheroo__label {
+  min-width: 0 !important;
+  margin-left: 0 !important;
+  padding-left: 0 !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  white-space: nowrap !important;
+}
+
+/* Footer : liens visibles en mode clair comme en mode sombre. */
+html body .aurora-footer-immersive,
+html body .aurora-footer-immersive * {
+  color: rgba(255,255,255,.92) !important;
+}
+
+html body .aurora-footer-immersive a,
+html body .aurora-footer-immersive a:link,
+html body .aurora-footer-immersive a:visited {
+  color: rgba(255,255,255,.9) !important;
+  opacity: 1 !important;
+  text-decoration: none !important;
+}
+
+html body .aurora-footer-immersive a:hover,
+html body .aurora-footer-immersive a:focus-visible {
+  color: #efd590 !important;
+}
+
+html body .aurora-footer-immersive .footer-brand {
+  color: #fff !important;
+  opacity: 1 !important;
+  text-shadow: 0 0 18px rgba(255,255,255,.24) !important;
+}
+
+html body .aurora-footer-immersive .footer-navigation {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: clamp(22px, 4vw, 58px) !important;
+}
+
+html body .aurora-footer-immersive .footer-bottom,
+html body .aurora-footer-immersive .admin-panel-link {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 14px !important;
+  flex-wrap: wrap !important;
+}
+
+html body .aurora-footer-immersive .footer-bottom a,
+html body .aurora-footer-immersive .admin-panel-link a {
+  color: rgba(255,255,255,.92) !important;
+  font-size: 10px !important;
+  text-transform: uppercase !important;
+  letter-spacing: .11em !important;
+  font-weight: 700 !important;
+}
+
+@media (max-width: 760px) {
+  html body header.banner,
+  html body .forum-wrapper > header.banner,
+  html body .forum-wrapper .banner,
+  html body .banner {
+    width: min(100% - 24px, 1200px) !important;
+    height: 260px !important;
+    min-height: 260px !important;
+    margin: 28px auto 10px !important;
+    border-radius: 22px !important;
+  }
+}
