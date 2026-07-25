@@ -15968,3 +15968,238 @@ body[data-lyx-theme="dark"] {
     grid-template-columns: 1fr !important;
   }
 }
+
+/* ==========================================================
+   LYXIAL V78 - correctif apres V77
+   A coller tout en bas du CSS, apres V77.
+   ========================================================== */
+
+:root {
+  --v78-last-bg: rgba(255,255,255,.86);
+  --v78-last-border: rgba(126,85,144,.2);
+  --v78-last-text: #2e2436;
+  --v78-last-muted: #77687f;
+  --v78-last-avatar-bg: linear-gradient(145deg,#eadcf4,#704c82);
+}
+
+html.theme-dark,
+html.dark,
+html[data-theme="dark"],
+html[data-lyx-theme="dark"],
+body.theme-dark,
+body.dark,
+body[data-theme="dark"],
+body[data-lyx-theme="dark"] {
+  --v78-last-bg: rgba(12,8,15,.9);
+  --v78-last-border: rgba(255,255,255,.13);
+  --v78-last-text: #fff;
+  --v78-last-muted: rgba(255,255,255,.68);
+}
+
+/* L'ancien JS mettait parfois l'image du forum comme personnage.
+   V78 force les vraies variables de personnages a passer devant. */
+.fa-category.fa-category-1::before {
+  background-image: var(--cat-side-img-1, none) !important;
+}
+
+.fa-category.fa-category-2::before {
+  background-image: var(--cat-side-img-2, none) !important;
+}
+
+.fa-category.fa-category-6::before {
+  background-image: var(--cat-side-img-6, none) !important;
+}
+
+.fa-category.fa-category-1.fa-v78-has-side-source::before {
+  background-image: var(--cat-side-img-local, var(--cat-side-img-1, none)) !important;
+}
+
+.fa-category.fa-category-2.fa-v78-has-side-source::before {
+  background-image: var(--cat-side-img-local, var(--cat-side-img-2, none)) !important;
+}
+
+.fa-category.fa-category-6.fa-v78-has-side-source::before {
+  background-image: var(--cat-side-img-local, var(--cat-side-img-6, none)) !important;
+}
+
+/* Tous les titres prennent exactement la largeur des blocs en dessous. */
+body .fa-category.fa-category-1 .cathead,
+body .fa-category.fa-category-2 .cathead,
+body .fa-category.fa-category-3 .cathead,
+body .fa-category.fa-category-4 .cathead,
+body .fa-category.fa-category-5 .cathead,
+body .fa-category.fa-category-6 .cathead {
+  width: 100% !important;
+  max-width: 100% !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  transform: none !important;
+}
+
+/* Sous-forums : liens en petites capsules comme sur la maquette. */
+.fa-category .fa-forum-links {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  align-items: center !important;
+  gap: 8px !important;
+  margin-top: 12px !important;
+  min-height: 0 !important;
+  max-height: none !important;
+  overflow: visible !important;
+  position: relative !important;
+  z-index: 14 !important;
+}
+
+.fa-category .fa-forum-links:empty {
+  display: none !important;
+}
+
+.fa-category .fa-forum-links a,
+.fa-category .fa-forum-links .gensmall {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  min-height: 28px !important;
+  padding: 7px 13px !important;
+  border-radius: 999px !important;
+  border: 1px solid rgba(126,85,144,.16) !important;
+  background: rgba(255,255,255,.92) !important;
+  color: var(--v77-purple, #78558b) !important;
+  box-shadow: 0 7px 16px rgba(41,27,49,.1) !important;
+  font: 700 9px/1 Arial, sans-serif !important;
+  text-transform: uppercase !important;
+  text-decoration: none !important;
+  white-space: nowrap !important;
+}
+
+html.theme-dark .fa-category .fa-forum-links a,
+html.theme-dark .fa-category .fa-forum-links .gensmall,
+body.theme-dark .fa-category .fa-forum-links a,
+body.theme-dark .fa-category .fa-forum-links .gensmall,
+html[data-lyx-theme="dark"] .fa-category .fa-forum-links a,
+html[data-lyx-theme="dark"] .fa-category .fa-forum-links .gensmall,
+body[data-lyx-theme="dark"] .fa-category .fa-forum-links a,
+body[data-lyx-theme="dark"] .fa-category .fa-forum-links .gensmall {
+  background: rgba(255,255,255,.12) !important;
+  color: #fff !important;
+  border-color: rgba(255,255,255,.18) !important;
+}
+
+.fa-category.fa-category-2 .fa-forum:first-child .fa-forum-links {
+  position: absolute !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  justify-content: flex-end !important;
+  margin: 0 !important;
+}
+
+.fa-category.fa-category-2 .fa-forum:first-child .fa-forum-description {
+  padding-right: 150px !important;
+}
+
+/* Derniers messages : clair en mode clair, sombre en mode sombre. */
+.fa-category .last-rich,
+.fa-category .ulast-rich {
+  background: var(--v78-last-bg) !important;
+  border-color: var(--v78-last-border) !important;
+  color: var(--v78-last-text) !important;
+}
+
+.fa-category .last-post-content,
+.fa-category .last-post-content span,
+.fa-category .last-post-content small,
+.fa-category .ulast-rich,
+.fa-category .ulast-rich span,
+.fa-category .ulast-rich small {
+  color: var(--v78-last-muted) !important;
+}
+
+.fa-category .last-post-content b,
+.fa-category .last-post-content b a,
+.fa-category .ulast-rich b,
+.fa-category .ulast-rich b a {
+  color: var(--v78-last-text) !important;
+}
+
+/* Etoile en orbite autour de l'avatar du dernier posteur. */
+.fa-category .last-avatar {
+  position: relative !important;
+  overflow: visible !important;
+  background: var(--v78-last-avatar-bg) !important;
+}
+
+.fa-category .last-avatar img {
+  position: relative !important;
+  z-index: 2 !important;
+  border-radius: 50% !important;
+}
+
+.fa-category .last-avatar::after {
+  content: "" !important;
+  position: absolute !important;
+  z-index: 3 !important;
+  left: 50% !important;
+  top: 50% !important;
+  width: 8px !important;
+  height: 8px !important;
+  margin: -4px 0 0 -4px !important;
+  background: #d7b675 !important;
+  clip-path: polygon(50% 0, 62% 34%, 100% 50%, 62% 66%, 50% 100%, 38% 66%, 0 50%, 38% 34%) !important;
+  filter: drop-shadow(0 0 6px rgba(215,182,117,.72)) !important;
+  animation: lyx-v78-orbit 4.2s linear infinite !important;
+  transform-origin: center center !important;
+  pointer-events: none !important;
+}
+
+@keyframes lyx-v78-orbit {
+  from {
+    transform: rotate(0deg) translateX(26px) rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg) translateX(26px) rotate(-360deg);
+  }
+}
+
+/* Statuts new / no new / lock : seulement l'image Forumactif, sans fond ni cadre. */
+.fa-category .forum-status,
+.fa-category .forum-status.has-status-img {
+  width: 30px !important;
+  height: 30px !important;
+  padding: 0 !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  overflow: visible !important;
+}
+
+.fa-category .forum-status::before,
+.fa-category .forum-status::after {
+  display: none !important;
+  content: none !important;
+}
+
+.fa-category .forum-status img {
+  display: block !important;
+  width: 30px !important;
+  height: 30px !important;
+  object-fit: contain !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+/* Footer : tous les textes en blanc. */
+.footer,
+.footer *,
+.footer h3,
+.footer b,
+.footer p,
+.footer a,
+.footer span,
+.footer small,
+.footer .footer-credits,
+.footer .footer-credits * {
+  color: #fff !important;
+}
