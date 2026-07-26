@@ -1,5 +1,5 @@
 /* ==========================================================
-   AURORA / HALLEY V4 - messages + profil de message
+   AURORA / HALLEY V5 - messages + profil de message
    A coller tout en bas du CSS.
    ========================================================== */
 
@@ -20,6 +20,7 @@
   --halley-shadow-soft: 0 10px 25px rgba(50,31,57,.08);
   --halley-avatar-width: 275px;
   --halley-avatar-height: 490px;
+  --halley-font-tarot: var(--v77-font-title, "Tarot", "Cinzel Decorative", Georgia, serif);
 
   /* Degrades raccordes aux couleurs du forum. */
   --halley-topic-gradient:
@@ -127,9 +128,16 @@ body.theme-dark .halley-topic-kicker {
 .halley-topic-header h1 {
   position: relative;
   z-index: 2;
-  margin: 0;
+  margin: 8px 0 5px;
   color: var(--halley-violet);
-  font: italic 46px/1 Georgia, "Times New Roman", serif;
+  font-family: var(--halley-font-tarot);
+  font-size: clamp(46px, 6vw, 76px);
+  font-weight: 400;
+  font-style: normal;
+  line-height: .9;
+  letter-spacing: 0;
+  text-transform: none;
+  text-shadow: 0 2px 0 rgba(255,255,255,.64), 0 10px 24px rgba(74,48,87,.16);
 }
 
 .halley-topic-header h1:empty {
@@ -652,19 +660,7 @@ body.theme-dark .halley-overview-alice small {
 }
 
 .halley-avatar-name {
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 3;
-  width: 100%;
-  padding: 12px 10px;
-  background: linear-gradient(transparent, rgba(31,21,38,.82));
-  color: #fff;
-  font: 700 12px/1 Arial, sans-serif;
-  letter-spacing: .14em;
-  text-align: center;
-  text-transform: uppercase;
+  display: none !important;
 }
 
 .halley-rank {
