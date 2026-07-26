@@ -1634,3 +1634,29 @@ body.theme-dark .halley-profile-links .halley-contact-link .bi {
   transform: none !important;
   pointer-events: none !important;
 }
+
+/* ==========================================================
+   AURORA / HALLEY V13 - images decoratives non cliquables
+   A coller tout en bas du CSS existant, apres la V12.
+   ========================================================== */
+
+/* Le badge doit capter le clic pour qu'il ne traverse pas vers l'avatar. */
+.halley-rank-badge,
+[data-halley-rank-badge],
+.halley-overview-emblem,
+[data-halley-icon-slot] {
+  pointer-events: auto !important;
+  cursor: default !important;
+}
+
+.halley-rank-badge a,
+[data-halley-rank-badge] a,
+.halley-overview-emblem a,
+[data-halley-icon-slot] a,
+.halley-rank-badge img,
+[data-halley-rank-badge] img,
+.halley-overview-emblem img,
+[data-halley-icon-slot] img {
+  pointer-events: none !important;
+  cursor: default !important;
+}
