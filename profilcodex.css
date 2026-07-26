@@ -745,3 +745,11 @@ body.theme-dark .ahp-contact-link {
     flex-direction: column;
   }
 }
+
+/* Correctif recompenses sous l'avatar dans viewtopic_body */
+.aht-awards{margin:12px 0;padding:10px;border:1px solid var(--aht-line,var(--line,#dccfe1));border-radius:12px;background:var(--aht-surface-2,var(--card-soft,#f2eaf5))}
+.aht-awards-title{display:block;margin-bottom:8px;color:var(--aht-muted,var(--muted,#817486));font-size:7px;font-weight:700;letter-spacing:.15em;text-transform:uppercase}
+.aht-awards-list{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:7px}
+.aht-awards-list img{width:36px!important;height:36px!important;max-width:36px!important;max-height:36px!important;object-fit:contain!important;border:0!important;background:none!important;box-shadow:none!important}
+.aht-awards-list a{display:inline-grid;place-items:center;text-decoration:none!important}
+.aht-awards .award_more{margin-top:8px;text-align:center}
