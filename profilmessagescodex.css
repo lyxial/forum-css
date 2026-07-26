@@ -1,7 +1,12 @@
 /* ==========================================================
-   AURORA / HALLEY V6 - messages + profil de message
-   A coller tout en bas du CSS.
+   AURORA / HALLEY V7 - messages + profil de message
+   A coller dans le CSS.
+   Important : les deux lignes @import doivent rester tout en haut
+   de la feuille CSS Forumactif si les icones ne s'affichent pas.
    ========================================================== */
+
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css");
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
 
 :root {
   --halley-page: var(--bg, #eee8f2);
@@ -348,6 +353,7 @@ body.theme-dark .halley-topic-kicker {
   box-shadow:
     0 0 0 1px rgba(255,255,255,.27),
     inset 0 0 0 7px rgba(255,255,255,.025);
+  overflow: hidden;
   pointer-events: none;
 }
 
@@ -367,6 +373,29 @@ body.theme-dark .halley-topic-kicker {
   color: #fff;
   font-size: 18px;
   line-height: 1;
+}
+
+.halley-overview-emblem.is-filled {
+  background: rgba(255,255,255,.16);
+  box-shadow:
+    0 0 0 2px rgba(255,255,255,.58),
+    0 9px 22px rgba(18,10,23,.18);
+}
+
+.halley-overview-emblem.is-filled::before,
+.halley-overview-emblem.is-filled::after {
+  display: none;
+}
+
+.halley-overview-emblem img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center;
+  border: 0;
+  border-radius: 50%;
+  box-shadow: none;
 }
 
 .halley-overview-label {
@@ -429,6 +458,13 @@ body.theme-dark .halley-topic-kicker {
   font: 20px/1 Georgia, "Times New Roman", serif;
   text-overflow: ellipsis;
   white-space: nowrap;
+}
+
+.halley-overview-stat strong img {
+  max-width: 42px;
+  max-height: 42px;
+  display: block;
+  object-fit: contain;
 }
 
 .halley-overview-side {
@@ -572,10 +608,12 @@ body.theme-dark .halley-overview-alice small {
 }
 
 .halley-avatar-frame {
+  position: relative;
   width: var(--halley-avatar-width);
   height: var(--halley-avatar-height);
-  margin: 0 auto;
+  margin: 28px auto 0;
   padding: 7px;
+  overflow: visible;
   border: 1px solid var(--halley-line);
   border-radius: 18px;
   background: var(--halley-surface);
@@ -649,14 +687,48 @@ body.theme-dark .halley-overview-alice small {
 }
 
 .halley-avatar-crown {
+  display: none !important;
+}
+
+.halley-rank-badge {
   position: absolute;
-  top: 12px;
+  top: -26px;
   left: 50%;
-  z-index: 3;
+  z-index: 8;
+  width: 82px;
+  height: 82px;
+  display: grid;
+  place-items: center;
   transform: translateX(-50%);
-  color: #f1d590;
-  font-size: 28px;
+  overflow: hidden;
+  border: 4px solid #fff;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 50% 42%, rgba(255,255,255,.58), transparent 52%),
+    var(--halley-surface-2);
+  box-shadow: 0 12px 26px rgba(34,20,40,.20);
   pointer-events: none;
+}
+
+.halley-rank-badge::before {
+  content: "*";
+  color: var(--halley-violet);
+  font-size: 18px;
+  line-height: 1;
+}
+
+.halley-rank-badge.is-filled::before {
+  display: none;
+}
+
+.halley-rank-badge img {
+  max-width: 70%;
+  max-height: 70%;
+  display: block;
+  object-fit: contain;
+  border: 0;
+  background: none;
+  box-shadow: none;
 }
 
 .halley-avatar-name {
@@ -754,7 +826,7 @@ body.theme-dark .halley-profile-links .halley-contact-link .bi {
 }
 
 .halley-profile-links .halley-contact-link.is-empty {
-  opacity: .38;
+  opacity: .72;
   pointer-events: none;
 }
 
@@ -860,7 +932,6 @@ body.theme-dark .halley-profile-links .halley-contact-link .bi {
 .halley-post-actions > span > a,
 .halley-post-actions > span > span,
 .halley-post-actions > span > img,
-.halley-profile-links a,
 .halley-post-actions a {
   width: 100% !important;
   height: 100% !important;
