@@ -1,5 +1,5 @@
 /* ==========================================================
-   AURORA / HALLEY V5 - messages + profil de message
+   AURORA / HALLEY V6 - messages + profil de message
    A coller tout en bas du CSS.
    ========================================================== */
 
@@ -131,7 +131,7 @@ body.theme-dark .halley-topic-kicker {
   margin: 8px 0 5px;
   color: var(--halley-violet);
   font-family: var(--halley-font-tarot);
-  font-size: clamp(46px, 6vw, 76px);
+  font-size: clamp(38px, 4.8vw, 62px);
   font-weight: 400;
   font-style: normal;
   line-height: .9;
@@ -720,6 +720,42 @@ body.theme-dark .halley-overview-alice small {
   background: var(--halley-surface);
   color: var(--halley-violet);
   text-decoration: none;
+}
+
+.halley-profile-links .halley-contact-link {
+  color: var(--halley-violet) !important;
+}
+
+.halley-profile-links .halley-contact-link i,
+.halley-profile-links .halley-contact-link .fa,
+.halley-profile-links .halley-contact-link .bi {
+  color: var(--halley-violet) !important;
+  font-size: 15px !important;
+  line-height: 1 !important;
+}
+
+html[data-lyx-theme="dark"] .halley-profile-links .halley-contact-link,
+html[data-lyx-theme="dark"] .halley-profile-links .halley-contact-link i,
+html[data-lyx-theme="dark"] .halley-profile-links .halley-contact-link .fa,
+html[data-lyx-theme="dark"] .halley-profile-links .halley-contact-link .bi,
+html.dark .halley-profile-links .halley-contact-link,
+html.dark .halley-profile-links .halley-contact-link i,
+html.dark .halley-profile-links .halley-contact-link .fa,
+html.dark .halley-profile-links .halley-contact-link .bi,
+body[data-lyx-theme="dark"] .halley-profile-links .halley-contact-link,
+body[data-lyx-theme="dark"] .halley-profile-links .halley-contact-link i,
+body[data-lyx-theme="dark"] .halley-profile-links .halley-contact-link .fa,
+body[data-lyx-theme="dark"] .halley-profile-links .halley-contact-link .bi,
+body.theme-dark .halley-profile-links .halley-contact-link,
+body.theme-dark .halley-profile-links .halley-contact-link i,
+body.theme-dark .halley-profile-links .halley-contact-link .fa,
+body.theme-dark .halley-profile-links .halley-contact-link .bi {
+  color: var(--halley-gold) !important;
+}
+
+.halley-profile-links .halley-contact-link.is-empty {
+  opacity: .38;
+  pointer-events: none;
 }
 
 .halley-profile-links span,
