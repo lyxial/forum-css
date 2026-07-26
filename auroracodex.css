@@ -19471,3 +19471,39 @@ html.aurora-viewforum-page body input[type="search"] {
   margin-top: 6px;
   opacity: .65;
 }
+
+/* ==========================================================
+   AURORA - Notifications custom V3
+   A coller tout en bas du CSS.
+   ========================================================== */
+
+.notification-btn .badge {
+  min-width: 16px;
+  height: 16px;
+  display: grid;
+  place-items: center;
+  border-radius: 999px;
+  background: var(--color-accent, var(--accent, #755483));
+  color: #fff;
+  font-size: 10px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.notification-btn .badge.is-empty {
+  opacity: .55;
+}
+
+.notification-list .notification-item {
+  cursor: pointer;
+}
+
+.notification-list .notification-content small {
+  display: block;
+}
+
+.notification-list .notification-content time {
+  display: block;
+  margin-top: 6px;
+  opacity: .65;
+}
