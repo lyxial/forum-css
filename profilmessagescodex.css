@@ -1553,3 +1553,84 @@ body.theme-dark .halley-profile-links .halley-contact-link .bi {
 .halley-rank:empty + .halley-profile-quote {
   margin-top: 16px !important;
 }
+
+/* ==========================================================
+   AURORA / HALLEY V12 - badge Rang + icone dossier
+   A coller tout en bas du CSS existant, apres la V11.
+   ========================================================== */
+
+/* Badge Rang : on reduit l'encadre rond, pas l'image. */
+.halley-rank-badge {
+  top: -30px !important;
+  width: 78px !important;
+  height: 78px !important;
+  border-width: 4px !important;
+}
+
+.halley-rank-badge img {
+  max-width: 78% !important;
+  max-height: 78% !important;
+}
+
+/* Icone "Dossier du personnage" : aucun morceau decoratif derriere l'image. */
+.halley-overview-emblem {
+  overflow: hidden !important;
+  border-radius: 50% !important;
+  background: transparent !important;
+  box-shadow: 0 0 0 2px rgba(255,255,255,.42) !important;
+  outline: 0 !important;
+  clip-path: circle(50% at 50% 50%) !important;
+  isolation: isolate !important;
+}
+
+.halley-overview-emblem::before,
+.halley-overview-emblem::after,
+.halley-overview-emblem.is-filled::before,
+.halley-overview-emblem.is-filled::after {
+  display: none !important;
+  content: none !important;
+}
+
+.halley-overview-emblem > *,
+.halley-overview-emblem a,
+.halley-overview-emblem span,
+.halley-overview-emblem div,
+.halley-overview-emblem center {
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  max-width: 100% !important;
+  max-height: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  display: block !important;
+  overflow: hidden !important;
+  border: 0 !important;
+  border-radius: 50% !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  transform: none !important;
+  pointer-events: none !important;
+}
+
+.halley-overview-emblem img {
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  min-width: 100% !important;
+  min-height: 100% !important;
+  max-width: none !important;
+  max-height: none !important;
+  display: block !important;
+  object-fit: cover !important;
+  object-position: center !important;
+  border: 0 !important;
+  border-radius: 50% !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  clip-path: circle(50% at 50% 50%) !important;
+  transform: none !important;
+  pointer-events: none !important;
+}
