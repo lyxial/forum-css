@@ -1482,3 +1482,74 @@ body.theme-dark .halley-profile-links .halley-contact-link .bi {
   pointer-events: none !important;
   cursor: default !important;
 }
+
+/* ==========================================================
+   AURORA / HALLEY V11 - ajustement fin icone/rang/citation
+   A coller tout en bas du CSS existant, apres la V10.
+   ========================================================== */
+
+/* Badge Rang : image encore plus petite dans le rond. */
+.halley-rank-badge img {
+  max-width: 46% !important;
+  max-height: 46% !important;
+}
+
+/* Icone "Dossier du personnage" : on coupe aussi les wrappers Forumactif. */
+.halley-overview-emblem {
+  overflow: hidden !important;
+  border-radius: 50% !important;
+  clip-path: circle(50% at 50% 50%) !important;
+  isolation: isolate !important;
+}
+
+.halley-overview-emblem::before,
+.halley-overview-emblem::after {
+  display: none !important;
+  content: none !important;
+}
+
+.halley-overview-emblem > *,
+.halley-overview-emblem a,
+.halley-overview-emblem span,
+.halley-overview-emblem div {
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  display: block !important;
+  overflow: hidden !important;
+  border: 0 !important;
+  border-radius: 50% !important;
+  background: none !important;
+  box-shadow: none !important;
+  pointer-events: none !important;
+}
+
+.halley-overview-emblem img {
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  max-width: none !important;
+  max-height: none !important;
+  display: block !important;
+  object-fit: cover !important;
+  object-position: center !important;
+  border: 0 !important;
+  border-radius: 50% !important;
+  background: none !important;
+  box-shadow: none !important;
+  clip-path: circle(50% at 50% 50%) !important;
+  pointer-events: none !important;
+}
+
+/* Quand il n'y a pas de rang texte/image visible, la citation garde son air. */
+.halley-profile-quote {
+  margin-top: 12px !important;
+}
+
+.halley-rank:empty + .halley-profile-quote {
+  margin-top: 16px !important;
+}
