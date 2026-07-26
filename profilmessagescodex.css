@@ -1444,3 +1444,41 @@ body.theme-dark .halley-profile-links .halley-contact-link .bi {
   cursor: pointer !important;
 }
 
+/* ==========================================================
+   AURORA / HALLEY V10 - ajustement badge rang + icone dossier
+   A coller tout en bas du CSS existant, apres la V9.
+   ========================================================== */
+
+/* Image Rang : rond conserve, image interieure un peu plus petite. */
+.halley-rank-badge img {
+  max-width: 62% !important;
+  max-height: 62% !important;
+}
+
+/* Icone du bloc "Dossier du personnage" : coupe tout ce qui depasse. */
+.halley-overview-emblem {
+  overflow: hidden !important;
+  isolation: isolate !important;
+}
+
+.halley-overview-emblem img {
+  position: relative !important;
+  z-index: 2 !important;
+  width: 100% !important;
+  height: 100% !important;
+  display: block !important;
+  object-fit: cover !important;
+  object-position: center !important;
+  border-radius: 50% !important;
+  clip-path: circle(50% at 50% 50%) !important;
+}
+
+.halley-overview-emblem.is-filled::before,
+.halley-overview-emblem.is-filled::after {
+  display: none !important;
+}
+
+.halley-overview-emblem a {
+  pointer-events: none !important;
+  cursor: default !important;
+}
