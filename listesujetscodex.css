@@ -1,29 +1,29 @@
 /* ==========================================================
-   AURORA — LISTE DES SUJETS, VERSION SÉCURISÉE
-   ModernBB — CSS uniquement
+   AURORA — LISTE DES SUJETS MODERNBB
+   VERSION CORRIGÉE — CSS UNIQUEMENT
 
-   Prérequis :
-   - topics_list_box remis sur le template Forumactif par défaut ;
-   - ne pas modifier viewforum_body ;
-   - ne pas modifier viewtopic_body.
+   IMPORTANT :
+   - garder topics_list_box sur la version Forumactif par défaut ;
+   - supprimer l'ancien bloc CSS commençant par #modernbb ;
+   - coller ce fichier tout en bas de la feuille CSS.
    ========================================================== */
 
-#modernbb{
-  --aurora-topic-surface:var(--au-surface,#fbf9fc);
-  --aurora-topic-surface-2:var(--au-surface-2,#f3edf6);
-  --aurora-topic-line:var(--au-line,#d9cee0);
-  --aurora-topic-text:var(--au-text,#302637);
-  --aurora-topic-muted:var(--au-muted,#887b8f);
-  --aurora-topic-primary:var(--au-purple,#755483);
-  --aurora-topic-shadow:var(
-    --au-shadow,
-    0 14px 34px rgba(57,35,64,.11)
-  );
+:root{
+  --aurora-topic-surface:#fbf9fc;
+  --aurora-topic-surface-2:#f3edf6;
+  --aurora-topic-line:#d9cee0;
+  --aurora-topic-text:#302637;
+  --aurora-topic-muted:#887b8f;
+  --aurora-topic-primary:#755483;
+  --aurora-topic-shadow:0 14px 34px rgba(57,35,64,.11);
 }
 
-/* Conteneurs natifs de la liste */
+/* ----------------------------------------------------------
+   CONTENEUR NATIF DE LA LISTE
+---------------------------------------------------------- */
 
-#modernbb .forumbg:has(> ul.topiclist.topics){
+.forumbg.announcement,
+.forumbg:has(ul.topiclist.topics.bg_none){
   margin:18px 0 0!important;
   padding:0!important;
   border:0!important;
@@ -32,16 +32,24 @@
   box-shadow:none!important;
 }
 
-#modernbb .forumbg:has(> ul.topiclist.topics) > ul.topiclist.topics{
+ul.topiclist.topics,
+ul.topiclist.topics.bg_none{
   margin:0!important;
   padding:0!important;
   border:0!important;
   background:transparent!important;
 }
 
-/* Titre natif : Annonces, Notes ou Sujets */
+ul.topiclist.topics.bg_none{
+  display:grid!important;
+  gap:12px!important;
+}
 
-#modernbb ul.topiclist.topics > li.header{
+/* ----------------------------------------------------------
+   TITRES : ANNONCES / NOTES / SUJETS
+---------------------------------------------------------- */
+
+ul.topiclist.topics > li.header{
   margin:0 4px 10px!important;
   padding:0!important;
   border:0!important;
@@ -49,8 +57,9 @@
   color:var(--aurora-topic-primary)!important;
 }
 
-#modernbb ul.topiclist.topics > li.header dl.icon{
+ul.topiclist.topics > li.header dl.icon{
   min-height:22px!important;
+  margin:0!important;
   display:grid!important;
   grid-template-columns:minmax(0,1fr) 90px 90px 280px!important;
   gap:10px!important;
@@ -58,69 +67,76 @@
   background:none!important;
 }
 
-#modernbb ul.topiclist.topics > li.header dt,
-#modernbb ul.topiclist.topics > li.header dd.dterm{
+ul.topiclist.topics > li.header dt,
+ul.topiclist.topics > li.header dd.dterm{
   width:auto!important;
+  min-width:0!important;
   margin:0!important;
   padding:0!important;
+  float:none!important;
   display:flex!important;
   align-items:center!important;
-  gap:9px!important;
+  gap:10px!important;
   color:var(--aurora-topic-primary)!important;
   font:700 15px/1.2 Georgia,serif!important;
   letter-spacing:.07em!important;
   text-transform:uppercase!important;
 }
 
-#modernbb ul.topiclist.topics > li.header dt::after,
-#modernbb ul.topiclist.topics > li.header dd.dterm::after{
+ul.topiclist.topics > li.header dt::after,
+ul.topiclist.topics > li.header dd.dterm::after{
   content:"";
   height:1px;
   flex:1;
   background:var(--aurora-topic-line);
 }
 
-#modernbb ul.topiclist.topics > li.header dd.posts,
-#modernbb ul.topiclist.topics > li.header dd.views,
-#modernbb ul.topiclist.topics > li.header dd.lastpost{
+ul.topiclist.topics > li.header dd.posts,
+ul.topiclist.topics > li.header dd.views,
+ul.topiclist.topics > li.header dd.lastpost{
   width:auto!important;
+  min-width:0!important;
   margin:0!important;
   padding:0!important;
+  float:none!important;
   border:0!important;
   color:var(--aurora-topic-muted)!important;
   font-size:0!important;
   text-align:center!important;
 }
 
-#modernbb ul.topiclist.topics > li.header dd.posts::after{
+ul.topiclist.topics > li.header dd.posts i,
+ul.topiclist.topics > li.header dd.views i,
+ul.topiclist.topics > li.header dd.lastpost i{
+  display:none!important;
+}
+
+ul.topiclist.topics > li.header dd.posts::after{
   content:"Réponses";
 }
 
-#modernbb ul.topiclist.topics > li.header dd.views::after{
+ul.topiclist.topics > li.header dd.views::after{
   content:"Vues";
 }
 
-#modernbb ul.topiclist.topics > li.header dd.lastpost::after{
+ul.topiclist.topics > li.header dd.lastpost::after{
   content:"Dernier message";
 }
 
-#modernbb ul.topiclist.topics > li.header dd.posts::after,
-#modernbb ul.topiclist.topics > li.header dd.views::after,
-#modernbb ul.topiclist.topics > li.header dd.lastpost::after{
-  font-size:7px;
-  font-weight:700;
+ul.topiclist.topics > li.header dd.posts::after,
+ul.topiclist.topics > li.header dd.views::after,
+ul.topiclist.topics > li.header dd.lastpost::after{
+  color:var(--aurora-topic-muted);
+  font:700 7px/1 Arial,sans-serif;
   letter-spacing:.07em;
   text-transform:uppercase;
 }
 
-/* Liste et cartes */
+/* ----------------------------------------------------------
+   CARTE D'UN SUJET
+---------------------------------------------------------- */
 
-#modernbb ul.topiclist.topics.bg_none{
-  display:grid!important;
-  gap:12px!important;
-}
-
-#modernbb ul.topiclist.topics.bg_none > li.row{
+ul.topiclist.topics.bg_none > li.row{
   min-height:104px!important;
   margin:0!important;
   padding:15px!important;
@@ -135,15 +151,17 @@
     box-shadow .2s ease!important;
 }
 
-#modernbb ul.topiclist.topics.bg_none > li.row:hover{
+ul.topiclist.topics.bg_none > li.row:hover{
   transform:translateY(-2px);
   border-color:#baa7c4!important;
   box-shadow:0 18px 40px rgba(57,35,64,.14)!important;
 }
 
-#modernbb ul.topiclist.topics.bg_none > li.row > dl.icon{
+ul.topiclist.topics.bg_none > li.row > dl.icon{
   min-height:74px!important;
   margin:0!important;
+  padding:0!important;
+  float:none!important;
   display:grid!important;
   grid-template-columns:minmax(0,1fr) 90px 90px 280px!important;
   gap:10px!important;
@@ -153,16 +171,19 @@
   background-size:52px 52px!important;
 }
 
-/* Sujet */
+/* ----------------------------------------------------------
+   TITRE, DESCRIPTION ET AUTEUR
+---------------------------------------------------------- */
 
-#modernbb ul.topiclist.topics.bg_none > li.row dd.dterm{
+ul.topiclist.topics.bg_none > li.row dd.dterm{
   width:auto!important;
   min-width:0!important;
   margin:0!important;
   padding:0 0 0 68px!important;
+  float:none!important;
 }
 
-#modernbb .topic-title-container{
+.topic-title-container{
   min-width:0!important;
   display:flex!important;
   align-items:center!important;
@@ -170,9 +191,10 @@
   gap:4px!important;
 }
 
-#modernbb .topic-title-container .topic-title{
+.topic-title-container h2.topic-title{
   width:100%!important;
   margin:2px 0 0!important;
+  padding:0!important;
   overflow:hidden!important;
   color:var(--aurora-topic-primary)!important;
   font:22px/1.2 Georgia,serif!important;
@@ -180,17 +202,17 @@
   white-space:nowrap!important;
 }
 
-#modernbb .topic-title-container .topictitle{
+.topic-title-container a.topictitle{
   color:var(--aurora-topic-primary)!important;
   font:inherit!important;
   text-decoration:none!important;
 }
 
-#modernbb .topic-title-container .topictitle:hover{
+.topic-title-container a.topictitle:hover{
   text-decoration:underline!important;
 }
 
-#modernbb .topic-description{
+.topic-description{
   margin-top:5px!important;
   display:block!important;
   overflow:hidden!important;
@@ -201,21 +223,25 @@
   white-space:nowrap!important;
 }
 
-#modernbb .topic-author{
+.topic-author{
   margin-top:6px!important;
   display:inline-block!important;
   color:var(--aurora-topic-muted)!important;
   font-size:9px!important;
 }
 
-/* Réponses et vues */
+/* ----------------------------------------------------------
+   RÉPONSES ET VUES
+---------------------------------------------------------- */
 
-#modernbb ul.topiclist.topics.bg_none > li.row dd.posts,
-#modernbb ul.topiclist.topics.bg_none > li.row dd.views{
+ul.topiclist.topics.bg_none > li.row dd.posts,
+ul.topiclist.topics.bg_none > li.row dd.views{
   width:auto!important;
+  min-width:0!important;
   min-height:56px!important;
   margin:0!important;
   padding:9px 5px!important;
+  float:none!important;
   display:flex!important;
   flex-direction:column!important;
   align-items:center!important;
@@ -228,8 +254,8 @@
   text-align:center!important;
 }
 
-#modernbb ul.topiclist.topics.bg_none > li.row dd.posts dfn,
-#modernbb ul.topiclist.topics.bg_none > li.row dd.views dfn{
+ul.topiclist.topics.bg_none > li.row dd.posts dfn,
+ul.topiclist.topics.bg_none > li.row dd.views dfn{
   margin-top:4px!important;
   display:block!important;
   color:var(--aurora-topic-muted)!important;
@@ -238,14 +264,17 @@
   text-transform:uppercase!important;
 }
 
-/* Dernier message */
+/* ----------------------------------------------------------
+   DERNIER MESSAGE
+---------------------------------------------------------- */
 
-#modernbb ul.topiclist.topics.bg_none > li.row dd.lastpost{
+ul.topiclist.topics.bg_none > li.row dd.lastpost{
   width:auto!important;
   min-width:0!important;
   min-height:62px!important;
   margin:0!important;
   padding:9px 28px 9px 10px!important;
+  float:none!important;
   display:grid!important;
   grid-template-columns:42px minmax(0,1fr)!important;
   gap:10px!important;
@@ -256,7 +285,7 @@
   background:var(--aurora-topic-surface-2)!important;
 }
 
-#modernbb .lastpost-avatar{
+.lastpost-avatar{
   width:42px!important;
   height:42px!important;
   margin:0!important;
@@ -267,98 +296,102 @@
   box-shadow:0 0 0 1px var(--aurora-topic-line)!important;
 }
 
-#modernbb .lastpost-avatar img{
+.lastpost-avatar img{
   width:100%!important;
   height:100%!important;
   display:block!important;
   object-fit:cover!important;
 }
 
-#modernbb .lastpost-infos{
+.lastpost-infos{
   min-width:0!important;
+  overflow:hidden!important;
   color:var(--aurora-topic-muted)!important;
   font-size:8px!important;
   line-height:1.45!important;
 }
 
-#modernbb .lastpost-infos a{
+.lastpost-infos a{
   color:var(--aurora-topic-text)!important;
   font-size:10px!important;
   font-weight:700!important;
 }
 
-/* Sélections et état vide */
+/* ----------------------------------------------------------
+   CASES DE SÉLECTION ET LISTE VIDE
+---------------------------------------------------------- */
 
-#modernbb ul.topiclist.topics.bg_none > li.row input[type="checkbox"],
-#modernbb ul.topiclist.topics.bg_none > li.row input[type="radio"],
-#modernbb ul.topiclist.topics > li.header input[type="checkbox"]{
+ul.topiclist.topics input[type="checkbox"],
+ul.topiclist.topics input[type="radio"]{
   accent-color:var(--aurora-topic-primary);
 }
 
-#modernbb ul.topiclist.topics.bg_none > li.row.row1 dl{
+ul.topiclist.topics.bg_none > li.row.row1 dl{
   margin:0!important;
 }
 
-#modernbb ul.topiclist.topics.bg_none > li.row.row1 dt{
+ul.topiclist.topics.bg_none > li.row.row1 dt{
   padding:20px!important;
   color:var(--aurora-topic-muted)!important;
   text-align:center!important;
 }
 
-/* Responsive */
+/* ----------------------------------------------------------
+   RESPONSIVE
+---------------------------------------------------------- */
 
 @media(max-width:900px){
-  #modernbb ul.topiclist.topics > li.header dl.icon{
+  ul.topiclist.topics > li.header dl.icon{
     grid-template-columns:minmax(0,1fr) 75px 75px!important;
   }
 
-  #modernbb ul.topiclist.topics > li.header dd.lastpost{
+  ul.topiclist.topics > li.header dd.lastpost{
     display:none!important;
   }
 
-  #modernbb ul.topiclist.topics.bg_none > li.row > dl.icon{
+  ul.topiclist.topics.bg_none > li.row > dl.icon{
     grid-template-columns:minmax(0,1fr) 75px 75px!important;
   }
 
-  #modernbb ul.topiclist.topics.bg_none > li.row dd.lastpost{
+  ul.topiclist.topics.bg_none > li.row dd.lastpost{
     grid-column:1 / -1!important;
     margin-left:68px!important;
   }
 }
 
 @media(max-width:600px){
-  #modernbb ul.topiclist.topics > li.header dl.icon{
+  ul.topiclist.topics > li.header dl.icon{
     display:block!important;
   }
 
-  #modernbb ul.topiclist.topics > li.header dd.posts,
-  #modernbb ul.topiclist.topics > li.header dd.views,
-  #modernbb ul.topiclist.topics > li.header dd.lastpost{
+  ul.topiclist.topics > li.header dd.posts,
+  ul.topiclist.topics > li.header dd.views,
+  ul.topiclist.topics > li.header dd.lastpost{
     display:none!important;
   }
 
-  #modernbb ul.topiclist.topics.bg_none > li.row > dl.icon{
+  ul.topiclist.topics.bg_none > li.row > dl.icon{
     display:grid!important;
     grid-template-columns:1fr 1fr!important;
     background-position:8px 8px!important;
     background-size:44px 44px!important;
   }
 
-  #modernbb ul.topiclist.topics.bg_none > li.row dd.dterm{
+  ul.topiclist.topics.bg_none > li.row dd.dterm{
     grid-column:1 / -1!important;
     padding-left:58px!important;
   }
 
-  #modernbb .topic-title-container .topic-title{
+  .topic-title-container h2.topic-title{
     font-size:18px!important;
     white-space:normal!important;
   }
 
-  #modernbb .topic-description{
+  .topic-description{
     white-space:normal!important;
   }
 
-  #modernbb ul.topiclist.topics.bg_none > li.row dd.lastpost{
+  ul.topiclist.topics.bg_none > li.row dd.lastpost{
     grid-column:1 / -1!important;
     margin-left:0!important;
   }
