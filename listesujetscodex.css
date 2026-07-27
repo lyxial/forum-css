@@ -1,288 +1,137 @@
-*
-============================================================
- AURORA — LISTE DES SUJETS
- Version : ModernBB
+/* ==========================================================
+   AURORA — Liste des sujets ModernBB
+   À ajouter tout en bas de la feuille CSS
+   ========================================================== */
 
- À coller à la fin de :
- PA > Affichage > Images et Couleurs > Couleurs
- > Feuille de style CSS
-============================================================
-*/
-
-/*
- * Les variables Aurora déjà présentes dans ton thème sont utilisées
- * en priorité. Les valeurs après les virgules servent de secours.
- */
-
-#modernbb .aurora-viewforum{
-  --aurora-topics-bg:var(--au-bg,#eee8f2);
-  --aurora-topics-surface:var(--au-surface,#fbf8fc);
-  --aurora-topics-surface-2:var(--au-surface-2,#f3ecf6);
-  --aurora-topics-text:var(--au-text,#302637);
-  --aurora-topics-muted:var(--au-muted,#827687);
-  --aurora-topics-primary:var(--au-purple,#755483);
-  --aurora-topics-gold:var(--au-gold,#b88d52);
-  --aurora-topics-line:var(--au-line,#dccfe1);
-  --aurora-topics-shadow:var(
-    --au-shadow,
-    0 18px 44px rgba(50,31,57,.13)
-  );
+.aurora-topics-page{
+  --at-bg:#efeaf3;
+  --at-surface:#fbf9fc;
+  --at-surface-2:#f3edf6;
+  --at-line:#d9cee0;
+  --at-text:#302637;
+  --at-muted:#887b8f;
+  --at-primary:#755483;
+  --at-shadow:0 16px 42px rgba(57,35,64,.12);
 
   width:100%;
-  min-width:0;
-  color:var(--aurora-topics-text);
+  color:var(--at-text);
 }
 
-/* ---------------------------------------------------------
-   Grand bandeau
---------------------------------------------------------- */
-
-#modernbb .aurora-topics-hero{
-  position:relative;
-  min-height:280px;
-  margin:16px 0 24px;
+.aurora-topics-banner{
+  min-height:220px;
+  margin:16px 0 22px;
+  padding:32px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
   overflow:hidden;
-  display:grid;
-  place-items:center;
-  border-radius:28px;
+  border-radius:26px;
   background:
-    radial-gradient(
-      circle at 24% 26%,
-      rgba(255,255,255,.14),
-      transparent 18%
-    ),
-    radial-gradient(
-      circle at 75% 65%,
-      rgba(255,255,255,.08),
-      transparent 26%
-    ),
-    linear-gradient(
-      118deg,
-      #24182f,
-      #3f2850 43%,
-      #79558d 76%,
-      #9a79aa
-    );
-  box-shadow:var(--aurora-topics-shadow);
-}
-
-#modernbb .aurora-topics-hero::before,
-#modernbb .aurora-topics-hero::after{
-  content:"";
-  position:absolute;
-  border:1px solid rgba(255,255,255,.12);
-  border-radius:50%;
-  pointer-events:none;
-}
-
-#modernbb .aurora-topics-hero::before{
-  width:290px;
-  height:290px;
-  left:-90px;
-  top:18px;
-}
-
-#modernbb .aurora-topics-hero::after{
-  width:460px;
-  height:460px;
-  right:-170px;
-  top:-150px;
-}
-
-#modernbb .aurora-topics-hero-copy{
-  position:relative;
-  z-index:1;
-  padding:34px;
+    radial-gradient(circle at 20% 25%,rgba(255,255,255,.13),transparent 21%),
+    radial-gradient(circle at 82% 55%,rgba(255,255,255,.08),transparent 24%),
+    linear-gradient(120deg,#261830,#4f335d 52%,#8c6ba0);
+  box-shadow:var(--at-shadow);
   color:#fff;
   text-align:center;
 }
 
-#modernbb .aurora-topics-hero-copy > span{
+.aurora-topics-banner > span{
   font-size:9px;
   font-weight:700;
-  letter-spacing:.3em;
+  letter-spacing:.25em;
   text-transform:uppercase;
 }
 
-#modernbb .aurora-topics-hero-copy h1{
+.aurora-topics-banner h1{
   margin:8px 0 0;
   color:#fff;
-  font:52px/.95 var(--au-font-title,Georgia,serif);
+  font:46px/1 Georgia,serif;
+  letter-spacing:.06em;
+  text-transform:uppercase;
+}
+
+.aurora-topics-banner p{
+  margin:12px 0 0;
+  color:rgba(255,255,255,.72);
+  font:italic 13px Georgia,serif;
+}
+
+.aurora-topic-render,
+.aurora-topic-source,
+.aurora-topic-list{
+  display:grid;
+  gap:12px;
+}
+
+.aurora-topic-group{
+  margin-top:18px;
+}
+
+.aurora-topic-group:first-child{
+  margin-top:0;
+}
+
+.aurora-topic-group > h3{
+  margin:0 4px 10px;
+  display:flex;
+  align-items:center;
+  gap:12px;
+  color:var(--at-primary);
+  font:700 15px Georgia,serif;
   letter-spacing:.07em;
   text-transform:uppercase;
 }
 
-#modernbb .aurora-topics-hero-copy p{
-  margin:14px 0 0;
-  color:rgba(255,255,255,.72);
-  font:italic 13px var(--au-font-title,Georgia,serif);
-}
-
-/* ---------------------------------------------------------
-   Nom et description du forum
---------------------------------------------------------- */
-
-#modernbb .aurora-forum-heading{
-  margin-bottom:16px;
-  padding:24px 28px;
-  display:flex;
-  justify-content:space-between;
-  align-items:flex-end;
-  gap:24px;
-  border:1px solid var(--aurora-topics-line);
-  border-radius:22px;
-  background:var(--aurora-topics-surface);
-  box-shadow:var(--aurora-topics-shadow);
-}
-
-#modernbb .aurora-forum-heading-copy{
-  min-width:0;
-}
-
-#modernbb .aurora-forum-heading small{
-  color:var(--aurora-topics-gold);
-  font-size:9px;
-  font-weight:700;
-  letter-spacing:.18em;
-  text-transform:uppercase;
-}
-
-#modernbb .aurora-forum-heading h2{
-  margin:7px 0 5px;
-  color:var(--aurora-topics-primary);
-  font:40px/1.1 var(--au-font-title,Georgia,serif);
-}
-
-#modernbb .aurora-forum-description{
-  color:var(--aurora-topics-muted);
-}
-
-#modernbb .aurora-forum-description:empty{
-  display:none;
-}
-
-#modernbb .aurora-new-topic{
-  flex:0 0 auto;
-  min-height:42px;
-  padding:0 17px;
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  gap:7px;
-  border:0;
-  border-radius:11px;
-  background:var(--aurora-topics-primary);
-  color:#fff!important;
-  font-size:9px;
-  font-weight:700;
-  letter-spacing:.04em;
-  text-decoration:none!important;
-  text-transform:uppercase;
-  transition:
-    transform .2s ease,
-    box-shadow .2s ease;
-}
-
-#modernbb .aurora-new-topic:hover{
-  transform:translateY(-2px);
-  box-shadow:0 10px 22px rgba(69,43,80,.18);
-}
-
-/* ---------------------------------------------------------
-   Sections : annonces, annonces générales, notes, sujets
---------------------------------------------------------- */
-
-#modernbb .aurora-topic-section{
-  margin-top:18px;
-}
-
-#modernbb .aurora-topic-section:first-child{
-  margin-top:0;
-}
-
-#modernbb .aurora-topic-section-title{
-  margin:22px 4px 10px;
-  display:flex;
-  align-items:center;
-  gap:12px;
-  color:var(--aurora-topics-primary);
-  font:700 15px/1.2 var(--au-font-title,Georgia,serif);
-  letter-spacing:.08em;
-  text-transform:uppercase;
-}
-
-#modernbb .aurora-topic-section-title::after{
+.aurora-topic-group > h3::after{
   content:"";
   height:1px;
   flex:1;
-  background:var(--aurora-topics-line);
+  background:var(--at-line);
 }
 
-#modernbb .aurora-topic-list,
-#modernbb .aurora-topics-source{
-  display:grid;
-  gap:12px;
-}
-
-/* ---------------------------------------------------------
-   Ligne d'un sujet
---------------------------------------------------------- */
-
-#modernbb .aurora-topic-row{
+.aurora-topic-row{
   position:relative;
-  min-height:105px;
+  min-height:104px;
   padding:15px;
   display:grid;
-  grid-template-columns:
-    64px
-    minmax(0,1fr)
-    170px
-    minmax(220px,250px);
-  gap:16px;
+  grid-template-columns:60px minmax(0,1fr) 170px 230px;
+  gap:15px;
   align-items:center;
-  border:1px solid var(--aurora-topics-line);
+  border:1px solid var(--at-line);
   border-radius:18px;
-  background:var(--aurora-topics-surface);
-  box-shadow:var(--aurora-topics-shadow);
-  transition:
-    transform .2s ease,
-    border-color .2s ease;
+  background:var(--at-surface);
+  box-shadow:var(--at-shadow);
+  transition:transform .2s ease,border-color .2s ease;
 }
 
-#modernbb .aurora-topic-row:hover{
+.aurora-topic-row:hover{
   transform:translateY(-2px);
-  border-color:color-mix(
-    in srgb,
-    var(--aurora-topics-primary) 38%,
-    var(--aurora-topics-line)
-  );
+  border-color:#bba8c5;
 }
 
-#modernbb .aurora-topic-select{
+.aurora-topic-selection{
   position:absolute;
   top:8px;
   right:8px;
-  z-index:2;
 }
 
-#modernbb .aurora-topic-select input{
-  accent-color:var(--aurora-topics-primary);
+.aurora-topic-selection input{
+  accent-color:var(--at-primary);
 }
 
-/* Image New / No New / Lock / Annonce / Note */
-
-#modernbb .aurora-topic-status{
-  width:54px;
-  height:54px;
+.aurora-topic-icon{
+  width:52px;
+  height:52px;
   overflow:hidden;
   display:grid;
   place-items:center;
-  border:1px solid var(--aurora-topics-line);
-  border-radius:16px;
-  background:var(--aurora-topics-surface-2);
+  border:1px solid var(--at-line);
+  border-radius:15px;
+  background:var(--at-surface-2);
 }
 
-#modernbb .aurora-topic-status img{
+.aurora-topic-icon img{
   width:100%;
   height:100%;
   padding:8px;
@@ -290,447 +139,207 @@
   object-fit:contain;
 }
 
-/* Informations principales */
-
-#modernbb .aurora-topic-main{
+.aurora-topic-content{
   min-width:0;
 }
 
-#modernbb .aurora-topic-labels{
-  min-height:12px;
-  margin-bottom:5px;
+.aurora-topic-native-icons{
+  min-height:13px;
   display:flex;
-  align-items:center;
-  flex-wrap:wrap;
   gap:5px;
-  color:var(--aurora-topics-muted);
-  font-size:7px;
-  font-weight:700;
-  letter-spacing:.14em;
-  text-transform:uppercase;
+  align-items:center;
 }
 
-#modernbb .aurora-topic-type:empty,
-#modernbb .aurora-topic-native-icon:empty,
-#modernbb .aurora-topic-newest:empty,
-#modernbb .aurora-topic-participate:empty{
-  display:none;
-}
-
-#modernbb .aurora-topic-native-icon img,
-#modernbb .aurora-topic-newest img,
-#modernbb .aurora-topic-participate img{
+.aurora-topic-native-icons img{
   width:auto;
   max-width:18px;
   max-height:18px;
-  vertical-align:middle;
 }
 
-#modernbb .aurora-topic-title{
-  margin:0;
-  padding:0;
+.aurora-topic-content h2{
+  margin:2px 0 0;
   overflow:hidden;
-  font:22px/1.2 var(--au-font-title,Georgia,serif);
+  font:22px/1.2 Georgia,serif;
   text-overflow:ellipsis;
   white-space:nowrap;
 }
 
-#modernbb .aurora-topic-title a{
-  color:var(--aurora-topics-primary)!important;
+.aurora-topic-content h2 a{
+  color:var(--at-primary)!important;
   text-decoration:none!important;
 }
 
-#modernbb .aurora-topic-title a:hover{
+.aurora-topic-content h2 a:hover{
   text-decoration:underline!important;
 }
 
-#modernbb .aurora-topic-description{
-  margin-top:5px;
+.aurora-topic-description{
+  margin-top:4px;
   overflow:hidden;
-  color:var(--aurora-topics-muted);
+  color:var(--at-muted);
   font-size:10px;
   text-overflow:ellipsis;
   white-space:nowrap;
 }
 
-#modernbb .aurora-topic-meta{
-  margin-top:5px;
-  display:flex;
-  align-items:center;
-  flex-wrap:wrap;
-  gap:7px 12px;
-  color:var(--aurora-topics-muted);
+.aurora-topic-author{
+  margin-top:6px;
+  color:var(--at-muted);
   font-size:9px;
 }
 
-#modernbb .aurora-topic-meta strong{
-  color:var(--aurora-topics-text);
-  font-weight:700;
+.aurora-topic-author strong{
+  color:var(--at-text);
 }
 
-#modernbb .aurora-topic-pages{
-  display:inline-flex;
-  align-items:center;
-  gap:3px;
+.aurora-topic-pages{
+  margin-left:8px;
 }
 
-#modernbb .aurora-topic-pages:empty{
-  display:none;
-}
-
-/* Réponses et vues */
-
-#modernbb .aurora-topic-stats{
+.aurora-topic-counts{
   display:grid;
   grid-template-columns:1fr 1fr;
   overflow:hidden;
-  border:1px solid var(--aurora-topics-line);
+  border:1px solid var(--at-line);
   border-radius:12px;
-  background:var(--aurora-topics-surface-2);
+  background:var(--at-surface-2);
 }
 
-#modernbb .aurora-topic-stats > div{
-  min-width:0;
-  padding:10px 6px;
+.aurora-topic-counts > div{
+  padding:10px 5px;
   text-align:center;
 }
 
-#modernbb .aurora-topic-stats > div + div{
-  border-left:1px solid var(--aurora-topics-line);
+.aurora-topic-counts > div + div{
+  border-left:1px solid var(--at-line);
 }
 
-#modernbb .aurora-topic-stats strong,
-#modernbb .aurora-topic-stats span{
+.aurora-topic-counts strong,
+.aurora-topic-counts span{
   display:block;
 }
 
-#modernbb .aurora-topic-stats strong{
-  color:var(--aurora-topics-primary);
-  font:20px/1 var(--au-font-title,Georgia,serif);
+.aurora-topic-counts strong{
+  color:var(--at-primary);
+  font:20px/1 Georgia,serif;
 }
 
-#modernbb .aurora-topic-stats span{
+.aurora-topic-counts span{
   margin-top:4px;
-  color:var(--aurora-topics-muted);
+  color:var(--at-muted);
   font-size:7px;
-  letter-spacing:.05em;
   text-transform:uppercase;
 }
 
-/* Dernier message */
-
-#modernbb .aurora-topic-lastpost{
-  min-width:0;
-  padding:10px;
-  display:grid;
-  grid-template-columns:42px minmax(0,1fr);
-  gap:10px;
-  align-items:center;
-  border:1px solid var(--aurora-topics-line);
-  border-radius:13px;
-  background:var(--aurora-topics-surface-2);
-}
-
-#modernbb .aurora-topic-last-avatar{
-  width:42px;
-  height:42px;
-  overflow:hidden;
-  border:2px solid var(--aurora-topics-surface);
-  border-radius:50%;
-  background:var(--aurora-topics-surface);
-  box-shadow:0 0 0 1px var(--aurora-topics-line);
-}
-
-#modernbb .aurora-topic-last-avatar img{
-  width:100%;
-  height:100%;
-  display:block;
-  object-fit:cover;
-}
-
-#modernbb .aurora-topic-last-infos{
+.aurora-topic-lastpost{
   position:relative;
   min-width:0;
-  padding-right:20px;
+  padding:11px 30px 11px 12px;
+  border:1px solid var(--at-line);
+  border-radius:13px;
+  background:var(--at-surface-2);
 }
 
-#modernbb .aurora-topic-last-infos strong,
-#modernbb .aurora-topic-last-infos small{
+.aurora-topic-lastpost > span,
+.aurora-topic-lastpost > strong,
+.aurora-topic-lastpost > small{
   display:block;
   overflow:hidden;
   text-overflow:ellipsis;
   white-space:nowrap;
 }
 
-#modernbb .aurora-topic-last-infos strong{
-  color:var(--aurora-topics-text);
+.aurora-topic-lastpost > span{
+  color:var(--at-muted);
+  font-size:7px;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+}
+
+.aurora-topic-lastpost > strong{
+  margin-top:4px;
+  color:var(--at-text);
   font-size:10px;
 }
 
-#modernbb .aurora-topic-last-infos small{
+.aurora-topic-lastpost > small{
   margin-top:2px;
-  color:var(--aurora-topics-muted);
+  color:var(--at-muted);
   font-size:8px;
 }
 
-#modernbb .aurora-topic-last-link{
+.aurora-topic-lastpost > div{
   position:absolute;
   top:50%;
-  right:0;
+  right:10px;
   transform:translateY(-50%);
 }
 
-#modernbb .aurora-topic-last-link img{
+.aurora-topic-lastpost img{
   width:auto;
   max-width:16px;
   max-height:16px;
 }
 
-/* ---------------------------------------------------------
-   Absence de sujets
---------------------------------------------------------- */
-
-#modernbb .aurora-no-topics{
-  padding:30px;
-  border:1px solid var(--aurora-topics-line);
+.aurora-no-topics{
+  padding:28px;
+  border:1px solid var(--at-line);
   border-radius:18px;
-  background:var(--aurora-topics-surface);
-  color:var(--aurora-topics-muted);
+  background:var(--at-surface);
+  color:var(--at-muted);
   text-align:center;
 }
 
-/* ---------------------------------------------------------
-   Pagination et outils du forum
---------------------------------------------------------- */
-
-#modernbb .aurora-pagination{
-  min-height:1px;
+.aurora-topics-pagination{
+  margin-top:15px;
 }
 
-#modernbb .aurora-pagination-top{
-  margin-bottom:12px;
-  text-align:right;
+.aurora-topic-source.is-ready{
+  margin-top:15px;
 }
 
-#modernbb .aurora-pagination .pagination{
-  display:flex;
-  align-items:center;
-  flex-wrap:wrap;
-  gap:6px;
-}
-
-#modernbb .aurora-pagination-top .pagination{
-  justify-content:flex-end;
-}
-
-#modernbb .aurora-pagination .pagination a,
-#modernbb .aurora-pagination .pagination span{
-  min-width:34px;
-  min-height:34px;
-  padding:0 9px;
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  border:1px solid var(--aurora-topics-line);
-  border-radius:10px;
-  background:var(--aurora-topics-surface);
-  color:var(--aurora-topics-text)!important;
-  text-decoration:none!important;
-}
-
-#modernbb .aurora-pagination .pagination span strong,
-#modernbb .aurora-pagination .pagination .pag-img{
-  color:#fff;
-}
-
-#modernbb .aurora-pagination .pagination span:has(strong){
-  background:var(--aurora-topics-primary);
-  color:#fff;
-}
-
-#modernbb .aurora-forum-footer{
-  margin-top:16px;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  gap:20px;
-}
-
-#modernbb .aurora-forum-tools{
-  display:flex;
-  align-items:center;
-  justify-content:flex-end;
-  flex-wrap:wrap;
-  gap:8px;
-}
-
-#modernbb .aurora-forum-tools > a,
-#modernbb .aurora-watch-forum a{
-  min-height:36px;
-  padding:0 12px;
-  display:inline-flex;
-  align-items:center;
-  border:1px solid var(--aurora-topics-line);
-  border-radius:10px;
-  background:var(--aurora-topics-surface);
-  color:var(--aurora-topics-primary)!important;
-  font-size:8px;
-  font-weight:700;
-  letter-spacing:.04em;
-  text-decoration:none!important;
-  text-transform:uppercase;
-}
-
-#modernbb .aurora-forum-permissions{
-  margin-top:14px;
-  color:var(--aurora-topics-muted);
-  font-size:9px;
-}
-
-/*
- * Forumactif peut injecter des séparateurs natifs à cet endroit.
- * Ils n'ont pas besoin d'être visibles avec la mise en page Aurora.
- */
-#modernbb .aurora-topics-source > table,
-#modernbb .aurora-topics-source > br{
+/* Les scripts et blocs vides ne créent pas d'espace. */
+.aurora-topic-source.is-ready:empty{
   display:none;
 }
 
-/* ---------------------------------------------------------
-   Mode sombre du thème Aurora
---------------------------------------------------------- */
+@media(max-width:950px){
+  .aurora-topic-row{
+    grid-template-columns:54px minmax(0,1fr) 150px;
+  }
 
-html.theme-dark #modernbb .aurora-topics-hero{
-  background:
-    radial-gradient(
-      circle at 24% 26%,
-      rgba(255,255,255,.08),
-      transparent 18%
-    ),
-    linear-gradient(118deg,#120c18,#281a32 52%,#503660);
-}
-
-/* ---------------------------------------------------------
-   Responsive
---------------------------------------------------------- */
-
-@media (max-width:1050px){
-  #modernbb .aurora-topic-row{
-    grid-template-columns:
-      58px
-      minmax(0,1fr)
-      150px
-      minmax(190px,220px);
-    gap:12px;
+  .aurora-topic-lastpost{
+    grid-column:2 / -1;
   }
 }
 
-@media (max-width:860px){
-  #modernbb .aurora-topics-hero{
-    min-height:220px;
+@media(max-width:650px){
+  .aurora-topics-banner{
+    min-height:175px;
+    padding:22px;
   }
 
-  #modernbb .aurora-topics-hero-copy h1{
-    font-size:40px;
-  }
-
-  #modernbb .aurora-forum-heading{
-    align-items:flex-start;
-  }
-
-  #modernbb .aurora-topic-row{
-    grid-template-columns:54px minmax(0,1fr);
-  }
-
-  #modernbb .aurora-topic-stats{
-    grid-column:2;
-    width:230px;
-    max-width:100%;
-  }
-
-  #modernbb .aurora-topic-lastpost{
-    grid-column:1 / -1;
-  }
-}
-
-@media (max-width:600px){
-  #modernbb .aurora-topics-hero{
-    min-height:185px;
-    border-radius:20px;
-  }
-
-  #modernbb .aurora-topics-hero-copy{
-    padding:24px 18px;
-  }
-
-  #modernbb .aurora-topics-hero-copy h1{
+  .aurora-topics-banner h1{
     font-size:30px;
   }
 
-  #modernbb .aurora-topics-hero-copy p{
-    font-size:11px;
-  }
-
-  #modernbb .aurora-forum-heading{
-    padding:20px;
-    flex-direction:column;
-    align-items:stretch;
-  }
-
-  #modernbb .aurora-forum-heading h2{
-    font-size:30px;
-  }
-
-  #modernbb .aurora-new-topic{
-    width:100%;
-  }
-
-  #modernbb .aurora-topic-row{
-    padding:12px;
+  .aurora-topic-row{
     grid-template-columns:44px minmax(0,1fr);
-    gap:10px;
+    padding:12px;
   }
 
-  #modernbb .aurora-topic-status{
+  .aurora-topic-icon{
     width:44px;
     height:44px;
-    border-radius:13px;
   }
 
-  #modernbb .aurora-topic-title{
+  .aurora-topic-content h2{
     font-size:18px;
     white-space:normal;
   }
 
-  #modernbb .aurora-topic-description{
-    white-space:normal;
-  }
-
-  #modernbb .aurora-topic-stats{
+  .aurora-topic-counts,
+  .aurora-topic-lastpost{
     grid-column:1 / -1;
-    width:100%;
-  }
-
-  #modernbb .aurora-topic-lastpost{
-    grid-template-columns:36px minmax(0,1fr);
-  }
-
-  #modernbb .aurora-topic-last-avatar{
-    width:36px;
-    height:36px;
-  }
-
-  #modernbb .aurora-forum-footer{
-    align-items:stretch;
-    flex-direction:column;
-  }
-
-  #modernbb .aurora-forum-tools{
-    justify-content:flex-start;
   }
 }
-
-/*
- * Solution de repli pour les navigateurs ne prenant pas en charge :has().
- * Le numéro de page courant reste lisible grâce au CSS natif Forumactif.
- */
