@@ -1,65 +1,62 @@
 /* ==========================================================
-   AURORA — LISTE DES SUJETS MODERNBB
-   VERSION CORRIGÉE — CSS UNIQUEMENT
-
-   IMPORTANT :
-   - garder topics_list_box sur la version Forumactif par défaut ;
-   - supprimer l'ancien bloc CSS commençant par #modernbb ;
-   - coller ce fichier tout en bas de la feuille CSS.
+   AURORA — topics_list_box ModernBB V2
+   À coller TOUT EN BAS de la feuille CSS.
    ========================================================== */
 
-:root{
-  --aurora-topic-surface:#fbf9fc;
-  --aurora-topic-surface-2:#f3edf6;
-  --aurora-topic-line:#d9cee0;
-  --aurora-topic-text:#302637;
-  --aurora-topic-muted:#887b8f;
-  --aurora-topic-primary:#755483;
-  --aurora-topic-shadow:0 14px 34px rgba(57,35,64,.11);
+.aurora-topics-shell{
+  --at-surface:#fbf9fc;
+  --at-surface-2:#f3edf6;
+  --at-line:#d9cee0;
+  --at-text:#302637;
+  --at-muted:#887b8f;
+  --at-primary:#755483;
+  --at-primary-soft:#9b7ba7;
+  --at-shadow:0 14px 34px rgba(57,35,64,.11);
+
+  display:grid;
+  gap:18px;
+  width:100%;
+  min-width:0;
+  color:var(--at-text);
 }
 
-/* ----------------------------------------------------------
-   CONTENEUR NATIF DE LA LISTE
----------------------------------------------------------- */
+/* Neutralisation du rendu natif uniquement dans la liste Aurora */
 
-.forumbg.announcement,
-.forumbg:has(ul.topiclist.topics.bg_none){
-  margin:18px 0 0!important;
+.aurora-topics-shell .aurora-topic-group{
+  margin:0!important;
   padding:0!important;
+  overflow:visible!important;
   border:0!important;
   border-radius:0!important;
   background:transparent!important;
   box-shadow:none!important;
 }
 
-ul.topiclist.topics,
-ul.topiclist.topics.bg_none{
+.aurora-topics-shell .topiclist{
   margin:0!important;
   padding:0!important;
   border:0!important;
   background:transparent!important;
 }
 
-ul.topiclist.topics.bg_none{
+.aurora-topics-shell .aurora-topic-list{
   display:grid!important;
   gap:12px!important;
 }
 
-/* ----------------------------------------------------------
-   TITRES : ANNONCES / NOTES / SUJETS
----------------------------------------------------------- */
+/* En-tête des groupes */
 
-ul.topiclist.topics > li.header{
+.aurora-topics-shell .aurora-topic-head{
   margin:0 4px 10px!important;
   padding:0!important;
   border:0!important;
   background:transparent!important;
-  color:var(--aurora-topic-primary)!important;
 }
 
-ul.topiclist.topics > li.header dl.icon{
+.aurora-topics-shell .aurora-topic-head-grid{
   min-height:22px!important;
   margin:0!important;
+  padding:0!important;
   display:grid!important;
   grid-template-columns:minmax(0,1fr) 90px 90px 280px!important;
   gap:10px!important;
@@ -67,101 +64,87 @@ ul.topiclist.topics > li.header dl.icon{
   background:none!important;
 }
 
-ul.topiclist.topics > li.header dt,
-ul.topiclist.topics > li.header dd.dterm{
-  width:auto!important;
-  min-width:0!important;
-  margin:0!important;
-  padding:0!important;
-  float:none!important;
-  display:flex!important;
-  align-items:center!important;
-  gap:10px!important;
-  color:var(--aurora-topic-primary)!important;
-  font:700 15px/1.2 Georgia,serif!important;
-  letter-spacing:.07em!important;
-  text-transform:uppercase!important;
-}
-
-ul.topiclist.topics > li.header dt::after,
-ul.topiclist.topics > li.header dd.dterm::after{
-  content:"";
-  height:1px;
-  flex:1;
-  background:var(--aurora-topic-line);
-}
-
-ul.topiclist.topics > li.header dd.posts,
-ul.topiclist.topics > li.header dd.views,
-ul.topiclist.topics > li.header dd.lastpost{
+.aurora-topics-shell .aurora-topic-head dt,
+.aurora-topics-shell .aurora-topic-head dd{
   width:auto!important;
   min-width:0!important;
   margin:0!important;
   padding:0!important;
   float:none!important;
   border:0!important;
-  color:var(--aurora-topic-muted)!important;
-  font-size:0!important;
-  text-align:center!important;
+  background:none!important;
 }
 
-ul.topiclist.topics > li.header dd.posts i,
-ul.topiclist.topics > li.header dd.views i,
-ul.topiclist.topics > li.header dd.lastpost i{
-  display:none!important;
+.aurora-topics-shell .aurora-topic-head dt,
+.aurora-topics-shell .aurora-topic-head dd.dterm{
+  display:flex!important;
+  align-items:center!important;
+  gap:9px!important;
 }
 
-ul.topiclist.topics > li.header dd.posts::after{
-  content:"Réponses";
-}
-
-ul.topiclist.topics > li.header dd.views::after{
-  content:"Vues";
-}
-
-ul.topiclist.topics > li.header dd.lastpost::after{
-  content:"Dernier message";
-}
-
-ul.topiclist.topics > li.header dd.posts::after,
-ul.topiclist.topics > li.header dd.views::after,
-ul.topiclist.topics > li.header dd.lastpost::after{
-  color:var(--aurora-topic-muted);
-  font:700 7px/1 Arial,sans-serif;
+.aurora-topic-group-title{
+  width:100%;
+  display:flex;
+  align-items:center;
+  gap:12px;
+  color:var(--at-primary);
+  font:700 15px/1.2 Georgia,serif;
   letter-spacing:.07em;
   text-transform:uppercase;
 }
 
-/* ----------------------------------------------------------
-   CARTE D'UN SUJET
----------------------------------------------------------- */
+.aurora-topic-group-title::after{
+  content:"";
+  height:1px;
+  flex:1;
+  background:var(--at-line);
+}
 
-ul.topiclist.topics.bg_none > li.row{
+.aurora-topics-shell .aurora-topic-head dd.posts,
+.aurora-topics-shell .aurora-topic-head dd.views,
+.aurora-topics-shell .aurora-topic-head dd.lastpost{
+  color:var(--at-muted)!important;
+  font-size:7px!important;
+  font-weight:700!important;
+  letter-spacing:.06em!important;
+  text-align:center!important;
+  text-transform:uppercase!important;
+}
+
+.aurora-topic-subtitle{
+  color:var(--at-primary);
+  font:700 13px Georgia,serif;
+  text-transform:uppercase;
+}
+
+/* Carte */
+
+.aurora-topics-shell .aurora-topic-row{
   min-height:104px!important;
   margin:0!important;
   padding:15px!important;
   overflow:visible!important;
-  border:1px solid var(--aurora-topic-line)!important;
+  border:1px solid var(--at-line)!important;
   border-radius:18px!important;
-  background:var(--aurora-topic-surface)!important;
-  box-shadow:var(--aurora-topic-shadow)!important;
+  background:var(--at-surface)!important;
+  box-shadow:var(--at-shadow)!important;
   transition:
     transform .2s ease,
     border-color .2s ease,
     box-shadow .2s ease!important;
 }
 
-ul.topiclist.topics.bg_none > li.row:hover{
+.aurora-topics-shell .aurora-topic-row:hover{
   transform:translateY(-2px);
   border-color:#baa7c4!important;
   box-shadow:0 18px 40px rgba(57,35,64,.14)!important;
 }
 
-ul.topiclist.topics.bg_none > li.row > dl.icon{
+.aurora-topics-shell .aurora-topic-grid{
+  position:relative;
   min-height:74px!important;
   margin:0!important;
   padding:0!important;
-  float:none!important;
   display:grid!important;
   grid-template-columns:minmax(0,1fr) 90px 90px 280px!important;
   gap:10px!important;
@@ -171,11 +154,9 @@ ul.topiclist.topics.bg_none > li.row > dl.icon{
   background-size:52px 52px!important;
 }
 
-/* ----------------------------------------------------------
-   TITRE, DESCRIPTION ET AUTEUR
----------------------------------------------------------- */
+/* Partie centrale */
 
-ul.topiclist.topics.bg_none > li.row dd.dterm{
+.aurora-topics-shell .aurora-topic-main{
   width:auto!important;
   min-width:0!important;
   margin:0!important;
@@ -183,59 +164,86 @@ ul.topiclist.topics.bg_none > li.row dd.dterm{
   float:none!important;
 }
 
-.topic-title-container{
-  min-width:0!important;
+.aurora-topic-title-line{
+  min-width:0;
   display:flex!important;
-  align-items:center!important;
-  flex-wrap:wrap!important;
-  gap:4px!important;
+  align-items:center;
+  flex-wrap:wrap;
+  gap:4px;
 }
 
-.topic-title-container h2.topic-title{
+.aurora-topic-native-icons{
+  display:inline-flex;
+  align-items:center;
+  gap:4px;
+}
+
+.aurora-topic-native-icons img{
+  width:auto;
+  max-width:17px;
+  max-height:17px;
+}
+
+.aurora-topic-type{
+  color:var(--at-primary-soft);
+  font-size:8px;
+  font-weight:700;
+  letter-spacing:.06em;
+  text-transform:uppercase;
+}
+
+.aurora-topics-shell .aurora-topic-title{
   width:100%!important;
   margin:2px 0 0!important;
   padding:0!important;
   overflow:hidden!important;
-  color:var(--aurora-topic-primary)!important;
+  color:var(--at-primary)!important;
   font:22px/1.2 Georgia,serif!important;
   text-overflow:ellipsis!important;
   white-space:nowrap!important;
 }
 
-.topic-title-container a.topictitle{
-  color:var(--aurora-topic-primary)!important;
+.aurora-topics-shell .aurora-topic-title a{
+  color:var(--at-primary)!important;
   font:inherit!important;
   text-decoration:none!important;
 }
 
-.topic-title-container a.topictitle:hover{
+.aurora-topics-shell .aurora-topic-title a:hover{
   text-decoration:underline!important;
 }
 
-.topic-description{
+.aurora-topics-shell .aurora-topic-description{
   margin-top:5px!important;
   display:block!important;
   overflow:hidden!important;
-  color:var(--aurora-topic-muted)!important;
+  color:var(--at-muted)!important;
   font-size:10px!important;
-  line-height:1.4!important;
   text-overflow:ellipsis!important;
   white-space:nowrap!important;
 }
 
-.topic-author{
+.aurora-topics-shell .aurora-topic-author{
   margin-top:6px!important;
   display:inline-block!important;
-  color:var(--aurora-topic-muted)!important;
+  color:var(--at-muted)!important;
   font-size:9px!important;
 }
 
-/* ----------------------------------------------------------
-   RÉPONSES ET VUES
----------------------------------------------------------- */
+.aurora-topics-shell .aurora-topic-author strong{
+  color:var(--at-text)!important;
+}
 
-ul.topiclist.topics.bg_none > li.row dd.posts,
-ul.topiclist.topics.bg_none > li.row dd.views{
+.aurora-topic-pages{
+  margin-left:8px;
+  display:inline-flex;
+  align-items:center;
+  gap:3px;
+}
+
+/* Statistiques */
+
+.aurora-topics-shell .aurora-topic-stat{
   width:auto!important;
   min-width:0!important;
   min-height:56px!important;
@@ -246,152 +254,191 @@ ul.topiclist.topics.bg_none > li.row dd.views{
   flex-direction:column!important;
   align-items:center!important;
   justify-content:center!important;
-  border:1px solid var(--aurora-topic-line)!important;
+  border:1px solid var(--at-line)!important;
   border-radius:12px!important;
-  background:var(--aurora-topic-surface-2)!important;
-  color:var(--aurora-topic-primary)!important;
-  font:20px/1 Georgia,serif!important;
+  background:var(--at-surface-2)!important;
+  color:var(--at-primary)!important;
   text-align:center!important;
 }
 
-ul.topiclist.topics.bg_none > li.row dd.posts dfn,
-ul.topiclist.topics.bg_none > li.row dd.views dfn{
+.aurora-topics-shell .aurora-topic-stat strong{
+  color:var(--at-primary)!important;
+  font:20px/1 Georgia,serif!important;
+}
+
+.aurora-topics-shell .aurora-topic-stat dfn{
   margin-top:4px!important;
   display:block!important;
-  color:var(--aurora-topic-muted)!important;
+  color:var(--at-muted)!important;
   font:7px/1.2 Arial,sans-serif!important;
   letter-spacing:.04em!important;
   text-transform:uppercase!important;
 }
 
-/* ----------------------------------------------------------
-   DERNIER MESSAGE
----------------------------------------------------------- */
+/* Dernier message */
 
-ul.topiclist.topics.bg_none > li.row dd.lastpost{
+.aurora-topics-shell .aurora-topic-lastpost{
   width:auto!important;
   min-width:0!important;
   min-height:62px!important;
   margin:0!important;
   padding:9px 28px 9px 10px!important;
   float:none!important;
+  position:relative!important;
   display:grid!important;
   grid-template-columns:42px minmax(0,1fr)!important;
   gap:10px!important;
   align-items:center!important;
-  position:relative!important;
-  border:1px solid var(--aurora-topic-line)!important;
+  border:1px solid var(--at-line)!important;
   border-radius:13px!important;
-  background:var(--aurora-topic-surface-2)!important;
+  background:var(--at-surface-2)!important;
 }
 
-.lastpost-avatar{
+.aurora-lastpost-avatar{
   width:42px!important;
   height:42px!important;
   margin:0!important;
   overflow:hidden!important;
-  border:2px solid var(--aurora-topic-surface)!important;
+  border:2px solid var(--at-surface)!important;
   border-radius:50%!important;
-  background:var(--aurora-topic-surface)!important;
-  box-shadow:0 0 0 1px var(--aurora-topic-line)!important;
+  background:var(--at-surface)!important;
+  box-shadow:0 0 0 1px var(--at-line)!important;
 }
 
-.lastpost-avatar img{
+.aurora-lastpost-avatar img{
   width:100%!important;
   height:100%!important;
   display:block!important;
   object-fit:cover!important;
 }
 
-.lastpost-infos{
+.aurora-lastpost-infos{
   min-width:0!important;
   overflow:hidden!important;
-  color:var(--aurora-topic-muted)!important;
-  font-size:8px!important;
-  line-height:1.45!important;
 }
 
-.lastpost-infos a{
-  color:var(--aurora-topic-text)!important;
-  font-size:10px!important;
-  font-weight:700!important;
+.aurora-lastpost-infos small,
+.aurora-lastpost-infos strong,
+.aurora-lastpost-infos em{
+  display:block;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
 }
 
-/* ----------------------------------------------------------
-   CASES DE SÉLECTION ET LISTE VIDE
----------------------------------------------------------- */
-
-ul.topiclist.topics input[type="checkbox"],
-ul.topiclist.topics input[type="radio"]{
-  accent-color:var(--aurora-topic-primary);
+.aurora-lastpost-infos small{
+  color:var(--at-muted);
+  font-size:7px;
+  font-style:normal;
+  font-weight:700;
+  letter-spacing:.06em;
+  text-transform:uppercase;
 }
 
-ul.topiclist.topics.bg_none > li.row.row1 dl{
-  margin:0!important;
+.aurora-lastpost-infos strong{
+  margin-top:3px;
+  color:var(--at-text);
+  font-size:10px;
 }
 
-ul.topiclist.topics.bg_none > li.row.row1 dt{
-  padding:20px!important;
-  color:var(--aurora-topic-muted)!important;
+.aurora-lastpost-infos em{
+  margin-top:2px;
+  color:var(--at-muted);
+  font-size:8px;
+  font-style:normal;
+}
+
+.aurora-lastpost-link{
+  position:absolute;
+  top:50%;
+  right:10px;
+  transform:translateY(-50%);
+}
+
+.aurora-lastpost-link img{
+  width:auto;
+  max-width:15px;
+  max-height:15px;
+}
+
+/* Sélections */
+
+.aurora-topic-radio{
+  margin-right:5px;
+  accent-color:var(--at-primary);
+}
+
+.aurora-topic-checkbox{
+  position:absolute;
+  right:8px;
+  bottom:8px;
+  accent-color:var(--at-primary);
+}
+
+/* Aucun sujet */
+
+.aurora-no-topics{
+  padding:28px!important;
+  border:1px solid var(--at-line)!important;
+  border-radius:18px!important;
+  background:var(--at-surface)!important;
+  color:var(--at-muted)!important;
   text-align:center!important;
 }
 
-/* ----------------------------------------------------------
-   RESPONSIVE
----------------------------------------------------------- */
+/* Responsive */
 
 @media(max-width:900px){
-  ul.topiclist.topics > li.header dl.icon{
+  .aurora-topics-shell .aurora-topic-head-grid{
     grid-template-columns:minmax(0,1fr) 75px 75px!important;
   }
 
-  ul.topiclist.topics > li.header dd.lastpost{
+  .aurora-topics-shell .aurora-topic-head dd.lastpost{
     display:none!important;
   }
 
-  ul.topiclist.topics.bg_none > li.row > dl.icon{
+  .aurora-topics-shell .aurora-topic-grid{
     grid-template-columns:minmax(0,1fr) 75px 75px!important;
   }
 
-  ul.topiclist.topics.bg_none > li.row dd.lastpost{
+  .aurora-topics-shell .aurora-topic-lastpost{
     grid-column:1 / -1!important;
     margin-left:68px!important;
   }
 }
 
 @media(max-width:600px){
-  ul.topiclist.topics > li.header dl.icon{
+  .aurora-topics-shell .aurora-topic-head-grid{
     display:block!important;
   }
 
-  ul.topiclist.topics > li.header dd.posts,
-  ul.topiclist.topics > li.header dd.views,
-  ul.topiclist.topics > li.header dd.lastpost{
+  .aurora-topics-shell .aurora-topic-head dd.posts,
+  .aurora-topics-shell .aurora-topic-head dd.views,
+  .aurora-topics-shell .aurora-topic-head dd.lastpost{
     display:none!important;
   }
 
-  ul.topiclist.topics.bg_none > li.row > dl.icon{
-    display:grid!important;
+  .aurora-topics-shell .aurora-topic-grid{
     grid-template-columns:1fr 1fr!important;
     background-position:8px 8px!important;
     background-size:44px 44px!important;
   }
 
-  ul.topiclist.topics.bg_none > li.row dd.dterm{
+  .aurora-topics-shell .aurora-topic-main{
     grid-column:1 / -1!important;
     padding-left:58px!important;
   }
 
-  .topic-title-container h2.topic-title{
+  .aurora-topics-shell .aurora-topic-title{
     font-size:18px!important;
     white-space:normal!important;
   }
 
-  .topic-description{
+  .aurora-topics-shell .aurora-topic-description{
     white-space:normal!important;
   }
 
-  ul.topiclist.topics.bg_none > li.row dd.lastpost{
+  .aurora-topics-shell .aurora-topic-lastpost{
     grid-column:1 / -1!important;
     margin-left:0!important;
   }
