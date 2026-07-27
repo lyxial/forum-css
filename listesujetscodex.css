@@ -17,45 +17,6 @@
   color:var(--at-text);
 }
 
-.aurora-topics-banner{
-  min-height:220px;
-  margin:16px 0 22px;
-  padding:32px;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  align-items:center;
-  overflow:hidden;
-  border-radius:26px;
-  background:
-    radial-gradient(circle at 20% 25%,rgba(255,255,255,.13),transparent 21%),
-    radial-gradient(circle at 82% 55%,rgba(255,255,255,.08),transparent 24%),
-    linear-gradient(120deg,#261830,#4f335d 52%,#8c6ba0);
-  box-shadow:var(--at-shadow);
-  color:#fff;
-  text-align:center;
-}
-
-.aurora-topics-banner > span{
-  font-size:9px;
-  font-weight:700;
-  letter-spacing:.25em;
-  text-transform:uppercase;
-}
-
-.aurora-topics-banner h1{
-  margin:8px 0 0;
-  color:#fff;
-  font:46px/1 Georgia,serif;
-  letter-spacing:.06em;
-  text-transform:uppercase;
-}
-
-.aurora-topics-banner p{
-  margin:12px 0 0;
-  color:rgba(255,255,255,.72);
-  font:italic 13px Georgia,serif;
-}
 
 .aurora-topic-render,
 .aurora-topic-source,
@@ -314,14 +275,6 @@
 }
 
 @media(max-width:650px){
-  .aurora-topics-banner{
-    min-height:175px;
-    padding:22px;
-  }
-
-  .aurora-topics-banner h1{
-    font-size:30px;
-  }
 
   .aurora-topic-row{
     grid-template-columns:44px minmax(0,1fr);
