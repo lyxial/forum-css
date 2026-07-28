@@ -111,7 +111,17 @@ html.dark{
 }
 
 .als-subnav{
+  display:block;
+  clear:both;
+  width:100%;
   margin:18px 0 20px;
+}
+
+.als-topic-form{
+  display:block;
+  clear:both;
+  width:100%;
+  margin-top:18px;
 }
 
 .als-subnav-source,
@@ -240,6 +250,11 @@ html.dark{
   width:44px;
   height:44px;
   border:2px solid #fff;
+}
+
+.als-subforum-last-avatar.is-empty,
+.als-last-avatar.is-empty{
+  color:transparent;
 }
 
 .als-subforum-last-avatar img,
