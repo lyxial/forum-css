@@ -1077,3 +1077,234 @@ body.is-dark .als-last-copy [data-als-last-time]{
   background:url("https://zupimages.net/up/26/31/3vwr.png") center/contain no-repeat !important;
 }
 
+/* ==========================================================
+   AURORA - Correctif V18
+   A coller tout a la fin du CSS.
+
+   Corrige :
+   - icone Forumactif trop basse ;
+   - fausse fleche encore visible ;
+   - avatar du dernier posteur disparu ;
+   - icone manquante dans les sous-forums.
+   ========================================================== */
+
+:root{
+  --als-last-link-img-fallback:url("https://zupimages.net/up/26/31/3vwr.png");
+}
+
+.als-avatar-source,
+.als-last-img-source{
+  display:none !important;
+}
+
+.als-last-post{
+  position:relative !important;
+  min-height:60px !important;
+  padding:8px 42px 8px 10px !important;
+  display:grid !important;
+  grid-template-columns:42px minmax(0,1fr) !important;
+  gap:10px !important;
+  align-items:center !important;
+  overflow:visible !important;
+}
+
+.als-last-post:before,
+.als-last-post:after{
+  content:none !important;
+  display:none !important;
+}
+
+.als-last-avatar{
+  position:relative !important;
+  width:42px !important;
+  height:42px !important;
+  display:grid !important;
+  place-items:center !important;
+  overflow:visible !important;
+  border-radius:50% !important;
+  background:linear-gradient(145deg,#d6b8e2,#8f63a1) !important;
+  border:2px solid var(--als-surface,#fffafd) !important;
+  box-shadow:0 0 0 1px var(--als-line,#decfe3) !important;
+}
+
+.als-last-avatar img{
+  width:100% !important;
+  height:100% !important;
+  display:block !important;
+  object-fit:cover !important;
+  border:0 !important;
+  border-radius:50% !important;
+  background:transparent !important;
+  box-shadow:none !important;
+}
+
+.als-last-avatar:after{
+  content:"\2726" !important;
+  position:absolute !important;
+  left:50% !important;
+  top:50% !important;
+  z-index:3 !important;
+  color:var(--als-gold,#c29255) !important;
+  font:700 10px/1 Georgia,serif !important;
+  text-shadow:0 0 6px rgba(255,255,255,.78) !important;
+  transform:translate(-50%,-50%) rotate(0deg) translateX(28px) !important;
+  animation:alsOrbit 4.2s linear infinite !important;
+  pointer-events:none !important;
+}
+
+.als-last-copy{
+  min-width:0 !important;
+  display:block !important;
+  padding-right:0 !important;
+}
+
+.als-last-topic,
+.als-last-copy strong,
+.als-last-copy small,
+.als-last-copy [data-als-last-time]{
+  display:block !important;
+  overflow:hidden !important;
+  text-overflow:ellipsis !important;
+  white-space:nowrap !important;
+}
+
+.als-last-copy small,
+.als-last-copy [data-als-last-time]{
+  margin-top:2px !important;
+  font-size:8px !important;
+  line-height:1.15 !important;
+  opacity:.9 !important;
+}
+
+.als-last-go,
+.als-last-go:link,
+.als-last-go:visited,
+.als-last-go:hover,
+.als-last-go:active{
+  position:absolute !important;
+  right:14px !important;
+  top:50% !important;
+  z-index:6 !important;
+  width:22px !important;
+  height:22px !important;
+  display:grid !important;
+  place-items:center !important;
+  overflow:visible !important;
+  border:0 !important;
+  background:transparent !important;
+  box-shadow:none !important;
+  color:transparent !important;
+  font-size:0 !important;
+  line-height:0 !important;
+  text-indent:0 !important;
+  opacity:1 !important;
+  visibility:visible !important;
+  transform:translateY(-50%) !important;
+}
+
+.als-last-go:before,
+.als-last-go:after{
+  content:none !important;
+  display:none !important;
+}
+
+.als-last-go a,
+.als-last-post > a:not(.als-status-icon):not(.als-last-post){
+  width:22px !important;
+  height:22px !important;
+  display:grid !important;
+  place-items:center !important;
+  border:0 !important;
+  background:transparent !important;
+  box-shadow:none !important;
+}
+
+.als-last-post > a:not(.als-status-icon):not(.als-last-post){
+  position:absolute !important;
+  right:14px !important;
+  top:50% !important;
+  z-index:7 !important;
+  transform:translateY(-50%) !important;
+}
+
+.als-last-go img,
+.als-last-post > a:not(.als-status-icon):not(.als-last-post) img{
+  width:18px !important;
+  height:18px !important;
+  max-width:18px !important;
+  max-height:18px !important;
+  display:block !important;
+  object-fit:contain !important;
+  border:0 !important;
+  border-radius:0 !important;
+  background:transparent !important;
+  box-shadow:none !important;
+  opacity:1 !important;
+  visibility:visible !important;
+  transform:none !important;
+}
+
+.als-last-go:not(:has(img[src])):not(:has(a img[src])){
+  background:var(--als-last-link-img-fallback) center/18px 18px no-repeat !important;
+}
+
+.als-subforum-last{
+  position:relative !important;
+  padding-right:42px !important;
+}
+
+.als-subforum-go{
+  position:absolute !important;
+  right:12px !important;
+  top:50% !important;
+  z-index:6 !important;
+  width:22px !important;
+  height:22px !important;
+  display:grid !important;
+  place-items:center !important;
+  color:transparent !important;
+  font-size:0 !important;
+  line-height:0 !important;
+  text-indent:0 !important;
+  transform:translateY(-50%) !important;
+}
+
+.als-subforum-go:before{
+  content:"" !important;
+  width:18px !important;
+  height:18px !important;
+  display:block !important;
+  background:var(--als-last-link-img-fallback) center/contain no-repeat !important;
+}
+
+.als-subforum-go:has(img[src]):before,
+.als-subforum-go:has(a img[src]):before{
+  content:none !important;
+  display:none !important;
+}
+
+.als-subforum-go:after{
+  content:none !important;
+  display:none !important;
+}
+
+.als-subforum-go a{
+  width:22px !important;
+  height:22px !important;
+  display:grid !important;
+  place-items:center !important;
+}
+
+.als-subforum-go img{
+  width:18px !important;
+  height:18px !important;
+  max-width:18px !important;
+  max-height:18px !important;
+  display:block !important;
+  object-fit:contain !important;
+  border:0 !important;
+  border-radius:0 !important;
+  background:transparent !important;
+  box-shadow:none !important;
+}
+
