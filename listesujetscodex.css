@@ -77,6 +77,14 @@ body.aurora-viewforum-page .als-page{
   box-shadow:none !important;
 }
 
+body.aurora-viewforum-page .page-body,
+body.aurora-viewforum-page #main-content,
+body.aurora-viewforum-page .forabg,
+body.aurora-viewforum-page .inner{
+  background:transparent !important;
+  box-shadow:none !important;
+}
+
 body.aurora-viewforum-page .als-forum-head{
   width:100% !important;
   margin:36px auto 28px !important;
@@ -102,7 +110,7 @@ body.aurora-viewforum-page .als-forum-head:after{
 }
 
 body.aurora-viewforum-page .als-forum-title{
-  width:auto !important;
+  width:100% !important;
   min-height:92px !important;
   margin:0 !important;
   padding:24px 30px !important;
@@ -544,6 +552,21 @@ body.aurora-viewforum-page .als-subforum-last-avatar{
   isolation:isolate !important;
 }
 
+body.aurora-viewforum-page .als-last-avatar > a,
+body.aurora-viewforum-page [data-als-last-avatar] > a,
+body.aurora-viewforum-page .als-subforum-last-avatar > a{
+  position:relative !important;
+  z-index:2 !important;
+  width:100% !important;
+  height:100% !important;
+  display:block !important;
+  overflow:hidden !important;
+  border:2px solid #fff !important;
+  border-radius:50% !important;
+  box-sizing:border-box !important;
+  background:transparent !important;
+}
+
 body.aurora-viewforum-page .als-subforum-last-avatar{
   width:44px !important;
   height:44px !important;
@@ -551,7 +574,10 @@ body.aurora-viewforum-page .als-subforum-last-avatar{
 
 body.aurora-viewforum-page .als-last-avatar > img,
 body.aurora-viewforum-page [data-als-last-avatar] > img,
-body.aurora-viewforum-page .als-subforum-last-avatar > img{
+body.aurora-viewforum-page .als-subforum-last-avatar > img,
+body.aurora-viewforum-page .als-last-avatar img,
+body.aurora-viewforum-page [data-als-last-avatar] img,
+body.aurora-viewforum-page .als-subforum-last-avatar img{
   position:relative !important;
   z-index:2 !important;
   display:block !important;
@@ -563,9 +589,20 @@ body.aurora-viewforum-page .als-subforum-last-avatar > img{
   max-height:100% !important;
   aspect-ratio:1 / 1 !important;
   object-fit:cover !important;
-  border:2px solid #fff !important;
   border-radius:50% !important;
   box-shadow:none !important;
+}
+
+body.aurora-viewforum-page .als-last-avatar > img,
+body.aurora-viewforum-page [data-als-last-avatar] > img,
+body.aurora-viewforum-page .als-subforum-last-avatar > img{
+  border:2px solid #fff !important;
+}
+
+body.aurora-viewforum-page .als-last-avatar > a img,
+body.aurora-viewforum-page [data-als-last-avatar] > a img,
+body.aurora-viewforum-page .als-subforum-last-avatar > a img{
+  border:0 !important;
 }
 
 body.aurora-viewforum-page .als-last-copy{
@@ -672,9 +709,15 @@ body.aurora-viewforum-page .button1,
 body.aurora-viewforum-page .button2,
 body.aurora-viewforum-page input.button1,
 body.aurora-viewforum-page input.button2{
-  min-height:36px !important;
+  min-width:0 !important;
+  min-height:38px !important;
+  height:38px !important;
+  display:inline-flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+  box-sizing:border-box !important;
   padding:0 18px !important;
-  border:1px solid var(--avf-border) !important;
+  border:1px solid rgba(255,255,255,.35) !important;
   border-radius:10px !important;
   background:var(--avf-title) !important;
   color:#fff !important;
@@ -686,6 +729,25 @@ body.aurora-viewforum-page input.button2{
   letter-spacing:.4px !important;
   text-transform:uppercase !important;
   white-space:nowrap !important;
+  vertical-align:middle !important;
+  cursor:pointer !important;
+}
+
+body.aurora-viewforum-page .als-button,
+body.aurora-viewforum-page .topic-actions a:not([href*="mode=newtopic"]){
+  border-color:var(--avf-border) !important;
+  background:var(--avf-title) !important;
+  color:#fff !important;
+}
+
+body.aurora-viewforum-page .als-new-topic-button:hover,
+body.aurora-viewforum-page .als-button:hover,
+body.aurora-viewforum-page a[href*="mode=newtopic"]:hover,
+body.aurora-viewforum-page a[href*="/post?f="]:hover,
+body.aurora-viewforum-page .button1:hover,
+body.aurora-viewforum-page .button2:hover{
+  filter:brightness(1.06) !important;
+  transform:translateY(-1px) !important;
 }
 
 body.aurora-viewforum-page .topic-actions,
