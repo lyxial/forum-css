@@ -81,8 +81,7 @@ body.aurora-viewforum-page .als-forum-head{
   width:100% !important;
   margin:36px auto 28px !important;
   padding:0 !important;
-  display:grid !important;
-  grid-template-columns:minmax(0,1fr) auto !important;
+  display:block !important;
   align-items:center !important;
   gap:20px !important;
   background:transparent !important;
@@ -107,9 +106,11 @@ body.aurora-viewforum-page .als-forum-title{
   min-height:92px !important;
   margin:0 !important;
   padding:24px 30px !important;
-  display:flex !important;
-  flex-direction:column !important;
-  justify-content:center !important;
+  display:grid !important;
+  grid-template-columns:minmax(0,1fr) auto !important;
+  grid-template-areas:"eyebrow action" "title action" "desc action" !important;
+  align-items:center !important;
+  column-gap:20px !important;
   border:1px solid var(--avf-border) !important;
   border-radius:var(--avf-radius) !important;
   background:
@@ -121,6 +122,7 @@ body.aurora-viewforum-page .als-forum-title{
 
 body.aurora-viewforum-page .als-forum-title small{
   display:block !important;
+  grid-area:eyebrow !important;
   margin:0 0 8px !important;
   color:var(--avf-gold) !important;
   font:700 10px/1 Arial,sans-serif !important;
@@ -129,6 +131,7 @@ body.aurora-viewforum-page .als-forum-title small{
 }
 
 body.aurora-viewforum-page .als-forum-title h2{
+  grid-area:title !important;
   margin:0 !important;
   color:var(--avf-title) !important;
   font-family:var(--avf-title-font) !important;
@@ -139,6 +142,7 @@ body.aurora-viewforum-page .als-forum-title h2{
 }
 
 body.aurora-viewforum-page .als-forum-head-actions{
+  grid-area:action !important;
   display:flex !important;
   justify-content:flex-end !important;
   align-items:center !important;
@@ -154,6 +158,7 @@ body.aurora-viewforum-page .als-forum-head-actions button{
 }
 
 body.aurora-viewforum-page .als-forum-title p{
+  grid-area:desc !important;
   margin:8px 0 0 !important;
   color:var(--avf-muted) !important;
   font:500 13px/1.5 Arial,sans-serif !important;
@@ -316,6 +321,30 @@ body.aurora-viewforum-page .als-last-topic{
   font:800 12px/1.25 Arial,sans-serif !important;
 }
 
+body.aurora-viewforum-page .als-subforum-last-copy{
+  min-width:0 !important;
+  display:block !important;
+}
+
+body.aurora-viewforum-page .als-subforum-last-topic-row,
+body.aurora-viewforum-page .als-subforum-last-author-row{
+  display:block !important;
+  overflow:hidden !important;
+  white-space:nowrap !important;
+  text-overflow:ellipsis !important;
+}
+
+body.aurora-viewforum-page .als-subforum-last-topic-row{
+  color:inherit !important;
+  font:800 12px/1.25 Arial,sans-serif !important;
+}
+
+body.aurora-viewforum-page .als-subforum-last-author-row{
+  margin-top:2px !important;
+  color:var(--avf-muted) !important;
+  font:600 10px/1.25 Arial,sans-serif !important;
+}
+
 body.aurora-viewforum-page .als-subforum-last small,
 body.aurora-viewforum-page .als-last-copy small,
 body.aurora-viewforum-page [data-als-last-time]{
@@ -422,10 +451,10 @@ body.aurora-viewforum-page .als-topic-title{
   white-space:nowrap !important;
   text-overflow:ellipsis !important;
   color:var(--avf-title) !important;
-  font-family:var(--avf-title-font) !important;
-  font-size:27px !important;
+  font-family:Georgia, "Times New Roman", serif !important;
+  font-size:25px !important;
   font-weight:400 !important;
-  line-height:1.05 !important;
+  line-height:1.12 !important;
   letter-spacing:0 !important;
 }
 
@@ -528,6 +557,11 @@ body.aurora-viewforum-page .als-subforum-last-avatar > img{
   display:block !important;
   width:100% !important;
   height:100% !important;
+  min-width:100% !important;
+  min-height:100% !important;
+  max-width:100% !important;
+  max-height:100% !important;
+  aspect-ratio:1 / 1 !important;
   object-fit:cover !important;
   border:2px solid #fff !important;
   border-radius:50% !important;
@@ -633,6 +667,7 @@ body.aurora-viewforum-page .als-clean-orbit-star{
 body.aurora-viewforum-page a[href*="mode=newtopic"],
 body.aurora-viewforum-page a[href*="/post?f="],
 body.aurora-viewforum-page .als-new-topic-button,
+body.aurora-viewforum-page .als-button,
 body.aurora-viewforum-page .button1,
 body.aurora-viewforum-page .button2,
 body.aurora-viewforum-page input.button1,
