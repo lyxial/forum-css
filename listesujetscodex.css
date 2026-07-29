@@ -1,11 +1,11 @@
-/* AURORA - Liste des sujets V10 */
+/* AURORA - Liste des sujets V11 */
 :root{
   --als-card-image-default:url("https://2img.net/zupimages.net/up/26/29/j02r.png");
   --als-bg:#ebeef1;
   --als-surface:#fffafd;
   --als-surface-soft:#f2e9f4;
-  --als-sub-last:rgba(54,38,62,.88);
-  --als-sub-last-text:#ffffff;
+  --als-sub-last:rgba(255,255,255,.88);
+  --als-sub-last-text:#302436;
   --als-text:#302436;
   --als-muted:#807384;
   --als-primary:#7d568c;
@@ -18,18 +18,33 @@
 html.theme-dark,
 html.dark,
 html.dark-mode,
+html.dark-theme,
+html.is-dark,
 html[data-theme="dark"],
+html[data-mode="dark"],
+html[data-color-scheme="dark"],
+html[data-theme-mode="dark"],
 body.theme-dark,
 body.dark,
 body.dark-mode,
+body.dark-theme,
+body.is-dark,
 body[data-theme="dark"],
 body[data-mode="dark"],
+body[data-color-scheme="dark"],
+body[data-theme-mode="dark"],
 .theme-dark .als-page,
-.dark-mode .als-page{
+.dark-mode .als-page,
+.dark-theme .als-page,
+.is-dark .als-page,
+[data-theme="dark"] .als-page,
+[data-mode="dark"] .als-page,
+[data-color-scheme="dark"] .als-page,
+[data-theme-mode="dark"] .als-page{
   --als-bg:#100b14;
   --als-surface:#1c1422;
   --als-surface-soft:#2a1e31;
-  --als-sub-last:rgba(255,255,255,.12);
+  --als-sub-last:rgba(42,30,49,.92);
   --als-sub-last-text:#ffffff;
   --als-text:#f4edf6;
   --als-muted:#c9b9d0;
@@ -326,6 +341,14 @@ body[data-mode="dark"],
   font:700 15px/1 Arial,sans-serif;
 }
 
+.als-subforum-go:before,
+.als-last-go:before{
+  content:"\2192";
+  display:block;
+  color:currentColor;
+  font:700 15px/1 Arial,sans-serif;
+}
+
 .als-subforum-go:empty:before,
 .als-last-go:empty:before,
 .als-subforum-go.is-fallback:before,
@@ -335,9 +358,9 @@ body[data-mode="dark"],
 
 .als-subforum-go img,
 .als-last-go img{
+  display:none !important;
   max-width:18px;
   max-height:18px;
-  display:block;
   object-fit:contain;
 }
 
@@ -518,6 +541,122 @@ body[data-mode="dark"],
 .als-last-topic{color:var(--als-text);font-weight:700}
 .als-last-copy strong{color:var(--als-muted);font-weight:700}
 .als-last-copy small{color:var(--als-muted);font-size:8px}
+
+html.theme-dark .als-topic-row,
+html.dark .als-topic-row,
+html.dark-mode .als-topic-row,
+html.dark-theme .als-topic-row,
+html.is-dark .als-topic-row,
+html[data-theme="dark"] .als-topic-row,
+html[data-mode="dark"] .als-topic-row,
+html[data-color-scheme="dark"] .als-topic-row,
+html[data-theme-mode="dark"] .als-topic-row,
+body.theme-dark .als-topic-row,
+body.dark .als-topic-row,
+body.dark-mode .als-topic-row,
+body.dark-theme .als-topic-row,
+body.is-dark .als-topic-row,
+body[data-theme="dark"] .als-topic-row,
+body[data-mode="dark"] .als-topic-row,
+body[data-color-scheme="dark"] .als-topic-row,
+body[data-theme-mode="dark"] .als-topic-row,
+.theme-dark .als-topic-row,
+.dark-mode .als-topic-row,
+.dark-theme .als-topic-row,
+.is-dark .als-topic-row,
+[data-theme="dark"] .als-topic-row,
+[data-mode="dark"] .als-topic-row,
+[data-color-scheme="dark"] .als-topic-row,
+[data-theme-mode="dark"] .als-topic-row{
+  background:#1c1422 !important;
+  color:#f4edf6 !important;
+}
+
+html.theme-dark .als-stats,
+html.theme-dark .als-last-post,
+html.dark .als-stats,
+html.dark .als-last-post,
+html.dark-mode .als-stats,
+html.dark-mode .als-last-post,
+html.dark-theme .als-stats,
+html.dark-theme .als-last-post,
+html.is-dark .als-stats,
+html.is-dark .als-last-post,
+html[data-theme="dark"] .als-stats,
+html[data-theme="dark"] .als-last-post,
+html[data-mode="dark"] .als-stats,
+html[data-mode="dark"] .als-last-post,
+html[data-color-scheme="dark"] .als-stats,
+html[data-color-scheme="dark"] .als-last-post,
+html[data-theme-mode="dark"] .als-stats,
+html[data-theme-mode="dark"] .als-last-post,
+body.theme-dark .als-stats,
+body.theme-dark .als-last-post,
+body.dark .als-stats,
+body.dark .als-last-post,
+body.dark-mode .als-stats,
+body.dark-mode .als-last-post,
+body.dark-theme .als-stats,
+body.dark-theme .als-last-post,
+body.is-dark .als-stats,
+body.is-dark .als-last-post,
+body[data-theme="dark"] .als-stats,
+body[data-theme="dark"] .als-last-post,
+body[data-mode="dark"] .als-stats,
+body[data-mode="dark"] .als-last-post,
+body[data-color-scheme="dark"] .als-stats,
+body[data-color-scheme="dark"] .als-last-post,
+body[data-theme-mode="dark"] .als-stats,
+body[data-theme-mode="dark"] .als-last-post,
+.theme-dark .als-stats,
+.theme-dark .als-last-post,
+.dark-mode .als-stats,
+.dark-mode .als-last-post,
+.dark-theme .als-stats,
+.dark-theme .als-last-post,
+.is-dark .als-stats,
+.is-dark .als-last-post,
+[data-theme="dark"] .als-stats,
+[data-theme="dark"] .als-last-post,
+[data-mode="dark"] .als-stats,
+[data-mode="dark"] .als-last-post,
+[data-color-scheme="dark"] .als-stats,
+[data-color-scheme="dark"] .als-last-post,
+[data-theme-mode="dark"] .als-stats,
+[data-theme-mode="dark"] .als-last-post{
+  background:#2a1e31 !important;
+  color:#f4edf6 !important;
+}
+
+html.theme-dark .als-subforum-last,
+html.dark .als-subforum-last,
+html.dark-mode .als-subforum-last,
+html.dark-theme .als-subforum-last,
+html.is-dark .als-subforum-last,
+html[data-theme="dark"] .als-subforum-last,
+html[data-mode="dark"] .als-subforum-last,
+html[data-color-scheme="dark"] .als-subforum-last,
+html[data-theme-mode="dark"] .als-subforum-last,
+body.theme-dark .als-subforum-last,
+body.dark .als-subforum-last,
+body.dark-mode .als-subforum-last,
+body.dark-theme .als-subforum-last,
+body.is-dark .als-subforum-last,
+body[data-theme="dark"] .als-subforum-last,
+body[data-mode="dark"] .als-subforum-last,
+body[data-color-scheme="dark"] .als-subforum-last,
+body[data-theme-mode="dark"] .als-subforum-last,
+.theme-dark .als-subforum-last,
+.dark-mode .als-subforum-last,
+.dark-theme .als-subforum-last,
+.is-dark .als-subforum-last,
+[data-theme="dark"] .als-subforum-last,
+[data-mode="dark"] .als-subforum-last,
+[data-color-scheme="dark"] .als-subforum-last,
+[data-theme-mode="dark"] .als-subforum-last{
+  background:rgba(42,30,49,.92) !important;
+  color:#fff !important;
+}
 
 .als-empty-topic,
 .als-admin-commands,
