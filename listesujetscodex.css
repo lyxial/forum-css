@@ -1722,4 +1722,107 @@ body.dark-mode .als-orbit-star-final,
   }
 }
 
+/* ==========================================================
+   AURORA - Correctif V25
+   A coller TOUT A LA FIN du CSS.
+
+   Nettoyage final de l'orbite sur viewforum :
+   - neutralise les anciennes etoiles V21/V22/V23/V24 ;
+   - garde une seule etoile stable autour des avatars ;
+   - fonctionne sur la liste des sujets et les sous-forums ;
+   - ne touche pas a la structure generale de la page.
+   ========================================================== */
+
+body.aurora-viewforum-page .als-topic-row .als-last-avatar,
+body.aurora-viewforum-page .als-topic-row [data-als-last-avatar],
+body.aurora-viewforum-page .als-subforum-last-avatar{
+  position:relative !important;
+  overflow:visible !important;
+  isolation:isolate !important;
+}
+
+/* Anciennes etoiles ajoutees par les correctifs precedents */
+body.aurora-viewforum-page .als-orbit-star,
+body.aurora-viewforum-page .als-orbit-star-final{
+  display:none !important;
+  visibility:hidden !important;
+  opacity:0 !important;
+  animation:none !important;
+  pointer-events:none !important;
+}
+
+/* Anciennes etoiles en pseudo-elements, surtout V23 */
+body.aurora-viewforum-page .als-topic-row .als-last-avatar::before,
+body.aurora-viewforum-page .als-topic-row .als-last-avatar::after,
+body.aurora-viewforum-page .als-topic-row [data-als-last-avatar]::before,
+body.aurora-viewforum-page .als-topic-row [data-als-last-avatar]::after,
+body.aurora-viewforum-page .als-subforum-last-avatar::before,
+body.aurora-viewforum-page .als-subforum-last-avatar::after{
+  content:none !important;
+  display:none !important;
+  visibility:hidden !important;
+  opacity:0 !important;
+  animation:none !important;
+}
+
+body.aurora-viewforum-page .als-topic-row .als-last-avatar > img,
+body.aurora-viewforum-page .als-topic-row [data-als-last-avatar] > img,
+body.aurora-viewforum-page .als-subforum-last-avatar > img{
+  position:relative !important;
+  z-index:2 !important;
+}
+
+/* Etoile unique V25 */
+body.aurora-viewforum-page .als-v25-orbit-star{
+  position:absolute !important;
+  left:50% !important;
+  top:50% !important;
+  z-index:20 !important;
+  width:14px !important;
+  height:14px !important;
+  display:grid !important;
+  place-items:center !important;
+  overflow:visible !important;
+  color:var(--als-gold,#c29255) !important;
+  background:transparent !important;
+  border:0 !important;
+  border-radius:0 !important;
+  box-shadow:none !important;
+  font:700 12px/1 Georgia,serif !important;
+  text-indent:0 !important;
+  text-shadow:0 0 7px rgba(255,255,255,.92) !important;
+  opacity:1 !important;
+  visibility:visible !important;
+  pointer-events:none !important;
+  transform-origin:center !important;
+  animation:alsV25OrbitClean 4.2s linear infinite !important;
+}
+
+html.theme-dark body.aurora-viewforum-page .als-v25-orbit-star,
+html.dark body.aurora-viewforum-page .als-v25-orbit-star,
+html.dark-mode body.aurora-viewforum-page .als-v25-orbit-star,
+body.theme-dark.aurora-viewforum-page .als-v25-orbit-star,
+body.dark.aurora-viewforum-page .als-v25-orbit-star,
+body.dark-mode.aurora-viewforum-page .als-v25-orbit-star,
+.theme-dark body.aurora-viewforum-page .als-v25-orbit-star,
+.dark-mode body.aurora-viewforum-page .als-v25-orbit-star{
+  color:#d2aa6a !important;
+  text-shadow:0 0 8px rgba(215,182,229,.9) !important;
+}
+
+@keyframes alsV25OrbitClean{
+  from{
+    transform:translate(-50%,-50%) rotate(0deg) translateX(26px) rotate(0deg);
+  }
+  to{
+    transform:translate(-50%,-50%) rotate(360deg) translateX(26px) rotate(-360deg);
+  }
+}
+
+@media (prefers-reduced-motion:reduce){
+  body.aurora-viewforum-page .als-v25-orbit-star{
+    animation:none !important;
+    transform:translate(16px,-26px) !important;
+  }
+}
 
