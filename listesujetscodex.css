@@ -836,3 +836,76 @@ body.is-dark .als-last-copy [data-als-last-time]{
   color:#c9b9d0 !important;
 }
 
+/* ==========================================================
+   AURORA - Correctif V15
+   A coller APRES le correctif V14 ou a la toute fin du CSS.
+
+   Ce correctif retire la fausse fleche texte et affiche
+   l'image native Forumactif : {topics_list_box.row.LAST_POST_IMG}
+   ========================================================== */
+
+.als-last-post{
+  position:relative !important;
+  grid-template-columns:42px minmax(0,1fr) 28px !important;
+  padding-right:10px !important;
+  overflow:visible !important;
+}
+
+.als-last-post:after{
+  content:none !important;
+  display:none !important;
+}
+
+.als-last-go,
+.als-last-go:link,
+.als-last-go:visited,
+.als-last-go:hover,
+.als-last-go:active{
+  width:26px !important;
+  height:26px !important;
+  display:grid !important;
+  place-items:center !important;
+  justify-self:end !important;
+  align-self:center !important;
+  overflow:visible !important;
+  border:0 !important;
+  background:transparent !important;
+  box-shadow:none !important;
+  color:inherit !important;
+  font-size:0 !important;
+  line-height:1 !important;
+  opacity:1 !important;
+  visibility:visible !important;
+  pointer-events:auto !important;
+}
+
+.als-last-go:before,
+.als-last-go:after{
+  content:none !important;
+  display:none !important;
+}
+
+.als-last-go img{
+  width:18px !important;
+  height:18px !important;
+  max-width:18px !important;
+  max-height:18px !important;
+  display:block !important;
+  object-fit:contain !important;
+  border:0 !important;
+  border-radius:0 !important;
+  background:transparent !important;
+  box-shadow:none !important;
+  opacity:1 !important;
+  visibility:visible !important;
+}
+
+.als-last-copy small,
+.als-last-copy [data-als-last-time]{
+  display:block !important;
+  margin-top:2px !important;
+  overflow:hidden !important;
+  text-overflow:ellipsis !important;
+  white-space:nowrap !important;
+}
+
