@@ -632,6 +632,7 @@ body.aurora-viewforum-page .als-clean-orbit-star{
 /* Boutons et blocs bas de page */
 body.aurora-viewforum-page a[href*="mode=newtopic"],
 body.aurora-viewforum-page a[href*="/post?f="],
+body.aurora-viewforum-page .als-new-topic-button,
 body.aurora-viewforum-page .button1,
 body.aurora-viewforum-page .button2,
 body.aurora-viewforum-page input.button1,
@@ -648,6 +649,8 @@ body.aurora-viewforum-page input.button2{
   font-weight:700 !important;
   line-height:1 !important;
   letter-spacing:.4px !important;
+  text-transform:uppercase !important;
+  white-space:nowrap !important;
 }
 
 body.aurora-viewforum-page .topic-actions,
