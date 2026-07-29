@@ -1,4 +1,4 @@
-/* AURORA - Liste des sujets V11 */
+/* AURORA - Liste des sujets V12 */
 :root{
   --als-card-image-default:url("https://2img.net/zupimages.net/up/26/29/j02r.png");
   --als-bg:#ebeef1;
@@ -334,26 +334,24 @@ body[data-theme-mode="dark"],
 .als-last-go{
   width:24px;
   height:24px;
-  display:grid;
-  place-items:center;
+  display:flex !important;
+  align-items:center;
+  justify-content:center;
   justify-self:end;
+  flex:0 0 24px;
+  opacity:1 !important;
+  visibility:visible !important;
   color:currentColor !important;
   font:700 15px/1 Arial,sans-serif;
+  text-indent:0 !important;
 }
 
-.als-subforum-go:before,
-.als-last-go:before{
+.als-subforum-go:empty:before,
+.als-last-go:empty:before{
   content:"\2192";
   display:block;
   color:currentColor;
   font:700 15px/1 Arial,sans-serif;
-}
-
-.als-subforum-go:empty:before,
-.als-last-go:empty:before,
-.als-subforum-go.is-fallback:before,
-.als-last-go.is-fallback:before{
-  content:"\2192";
 }
 
 .als-subforum-go img,
