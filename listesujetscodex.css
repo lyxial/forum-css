@@ -729,1100 +729,590 @@ body[data-theme-mode="dark"] .als-subforum-last,
 }
 
 /* ==========================================================
-   AURORA - Correctif urgence V14
-   A coller tout a la fin du CSS.
+   AURORA - VIEWFORUM BASE PROPRE
+   A coller a la place des anciens correctifs de liste des sujets.
 
-   IMPORTANT :
-   Supprimer le JS_CORRECTIF_V13_FLECHE_DATE.js du forum.
-   Cette version ne contient aucun MutationObserver et ne ralentit
-   pas les pages de liste des sujets.
+   Remplace les correctifs disperses V13 a V25 pour :
+   - la liste des sujets ;
+   - les sous-forums ;
+   - le bloc dernier posteur ;
+   - l'icone native "lien derniere reponse" ;
+   - l'etoile en orbite autour de l'avatar.
+
+   Important : ce CSS est scope sur body.aurora-viewforum-page.
    ========================================================== */
 
-.als-last-post{
-  position:relative !important;
-  grid-template-columns:42px minmax(0,1fr) !important;
-  padding-right:42px !important;
-  overflow:visible !important;
+body.aurora-viewforum-page{
+  --avf-bg:#e9ecef;
+  --avf-panel:#fffaff;
+  --avf-panel-2:#f5edf7;
+  --avf-ink:#302436;
+  --avf-muted:#8c8094;
+  --avf-purple:#7f5891;
+  --avf-purple-deep:#2b1d31;
+  --avf-border:#d9c8df;
+  --avf-gold:#c29255;
+  --avf-shadow:0 20px 42px rgba(46,31,54,.12);
+  --avf-radius:18px;
 }
 
-.als-last-post:after{
-  content:"\2192" !important;
-  position:absolute !important;
-  right:14px !important;
-  top:50% !important;
-  z-index:8 !important;
-  width:22px !important;
-  height:22px !important;
-  display:grid !important;
-  place-items:center !important;
-  color:#302436 !important;
-  font:700 17px/1 Arial,sans-serif !important;
-  opacity:1 !important;
-  visibility:visible !important;
-  transform:translateY(-50%) !important;
-  pointer-events:none !important;
+body.aurora-viewforum-page.theme-dark,
+body.aurora-viewforum-page.dark,
+body.aurora-viewforum-page.dark-mode,
+html.theme-dark body.aurora-viewforum-page,
+html.dark body.aurora-viewforum-page,
+html.dark-mode body.aurora-viewforum-page{
+  --avf-bg:#110b16;
+  --avf-panel:#201426;
+  --avf-panel-2:#2c1c34;
+  --avf-ink:#fff8ff;
+  --avf-muted:#cbb8d3;
+  --avf-purple:#d8aee8;
+  --avf-purple-deep:#160d1b;
+  --avf-border:#563963;
+  --avf-gold:#d8b36d;
+  --avf-shadow:0 18px 40px rgba(0,0,0,.28);
 }
 
-html.theme-dark .als-last-post:after,
-html.dark .als-last-post:after,
-html.dark-mode .als-last-post:after,
-html.dark-theme .als-last-post:after,
-html.is-dark .als-last-post:after,
-html[data-theme="dark"] .als-last-post:after,
-html[data-mode="dark"] .als-last-post:after,
-body.theme-dark .als-last-post:after,
-body.dark .als-last-post:after,
-body.dark-mode .als-last-post:after,
-body.dark-theme .als-last-post:after,
-body.is-dark .als-last-post:after,
-body[data-theme="dark"] .als-last-post:after,
-body[data-mode="dark"] .als-last-post:after,
-.theme-dark .als-last-post:after,
-.dark-mode .als-last-post:after,
-.dark-theme .als-last-post:after,
-.is-dark .als-last-post:after,
-[data-theme="dark"] .als-last-post:after,
-[data-mode="dark"] .als-last-post:after{
-  color:#ffffff !important;
+body.aurora-viewforum-page a{
+  text-decoration:none;
 }
 
-.als-last-go,
-.als-last-go:before,
-.als-last-go:after{
-  display:none !important;
-  content:none !important;
-}
-
-.als-last-copy{
-  min-width:0 !important;
-  padding-right:2px !important;
-}
-
-.als-last-copy small,
-.als-last-copy [data-als-last-time]{
-  display:block !important;
-  min-height:1em !important;
-  margin-top:2px !important;
-  overflow:hidden !important;
-  color:var(--als-muted,#807384) !important;
-  font-size:8px !important;
-  line-height:1.15 !important;
-  text-overflow:ellipsis !important;
-  white-space:nowrap !important;
-  opacity:.9 !important;
-  visibility:visible !important;
-}
-
-html.theme-dark .als-last-copy small,
-html.theme-dark .als-last-copy [data-als-last-time],
-html.dark .als-last-copy small,
-html.dark .als-last-copy [data-als-last-time],
-html.dark-mode .als-last-copy small,
-html.dark-mode .als-last-copy [data-als-last-time],
-html.dark-theme .als-last-copy small,
-html.dark-theme .als-last-copy [data-als-last-time],
-html.is-dark .als-last-copy small,
-html.is-dark .als-last-copy [data-als-last-time],
-body.theme-dark .als-last-copy small,
-body.theme-dark .als-last-copy [data-als-last-time],
-body.dark .als-last-copy small,
-body.dark .als-last-copy [data-als-last-time],
-body.dark-mode .als-last-copy small,
-body.dark-mode .als-last-copy [data-als-last-time],
-body.dark-theme .als-last-copy small,
-body.dark-theme .als-last-copy [data-als-last-time],
-body.is-dark .als-last-copy small,
-body.is-dark .als-last-copy [data-als-last-time]{
-  color:#c9b9d0 !important;
-}
-
-/* ==========================================================
-   AURORA - Correctif V15
-   A coller APRES le correctif V14 ou a la toute fin du CSS.
-
-   Ce correctif retire la fausse fleche texte et affiche
-   l'image native Forumactif : {topics_list_box.row.LAST_POST_IMG}
-   ========================================================== */
-
-.als-last-post{
-  position:relative !important;
-  grid-template-columns:42px minmax(0,1fr) 28px !important;
-  padding-right:10px !important;
-  overflow:visible !important;
-}
-
-.als-last-post:after{
-  content:none !important;
-  display:none !important;
-}
-
-.als-last-go,
-.als-last-go:link,
-.als-last-go:visited,
-.als-last-go:hover,
-.als-last-go:active{
-  width:26px !important;
-  height:26px !important;
-  display:grid !important;
-  place-items:center !important;
-  justify-self:end !important;
-  align-self:center !important;
-  overflow:visible !important;
+body.aurora-viewforum-page .clear,
+body.aurora-viewforum-page .clearfix:after{
   border:0 !important;
+}
+
+/* Bandeau de titre du forum */
+body.aurora-viewforum-page .als-forum-title{
+  width:min(1200px, calc(100% - 56px));
+  margin:42px auto 28px;
+  min-height:104px;
+  padding:28px 34px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  border:1px solid var(--avf-border);
+  border-radius:var(--avf-radius);
+  background:var(--avf-panel);
+  box-shadow:var(--avf-shadow);
+  color:var(--avf-ink);
+}
+
+body.aurora-viewforum-page .als-forum-title small{
+  display:block;
+  margin:0 0 8px;
+  color:var(--avf-gold);
+  font:700 10px/1.2 Arial,sans-serif;
+  letter-spacing:3px;
+  text-transform:uppercase;
+}
+
+body.aurora-viewforum-page .als-forum-title h2{
+  margin:0;
+  color:var(--avf-purple);
+  font:400 clamp(34px, 4.2vw, 58px)/.9 var(--font-title, "Georgia", serif);
+  letter-spacing:0;
+}
+
+body.aurora-viewforum-page .als-forum-title p{
+  margin:8px 0 0;
+  color:var(--avf-muted);
+  font:500 13px/1.5 Arial,sans-serif;
+}
+
+/* Sous-forums */
+body.aurora-viewforum-page .als-subnav{
+  width:min(1200px, calc(100% - 56px));
+  margin:0 auto 34px;
+}
+
+body.aurora-viewforum-page .als-subnav-grid{
+  display:grid;
+  grid-template-columns:repeat(2, minmax(280px, 1fr));
+  gap:16px;
+}
+
+body.aurora-viewforum-page .als-subforum-card{
+  position:relative;
+  min-height:250px;
+  overflow:hidden;
+  border:1px solid var(--avf-border);
+  border-radius:20px;
+  background:
+    linear-gradient(180deg, rgba(20,12,25,.06), rgba(20,12,25,.84)),
+    var(--als-card-image, none) center/cover no-repeat,
+    var(--avf-panel-2);
+  box-shadow:var(--avf-shadow);
+  color:#fff;
+}
+
+body.aurora-viewforum-page .als-subforum-stats{
+  position:absolute;
+  z-index:2;
+  top:18px;
+  left:22px;
+  display:flex;
+  gap:18px;
+  color:rgba(255,255,255,.9);
+  font:700 11px/1 Arial,sans-serif;
+}
+
+body.aurora-viewforum-page .als-subforum-title{
+  position:absolute;
+  z-index:2;
+  left:24px;
+  right:24px;
+  bottom:94px;
+  color:#fff !important;
+  font:400 clamp(24px, 3vw, 38px)/.92 var(--font-title, "Georgia", serif);
+  letter-spacing:0;
+  text-transform:uppercase;
+  text-shadow:0 2px 16px rgba(0,0,0,.55);
+}
+
+body.aurora-viewforum-page .als-subforum-title:after{
+  content:"";
+  display:block;
+  width:54px;
+  height:1px;
+  margin-top:10px;
+  background:var(--avf-gold);
+}
+
+body.aurora-viewforum-page .als-subforum-status{
+  position:absolute;
+  right:18px;
+  bottom:22px;
+  z-index:4;
+  width:28px;
+  height:28px;
+  display:grid;
+  place-items:center;
   background:transparent !important;
-  box-shadow:none !important;
-  color:inherit !important;
-  font-size:0 !important;
-  line-height:1 !important;
-  opacity:1 !important;
-  visibility:visible !important;
-  pointer-events:auto !important;
-}
-
-.als-last-go:before,
-.als-last-go:after{
-  content:none !important;
-  display:none !important;
-}
-
-.als-last-go img{
-  width:18px !important;
-  height:18px !important;
-  max-width:18px !important;
-  max-height:18px !important;
-  display:block !important;
-  object-fit:contain !important;
   border:0 !important;
-  border-radius:0 !important;
-  background:transparent !important;
-  box-shadow:none !important;
-  opacity:1 !important;
-  visibility:visible !important;
-}
-
-.als-last-copy small,
-.als-last-copy [data-als-last-time]{
-  display:block !important;
-  margin-top:2px !important;
-  overflow:hidden !important;
-  text-overflow:ellipsis !important;
-  white-space:nowrap !important;
-}
-
-/* ==========================================================
-   AURORA - Correctif V17
-   A coller tout a la fin du CSS, apres V14/V15/V16 si presents.
-
-   Corrige :
-   - disparition de l'avatar du dernier posteur ;
-   - ancienne fleche texte encore visible ;
-   - affichage de l'image Forumactif "Lien derniere reponse".
-   ========================================================== */
-
-.als-last-post{
-  position:relative !important;
-  min-height:60px !important;
-  padding:8px 10px !important;
-  display:grid !important;
-  grid-template-columns:42px minmax(0,1fr) 26px !important;
-  gap:10px !important;
-  align-items:center !important;
-  overflow:visible !important;
-}
-
-.als-last-post:before,
-.als-last-post:after{
-  content:none !important;
-  display:none !important;
-}
-
-.als-last-avatar{
-  width:42px !important;
-  height:42px !important;
-  display:grid !important;
-  place-items:center !important;
-  overflow:visible !important;
-  border-radius:50% !important;
-  background:linear-gradient(145deg,#d6b8e2,#8f63a1) !important;
-  border:2px solid var(--als-surface,#fffafd) !important;
-  box-shadow:0 0 0 1px var(--als-line,#decfe3) !important;
-}
-
-.als-last-avatar img{
-  width:100% !important;
-  height:100% !important;
-  display:block !important;
-  object-fit:cover !important;
-  border-radius:50% !important;
-  border:0 !important;
-  background:transparent !important;
   box-shadow:none !important;
 }
 
-.als-last-avatar:after{
-  content:"\2726" !important;
-  position:absolute !important;
-  left:50% !important;
-  top:50% !important;
-  z-index:3 !important;
-  color:var(--als-gold,#c29255) !important;
-  font:700 10px/1 Georgia,serif !important;
-  text-shadow:0 0 6px rgba(255,255,255,.78) !important;
-  transform:translate(-50%,-50%) rotate(0deg) translateX(28px) !important;
-  animation:alsOrbit 4.2s linear infinite !important;
-  pointer-events:none !important;
-}
-
-.als-last-copy{
-  min-width:0 !important;
-  display:block !important;
-  padding-right:0 !important;
-}
-
-.als-last-topic,
-.als-last-copy strong,
-.als-last-copy small,
-.als-last-copy [data-als-last-time]{
-  display:block !important;
-  overflow:hidden !important;
-  text-overflow:ellipsis !important;
-  white-space:nowrap !important;
-}
-
-.als-last-copy small,
-.als-last-copy [data-als-last-time]{
-  margin-top:2px !important;
-  font-size:8px !important;
-  line-height:1.15 !important;
-  opacity:.9 !important;
-}
-
-.als-last-go,
-.als-last-go:link,
-.als-last-go:visited,
-.als-last-go:hover,
-.als-last-go:active{
-  width:26px !important;
-  height:26px !important;
-  display:grid !important;
-  place-items:center !important;
-  justify-self:end !important;
-  align-self:center !important;
-  overflow:visible !important;
-  border:0 !important;
+body.aurora-viewforum-page .als-subforum-status img{
+  display:block;
+  max-width:28px;
+  max-height:28px;
+  object-fit:contain;
   background:transparent !important;
-  box-shadow:none !important;
-  color:transparent !important;
-  font-size:0 !important;
-  line-height:0 !important;
-  text-indent:-9999px !important;
-  opacity:1 !important;
-  visibility:visible !important;
-  pointer-events:auto !important;
-}
-
-.als-last-go:before,
-.als-last-go:after{
-  content:none !important;
-  display:none !important;
-}
-
-.als-last-go img{
-  width:18px !important;
-  height:18px !important;
-  max-width:18px !important;
-  max-height:18px !important;
-  display:block !important;
-  object-fit:contain !important;
   border:0 !important;
-  border-radius:0 !important;
-  background:transparent !important;
-  box-shadow:none !important;
-  opacity:1 !important;
-  visibility:visible !important;
-  transform:none !important;
-}
-
-.als-last-go:not(:has(img[src])){
-  background:url("https://zupimages.net/up/26/31/3vwr.png") center/18px 18px no-repeat !important;
-}
-
-/* Sous-forums : on retire aussi la fleche texte seule. */
-.als-subforum-go{
-  color:transparent !important;
-  font-size:0 !important;
-  line-height:0 !important;
-  text-indent:-9999px !important;
-}
-
-.als-subforum-go:after{
-  content:none !important;
-  display:none !important;
-}
-
-.als-subforum-go img{
-  display:block !important;
-  width:18px !important;
-  height:18px !important;
-  max-width:18px !important;
-  max-height:18px !important;
-  object-fit:contain !important;
-}
-
-.als-subforum-go:not(:has(img[src])):before{
-  content:"" !important;
-  width:18px !important;
-  height:18px !important;
-  display:block !important;
-  background:url("https://zupimages.net/up/26/31/3vwr.png") center/contain no-repeat !important;
-}
-
-/* ==========================================================
-   AURORA - Correctif V18
-   A coller tout a la fin du CSS.
-
-   Corrige :
-   - icone Forumactif trop basse ;
-   - fausse fleche encore visible ;
-   - avatar du dernier posteur disparu ;
-   - icone manquante dans les sous-forums.
-   ========================================================== */
-
-:root{
-  --als-last-link-img-fallback:url("https://zupimages.net/up/26/31/3vwr.png");
-}
-
-.als-avatar-source,
-.als-last-img-source{
-  display:none !important;
-}
-
-.als-last-post{
-  position:relative !important;
-  min-height:60px !important;
-  padding:8px 42px 8px 10px !important;
-  display:grid !important;
-  grid-template-columns:42px minmax(0,1fr) !important;
-  gap:10px !important;
-  align-items:center !important;
-  overflow:visible !important;
-}
-
-.als-last-post:before,
-.als-last-post:after{
-  content:none !important;
-  display:none !important;
-}
-
-.als-last-avatar{
-  position:relative !important;
-  width:42px !important;
-  height:42px !important;
-  display:grid !important;
-  place-items:center !important;
-  overflow:visible !important;
-  border-radius:50% !important;
-  background:linear-gradient(145deg,#d6b8e2,#8f63a1) !important;
-  border:2px solid var(--als-surface,#fffafd) !important;
-  box-shadow:0 0 0 1px var(--als-line,#decfe3) !important;
-}
-
-.als-last-avatar img{
-  width:100% !important;
-  height:100% !important;
-  display:block !important;
-  object-fit:cover !important;
-  border:0 !important;
-  border-radius:50% !important;
-  background:transparent !important;
   box-shadow:none !important;
 }
 
-.als-last-avatar:after{
-  content:"\2726" !important;
-  position:absolute !important;
-  left:50% !important;
-  top:50% !important;
-  z-index:3 !important;
-  color:var(--als-gold,#c29255) !important;
-  font:700 10px/1 Georgia,serif !important;
-  text-shadow:0 0 6px rgba(255,255,255,.78) !important;
-  transform:translate(-50%,-50%) rotate(0deg) translateX(28px) !important;
-  animation:alsOrbit 4.2s linear infinite !important;
-  pointer-events:none !important;
+body.aurora-viewforum-page .als-subforum-last{
+  position:absolute;
+  z-index:3;
+  left:20px;
+  right:44px;
+  bottom:22px;
+  min-height:62px;
+  display:grid;
+  grid-template-columns:48px minmax(0,1fr) 26px;
+  align-items:center;
+  gap:10px;
+  padding:8px 10px;
+  border:1px solid rgba(255,255,255,.34);
+  border-radius:10px;
+  background:rgba(255,255,255,.88);
+  color:var(--avf-ink) !important;
+  backdrop-filter:blur(8px);
 }
 
-.als-last-copy{
-  min-width:0 !important;
-  display:block !important;
-  padding-right:0 !important;
+body.aurora-viewforum-page.theme-dark .als-subforum-last,
+html.theme-dark body.aurora-viewforum-page .als-subforum-last,
+html.dark body.aurora-viewforum-page .als-subforum-last,
+body.aurora-viewforum-page.dark .als-subforum-last{
+  background:rgba(32,20,38,.92);
+  color:#fff !important;
+  border-color:rgba(214,174,232,.34);
 }
 
-.als-last-topic,
-.als-last-copy strong,
-.als-last-copy small,
-.als-last-copy [data-als-last-time]{
-  display:block !important;
-  overflow:hidden !important;
-  text-overflow:ellipsis !important;
-  white-space:nowrap !important;
+body.aurora-viewforum-page .als-subforum-last strong,
+body.aurora-viewforum-page .als-last-topic{
+  display:block;
+  overflow:hidden;
+  white-space:nowrap;
+  text-overflow:ellipsis;
+  color:inherit;
+  font:800 12px/1.25 Arial,sans-serif;
 }
 
-.als-last-copy small,
-.als-last-copy [data-als-last-time]{
-  margin-top:2px !important;
-  font-size:8px !important;
-  line-height:1.15 !important;
-  opacity:.9 !important;
+body.aurora-viewforum-page .als-subforum-last small,
+body.aurora-viewforum-page .als-last-copy small,
+body.aurora-viewforum-page [data-als-last-time]{
+  display:block;
+  margin-top:2px;
+  color:var(--avf-muted);
+  font:600 10px/1.25 Arial,sans-serif;
 }
 
-.als-last-go,
-.als-last-go:link,
-.als-last-go:visited,
-.als-last-go:hover,
-.als-last-go:active{
-  position:absolute !important;
-  right:14px !important;
-  top:50% !important;
-  z-index:6 !important;
-  width:22px !important;
-  height:22px !important;
-  display:grid !important;
-  place-items:center !important;
-  overflow:visible !important;
-  border:0 !important;
+/* Groupes de sujets */
+body.aurora-viewforum-page .als-topic-form,
+body.aurora-viewforum-page .als-topic-zone,
+body.aurora-viewforum-page .als-topic-groups{
+  width:min(1200px, calc(100% - 56px));
+  margin-left:auto;
+  margin-right:auto;
+}
+
+body.aurora-viewforum-page .als-topic-form{
+  margin-top:0;
+}
+
+body.aurora-viewforum-page .als-topic-group{
+  margin:0 0 28px;
+}
+
+body.aurora-viewforum-page .als-zone-title{
+  display:flex;
+  align-items:center;
+  gap:14px;
+  margin:0 0 12px;
+  color:var(--avf-purple);
+  font:400 25px/1 var(--font-title, "Georgia", serif);
+  letter-spacing:0;
+  text-transform:uppercase;
+}
+
+body.aurora-viewforum-page .als-zone-title:after{
+  content:"";
+  flex:1 1 auto;
+  height:1px;
+  background:linear-gradient(90deg, var(--avf-border), transparent);
+}
+
+body.aurora-viewforum-page .als-topic-list{
+  display:grid;
+  gap:14px;
+}
+
+body.aurora-viewforum-page .als-topic-row{
+  min-height:116px;
+  display:grid;
+  grid-template-columns:58px minmax(0,1fr) 170px 280px;
+  align-items:center;
+  gap:18px;
+  padding:18px 18px;
+  border:1px solid var(--avf-border);
+  border-radius:16px;
+  background:var(--avf-panel);
+  color:var(--avf-ink);
+  box-shadow:var(--avf-shadow);
+}
+
+body.aurora-viewforum-page .als-status-icon{
+  width:46px;
+  height:46px;
+  display:grid;
+  place-items:center;
+  border:1px solid var(--avf-border);
+  border-radius:14px;
+  background:var(--avf-panel-2);
+}
+
+body.aurora-viewforum-page .als-status-icon img{
+  display:block;
+  max-width:26px;
+  max-height:26px;
+  object-fit:contain;
   background:transparent !important;
-  box-shadow:none !important;
-  color:transparent !important;
-  font-size:0 !important;
-  line-height:0 !important;
-  text-indent:0 !important;
-  opacity:1 !important;
-  visibility:visible !important;
-  transform:translateY(-50%) !important;
-}
-
-.als-last-go:before,
-.als-last-go:after{
-  content:none !important;
-  display:none !important;
-}
-
-.als-last-go a,
-.als-last-post > a:not(.als-status-icon):not(.als-last-post){
-  width:22px !important;
-  height:22px !important;
-  display:grid !important;
-  place-items:center !important;
   border:0 !important;
-  background:transparent !important;
-  box-shadow:none !important;
-}
-
-.als-last-post > a:not(.als-status-icon):not(.als-last-post){
-  position:absolute !important;
-  right:14px !important;
-  top:50% !important;
-  z-index:7 !important;
-  transform:translateY(-50%) !important;
-}
-
-.als-last-go img,
-.als-last-post > a:not(.als-status-icon):not(.als-last-post) img{
-  width:18px !important;
-  height:18px !important;
-  max-width:18px !important;
-  max-height:18px !important;
-  display:block !important;
-  object-fit:contain !important;
-  border:0 !important;
-  border-radius:0 !important;
-  background:transparent !important;
-  box-shadow:none !important;
-  opacity:1 !important;
-  visibility:visible !important;
-  transform:none !important;
-}
-
-.als-last-go:not(:has(img[src])):not(:has(a img[src])){
-  background:var(--als-last-link-img-fallback) center/18px 18px no-repeat !important;
-}
-
-.als-subforum-last{
-  position:relative !important;
-  padding-right:42px !important;
-}
-
-.als-subforum-go{
-  position:absolute !important;
-  right:12px !important;
-  top:50% !important;
-  z-index:6 !important;
-  width:22px !important;
-  height:22px !important;
-  display:grid !important;
-  place-items:center !important;
-  color:transparent !important;
-  font-size:0 !important;
-  line-height:0 !important;
-  text-indent:0 !important;
-  transform:translateY(-50%) !important;
-}
-
-.als-subforum-go:before{
-  content:"" !important;
-  width:18px !important;
-  height:18px !important;
-  display:block !important;
-  background:var(--als-last-link-img-fallback) center/contain no-repeat !important;
-}
-
-.als-subforum-go:has(img[src]):before,
-.als-subforum-go:has(a img[src]):before{
-  content:none !important;
-  display:none !important;
-}
-
-.als-subforum-go:after{
-  content:none !important;
-  display:none !important;
-}
-
-.als-subforum-go a{
-  width:22px !important;
-  height:22px !important;
-  display:grid !important;
-  place-items:center !important;
-}
-
-.als-subforum-go img{
-  width:18px !important;
-  height:18px !important;
-  max-width:18px !important;
-  max-height:18px !important;
-  display:block !important;
-  object-fit:contain !important;
-  border:0 !important;
-  border-radius:0 !important;
-  background:transparent !important;
   box-shadow:none !important;
 }
 
-/* ==========================================================
-   AURORA - Correctif V20
-   A coller tout a la fin du CSS.
-
-   Assure que l'avatar du dernier posteur dans les sous-forums
-   reste visible dans son rond.
-   ========================================================== */
-
-.als-subforum-last-avatar{
-  position:relative !important;
-  width:44px !important;
-  height:44px !important;
-  display:grid !important;
-  place-items:center !important;
-  overflow:visible !important;
-  flex:0 0 44px !important;
-  border-radius:50% !important;
-  background:linear-gradient(145deg,#d6b8e2,#8f63a1) !important;
-  border:2px solid #fff !important;
+body.aurora-viewforum-page .als-topic-main{
+  min-width:0;
 }
 
-.als-subforum-last-avatar img{
-  width:100% !important;
-  height:100% !important;
-  display:block !important;
-  object-fit:cover !important;
-  border-radius:50% !important;
-  border:0 !important;
-  background:transparent !important;
-  box-shadow:none !important;
+body.aurora-viewforum-page .als-topic-type{
+  margin:0 0 4px;
+  color:var(--avf-muted);
+  font:800 9px/1.2 Arial,sans-serif;
+  letter-spacing:2px;
+  text-transform:uppercase;
 }
 
-.als-subforum-last-avatar:after{
-  content:"\2726" !important;
-  position:absolute !important;
-  left:50% !important;
-  top:50% !important;
-  z-index:4 !important;
-  color:var(--als-gold,#c29255) !important;
-  font:700 10px/1 Georgia,serif !important;
-  text-shadow:0 0 6px rgba(255,255,255,.78) !important;
-  transform:translate(-50%,-50%) rotate(0deg) translateX(28px) !important;
-  animation:alsSubforumAvatarOrbit 4.2s linear infinite !important;
-  pointer-events:none !important;
+body.aurora-viewforum-page .als-topic-title{
+  display:block;
+  overflow:hidden;
+  white-space:nowrap;
+  text-overflow:ellipsis;
+  color:var(--avf-purple) !important;
+  font:400 27px/1.05 var(--font-title, "Georgia", serif);
+  letter-spacing:0;
 }
 
-@keyframes alsSubforumAvatarOrbit{
-  from{
-    transform:translate(-50%,-50%) rotate(0deg) translateX(28px) rotate(0deg);
-  }
-  to{
-    transform:translate(-50%,-50%) rotate(360deg) translateX(28px) rotate(-360deg);
-  }
+body.aurora-viewforum-page .als-topic-author{
+  display:flex;
+  align-items:center;
+  flex-wrap:wrap;
+  gap:4px;
+  margin-top:6px;
+  color:var(--avf-muted);
+  font:600 11px/1.3 Arial,sans-serif;
 }
 
-/* ==========================================================
-   AURORA - Correctif V21
-   A coller tout a la fin du CSS.
-
-   Remet l'animation de l'etoile en orbite autour de l'avatar
-   dans le bloc "dernier posteur" de la liste des sujets.
-   ========================================================== */
-
-.als-topic-row .als-last-post .als-last-avatar,
-.als-topic-row [data-als-last-post] .als-last-avatar,
-.als-topic-row .als-last-post [data-als-last-avatar]{
-  position:relative !important;
-  overflow:visible !important;
-  isolation:isolate !important;
-  z-index:2 !important;
+body.aurora-viewforum-page .als-topic-author > span:first-child{
+  margin-right:3px;
 }
 
-.als-topic-row .als-last-post .als-last-avatar img,
-.als-topic-row [data-als-last-post] .als-last-avatar img,
-.als-topic-row .als-last-post [data-als-last-avatar] img{
-  position:relative !important;
-  z-index:1 !important;
+body.aurora-viewforum-page .als-topic-author strong{
+  color:var(--avf-ink);
 }
 
-.als-topic-row .als-last-post .als-last-avatar:before,
-.als-topic-row [data-als-last-post] .als-last-avatar:before,
-.als-topic-row .als-last-post [data-als-last-avatar]:before{
-  content:"" !important;
-  position:absolute !important;
-  inset:-8px !important;
-  z-index:0 !important;
-  display:block !important;
-  border-radius:50% !important;
-  border:1px solid rgba(194,146,85,.22) !important;
-  pointer-events:none !important;
+body.aurora-viewforum-page .als-stats{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  overflow:hidden;
+  border:1px solid var(--avf-border);
+  border-radius:10px;
+  background:var(--avf-panel-2);
 }
 
-.als-topic-row .als-last-post .als-last-avatar:after,
-.als-topic-row [data-als-last-post] .als-last-avatar:after,
-.als-topic-row .als-last-post [data-als-last-avatar]:after{
-  content:"\2726" !important;
-  position:absolute !important;
-  left:50% !important;
-  top:50% !important;
-  z-index:6 !important;
-  width:14px !important;
-  height:14px !important;
-  display:grid !important;
-  place-items:center !important;
-  overflow:visible !important;
-  color:var(--als-gold,#c29255) !important;
-  background:transparent !important;
-  border:0 !important;
-  border-radius:0 !important;
-  box-shadow:none !important;
-  font:700 12px/1 Georgia,serif !important;
-  text-indent:0 !important;
-  text-shadow:0 0 7px rgba(255,255,255,.92) !important;
-  opacity:1 !important;
-  visibility:visible !important;
-  pointer-events:none !important;
-  transform-origin:center !important;
-  animation:alsV21LastAvatarOrbit 4.2s linear infinite !important;
+body.aurora-viewforum-page .als-stats > div{
+  min-height:54px;
+  display:grid;
+  place-items:center;
+  align-content:center;
+  padding:6px;
 }
 
-html.theme-dark .als-topic-row .als-last-post .als-last-avatar:after,
-html.dark .als-topic-row .als-last-post .als-last-avatar:after,
-html.dark-mode .als-topic-row .als-last-post .als-last-avatar:after,
-body.theme-dark .als-topic-row .als-last-post .als-last-avatar:after,
-body.dark .als-topic-row .als-last-post .als-last-avatar:after,
-body.dark-mode .als-topic-row .als-last-post .als-last-avatar:after,
-.theme-dark .als-topic-row .als-last-post .als-last-avatar:after,
-.dark-mode .als-topic-row .als-last-post .als-last-avatar:after{
-  color:#d2aa6a !important;
-  text-shadow:0 0 8px rgba(215,182,229,.9) !important;
+body.aurora-viewforum-page .als-stats > div + div{
+  border-left:1px solid var(--avf-border);
 }
 
-@keyframes alsV21LastAvatarOrbit{
-  from{
-    transform:translate(-50%,-50%) rotate(0deg) translateX(28px) rotate(0deg);
-  }
-  to{
-    transform:translate(-50%,-50%) rotate(360deg) translateX(28px) rotate(-360deg);
-  }
+body.aurora-viewforum-page .als-stats strong{
+  color:var(--avf-purple);
+  font:700 20px/1 Georgia,serif;
 }
 
-/* ==========================================================
-   AURORA - Correctif V22
-   A coller tout a la fin du CSS.
-
-   Remet l'etoile en orbite autour des avatars de dernier posteur
-   avec une vraie balise .als-orbit-star.
-
-   Cela evite les conflits avec les anciens :before / :after.
-   ========================================================== */
-
-.als-topic-row .als-last-avatar,
-.als-topic-row [data-als-last-avatar],
-.als-subforum-last-avatar{
-  position:relative !important;
-  overflow:visible !important;
-  isolation:isolate !important;
+body.aurora-viewforum-page .als-stats span{
+  margin-top:3px;
+  color:var(--avf-muted);
+  font:800 8px/1 Arial,sans-serif;
+  letter-spacing:1.5px;
+  text-transform:uppercase;
 }
 
-.als-topic-row .als-last-avatar:before,
-.als-topic-row .als-last-avatar:after,
-.als-topic-row [data-als-last-avatar]:before,
-.als-topic-row [data-als-last-avatar]:after,
-.als-subforum-last-avatar:before,
-.als-subforum-last-avatar:after{
-  content:none !important;
+body.aurora-viewforum-page .als-last-post{
+  min-width:0;
+  min-height:60px;
+  display:grid;
+  grid-template-columns:46px minmax(0,1fr) 24px;
+  align-items:center;
+  gap:10px;
+  padding:8px 10px;
+  border:1px solid var(--avf-border);
+  border-radius:10px;
+  background:var(--avf-panel-2);
+  color:var(--avf-ink);
+}
+
+body.aurora-viewforum-page.theme-dark .als-last-post,
+html.theme-dark body.aurora-viewforum-page .als-last-post,
+html.dark body.aurora-viewforum-page .als-last-post,
+body.aurora-viewforum-page.dark .als-last-post{
+  background:var(--avf-panel-2);
+  color:#fff;
+}
+
+body.aurora-viewforum-page .als-avatar-source,
+body.aurora-viewforum-page .als-last-img-source{
   display:none !important;
 }
 
-.als-topic-row .als-last-avatar img,
-.als-topic-row [data-als-last-avatar] img,
-.als-subforum-last-avatar img{
-  position:relative !important;
-  z-index:1 !important;
-}
-
-.als-orbit-star{
-  position:absolute !important;
-  left:50% !important;
-  top:50% !important;
-  z-index:8 !important;
-  width:15px !important;
-  height:15px !important;
-  display:grid !important;
-  place-items:center !important;
-  overflow:visible !important;
-  color:var(--als-gold,#c29255) !important;
-  background:transparent !important;
-  border:0 !important;
-  border-radius:0 !important;
-  box-shadow:none !important;
-  font:700 13px/1 Georgia,serif !important;
-  text-indent:0 !important;
-  text-shadow:0 0 7px rgba(255,255,255,.92) !important;
-  opacity:1 !important;
-  visibility:visible !important;
-  pointer-events:none !important;
-  transform-origin:center !important;
-  animation:alsV22OrbitStar 4.2s linear infinite !important;
-}
-
-html.theme-dark .als-orbit-star,
-html.dark .als-orbit-star,
-html.dark-mode .als-orbit-star,
-body.theme-dark .als-orbit-star,
-body.dark .als-orbit-star,
-body.dark-mode .als-orbit-star,
-.theme-dark .als-orbit-star,
-.dark-mode .als-orbit-star{
-  color:#d2aa6a !important;
-  text-shadow:0 0 8px rgba(215,182,229,.9) !important;
-}
-
-@keyframes alsV22OrbitStar{
-  from{
-    transform:translate(-50%,-50%) rotate(0deg) translateX(28px) rotate(0deg);
-  }
-  to{
-    transform:translate(-50%,-50%) rotate(360deg) translateX(28px) rotate(-360deg);
-  }
-}
-/* ==========================================================
-   AURORA - Correctif V23
-   A coller TOUT A LA FIN du CSS.
-
-   Nettoie V21/V22 :
-   - masque les etoiles .als-orbit-star ajoutees en dur ;
-   - remet UNE SEULE etoile orbitale en CSS ;
-   - n'affiche l'orbite que si le rond contient un avatar.
-   ========================================================== */
-
-.als-orbit-star{
-  display:none !important;
-  content:none !important;
-  opacity:0 !important;
-  visibility:hidden !important;
-  animation:none !important;
-}
-
-.als-topic-row .als-last-avatar,
-.als-topic-row [data-als-last-avatar],
-.als-subforum-last-avatar{
-  position:relative !important;
-  overflow:visible !important;
-  isolation:isolate !important;
-}
-
-.als-topic-row .als-last-avatar:before,
-.als-topic-row [data-als-last-avatar]:before,
-.als-subforum-last-avatar:before{
-  content:none !important;
-  display:none !important;
-}
-
-.als-topic-row .als-last-avatar:not(:has(img[src])):after,
-.als-topic-row [data-als-last-avatar]:not(:has(img[src])):after,
-.als-subforum-last-avatar:not(:has(img[src])):after{
-  content:none !important;
-  display:none !important;
-  animation:none !important;
-}
-
-.als-topic-row .als-last-avatar:has(img[src]) img,
-.als-topic-row [data-als-last-avatar]:has(img[src]) img,
-.als-subforum-last-avatar:has(img[src]) img{
-  position:relative !important;
-  z-index:1 !important;
-}
-
-.als-topic-row .als-last-avatar:has(img[src]):after,
-.als-topic-row [data-als-last-avatar]:has(img[src]):after,
-.als-subforum-last-avatar:has(img[src]):after{
-  content:"\2726" !important;
-  position:absolute !important;
-  left:50% !important;
-  top:50% !important;
-  z-index:8 !important;
-  width:14px !important;
-  height:14px !important;
-  display:grid !important;
-  place-items:center !important;
-  overflow:visible !important;
-  color:var(--als-gold,#c29255) !important;
-  background:transparent !important;
-  border:0 !important;
-  border-radius:0 !important;
-  box-shadow:none !important;
-  font:700 12px/1 Georgia,serif !important;
-  text-indent:0 !important;
-  text-shadow:0 0 7px rgba(255,255,255,.92) !important;
-  opacity:1 !important;
-  visibility:visible !important;
-  pointer-events:none !important;
-  transform-origin:center !important;
-  animation:alsV23CleanOrbit 4.2s linear infinite !important;
-}
-
-html.theme-dark .als-topic-row .als-last-avatar:has(img[src]):after,
-html.dark .als-topic-row .als-last-avatar:has(img[src]):after,
-html.dark-mode .als-topic-row .als-last-avatar:has(img[src]):after,
-html.theme-dark .als-subforum-last-avatar:has(img[src]):after,
-html.dark .als-subforum-last-avatar:has(img[src]):after,
-html.dark-mode .als-subforum-last-avatar:has(img[src]):after,
-body.theme-dark .als-topic-row .als-last-avatar:has(img[src]):after,
-body.dark .als-topic-row .als-last-avatar:has(img[src]):after,
-body.dark-mode .als-topic-row .als-last-avatar:has(img[src]):after,
-body.theme-dark .als-subforum-last-avatar:has(img[src]):after,
-body.dark .als-subforum-last-avatar:has(img[src]):after,
-body.dark-mode .als-subforum-last-avatar:has(img[src]):after{
-  color:#d2aa6a !important;
-  text-shadow:0 0 8px rgba(215,182,229,.9) !important;
-}
-
-@keyframes alsV23CleanOrbit{
-  from{
-    transform:translate(-50%,-50%) rotate(0deg) translateX(28px) rotate(0deg);
-  }
-  to{
-    transform:translate(-50%,-50%) rotate(360deg) translateX(28px) rotate(-360deg);
-  }
-}
-
-/* ==========================================================
-   AURORA - Correctif V24
-   A coller TOUT A LA FIN du CSS.
-
-   Corrige l'orbite qui disparait apres le chargement.
-
-   Principe :
-   - on neutralise les anciennes etoiles en :before/:after ;
-   - on masque les anciennes .als-orbit-star ;
-   - on utilise une nouvelle balise .als-orbit-star-final
-     que les anciens scripts ne suppriment pas.
-   ========================================================== */
-
-.als-topic-row .als-last-avatar,
-.als-topic-row [data-als-last-avatar],
-.als-subforum-last-avatar{
-  position:relative !important;
-  overflow:visible !important;
-  isolation:isolate !important;
-}
-
-.als-topic-row .als-last-avatar:before,
-.als-topic-row .als-last-avatar:after,
-.als-topic-row [data-als-last-avatar]:before,
-.als-topic-row [data-als-last-avatar]:after,
-.als-subforum-last-avatar:before,
-.als-subforum-last-avatar:after{
-  content:none !important;
-  display:none !important;
-  animation:none !important;
-}
-
-.als-orbit-star{
-  display:none !important;
-  visibility:hidden !important;
-  opacity:0 !important;
-  animation:none !important;
-}
-
-.als-topic-row .als-last-avatar img,
-.als-topic-row [data-als-last-avatar] img,
-.als-subforum-last-avatar img{
-  position:relative !important;
-  z-index:1 !important;
-}
-
-.als-orbit-star-final{
-  position:absolute !important;
-  left:50% !important;
-  top:50% !important;
-  z-index:12 !important;
-  width:15px !important;
-  height:15px !important;
-  display:grid !important;
-  place-items:center !important;
-  overflow:visible !important;
-  color:var(--als-gold,#c29255) !important;
-  background:transparent !important;
-  border:0 !important;
-  border-radius:0 !important;
-  box-shadow:none !important;
-  font:700 13px/1 Georgia,serif !important;
-  text-indent:0 !important;
-  text-shadow:0 0 7px rgba(255,255,255,.92) !important;
-  opacity:1 !important;
-  visibility:visible !important;
-  pointer-events:none !important;
-  transform-origin:center !important;
-  animation:alsV24OrbitStable 4.2s linear infinite !important;
-}
-
-html.theme-dark .als-orbit-star-final,
-html.dark .als-orbit-star-final,
-html.dark-mode .als-orbit-star-final,
-body.theme-dark .als-orbit-star-final,
-body.dark .als-orbit-star-final,
-body.dark-mode .als-orbit-star-final,
-.theme-dark .als-orbit-star-final,
-.dark-mode .als-orbit-star-final{
-  color:#d2aa6a !important;
-  text-shadow:0 0 8px rgba(215,182,229,.9) !important;
-}
-
-@keyframes alsV24OrbitStable{
-  from{
-    transform:translate(-50%,-50%) rotate(0deg) translateX(28px) rotate(0deg);
-  }
-  to{
-    transform:translate(-50%,-50%) rotate(360deg) translateX(28px) rotate(-360deg);
-  }
-}
-
-/* ==========================================================
-   AURORA - Correctif V25
-   A coller TOUT A LA FIN du CSS.
-
-   Nettoyage final de l'orbite sur viewforum :
-   - neutralise les anciennes etoiles V21/V22/V23/V24 ;
-   - garde une seule etoile stable autour des avatars ;
-   - fonctionne sur la liste des sujets et les sous-forums ;
-   - ne touche pas a la structure generale de la page.
-   ========================================================== */
-
-body.aurora-viewforum-page .als-topic-row .als-last-avatar,
-body.aurora-viewforum-page .als-topic-row [data-als-last-avatar],
+body.aurora-viewforum-page .als-last-avatar,
+body.aurora-viewforum-page [data-als-last-avatar],
 body.aurora-viewforum-page .als-subforum-last-avatar{
   position:relative !important;
+  width:42px;
+  height:42px;
+  display:grid;
+  place-items:center;
   overflow:visible !important;
-  isolation:isolate !important;
+  flex:0 0 auto;
+  border-radius:50%;
+  background:linear-gradient(135deg, #e8c7f1, #79508a);
+  isolation:isolate;
 }
 
-/* Anciennes etoiles ajoutees par les correctifs precedents */
-body.aurora-viewforum-page .als-orbit-star,
-body.aurora-viewforum-page .als-orbit-star-final{
-  display:none !important;
-  visibility:hidden !important;
-  opacity:0 !important;
-  animation:none !important;
-  pointer-events:none !important;
+body.aurora-viewforum-page .als-subforum-last-avatar{
+  width:44px;
+  height:44px;
 }
 
-/* Anciennes etoiles en pseudo-elements, surtout V23 */
-body.aurora-viewforum-page .als-topic-row .als-last-avatar::before,
-body.aurora-viewforum-page .als-topic-row .als-last-avatar::after,
-body.aurora-viewforum-page .als-topic-row [data-als-last-avatar]::before,
-body.aurora-viewforum-page .als-topic-row [data-als-last-avatar]::after,
-body.aurora-viewforum-page .als-subforum-last-avatar::before,
-body.aurora-viewforum-page .als-subforum-last-avatar::after{
-  content:none !important;
-  display:none !important;
-  visibility:hidden !important;
-  opacity:0 !important;
-  animation:none !important;
-}
-
-body.aurora-viewforum-page .als-topic-row .als-last-avatar > img,
-body.aurora-viewforum-page .als-topic-row [data-als-last-avatar] > img,
+body.aurora-viewforum-page .als-last-avatar > img,
+body.aurora-viewforum-page [data-als-last-avatar] > img,
 body.aurora-viewforum-page .als-subforum-last-avatar > img{
   position:relative !important;
   z-index:2 !important;
+  width:100%;
+  height:100%;
+  display:block;
+  object-fit:cover;
+  border:2px solid #fff;
+  border-radius:50%;
+  box-shadow:none !important;
 }
 
-/* Etoile unique V25 */
+body.aurora-viewforum-page .als-last-copy{
+  min-width:0;
+}
+
+body.aurora-viewforum-page .als-last-copy strong,
+body.aurora-viewforum-page .als-last-copy [data-als-last-author]{
+  display:block;
+  overflow:hidden;
+  white-space:nowrap;
+  text-overflow:ellipsis;
+  color:inherit;
+  font:800 11px/1.25 Arial,sans-serif;
+}
+
+body.aurora-viewforum-page .als-last-go,
+body.aurora-viewforum-page .als-subforum-go{
+  width:22px;
+  height:22px;
+  display:grid !important;
+  place-items:center;
+  justify-self:end;
+  align-self:center;
+  color:transparent !important;
+  font-size:0 !important;
+  line-height:0 !important;
+  background:transparent !important;
+  border:0 !important;
+  box-shadow:none !important;
+}
+
+body.aurora-viewforum-page .als-last-go a,
+body.aurora-viewforum-page .als-subforum-go a{
+  width:22px;
+  height:22px;
+  display:grid;
+  place-items:center;
+}
+
+body.aurora-viewforum-page .als-last-go img,
+body.aurora-viewforum-page .als-subforum-go img{
+  display:block !important;
+  max-width:18px;
+  max-height:18px;
+  object-fit:contain;
+  background:transparent !important;
+  border:0 !important;
+  box-shadow:none !important;
+}
+
+/* Nettoyage total des anciennes orbites */
+body.aurora-viewforum-page .als-orbit-star,
+body.aurora-viewforum-page .als-orbit-star-final,
 body.aurora-viewforum-page .als-v25-orbit-star{
+  display:none !important;
+  visibility:hidden !important;
+  opacity:0 !important;
+  animation:none !important;
+}
+
+body.aurora-viewforum-page .als-last-avatar:before,
+body.aurora-viewforum-page .als-last-avatar:after,
+body.aurora-viewforum-page [data-als-last-avatar]:before,
+body.aurora-viewforum-page [data-als-last-avatar]:after,
+body.aurora-viewforum-page .als-subforum-last-avatar:before,
+body.aurora-viewforum-page .als-subforum-last-avatar:after{
+  content:none !important;
+  display:none !important;
+  animation:none !important;
+}
+
+body.aurora-viewforum-page .als-clean-orbit-star{
   position:absolute !important;
   left:50% !important;
   top:50% !important;
-  z-index:20 !important;
+  z-index:8 !important;
   width:14px !important;
   height:14px !important;
   display:grid !important;
   place-items:center !important;
   overflow:visible !important;
-  color:var(--als-gold,#c29255) !important;
+  color:var(--avf-gold) !important;
   background:transparent !important;
   border:0 !important;
   border-radius:0 !important;
   box-shadow:none !important;
   font:700 12px/1 Georgia,serif !important;
-  text-indent:0 !important;
-  text-shadow:0 0 7px rgba(255,255,255,.92) !important;
-  opacity:1 !important;
-  visibility:visible !important;
+  text-shadow:0 0 7px rgba(255,255,255,.9);
   pointer-events:none !important;
-  transform-origin:center !important;
-  animation:alsV25OrbitClean 4.2s linear infinite !important;
+  animation:avfCleanOrbit 4.2s linear infinite !important;
 }
 
-html.theme-dark body.aurora-viewforum-page .als-v25-orbit-star,
-html.dark body.aurora-viewforum-page .als-v25-orbit-star,
-html.dark-mode body.aurora-viewforum-page .als-v25-orbit-star,
-body.theme-dark.aurora-viewforum-page .als-v25-orbit-star,
-body.dark.aurora-viewforum-page .als-v25-orbit-star,
-body.dark-mode.aurora-viewforum-page .als-v25-orbit-star,
-.theme-dark body.aurora-viewforum-page .als-v25-orbit-star,
-.dark-mode body.aurora-viewforum-page .als-v25-orbit-star{
-  color:#d2aa6a !important;
-  text-shadow:0 0 8px rgba(215,182,229,.9) !important;
+@keyframes avfCleanOrbit{
+  from{ transform:translate(-50%,-50%) rotate(0deg) translateX(26px) rotate(0deg); }
+  to{ transform:translate(-50%,-50%) rotate(360deg) translateX(26px) rotate(-360deg); }
 }
 
-@keyframes alsV25OrbitClean{
-  from{
-    transform:translate(-50%,-50%) rotate(0deg) translateX(26px) rotate(0deg);
+/* Boutons et bas de page de la liste */
+body.aurora-viewforum-page a[href*="mode=newtopic"],
+body.aurora-viewforum-page a[href*="/post?f="],
+body.aurora-viewforum-page .button1,
+body.aurora-viewforum-page .button2,
+body.aurora-viewforum-page input.button1,
+body.aurora-viewforum-page input.button2{
+  border:1px solid var(--avf-border) !important;
+  border-radius:10px !important;
+  background:var(--avf-purple) !important;
+  color:#fff !important;
+  box-shadow:none !important;
+  font:800 11px/1 Arial,sans-serif !important;
+  letter-spacing:.4px;
+}
+
+body.aurora-viewforum-page .topic-actions,
+body.aurora-viewforum-page .pathname-box,
+body.aurora-viewforum-page .pagination,
+body.aurora-viewforum-page .jumpbox,
+body.aurora-viewforum-page .block,
+body.aurora-viewforum-page .panel{
+  border-color:var(--avf-border) !important;
+  background:var(--avf-panel) !important;
+  color:var(--avf-ink) !important;
+}
+
+body.aurora-viewforum-page hr,
+body.aurora-viewforum-page .als-topic-group hr{
+  display:none !important;
+}
+
+@media (max-width:900px){
+  body.aurora-viewforum-page .als-subnav-grid{
+    grid-template-columns:1fr;
   }
-  to{
-    transform:translate(-50%,-50%) rotate(360deg) translateX(26px) rotate(-360deg);
+
+  body.aurora-viewforum-page .als-topic-row{
+    grid-template-columns:48px minmax(0,1fr);
+  }
+
+  body.aurora-viewforum-page .als-stats,
+  body.aurora-viewforum-page .als-last-post{
+    grid-column:1 / -1;
   }
 }
 
-@media (prefers-reduced-motion:reduce){
-  body.aurora-viewforum-page .als-v25-orbit-star{
-    animation:none !important;
-    transform:translate(16px,-26px) !important;
+@media (max-width:560px){
+  body.aurora-viewforum-page .als-forum-title,
+  body.aurora-viewforum-page .als-subnav,
+  body.aurora-viewforum-page .als-topic-form,
+  body.aurora-viewforum-page .als-topic-zone,
+  body.aurora-viewforum-page .als-topic-groups{
+    width:calc(100% - 24px);
+  }
+
+  body.aurora-viewforum-page .als-topic-title{
+    white-space:normal;
   }
 }
-
