@@ -729,10 +729,13 @@ body[data-theme-mode="dark"] .als-subforum-last,
 }
 
 /* ==========================================================
-   AURORA - Correctif liste des sujets V13
-   A coller tout a la fin du CSS existant.
-   Objectif : fleche visible dans le bloc droit du dernier posteur
-   + date du dernier post lisible dans ce meme bloc.
+   AURORA - Correctif urgence V14
+   A coller tout a la fin du CSS.
+
+   IMPORTANT :
+   Supprimer le JS_CORRECTIF_V13_FLECHE_DATE.js du forum.
+   Cette version ne contient aucun MutationObserver et ne ralentit
+   pas les pages de liste des sujets.
    ========================================================== */
 
 .als-last-post{
@@ -754,7 +757,6 @@ body[data-theme-mode="dark"] .als-subforum-last,
   place-items:center !important;
   color:#302436 !important;
   font:700 17px/1 Arial,sans-serif !important;
-  text-indent:0 !important;
   opacity:1 !important;
   visibility:visible !important;
   transform:translateY(-50%) !important;
@@ -807,7 +809,7 @@ body[data-mode="dark"] .als-last-post:after,
   line-height:1.15 !important;
   text-overflow:ellipsis !important;
   white-space:nowrap !important;
-  opacity:.86 !important;
+  opacity:.9 !important;
   visibility:visible !important;
 }
 
