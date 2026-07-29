@@ -727,3 +727,110 @@ body[data-theme-mode="dark"] .als-subforum-last,
   .als-stats,
   .als-last-post{grid-column:1 / -1}
 }
+
+/* ==========================================================
+   AURORA - Correctif liste des sujets V13
+   A coller tout a la fin du CSS existant.
+   Objectif : fleche visible dans le bloc droit du dernier posteur
+   + date du dernier post lisible dans ce meme bloc.
+   ========================================================== */
+
+.als-last-post{
+  position:relative !important;
+  grid-template-columns:42px minmax(0,1fr) !important;
+  padding-right:42px !important;
+  overflow:visible !important;
+}
+
+.als-last-post:after{
+  content:"\2192" !important;
+  position:absolute !important;
+  right:14px !important;
+  top:50% !important;
+  z-index:8 !important;
+  width:22px !important;
+  height:22px !important;
+  display:grid !important;
+  place-items:center !important;
+  color:#302436 !important;
+  font:700 17px/1 Arial,sans-serif !important;
+  text-indent:0 !important;
+  opacity:1 !important;
+  visibility:visible !important;
+  transform:translateY(-50%) !important;
+  pointer-events:none !important;
+}
+
+html.theme-dark .als-last-post:after,
+html.dark .als-last-post:after,
+html.dark-mode .als-last-post:after,
+html.dark-theme .als-last-post:after,
+html.is-dark .als-last-post:after,
+html[data-theme="dark"] .als-last-post:after,
+html[data-mode="dark"] .als-last-post:after,
+body.theme-dark .als-last-post:after,
+body.dark .als-last-post:after,
+body.dark-mode .als-last-post:after,
+body.dark-theme .als-last-post:after,
+body.is-dark .als-last-post:after,
+body[data-theme="dark"] .als-last-post:after,
+body[data-mode="dark"] .als-last-post:after,
+.theme-dark .als-last-post:after,
+.dark-mode .als-last-post:after,
+.dark-theme .als-last-post:after,
+.is-dark .als-last-post:after,
+[data-theme="dark"] .als-last-post:after,
+[data-mode="dark"] .als-last-post:after{
+  color:#ffffff !important;
+}
+
+.als-last-go,
+.als-last-go:before,
+.als-last-go:after{
+  display:none !important;
+  content:none !important;
+}
+
+.als-last-copy{
+  min-width:0 !important;
+  padding-right:2px !important;
+}
+
+.als-last-copy small,
+.als-last-copy [data-als-last-time]{
+  display:block !important;
+  min-height:1em !important;
+  margin-top:2px !important;
+  overflow:hidden !important;
+  color:var(--als-muted,#807384) !important;
+  font-size:8px !important;
+  line-height:1.15 !important;
+  text-overflow:ellipsis !important;
+  white-space:nowrap !important;
+  opacity:.86 !important;
+  visibility:visible !important;
+}
+
+html.theme-dark .als-last-copy small,
+html.theme-dark .als-last-copy [data-als-last-time],
+html.dark .als-last-copy small,
+html.dark .als-last-copy [data-als-last-time],
+html.dark-mode .als-last-copy small,
+html.dark-mode .als-last-copy [data-als-last-time],
+html.dark-theme .als-last-copy small,
+html.dark-theme .als-last-copy [data-als-last-time],
+html.is-dark .als-last-copy small,
+html.is-dark .als-last-copy [data-als-last-time],
+body.theme-dark .als-last-copy small,
+body.theme-dark .als-last-copy [data-als-last-time],
+body.dark .als-last-copy small,
+body.dark .als-last-copy [data-als-last-time],
+body.dark-mode .als-last-copy small,
+body.dark-mode .als-last-copy [data-als-last-time],
+body.dark-theme .als-last-copy small,
+body.dark-theme .als-last-copy [data-als-last-time],
+body.is-dark .als-last-copy small,
+body.is-dark .als-last-copy [data-als-last-time]{
+  color:#c9b9d0 !important;
+}
+
