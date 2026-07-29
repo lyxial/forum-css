@@ -1363,3 +1363,89 @@ body.is-dark .als-last-copy [data-als-last-time]{
   }
 }
 
+/* ==========================================================
+   AURORA - Correctif V21
+   A coller tout a la fin du CSS.
+
+   Remet l'animation de l'etoile en orbite autour de l'avatar
+   dans le bloc "dernier posteur" de la liste des sujets.
+   ========================================================== */
+
+.als-topic-row .als-last-post .als-last-avatar,
+.als-topic-row [data-als-last-post] .als-last-avatar,
+.als-topic-row .als-last-post [data-als-last-avatar]{
+  position:relative !important;
+  overflow:visible !important;
+  isolation:isolate !important;
+  z-index:2 !important;
+}
+
+.als-topic-row .als-last-post .als-last-avatar img,
+.als-topic-row [data-als-last-post] .als-last-avatar img,
+.als-topic-row .als-last-post [data-als-last-avatar] img{
+  position:relative !important;
+  z-index:1 !important;
+}
+
+.als-topic-row .als-last-post .als-last-avatar:before,
+.als-topic-row [data-als-last-post] .als-last-avatar:before,
+.als-topic-row .als-last-post [data-als-last-avatar]:before{
+  content:"" !important;
+  position:absolute !important;
+  inset:-8px !important;
+  z-index:0 !important;
+  display:block !important;
+  border-radius:50% !important;
+  border:1px solid rgba(194,146,85,.22) !important;
+  pointer-events:none !important;
+}
+
+.als-topic-row .als-last-post .als-last-avatar:after,
+.als-topic-row [data-als-last-post] .als-last-avatar:after,
+.als-topic-row .als-last-post [data-als-last-avatar]:after{
+  content:"\2726" !important;
+  position:absolute !important;
+  left:50% !important;
+  top:50% !important;
+  z-index:6 !important;
+  width:14px !important;
+  height:14px !important;
+  display:grid !important;
+  place-items:center !important;
+  overflow:visible !important;
+  color:var(--als-gold,#c29255) !important;
+  background:transparent !important;
+  border:0 !important;
+  border-radius:0 !important;
+  box-shadow:none !important;
+  font:700 12px/1 Georgia,serif !important;
+  text-indent:0 !important;
+  text-shadow:0 0 7px rgba(255,255,255,.92) !important;
+  opacity:1 !important;
+  visibility:visible !important;
+  pointer-events:none !important;
+  transform-origin:center !important;
+  animation:alsV21LastAvatarOrbit 4.2s linear infinite !important;
+}
+
+html.theme-dark .als-topic-row .als-last-post .als-last-avatar:after,
+html.dark .als-topic-row .als-last-post .als-last-avatar:after,
+html.dark-mode .als-topic-row .als-last-post .als-last-avatar:after,
+body.theme-dark .als-topic-row .als-last-post .als-last-avatar:after,
+body.dark .als-topic-row .als-last-post .als-last-avatar:after,
+body.dark-mode .als-topic-row .als-last-post .als-last-avatar:after,
+.theme-dark .als-topic-row .als-last-post .als-last-avatar:after,
+.dark-mode .als-topic-row .als-last-post .als-last-avatar:after{
+  color:#d2aa6a !important;
+  text-shadow:0 0 8px rgba(215,182,229,.9) !important;
+}
+
+@keyframes alsV21LastAvatarOrbit{
+  from{
+    transform:translate(-50%,-50%) rotate(0deg) translateX(28px) rotate(0deg);
+  }
+  to{
+    transform:translate(-50%,-50%) rotate(360deg) translateX(28px) rotate(-360deg);
+  }
+}
+
