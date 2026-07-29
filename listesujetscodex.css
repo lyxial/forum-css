@@ -909,3 +909,171 @@ body.is-dark .als-last-copy [data-als-last-time]{
   white-space:nowrap !important;
 }
 
+/* ==========================================================
+   AURORA - Correctif V17
+   A coller tout a la fin du CSS, apres V14/V15/V16 si presents.
+
+   Corrige :
+   - disparition de l'avatar du dernier posteur ;
+   - ancienne fleche texte encore visible ;
+   - affichage de l'image Forumactif "Lien derniere reponse".
+   ========================================================== */
+
+.als-last-post{
+  position:relative !important;
+  min-height:60px !important;
+  padding:8px 10px !important;
+  display:grid !important;
+  grid-template-columns:42px minmax(0,1fr) 26px !important;
+  gap:10px !important;
+  align-items:center !important;
+  overflow:visible !important;
+}
+
+.als-last-post:before,
+.als-last-post:after{
+  content:none !important;
+  display:none !important;
+}
+
+.als-last-avatar{
+  width:42px !important;
+  height:42px !important;
+  display:grid !important;
+  place-items:center !important;
+  overflow:visible !important;
+  border-radius:50% !important;
+  background:linear-gradient(145deg,#d6b8e2,#8f63a1) !important;
+  border:2px solid var(--als-surface,#fffafd) !important;
+  box-shadow:0 0 0 1px var(--als-line,#decfe3) !important;
+}
+
+.als-last-avatar img{
+  width:100% !important;
+  height:100% !important;
+  display:block !important;
+  object-fit:cover !important;
+  border-radius:50% !important;
+  border:0 !important;
+  background:transparent !important;
+  box-shadow:none !important;
+}
+
+.als-last-avatar:after{
+  content:"\2726" !important;
+  position:absolute !important;
+  left:50% !important;
+  top:50% !important;
+  z-index:3 !important;
+  color:var(--als-gold,#c29255) !important;
+  font:700 10px/1 Georgia,serif !important;
+  text-shadow:0 0 6px rgba(255,255,255,.78) !important;
+  transform:translate(-50%,-50%) rotate(0deg) translateX(28px) !important;
+  animation:alsOrbit 4.2s linear infinite !important;
+  pointer-events:none !important;
+}
+
+.als-last-copy{
+  min-width:0 !important;
+  display:block !important;
+  padding-right:0 !important;
+}
+
+.als-last-topic,
+.als-last-copy strong,
+.als-last-copy small,
+.als-last-copy [data-als-last-time]{
+  display:block !important;
+  overflow:hidden !important;
+  text-overflow:ellipsis !important;
+  white-space:nowrap !important;
+}
+
+.als-last-copy small,
+.als-last-copy [data-als-last-time]{
+  margin-top:2px !important;
+  font-size:8px !important;
+  line-height:1.15 !important;
+  opacity:.9 !important;
+}
+
+.als-last-go,
+.als-last-go:link,
+.als-last-go:visited,
+.als-last-go:hover,
+.als-last-go:active{
+  width:26px !important;
+  height:26px !important;
+  display:grid !important;
+  place-items:center !important;
+  justify-self:end !important;
+  align-self:center !important;
+  overflow:visible !important;
+  border:0 !important;
+  background:transparent !important;
+  box-shadow:none !important;
+  color:transparent !important;
+  font-size:0 !important;
+  line-height:0 !important;
+  text-indent:-9999px !important;
+  opacity:1 !important;
+  visibility:visible !important;
+  pointer-events:auto !important;
+}
+
+.als-last-go:before,
+.als-last-go:after{
+  content:none !important;
+  display:none !important;
+}
+
+.als-last-go img{
+  width:18px !important;
+  height:18px !important;
+  max-width:18px !important;
+  max-height:18px !important;
+  display:block !important;
+  object-fit:contain !important;
+  border:0 !important;
+  border-radius:0 !important;
+  background:transparent !important;
+  box-shadow:none !important;
+  opacity:1 !important;
+  visibility:visible !important;
+  transform:none !important;
+}
+
+.als-last-go:not(:has(img[src])){
+  background:url("https://zupimages.net/up/26/31/3vwr.png") center/18px 18px no-repeat !important;
+}
+
+/* Sous-forums : on retire aussi la fleche texte seule. */
+.als-subforum-go{
+  color:transparent !important;
+  font-size:0 !important;
+  line-height:0 !important;
+  text-indent:-9999px !important;
+}
+
+.als-subforum-go:after{
+  content:none !important;
+  display:none !important;
+}
+
+.als-subforum-go img{
+  display:block !important;
+  width:18px !important;
+  height:18px !important;
+  max-width:18px !important;
+  max-height:18px !important;
+  object-fit:contain !important;
+}
+
+.als-subforum-go:not(:has(img[src])):before{
+  content:"" !important;
+  width:18px !important;
+  height:18px !important;
+  display:block !important;
+  background:url("https://zupimages.net/up/26/31/3vwr.png") center/contain no-repeat !important;
+}
+
