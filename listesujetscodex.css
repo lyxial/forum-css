@@ -1308,3 +1308,58 @@ body.is-dark .als-last-copy [data-als-last-time]{
   box-shadow:none !important;
 }
 
+/* ==========================================================
+   AURORA - Correctif V20
+   A coller tout a la fin du CSS.
+
+   Assure que l'avatar du dernier posteur dans les sous-forums
+   reste visible dans son rond.
+   ========================================================== */
+
+.als-subforum-last-avatar{
+  position:relative !important;
+  width:44px !important;
+  height:44px !important;
+  display:grid !important;
+  place-items:center !important;
+  overflow:visible !important;
+  flex:0 0 44px !important;
+  border-radius:50% !important;
+  background:linear-gradient(145deg,#d6b8e2,#8f63a1) !important;
+  border:2px solid #fff !important;
+}
+
+.als-subforum-last-avatar img{
+  width:100% !important;
+  height:100% !important;
+  display:block !important;
+  object-fit:cover !important;
+  border-radius:50% !important;
+  border:0 !important;
+  background:transparent !important;
+  box-shadow:none !important;
+}
+
+.als-subforum-last-avatar:after{
+  content:"\2726" !important;
+  position:absolute !important;
+  left:50% !important;
+  top:50% !important;
+  z-index:4 !important;
+  color:var(--als-gold,#c29255) !important;
+  font:700 10px/1 Georgia,serif !important;
+  text-shadow:0 0 6px rgba(255,255,255,.78) !important;
+  transform:translate(-50%,-50%) rotate(0deg) translateX(28px) !important;
+  animation:alsSubforumAvatarOrbit 4.2s linear infinite !important;
+  pointer-events:none !important;
+}
+
+@keyframes alsSubforumAvatarOrbit{
+  from{
+    transform:translate(-50%,-50%) rotate(0deg) translateX(28px) rotate(0deg);
+  }
+  to{
+    transform:translate(-50%,-50%) rotate(360deg) translateX(28px) rotate(-360deg);
+  }
+}
+
