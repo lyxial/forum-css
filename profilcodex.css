@@ -2512,8 +2512,10 @@ body.theme-dark .halley-profile-links .halley-contact-link .bi {
 }
 
 /* ==========================================================
-   AURORA / HALLEY - Recompenses profil
-   CSS pour le bloc :
+   AURORA / HALLEY - Recompenses profil V3
+   A ajouter dans le CSS du forum.
+
+   Fonctionne avec :
    <div class="ahp-awards-native">{switch_awards.AWARDS_LIST}</div>
    ========================================================== */
 
@@ -2537,6 +2539,10 @@ body.theme-dark .halley-profile-links .halley-contact-link .bi {
   display: none;
 }
 
+.ahp-awards-native br {
+  display: none;
+}
+
 .ahp-awards-native img {
   display: block;
   width: 46px;
@@ -2548,16 +2554,21 @@ body.theme-dark .halley-profile-links .halley-contact-link .bi {
   box-shadow: none;
 }
 
-.ahp-awards-native a {
+.ahp-awards-native a,
+.ahp-awards-native span,
+.ahp-awards-native li {
   position: relative;
   display: inline-flex;
   align-items: center;
   justify-content: center;
+}
+
+.ahp-awards-native a {
   text-decoration: none;
 }
 
-.ahp-awards-native br {
-  display: none;
+.ahp-awards-native [data-award-tooltip] {
+  cursor: help;
 }
 
 body.dark .ahp-awards-native,
@@ -2566,28 +2577,16 @@ body.dark .ahp-awards-native,
   border-color: rgba(216, 181, 111, .25);
 }
 
-.ahp-awards-native [data-award-tooltip] {
-  cursor: help;
-}
-
-.ahp-awards-native [data-award-tooltip]::before,
-.ahp-awards-native [data-award-tooltip]::after {
-  display: none !important;
-  content: none !important;
-}
-
+/* Infobulle Aurora creee par le JS, proche des partenaires rapides. */
 #aurora-award-tooltip {
   position: fixed;
   z-index: 999999;
-  max-width: 220px;
-  padding: 4px 8px;
-  border: 1px solid rgba(255, 255, 255, .72);
+  max-width: 230px;
+  padding: 5px 9px;
   border-radius: 4px;
   background: #8d5c93;
   color: #fff;
-  font: 700 10px/1.15 Arial, sans-serif;
   text-align: center;
-  text-transform: none;
   box-shadow: 0 5px 12px rgba(35, 24, 42, .28);
   pointer-events: none;
   opacity: 0;
@@ -2595,16 +2594,97 @@ body.dark .ahp-awards-native,
   transition: opacity .14s ease, visibility .14s ease;
 }
 
+#aurora-award-tooltip::before {
+  content: "";
+  position: absolute;
+  top: -5px;
+  left: 50%;
+  width: 10px;
+  height: 10px;
+  background: #8d5c93;
+  transform: translateX(-50%) rotate(45deg);
+}
+
 #aurora-award-tooltip.is-visible {
   opacity: 1;
   visibility: visible;
 }
 
-/* Neutralise l'apparence bleue native des tooltips de recompenses si Forumactif l'injecte. */
-.ahp-awards-native .tooltip,
-.ahp-awards-native .tooltiptext,
-.ahp-awards-native .award_tooltip,
-.ahp-awards-native .award-tooltip,
-.ahp-awards-native [class*="tooltip"] {
-  display: none !important;
+#aurora-award-tooltip strong,
+#aurora-award-tooltip span {
+  display: block;
+  color: #fff;
+  font: 700 10px/1.15 Arial, sans-serif;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+#aurora-award-tooltip span {
+  margin-top: 2px;
+  font-size: 9px;
+  opacity: .92;
+}
+
+/* Infobulles natives Forumactif / Tooltipster, quand Forumactif les gere deja. */
+body .tooltipster-base {
+  z-index: 999999 !important;
+}
+
+body .tooltipster-base .tooltipster-box,
+body .tooltipster-default,
+body .tooltipster-light,
+body .tooltipster-punk {
+  border: 0 !important;
+  border-radius: 4px !important;
+  background: #8d5c93 !important;
+  box-shadow: 0 5px 12px rgba(35, 24, 42, .28) !important;
+}
+
+body .tooltipster-base .tooltipster-content,
+body .tooltipster-default .tooltipster-content,
+body .tooltipster-light .tooltipster-content,
+body .tooltipster-punk .tooltipster-content {
+  padding: 5px 9px !important;
+  color: #fff !important;
+  font: 700 10px/1.15 Arial, sans-serif !important;
+  text-align: center !important;
+  text-transform: uppercase !important;
+}
+
+body .tooltipster-sidetip.tooltipster-top .tooltipster-arrow-background,
+body .tooltipster-sidetip.tooltipster-top .tooltipster-arrow-border {
+  border-top-color: #8d5c93 !important;
+}
+
+body .tooltipster-sidetip.tooltipster-bottom .tooltipster-arrow-background,
+body .tooltipster-sidetip.tooltipster-bottom .tooltipster-arrow-border {
+  border-bottom-color: #8d5c93 !important;
+}
+
+body .tooltipster-sidetip.tooltipster-left .tooltipster-arrow-background,
+body .tooltipster-sidetip.tooltipster-left .tooltipster-arrow-border {
+  border-left-color: #8d5c93 !important;
+}
+
+body .tooltipster-sidetip.tooltipster-right .tooltipster-arrow-background,
+body .tooltipster-sidetip.tooltipster-right .tooltipster-arrow-border {
+  border-right-color: #8d5c93 !important;
+}
+
+/* Autres systemes d'infobulles possibles. */
+body .ui-tooltip,
+body .qtip,
+body .qtip-default {
+  border: 0 !important;
+  border-radius: 4px !important;
+  background: #8d5c93 !important;
+  color: #fff !important;
+  box-shadow: 0 5px 12px rgba(35, 24, 42, .28) !important;
+}
+
+body .qtip-content {
+  color: #fff !important;
+  font: 700 10px/1.15 Arial, sans-serif !important;
+  text-align: center !important;
+  text-transform: uppercase !important;
 }
