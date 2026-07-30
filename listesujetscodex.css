@@ -795,3 +795,89 @@ body.aurora-viewforum-page hr{
     white-space:normal !important;
   }
 }
+
+/* ==========================================================
+   Corrections V8
+   - boutons plus hauts et texte centre ;
+   - boutons du bas avec vrai encadre ;
+   - dernier post sans gras excessif.
+   ========================================================== */
+
+body.aurora-viewforum-page .als-forum-title .als-forum-head-actions{
+  align-self:center !important;
+  justify-self:center !important;
+}
+
+body.aurora-viewforum-page .als-forum-title .als-new-topic-button,
+body.aurora-viewforum-page .als-forum-title a[href*="mode=newtopic"],
+body.aurora-viewforum-page .als-forum-title a[href*="/post?f="]{
+  min-width:220px !important;
+  min-height:44px !important;
+  height:44px !important;
+  display:inline-grid !important;
+  place-items:center !important;
+  padding:2px 24px 0 !important;
+  text-align:center !important;
+  line-height:1 !important;
+}
+
+body.aurora-viewforum-page .topic-actions,
+body.aurora-viewforum-page .action-bar,
+body.aurora-viewforum-page .buttons,
+body.aurora-viewforum-page .posting-buttons{
+  display:flex !important;
+  flex-wrap:wrap !important;
+  align-items:center !important;
+  gap:10px !important;
+}
+
+body.aurora-viewforum-page .topic-actions a,
+body.aurora-viewforum-page .action-bar a,
+body.aurora-viewforum-page .buttons a,
+body.aurora-viewforum-page .posting-buttons a,
+body.aurora-viewforum-page a.als-button,
+body.aurora-viewforum-page a[href*="mark=topics"],
+body.aurora-viewforum-page a[href*="mark=forums"],
+body.aurora-viewforum-page a[href*="mark=read"],
+body.aurora-viewforum-page a[href*="mode=newtopic"],
+body.aurora-viewforum-page a[href*="/post?f="]{
+  min-width:190px !important;
+  min-height:42px !important;
+  height:42px !important;
+  display:inline-grid !important;
+  place-items:center !important;
+  box-sizing:border-box !important;
+  padding:2px 22px 0 !important;
+  border:1px solid rgba(255,255,255,.38) !important;
+  border-radius:10px !important;
+  background:var(--avf-title) !important;
+  color:#fff !important;
+  text-align:center !important;
+  line-height:1 !important;
+  font-family:var(--avf-title-font) !important;
+  font-size:12px !important;
+  font-weight:600 !important;
+  letter-spacing:.25px !important;
+  text-transform:uppercase !important;
+  box-shadow:none !important;
+}
+
+body.aurora-viewforum-page a[href*="mark=topics"],
+body.aurora-viewforum-page a[href*="mark=forums"],
+body.aurora-viewforum-page a[href*="mark=read"],
+body.aurora-viewforum-page a.als-button{
+  min-width:250px !important;
+}
+
+body.aurora-viewforum-page .als-last-topic,
+body.aurora-viewforum-page .als-last-copy strong,
+body.aurora-viewforum-page .als-last-copy b,
+body.aurora-viewforum-page .als-last-copy a,
+body.aurora-viewforum-page .als-last-copy [data-als-last-author],
+body.aurora-viewforum-page .als-subforum-last-topic-row,
+body.aurora-viewforum-page .als-subforum-last-author-row,
+body.aurora-viewforum-page .als-subforum-last strong,
+body.aurora-viewforum-page .als-subforum-last b,
+body.aurora-viewforum-page .als-subforum-last a{
+  font-weight:500 !important;
+}
