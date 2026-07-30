@@ -881,3 +881,22 @@ body.aurora-viewforum-page .als-subforum-last b,
 body.aurora-viewforum-page .als-subforum-last a{
   font-weight:500 !important;
 }
+
+/* ==========================================================
+   AURORA - Correctif espace entre les boutons viewforum
+   A coller tout en bas du CSS, apres le CSS viewforum actuel.
+   ========================================================== */
+
+body.aurora-viewforum-page a[href*="mode=newtopic"] + a,
+body.aurora-viewforum-page a[href*="/post?f="] + a,
+body.aurora-viewforum-page .als-new-topic-button + .als-button,
+body.aurora-viewforum-page .als-button + .als-button{
+  margin-left:12px !important;
+}
+
+body.aurora-viewforum-page .topic-actions > * + *,
+body.aurora-viewforum-page .action-bar > * + *,
+body.aurora-viewforum-page .buttons > * + *,
+body.aurora-viewforum-page .posting-buttons > * + *{
+  margin-left:12px !important;
+}
