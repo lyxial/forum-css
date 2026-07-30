@@ -2512,22 +2512,23 @@ body.theme-dark .halley-profile-links .halley-contact-link .bi {
 }
 
 /* ==========================================================
-   AURORA / HALLEY - Recompenses profil V3
+   AURORA / HALLEY - Recompenses profil V4
    A ajouter dans le CSS du forum.
-
-   Fonctionne avec :
-   <div class="ahp-awards-native">{switch_awards.AWARDS_LIST}</div>
    ========================================================== */
 
 .ahp-awards {
   margin-top: 18px;
 }
 
-.ahp-awards-native {
+.ahp-awards-native,
+.ahp-awards-list {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   gap: 10px;
+}
+
+.ahp-awards-native {
   min-height: 58px;
   padding: 16px;
   border: 1px solid var(--line, rgba(125, 85, 143, .24));
@@ -2535,15 +2536,19 @@ body.theme-dark .halley-profile-links .halley-contact-link .bi {
   background: var(--panel-soft, rgba(255, 255, 255, .48));
 }
 
-.ahp-awards-native:empty {
+.ahp-awards-native:empty,
+.ahp-awards-list:empty {
   display: none;
 }
 
-.ahp-awards-native br {
+.ahp-awards-native br,
+.ahp-awards-list br {
   display: none;
 }
 
-.ahp-awards-native img {
+.ahp-awards-native img,
+.ahp-awards-list img,
+.ahp-award img {
   display: block;
   width: 46px;
   height: 46px;
@@ -2554,20 +2559,27 @@ body.theme-dark .halley-profile-links .halley-contact-link .bi {
   box-shadow: none;
 }
 
-.ahp-awards-native a,
-.ahp-awards-native span,
-.ahp-awards-native li {
+.ahp-award,
+.ahp-awards-native .award {
   position: relative;
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  width: 46px;
+  height: 46px;
 }
 
-.ahp-awards-native a {
-  text-decoration: none;
+.ahp-awards-native .award {
+  background: var(--award-image) center / contain no-repeat;
 }
 
-.ahp-awards-native [data-award-tooltip] {
+.ahp-awards-native .award_tooltiptext {
+  display: none;
+}
+
+.ahp-award[data-award-tooltip],
+.ahp-award [data-award-tooltip],
+.aurora-award-tooltip-source {
   cursor: help;
 }
 
@@ -2577,7 +2589,13 @@ body.dark .ahp-awards-native,
   border-color: rgba(216, 181, 111, .25);
 }
 
-/* Infobulle Aurora creee par le JS, proche des partenaires rapides. */
+/* Si le bloc natif est dans le bloc source cache du template profil,
+   on le garde lisible par le JS mais invisible pour l'affichage. */
+.ahp-source #aurora-profile-awards,
+.ahp-source .ahp-awards-native {
+  display: none !important;
+}
+
 #aurora-award-tooltip {
   position: fixed;
   z-index: 999999;
@@ -2625,25 +2643,28 @@ body.dark .ahp-awards-native,
   opacity: .92;
 }
 
-/* Infobulles natives Forumactif / Tooltipster, quand Forumactif les gere deja. */
-body .tooltipster-base {
-  z-index: 999999 !important;
-}
-
+/* Infobulle native Forumactif si elle se declenche quand meme. */
+body > .award_tooltiptext,
 body .tooltipster-base .tooltipster-box,
 body .tooltipster-default,
 body .tooltipster-light,
-body .tooltipster-punk {
+body .tooltipster-punk,
+body .ui-tooltip,
+body .qtip,
+body .qtip-default {
   border: 0 !important;
   border-radius: 4px !important;
   background: #8d5c93 !important;
+  color: #fff !important;
   box-shadow: 0 5px 12px rgba(35, 24, 42, .28) !important;
 }
 
+body > .award_tooltiptext,
 body .tooltipster-base .tooltipster-content,
 body .tooltipster-default .tooltipster-content,
 body .tooltipster-light .tooltipster-content,
-body .tooltipster-punk .tooltipster-content {
+body .tooltipster-punk .tooltipster-content,
+body .qtip-content {
   padding: 5px 9px !important;
   color: #fff !important;
   font: 700 10px/1.15 Arial, sans-serif !important;
@@ -2669,22 +2690,4 @@ body .tooltipster-sidetip.tooltipster-left .tooltipster-arrow-border {
 body .tooltipster-sidetip.tooltipster-right .tooltipster-arrow-background,
 body .tooltipster-sidetip.tooltipster-right .tooltipster-arrow-border {
   border-right-color: #8d5c93 !important;
-}
-
-/* Autres systemes d'infobulles possibles. */
-body .ui-tooltip,
-body .qtip,
-body .qtip-default {
-  border: 0 !important;
-  border-radius: 4px !important;
-  background: #8d5c93 !important;
-  color: #fff !important;
-  box-shadow: 0 5px 12px rgba(35, 24, 42, .28) !important;
-}
-
-body .qtip-content {
-  color: #fff !important;
-  font: 700 10px/1.15 Arial, sans-serif !important;
-  text-align: center !important;
-  text-transform: uppercase !important;
 }
