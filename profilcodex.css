@@ -2511,3 +2511,100 @@ body.theme-dark .halley-profile-links .halley-contact-link .bi {
   }
 }
 
+/* ==========================================================
+   AURORA / HALLEY - Recompenses profil
+   CSS pour le bloc :
+   <div class="ahp-awards-native">{switch_awards.AWARDS_LIST}</div>
+   ========================================================== */
+
+.ahp-awards {
+  margin-top: 18px;
+}
+
+.ahp-awards-native {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  min-height: 58px;
+  padding: 16px;
+  border: 1px solid var(--line, rgba(125, 85, 143, .24));
+  border-radius: 12px;
+  background: var(--panel-soft, rgba(255, 255, 255, .48));
+}
+
+.ahp-awards-native:empty {
+  display: none;
+}
+
+.ahp-awards-native img {
+  display: block;
+  width: 46px;
+  height: 46px;
+  object-fit: contain;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+.ahp-awards-native a {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+
+.ahp-awards-native br {
+  display: none;
+}
+
+body.dark .ahp-awards-native,
+[data-theme="dark"] .ahp-awards-native {
+  background: rgba(30, 18, 38, .72);
+  border-color: rgba(216, 181, 111, .25);
+}
+
+.ahp-awards-native [data-award-tooltip] {
+  cursor: help;
+}
+
+.ahp-awards-native [data-award-tooltip]::before,
+.ahp-awards-native [data-award-tooltip]::after {
+  display: none !important;
+  content: none !important;
+}
+
+#aurora-award-tooltip {
+  position: fixed;
+  z-index: 999999;
+  max-width: 220px;
+  padding: 4px 8px;
+  border: 1px solid rgba(255, 255, 255, .72);
+  border-radius: 4px;
+  background: #8d5c93;
+  color: #fff;
+  font: 700 10px/1.15 Arial, sans-serif;
+  text-align: center;
+  text-transform: none;
+  box-shadow: 0 5px 12px rgba(35, 24, 42, .28);
+  pointer-events: none;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity .14s ease, visibility .14s ease;
+}
+
+#aurora-award-tooltip.is-visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Neutralise l'apparence bleue native des tooltips de recompenses si Forumactif l'injecte. */
+.ahp-awards-native .tooltip,
+.ahp-awards-native .tooltiptext,
+.ahp-awards-native .award_tooltip,
+.ahp-awards-native .award-tooltip,
+.ahp-awards-native [class*="tooltip"] {
+  display: none !important;
+}
