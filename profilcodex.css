@@ -2512,15 +2512,20 @@ body.theme-dark .halley-profile-links .halley-contact-link .bi {
 }
 
 /* ==========================================================
-   AURORA / HALLEY - Recompenses profil V4
-   A ajouter dans le CSS du forum.
+   AURORA - Infobulle recompenses profil COMPLETE
+
+   A coller tout en bas du CSS du forum.
+   Cette version n'a pas besoin de JS.
    ========================================================== */
 
-.ahp-awards {
-  margin-top: 18px;
+.ahp-layout,
+.ahp-sheet,
+.ahp-fields-panel,
+.ahp-awards-panel,
+.ahp-awards-list {
+  overflow: visible !important;
 }
 
-.ahp-awards-native,
 .ahp-awards-list {
   display: flex;
   flex-wrap: wrap;
@@ -2528,247 +2533,28 @@ body.theme-dark .halley-profile-links .halley-contact-link .bi {
   gap: 10px;
 }
 
-.ahp-awards-native {
-  min-height: 58px;
-  padding: 16px;
-  border: 1px solid var(--line, rgba(125, 85, 143, .24));
-  border-radius: 12px;
-  background: var(--panel-soft, rgba(255, 255, 255, .48));
+.ahp-award[data-award-tooltip],
+.aurora-award-tooltip-source[data-award-tooltip] {
+  position: relative !important;
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  overflow: visible !important;
+  pointer-events: auto !important;
+  cursor: help !important;
 }
 
-.ahp-awards-native:empty,
-.ahp-awards-list:empty {
-  display: none;
-}
-
-.ahp-awards-native br,
-.ahp-awards-list br {
-  display: none;
-}
-
-.ahp-awards-native img,
-.ahp-awards-list img,
-.ahp-award img {
+.ahp-award[data-award-tooltip] img,
+.aurora-award-tooltip-source[data-award-tooltip] img {
   display: block;
-  width: 46px;
-  height: 46px;
+  width: 52px;
+  height: 52px;
   object-fit: contain;
   border: 0;
   border-radius: 0;
   background: transparent;
   box-shadow: none;
-}
-
-.ahp-award,
-.ahp-awards-native .award {
-  position: relative;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 46px;
-  height: 46px;
-}
-
-.ahp-awards-native .award {
-  background: var(--award-image) center / contain no-repeat;
-}
-
-.ahp-awards-native .award_tooltiptext {
-  display: none;
-}
-
-.ahp-award[data-award-tooltip],
-.ahp-award [data-award-tooltip],
-.aurora-award-tooltip-source {
-  cursor: help;
-}
-
-body.dark .ahp-awards-native,
-[data-theme="dark"] .ahp-awards-native {
-  background: rgba(30, 18, 38, .72);
-  border-color: rgba(216, 181, 111, .25);
-}
-
-/* Si le bloc natif est dans le bloc source cache du template profil,
-   on le garde lisible par le JS mais invisible pour l'affichage. */
-.ahp-source #aurora-profile-awards,
-.ahp-source .ahp-awards-native {
-  display: none !important;
-}
-
-#aurora-award-tooltip {
-  position: fixed;
-  z-index: 999999;
-  max-width: 230px;
-  padding: 5px 9px;
-  border-radius: 4px;
-  background: #8d5c93;
-  color: #fff;
-  text-align: center;
-  box-shadow: 0 5px 12px rgba(35, 24, 42, .28);
-  pointer-events: none;
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity .14s ease, visibility .14s ease;
-}
-
-#aurora-award-tooltip::before {
-  content: "";
-  position: absolute;
-  top: -5px;
-  left: 50%;
-  width: 10px;
-  height: 10px;
-  background: #8d5c93;
-  transform: translateX(-50%) rotate(45deg);
-}
-
-#aurora-award-tooltip.is-visible {
-  opacity: 1;
-  visibility: visible;
-}
-
-#aurora-award-tooltip strong,
-#aurora-award-tooltip span {
-  display: block;
-  color: #fff;
-  font: 700 10px/1.15 Arial, sans-serif;
-  letter-spacing: 0;
-  text-transform: uppercase;
-}
-
-#aurora-award-tooltip span {
-  margin-top: 2px;
-  font-size: 9px;
-  opacity: .92;
-}
-
-/* Infobulle native Forumactif si elle se declenche quand meme. */
-body > .award_tooltiptext,
-body .tooltipster-base .tooltipster-box,
-body .tooltipster-default,
-body .tooltipster-light,
-body .tooltipster-punk,
-body .ui-tooltip,
-body .qtip,
-body .qtip-default {
-  border: 0 !important;
-  border-radius: 4px !important;
-  background: #8d5c93 !important;
-  color: #fff !important;
-  box-shadow: 0 5px 12px rgba(35, 24, 42, .28) !important;
-}
-
-body > .award_tooltiptext,
-body .tooltipster-base .tooltipster-content,
-body .tooltipster-default .tooltipster-content,
-body .tooltipster-light .tooltipster-content,
-body .tooltipster-punk .tooltipster-content,
-body .qtip-content {
-  padding: 5px 9px !important;
-  color: #fff !important;
-  font: 700 10px/1.15 Arial, sans-serif !important;
-  text-align: center !important;
-  text-transform: uppercase !important;
-}
-
-body .tooltipster-sidetip.tooltipster-top .tooltipster-arrow-background,
-body .tooltipster-sidetip.tooltipster-top .tooltipster-arrow-border {
-  border-top-color: #8d5c93 !important;
-}
-
-body .tooltipster-sidetip.tooltipster-bottom .tooltipster-arrow-background,
-body .tooltipster-sidetip.tooltipster-bottom .tooltipster-arrow-border {
-  border-bottom-color: #8d5c93 !important;
-}
-
-body .tooltipster-sidetip.tooltipster-left .tooltipster-arrow-background,
-body .tooltipster-sidetip.tooltipster-left .tooltipster-arrow-border {
-  border-left-color: #8d5c93 !important;
-}
-
-body .tooltipster-sidetip.tooltipster-right .tooltipster-arrow-background,
-body .tooltipster-sidetip.tooltipster-right .tooltipster-arrow-border {
-  border-right-color: #8d5c93 !important;
-}
-
-/* ==========================================================
-   AURORA - Infobulle minimale des recompenses
-   A ajouter dans le CSS du forum.
-   ========================================================== */
-
-[data-award-tooltip] {
-  cursor: help;
-}
-
-#aurora-award-tooltip {
-  position: fixed;
-  z-index: 999999;
-  max-width: 230px;
-  padding: 5px 9px;
-  border-radius: 4px;
-  background: #8d5c93;
-  color: #fff;
-  text-align: center;
-  box-shadow: 0 5px 12px rgba(35, 24, 42, .28);
-  pointer-events: none;
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity .14s ease, visibility .14s ease;
-}
-
-#aurora-award-tooltip::before {
-  content: "";
-  position: absolute;
-  top: -5px;
-  left: 50%;
-  width: 10px;
-  height: 10px;
-  background: #8d5c93;
-  transform: translateX(-50%) rotate(45deg);
-}
-
-#aurora-award-tooltip.is-visible {
-  opacity: 1;
-  visibility: visible;
-}
-
-#aurora-award-tooltip strong,
-#aurora-award-tooltip span {
-  display: block;
-  color: #fff;
-  font: 700 10px/1.15 Arial, sans-serif;
-  letter-spacing: 0;
-  text-transform: uppercase;
-}
-
-#aurora-award-tooltip span {
-  margin-top: 2px;
-  font-size: 9px;
-  opacity: .92;
-}
-
-/* ==========================================================
-   AURORA - Infobulle recompenses SANS JS
-
-   A coller tout en bas du CSS du forum.
-
-   Diagnostic sur /u1 :
-   le badge possede deja data-award-tooltip="connexion / premiere connexion".
-   Il manque seulement l'affichage visuel de cette infobulle.
-   ========================================================== */
-
-.ahp-awards-panel,
-.ahp-awards-list {
-  overflow: visible !important;
-}
-
-.ahp-award[data-award-tooltip],
-.ahp-award [data-award-tooltip],
-.aurora-award-tooltip-source[data-award-tooltip] {
-  position: relative !important;
-  overflow: visible !important;
-  cursor: help !important;
+  pointer-events: none !important;
 }
 
 .ahp-award[data-award-tooltip]::before,
@@ -2784,7 +2570,7 @@ body .tooltipster-sidetip.tooltipster-right .tooltipster-arrow-border {
   border-radius: 2px;
   opacity: 0;
   visibility: hidden;
-  pointer-events: none;
+  pointer-events: none !important;
   transform: translateX(-50%) rotate(45deg);
   transition: opacity .14s ease, visibility .14s ease;
 }
@@ -2809,7 +2595,7 @@ body .tooltipster-sidetip.tooltipster-right .tooltipster-arrow-border {
   white-space: pre-line;
   opacity: 0;
   visibility: hidden;
-  pointer-events: none;
+  pointer-events: none !important;
   transform: translateX(-50%);
   transition: opacity .14s ease, visibility .14s ease;
 }
@@ -2818,64 +2604,6 @@ body .tooltipster-sidetip.tooltipster-right .tooltipster-arrow-border {
 .ahp-award[data-award-tooltip]:hover::after,
 .aurora-award-tooltip-source[data-award-tooltip]:hover::before,
 .aurora-award-tooltip-source[data-award-tooltip]:hover::after {
-  opacity: 1;
-  visibility: visible;
-}
-
-/* Si le survol tombe directement sur l'image, le parent garde l'infobulle. */
-.ahp-award[data-award-tooltip] img,
-.aurora-award-tooltip-source[data-award-tooltip] img {
-  pointer-events: none;
-}
-
-/* ==========================================================
-   AURORA - FIX FINAL infobulle recompenses profil
-
-   A coller TOUT EN BAS du CSS du forum.
-
-   Diagnostic sur /u1 :
-   - le badge a bien data-award-tooltip ;
-   - l'infobulle CSS existe bien ;
-   - mais le badge a pointer-events:none, donc le :hover ne peut pas marcher.
-   ========================================================== */
-
-.ahp-layout,
-.ahp-sheet,
-.ahp-fields-panel,
-.ahp-awards-panel,
-.ahp-awards-list {
-  overflow: visible !important;
-}
-
-.ahp-award[data-award-tooltip],
-.aurora-award-tooltip-source[data-award-tooltip] {
-  position: relative !important;
-  overflow: visible !important;
-  pointer-events: auto !important;
-  cursor: help !important;
-}
-
-.ahp-award[data-award-tooltip] img,
-.aurora-award-tooltip-source[data-award-tooltip] img {
-  pointer-events: none !important;
-}
-
-.ahp-award[data-award-tooltip]::before,
-.aurora-award-tooltip-source[data-award-tooltip]::before,
-.ahp-award[data-award-tooltip]::after,
-.aurora-award-tooltip-source[data-award-tooltip]::after {
-  pointer-events: none !important;
-}
-
-.ahp-award[data-award-tooltip]:hover::before,
-.aurora-award-tooltip-source[data-award-tooltip]:hover::before {
   opacity: 1 !important;
   visibility: visible !important;
 }
-
-.ahp-award[data-award-tooltip]:hover::after,
-.aurora-award-tooltip-source[data-award-tooltip]:hover::after {
-  opacity: 1 !important;
-  visibility: visible !important;
-}
-
