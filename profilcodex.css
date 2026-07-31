@@ -2747,3 +2747,83 @@ body .tooltipster-sidetip.tooltipster-right .tooltipster-arrow-border {
   font-size: 9px;
   opacity: .92;
 }
+
+/* ==========================================================
+   AURORA - Infobulle recompenses SANS JS
+
+   A coller tout en bas du CSS du forum.
+
+   Diagnostic sur /u1 :
+   le badge possede deja data-award-tooltip="connexion / premiere connexion".
+   Il manque seulement l'affichage visuel de cette infobulle.
+   ========================================================== */
+
+.ahp-awards-panel,
+.ahp-awards-list {
+  overflow: visible !important;
+}
+
+.ahp-award[data-award-tooltip],
+.ahp-award [data-award-tooltip],
+.aurora-award-tooltip-source[data-award-tooltip] {
+  position: relative !important;
+  overflow: visible !important;
+  cursor: help !important;
+}
+
+.ahp-award[data-award-tooltip]::before,
+.aurora-award-tooltip-source[data-award-tooltip]::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: calc(100% + 5px);
+  z-index: 99999;
+  width: 10px;
+  height: 10px;
+  background: #8d5c93;
+  border-radius: 2px;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateX(-50%) rotate(45deg);
+  transition: opacity .14s ease, visibility .14s ease;
+}
+
+.ahp-award[data-award-tooltip]::after,
+.aurora-award-tooltip-source[data-award-tooltip]::after {
+  content: attr(data-award-tooltip);
+  position: absolute;
+  left: 50%;
+  bottom: calc(100% + 10px);
+  z-index: 100000;
+  min-width: 118px;
+  max-width: 230px;
+  padding: 6px 10px;
+  border-radius: 4px;
+  background: #8d5c93;
+  color: #fff;
+  box-shadow: 0 5px 12px rgba(35, 24, 42, .28);
+  font: 700 10px/1.2 Arial, sans-serif;
+  text-align: center;
+  text-transform: uppercase;
+  white-space: pre-line;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateX(-50%);
+  transition: opacity .14s ease, visibility .14s ease;
+}
+
+.ahp-award[data-award-tooltip]:hover::before,
+.ahp-award[data-award-tooltip]:hover::after,
+.aurora-award-tooltip-source[data-award-tooltip]:hover::before,
+.aurora-award-tooltip-source[data-award-tooltip]:hover::after {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Si le survol tombe directement sur l'image, le parent garde l'infobulle. */
+.ahp-award[data-award-tooltip] img,
+.aurora-award-tooltip-source[data-award-tooltip] img {
+  pointer-events: none;
+}
