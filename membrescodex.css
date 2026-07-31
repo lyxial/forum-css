@@ -9,6 +9,10 @@
 }
 
 .aml-page {
+  /* Images des boutons d'action.
+     Remplace uniquement les URL ci-dessous si tu veux changer les icones. */
+  --aml-icon-profile: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Ccircle cx='12' cy='8' r='4' fill='%23755483'/%3E%3Cpath d='M4 21c1.2-5 4-7 8-7s6.8 2 8 7' fill='%23755483'/%3E%3C/svg%3E");
+  --aml-icon-prez: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M6 4.5c0-.8.7-1.5 1.5-1.5H18v17H7.5A1.5 1.5 0 0 1 6 18.5v-14Z' fill='%23755483' opacity='.35'/%3E%3Cpath d='M8 6h8v1.8H8V6Zm0 4h8v1.8H8V10Zm0 4h5v1.8H8V14Z' fill='%23755483'/%3E%3C/svg%3E");
   --aml-bg: #efeaf3;
   --aml-bg-2: #e6dde9;
   --aml-surface: #fbf9fc;
@@ -22,7 +26,7 @@
   --aml-gold: #c7a45a;
   --aml-shadow: 0 16px 40px rgba(74, 44, 90, .08);
   --aml-title-font: var(--font-title, Georgia, "Times New Roman", serif);
-  width: min(1380px, calc(100vw - 40px));
+  width: min(1180px, calc(100vw - 56px));
   margin: 28px auto 40px;
   color: var(--aml-text);
   font: 14px/1.45 "Segoe UI", Arial, sans-serif;
@@ -144,7 +148,7 @@ html.dark .aml-panel,
   display: flex;
   align-items: center;
   gap: 10px;
-  flex: 1 1 640px;
+  flex: 1 1 420px;
 }
 
 .aml-search-shell {
@@ -201,7 +205,6 @@ html.dark .aml-panel,
   color: #9d8ca7;
 }
 
-.aml-search-btn,
 .aml-sort button {
   height: 54px;
   min-width: 134px;
@@ -216,7 +219,6 @@ html.dark .aml-panel,
   box-shadow: 0 8px 20px rgba(117, 84, 131, .18);
 }
 
-.aml-search-btn:hover,
 .aml-sort button:hover {
   filter: brightness(1.04);
 }
@@ -439,11 +441,40 @@ html.dark .aml-meta-table td,
   letter-spacing: .08em;
   text-transform: uppercase;
   text-decoration: none;
+  padding: 0;
+  overflow: hidden;
 }
 
-.aml-native-action img {
-  max-width: 18px;
-  max-height: 18px;
+.aml-icon {
+  font-size: 0;
+}
+
+.aml-action-img {
+  display: block;
+  width: 22px;
+  height: 22px;
+  background: var(--aml-icon-profile) center / contain no-repeat;
+}
+
+.aml-prez-action .aml-action-img {
+  background-image: var(--aml-icon-prez);
+}
+
+.aml-prez-action.is-hidden {
+  display: none;
+}
+
+.aml-native-action a {
+  font-size: 0;
+  line-height: 0;
+}
+
+.aml-native-action img,
+.aml-action-img img {
+  display: block;
+  max-width: 24px;
+  max-height: 24px;
+  object-fit: contain;
 }
 
 .aml-native-action:empty {
@@ -453,6 +484,18 @@ html.dark .aml-meta-table td,
 .aml-native-action a[href=""],
 .aml-native-action a:not([href]) {
   display: none;
+}
+
+.aml-sr {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }
 
 .aml-empty {
@@ -524,7 +567,6 @@ html.dark .aml-meta-table td,
     align-items: stretch;
   }
 
-  .aml-search-btn,
   .aml-members-count {
     width: 100%;
   }
