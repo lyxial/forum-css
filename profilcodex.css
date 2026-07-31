@@ -2691,3 +2691,59 @@ body .tooltipster-sidetip.tooltipster-right .tooltipster-arrow-background,
 body .tooltipster-sidetip.tooltipster-right .tooltipster-arrow-border {
   border-right-color: #8d5c93 !important;
 }
+
+/* ==========================================================
+   AURORA - Infobulle minimale des recompenses
+   A ajouter dans le CSS du forum.
+   ========================================================== */
+
+[data-award-tooltip] {
+  cursor: help;
+}
+
+#aurora-award-tooltip {
+  position: fixed;
+  z-index: 999999;
+  max-width: 230px;
+  padding: 5px 9px;
+  border-radius: 4px;
+  background: #8d5c93;
+  color: #fff;
+  text-align: center;
+  box-shadow: 0 5px 12px rgba(35, 24, 42, .28);
+  pointer-events: none;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity .14s ease, visibility .14s ease;
+}
+
+#aurora-award-tooltip::before {
+  content: "";
+  position: absolute;
+  top: -5px;
+  left: 50%;
+  width: 10px;
+  height: 10px;
+  background: #8d5c93;
+  transform: translateX(-50%) rotate(45deg);
+}
+
+#aurora-award-tooltip.is-visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+#aurora-award-tooltip strong,
+#aurora-award-tooltip span {
+  display: block;
+  color: #fff;
+  font: 700 10px/1.15 Arial, sans-serif;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+#aurora-award-tooltip span {
+  margin-top: 2px;
+  font-size: 9px;
+  opacity: .92;
+}
