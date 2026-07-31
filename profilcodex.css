@@ -2827,3 +2827,55 @@ body .tooltipster-sidetip.tooltipster-right .tooltipster-arrow-border {
 .aurora-award-tooltip-source[data-award-tooltip] img {
   pointer-events: none;
 }
+
+/* ==========================================================
+   AURORA - FIX FINAL infobulle recompenses profil
+
+   A coller TOUT EN BAS du CSS du forum.
+
+   Diagnostic sur /u1 :
+   - le badge a bien data-award-tooltip ;
+   - l'infobulle CSS existe bien ;
+   - mais le badge a pointer-events:none, donc le :hover ne peut pas marcher.
+   ========================================================== */
+
+.ahp-layout,
+.ahp-sheet,
+.ahp-fields-panel,
+.ahp-awards-panel,
+.ahp-awards-list {
+  overflow: visible !important;
+}
+
+.ahp-award[data-award-tooltip],
+.aurora-award-tooltip-source[data-award-tooltip] {
+  position: relative !important;
+  overflow: visible !important;
+  pointer-events: auto !important;
+  cursor: help !important;
+}
+
+.ahp-award[data-award-tooltip] img,
+.aurora-award-tooltip-source[data-award-tooltip] img {
+  pointer-events: none !important;
+}
+
+.ahp-award[data-award-tooltip]::before,
+.aurora-award-tooltip-source[data-award-tooltip]::before,
+.ahp-award[data-award-tooltip]::after,
+.aurora-award-tooltip-source[data-award-tooltip]::after {
+  pointer-events: none !important;
+}
+
+.ahp-award[data-award-tooltip]:hover::before,
+.aurora-award-tooltip-source[data-award-tooltip]:hover::before {
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+.ahp-award[data-award-tooltip]:hover::after,
+.aurora-award-tooltip-source[data-award-tooltip]:hover::after {
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
