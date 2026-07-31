@@ -8,7 +8,7 @@
   --fa-img-temp-dark: linear-gradient(135deg,#2f243b 0%,#6c4b7c 48%,#1e1728 100%);
 
   /* Images de la navigation / PA */
-  --img-banner: url("https://zupimages.net/up/26/29/377c.png");
+  --img-banner: url("https://zupimages.net/up/26/31/5aus.png");
   --img-pa-intro-deco: var(--fa-img-temp);
   --img-pa-event: url("https://zupimages.net/up/26/29/zx96.png");
   --img-weather: var(--fa-img-temp);
@@ -17090,7 +17090,7 @@ html body .banner {
   padding: 0 !important;
   overflow: hidden !important;
   border-radius: 32px !important;
-  background-image: var(--img-banner, url("https://zupimages.net/up/26/29/377c.png")) !important;
+  background-image: var(--img-banner, url("https://zupimages.net/up/26/31/5aus.png")) !important;
   background-position: center !important;
   background-repeat: no-repeat !important;
   background-size: cover !important;
@@ -17116,7 +17116,7 @@ body[data-theme="dark"] .banner,
 body[data-lyx-theme="dark"] .banner {
   filter: none !important;
   opacity: 1 !important;
-  background-image: var(--img-banner, url("https://zupimages.net/up/26/29/377c.png")) !important;
+  background-image: var(--img-banner, url("https://zupimages.net/up/26/31/5aus.png")) !important;
   background-position: center !important;
   background-repeat: no-repeat !important;
   background-size: cover !important;
@@ -17420,7 +17420,7 @@ html body .banner {
   padding: 0 !important;
   overflow: hidden !important;
   border-radius: 32px !important;
-  background-image: var(--img-banner, url("https://zupimages.net/up/26/29/377c.png")) !important;
+  background-image: var(--img-banner, url("https://zupimages.net/up/26/31/5aus.png")) !important;
   background-position: center !important;
   background-repeat: no-repeat !important;
   background-size: cover !important;
@@ -17446,7 +17446,7 @@ body[data-theme="dark"] .banner,
 body[data-lyx-theme="dark"] .banner {
   filter: none !important;
   opacity: 1 !important;
-  background-image: var(--img-banner, url("https://zupimages.net/up/26/29/377c.png")) !important;
+  background-image: var(--img-banner, url("https://zupimages.net/up/26/31/5aus.png")) !important;
   background-position: center !important;
   background-repeat: no-repeat !important;
   background-size: cover !important;
@@ -17728,7 +17728,7 @@ html body .banner {
   padding: 0 !important;
   overflow: hidden !important;
   border-radius: 32px !important;
-  background-image: var(--img-banner, url("https://zupimages.net/up/26/29/377c.png")) !important;
+  background-image: var(--img-banner, url("https://zupimages.net/up/26/31/5aus.png")) !important;
   background-position: center !important;
   background-repeat: no-repeat !important;
   background-size: cover !important;
@@ -17754,7 +17754,7 @@ body[data-theme="dark"] .banner,
 body[data-lyx-theme="dark"] .banner {
   filter: none !important;
   opacity: 1 !important;
-  background-image: var(--img-banner, url("https://zupimages.net/up/26/29/377c.png")) !important;
+  background-image: var(--img-banner, url("https://zupimages.net/up/26/31/5aus.png")) !important;
   background-position: center !important;
   background-repeat: no-repeat !important;
   background-size: cover !important;
