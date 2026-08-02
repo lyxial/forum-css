@@ -3159,3 +3159,35 @@ html[data-theme="dark"] .ahp-overview-alice strong {
 
 .halley-overview-currency strong {
     color: #b88947!important;
+
+/* AURORA - Profil membre : chiffre Rabbits en dore
+   A coller tout en bas de la feuille CSS. */
+
+:root {
+  --aurora-gold: #d8b56f;
+}
+
+/* Cible le champ Rabbits sans toucher aux autres valeurs du bandeau. */
+.ahp-profile [data-ahp-field="rabbits" i] .ahp-field-value,
+.ahp-profile [data-ahp-field="rabbits" i] .ahp-profile-field-value,
+.ahp-profile [data-ahp-field="rabbits" i] [data-ahp-value],
+.ahp-profile [data-field="rabbits" i] .ahp-field-value,
+.ahp-profile [data-field="rabbits" i] .ahp-profile-field-value,
+.ahp-profile [data-field="rabbits" i] [data-ahp-value],
+.ahp-profile .ahp-rabbits .ahp-field-value,
+.ahp-profile .ahp-rabbits .ahp-profile-field-value,
+.ahp-profile .ahp-rabbits [data-ahp-value],
+.ahp-profile .ahp-rabbits-card .ahp-field-value,
+.ahp-profile .ahp-rabbits-card .ahp-profile-field-value,
+.ahp-profile .ahp-rabbits-card [data-ahp-value],
+.ahp-profile .ahp-rabbits-value,
+.ahp-profile .ahp-rabbit-value {
+  color: var(--aurora-gold) !important;
+}
+
+/* Fallback si le bloc n'a plus de classe dediee, mais contient le label Rabbits. */
+.ahp-profile .ahp-stat:has(.ahp-stat-label:is([title="Rabbits"], [aria-label="Rabbits"])) .ahp-stat-value,
+.ahp-profile .ahp-profile-field:has(.ahp-profile-field-label:is([title="Rabbits"], [aria-label="Rabbits"])) .ahp-profile-field-value,
+.ahp-profile .ahp-field-card:has(.ahp-field-label:is([title="Rabbits"], [aria-label="Rabbits"])) .ahp-field-value {
+  color: var(--aurora-gold) !important;
+}
