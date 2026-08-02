@@ -1816,3 +1816,122 @@ body.theme-dark .halley-profile-links .halley-contact-link .bi {
 .halley-message-footer .halley-edited:empty {
   display: none !important;
 }
+
+/* AURORA - Signature exterieure centree + trait visible
+   A ajouter dans la feuille CSS, tout en bas apres le CSS des messages.
+   La signature garde la taille reelle de chaque image. */
+
+.halley-message-content {
+  padding-bottom: 26px !important;
+}
+
+.halley-message-card {
+  margin-bottom: 34px !important;
+}
+
+/* Bloc signature sorti du cadre message. Compatible avec la nouvelle classe
+   .halley-signature-outside et avec l'ancienne classe .halley-signature si elle
+   est collee juste apres le bloc message. */
+.halley-signature-outside,
+.halley-message-card .halley-signature-outside,
+.halley-message-card > .halley-signature {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 100% !important;
+  margin: 18px auto 0 !important;
+  padding: 0 32px 24px !important;
+  box-sizing: border-box !important;
+  text-align: center !important;
+  overflow: visible !important;
+  color: #d8b56f !important;
+}
+
+/* Trait juste avant la signature. */
+.halley-signature-outside:before,
+.halley-message-card .halley-signature-outside:before,
+.halley-message-card > .halley-signature:before {
+  content: "" !important;
+  display: block !important;
+  width: min(420px, 70%) !important;
+  height: 1px !important;
+  margin: 0 auto 16px !important;
+  background: rgba(216, 181, 111, 0.62) !important;
+  opacity: 1 !important;
+}
+
+.halley-signature-outside .signature_div,
+.halley-message-card .halley-signature-outside .signature_div,
+.halley-message-card > .halley-signature .signature_div {
+  display: block !important;
+  width: max-content !important;
+  max-width: none !important;
+  min-width: 0 !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  text-align: center !important;
+  overflow: visible !important;
+}
+
+.halley-signature-outside a,
+.halley-signature-outside .signature_div a,
+.halley-message-card .halley-signature-outside a,
+.halley-message-card .halley-signature-outside .signature_div a,
+.halley-message-card > .halley-signature a,
+.halley-message-card > .halley-signature .signature_div a {
+  display: inline-block !important;
+  width: auto !important;
+  max-width: none !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+.halley-signature-outside img,
+.halley-signature-outside .signature_div img,
+.halley-message-card .halley-signature-outside img,
+.halley-message-card .halley-signature-outside .signature_div img,
+.halley-message-card > .halley-signature img,
+.halley-message-card > .halley-signature .signature_div img {
+  display: inline-block !important;
+  width: auto !important;
+  height: auto !important;
+  min-width: 0 !important;
+  max-width: none !important;
+  max-height: none !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  object-fit: contain !important;
+  transform: none !important;
+}
+
+.halley-signature-outside br,
+.halley-message-card .halley-signature-outside br,
+.halley-message-card > .halley-signature br {
+  display: none !important;
+}
+
+/* Ancien bas de message : ligne et Message #X masques. */
+.halley-message-footer,
+.halley-message-footer:before,
+.halley-message-footer:after {
+  border: 0 !important;
+  box-shadow: none !important;
+  background: transparent !important;
+}
+
+.halley-message-footer .halley-message-number {
+  display: none !important;
+}
+
+.halley-message-footer {
+  min-height: 0 !important;
+  height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+}
+
+.halley-message-footer .halley-edited:empty {
+  display: none !important;
+}
