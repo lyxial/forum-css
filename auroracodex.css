@@ -19507,3 +19507,86 @@ html.aurora-viewforum-page body input[type="search"] {
   margin-top: 6px;
   opacity: .65;
 }
+
+/* AURORA - Navigation : profil moins clair en mode sombre
+   A coller tout en bas du CSS. */
+
+html.theme-dark .profile-dropdown,
+body.theme-dark .profile-dropdown,
+html.theme-dark .profile-maquette,
+body.theme-dark .profile-maquette {
+  background: #100a15 !important;
+  border-color: rgba(216, 181, 111, 0.2) !important;
+  color: #f5edf8 !important;
+}
+
+html.theme-dark .profile-quick-stats .profile-stat-card,
+body.theme-dark .profile-quick-stats .profile-stat-card,
+html.theme-dark .profile-stat-card,
+body.theme-dark .profile-stat-card {
+  background: linear-gradient(145deg, rgba(43, 28, 52, 0.96), rgba(30, 19, 38, 0.98)) !important;
+  border-color: rgba(216, 181, 111, 0.18) !important;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.03) !important;
+  color: #f4edf6 !important;
+}
+
+html.theme-dark .profile-stat-card strong,
+body.theme-dark .profile-stat-card strong {
+  color: #d8b56f !important;
+}
+
+html.theme-dark .profile-stat-card span,
+body.theme-dark .profile-stat-card span {
+  color: rgba(245, 237, 248, 0.74) !important;
+}
+
+html.theme-dark .switcheroo-title,
+body.theme-dark .switcheroo-title {
+  color: #d8b56f !important;
+}
+
+html.theme-dark .switcheroo-list,
+body.theme-dark .switcheroo-list {
+  background: transparent !important;
+}
+
+html.theme-dark .switcheroo__squircle,
+body.theme-dark .switcheroo__squircle,
+html.theme-dark .profile-dropdown .switcheroo__squircle,
+body.theme-dark .profile-dropdown .switcheroo__squircle {
+  background: rgba(42, 28, 52, 0.96) !important;
+  border-color: rgba(216, 181, 111, 0.2) !important;
+  color: #f5edf8 !important;
+}
+
+html.theme-dark .switcheroo__squircle.active,
+body.theme-dark .switcheroo__squircle.active {
+  background: linear-gradient(90deg, rgba(108, 75, 124, 0.9), rgba(72, 48, 86, 0.94)) !important;
+}
+
+html.theme-dark .switcheroo__squircle--button,
+body.theme-dark .switcheroo__squircle--button,
+html.theme-dark [data-action="open-login"],
+body.theme-dark [data-action="open-login"] {
+  background: rgba(58, 39, 70, 0.95) !important;
+  border-color: rgba(216, 181, 111, 0.28) !important;
+  color: #d8b56f !important;
+}
+
+html.theme-dark .profile-links,
+body.theme-dark .profile-links {
+  background: #24172d !important;
+  border-color: rgba(216, 181, 111, 0.12) !important;
+}
+
+html.theme-dark .profile-links a,
+body.theme-dark .profile-links a {
+  background: rgba(36, 23, 45, 0.92) !important;
+  color: #f5edf8 !important;
+}
+
+html.theme-dark .profile-links a:hover,
+body.theme-dark .profile-links a:hover {
+  background: rgba(216, 181, 111, 0.18) !important;
+  color: #d8b56f !important;
+}
