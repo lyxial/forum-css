@@ -1684,3 +1684,60 @@ body.theme-dark .halley-profile-links .halley-contact-link .bi {
 .halley-signature br {
   display: none !important;
 }
+/* AURORA - Signature a sa taille originale + numero de message a droite
+   A ajouter dans la feuille CSS, apres le CSS des messages.
+   Aucune largeur fixe : chaque image garde ses dimensions reelles. */
+
+.halley-message-card .halley-signature,
+.halley-message-card .halley-signature .signature_div {
+  width: max-content !important;
+  max-width: none !important;
+  min-width: 0 !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  text-align: center !important;
+  overflow: visible !important;
+}
+
+.halley-message-card .halley-signature a,
+.halley-message-card .halley-signature .signature_div a {
+  display: inline-block !important;
+  width: auto !important;
+  max-width: none !important;
+}
+
+.halley-message-card .halley-signature img,
+.halley-message-card .halley-signature .signature_div img,
+.halley-message-card .signature_div img {
+  display: inline-block !important;
+  width: auto !important;
+  height: auto !important;
+  min-width: 0 !important;
+  max-width: none !important;
+  max-height: none !important;
+  object-fit: contain !important;
+  transform: none !important;
+}
+
+.halley-message-card .halley-signature br {
+  display: none !important;
+}
+
+.halley-message-footer {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: flex-end !important;
+  width: 100% !important;
+  text-align: right !important;
+}
+
+.halley-message-footer .halley-edited:not(:empty) {
+  margin-right: auto !important;
+  text-align: left !important;
+}
+
+.halley-message-footer .halley-message-number {
+  display: block !important;
+  margin-left: auto !important;
+  text-align: right !important;
+}
