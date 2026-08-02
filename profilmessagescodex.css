@@ -1741,3 +1741,78 @@ body.theme-dark .halley-profile-links .halley-contact-link .bi {
   margin-left: auto !important;
   text-align: right !important;
 }
+
+/* AURORA - Signature a sa taille originale + bas de message propre
+   A ajouter dans la feuille CSS, apres le CSS des messages.
+   Aucune largeur fixe : chaque image garde ses dimensions reelles. */
+
+.halley-message-card,
+.halley-message-content,
+.halley-message-body,
+.halley-message-text,
+.halley-post-content {
+  padding-bottom: 18px !important;
+}
+
+.halley-message-card {
+  margin-bottom: 28px !important;
+}
+
+.halley-message-card .halley-signature,
+.halley-message-card .halley-signature .signature_div {
+  width: max-content !important;
+  max-width: none !important;
+  min-width: 0 !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  text-align: center !important;
+  overflow: visible !important;
+}
+
+.halley-message-card .halley-signature a,
+.halley-message-card .halley-signature .signature_div a {
+  display: inline-block !important;
+  width: auto !important;
+  max-width: none !important;
+}
+
+.halley-message-card .halley-signature img,
+.halley-message-card .halley-signature .signature_div img,
+.halley-message-card .signature_div img {
+  display: inline-block !important;
+  width: auto !important;
+  height: auto !important;
+  min-width: 0 !important;
+  max-width: none !important;
+  max-height: none !important;
+  object-fit: contain !important;
+  transform: none !important;
+}
+
+.halley-message-card .halley-signature br {
+  display: none !important;
+}
+
+.halley-message-footer,
+.halley-message-footer:before,
+.halley-message-footer:after {
+  border: 0 !important;
+  box-shadow: none !important;
+  background: transparent !important;
+}
+
+.halley-message-footer .halley-message-number {
+  display: none !important;
+}
+
+.halley-message-footer {
+  min-height: 0 !important;
+  height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+}
+
+.halley-message-footer .halley-edited:empty {
+  display: none !important;
+}
