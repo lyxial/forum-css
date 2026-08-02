@@ -20060,3 +20060,82 @@ body.aurora-nav-dark .nav .profile-switch-card .profile-links a:hover {
   background: rgba(216, 181, 111, 0.18) !important;
   color: var(--aurora-nav-profile-gold) !important;
 }
+
+/* ==========================================================
+   AURORA - FIX DIRECT MENU PROFIL NAVIGATION MODE SOMBRE
+   A coller TOUT EN BAS du CSS.
+   Corrige uniquement les blocs clairs dans la fenetre profil de la nav.
+   ========================================================== */
+
+html.theme-dark body#top.theme-dark .forum-wrapper .nav .profile-switch-card,
+html.theme-dark body#top.theme-dark .forum-wrapper .nav .profile-switch-card .profile-dropdown.profile-maquette,
+html.aurora-dark-active body#top.aurora-dark-active .forum-wrapper .nav .profile-switch-card,
+html.aurora-dark-active body#top.aurora-dark-active .forum-wrapper .nav .profile-switch-card .profile-dropdown.profile-maquette {
+  background: #0f0a14 !important;
+  background-image: none !important;
+  border-color: rgba(216, 181, 111, 0.24) !important;
+  color: #f7edf8 !important;
+}
+
+html.theme-dark body#top.theme-dark .forum-wrapper .nav .profile-switch-card .profile-stat-card,
+html.aurora-dark-active body#top.aurora-dark-active .forum-wrapper .nav .profile-switch-card .profile-stat-card {
+  background: linear-gradient(145deg, #2a1a36, #1b1023) !important;
+  background-image: linear-gradient(145deg, #2a1a36, #1b1023) !important;
+  background-color: #1b1023 !important;
+  border-color: rgba(216, 181, 111, 0.28) !important;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.08) !important;
+  color: #f7edf8 !important;
+}
+
+html.theme-dark body#top.theme-dark .forum-wrapper .nav .profile-switch-card .profile-stat-card strong,
+html.aurora-dark-active body#top.aurora-dark-active .forum-wrapper .nav .profile-switch-card .profile-stat-card strong {
+  color: #d8b56f !important;
+  text-shadow: none !important;
+}
+
+html.theme-dark body#top.theme-dark .forum-wrapper .nav .profile-switch-card .profile-stat-card span,
+html.aurora-dark-active body#top.aurora-dark-active .forum-wrapper .nav .profile-switch-card .profile-stat-card span {
+  color: rgba(247, 237, 248, 0.68) !important;
+  text-shadow: none !important;
+}
+
+html.theme-dark body#top.theme-dark .forum-wrapper .nav .profile-switch-card .switcheroo-title,
+html.aurora-dark-active body#top.aurora-dark-active .forum-wrapper .nav .profile-switch-card .switcheroo-title {
+  color: #d8b56f !important;
+}
+
+html.theme-dark body#top.theme-dark .forum-wrapper .nav .profile-switch-card .switcheroo__squircle,
+html.aurora-dark-active body#top.aurora-dark-active .forum-wrapper .nav .profile-switch-card .switcheroo__squircle {
+  background: #2a1a36 !important;
+  background-image: none !important;
+  background-color: #2a1a36 !important;
+  border-color: rgba(216, 181, 111, 0.28) !important;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.08) !important;
+  color: #f7edf8 !important;
+}
+
+html.theme-dark body#top.theme-dark .forum-wrapper .nav .profile-switch-card .switcheroo__squircle.active,
+html.aurora-dark-active body#top.aurora-dark-active .forum-wrapper .nav .profile-switch-card .switcheroo__squircle.active {
+  background: linear-gradient(90deg, #6f4c82, #372343) !important;
+  background-image: linear-gradient(90deg, #6f4c82, #372343) !important;
+}
+
+html.theme-dark body#top.theme-dark .forum-wrapper .nav .profile-switch-card .profile-links,
+html.aurora-dark-active body#top.aurora-dark-active .forum-wrapper .nav .profile-switch-card .profile-links {
+  background: #0f0a14 !important;
+  background-image: none !important;
+  border-color: rgba(216, 181, 111, 0.18) !important;
+}
+
+html.theme-dark body#top.theme-dark .forum-wrapper .nav .profile-switch-card .profile-links a,
+html.aurora-dark-active body#top.aurora-dark-active .forum-wrapper .nav .profile-switch-card .profile-links a {
+  background: #2b2034 !important;
+  background-image: none !important;
+  color: #f7edf8 !important;
+}
+
+html.theme-dark body#top.theme-dark .forum-wrapper .nav .profile-switch-card .profile-links a:hover,
+html.aurora-dark-active body#top.aurora-dark-active .forum-wrapper .nav .profile-switch-card .profile-links a:hover {
+  background: rgba(216, 181, 111, 0.18) !important;
+  color: #d8b56f !important;
+}
