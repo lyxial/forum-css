@@ -20219,31 +20219,39 @@ html.aurora-dark-active body#top.aurora-dark-active .forum-wrapper .nav .profile
   color: #d8b56f !important;
 }
 
-/* ==========================================================
-   AURORA - Bouton "Voir tous les personnages" visible en sombre
-   A coller en bas du CSS si tu ne veux pas remplacer tout le JS.
-   ========================================================== */
-
+/* PA - bouton "Voir tous les personnages" lisible en mode sombre */
 html.theme-dark #lyxial-pa .pred-all-link,
-html.aurora-dark-active #lyxial-pa .pred-all-link,
-html[data-lyx-theme="dark"] #lyxial-pa .pred-all-link,
 body.theme-dark #lyxial-pa .pred-all-link,
+html.aurora-dark-active #lyxial-pa .pred-all-link,
 body.aurora-dark-active #lyxial-pa .pred-all-link,
-body[data-lyx-theme="dark"] #lyxial-pa .pred-all-link {
+html[data-lyx-theme="dark"] #lyxial-pa .pred-all-link,
+body[data-lyx-theme="dark"] #lyxial-pa .pred-all-link,
+html[data-theme="dark"] #lyxial-pa .pred-all-link,
+body[data-theme="dark"] #lyxial-pa .pred-all-link,
+html.dark #lyxial-pa .pred-all-link,
+body.dark #lyxial-pa .pred-all-link,
+html.dark-mode #lyxial-pa .pred-all-link,
+body.dark-mode #lyxial-pa .pred-all-link {
   background: linear-gradient(135deg, #7d558f, #3a2748) !important;
   border-color: rgba(216, 181, 111, 0.72) !important;
   color: #fff !important;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.45) !important;
   box-shadow: 0 8px 18px rgba(0, 0, 0, 0.22),
     inset 0 1px 0 rgba(255, 255, 255, 0.12) !important;
-  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.42) !important;
 }
 
 html.theme-dark #lyxial-pa .pred-all-link:hover,
-html.aurora-dark-active #lyxial-pa .pred-all-link:hover,
-html[data-lyx-theme="dark"] #lyxial-pa .pred-all-link:hover,
 body.theme-dark #lyxial-pa .pred-all-link:hover,
+html.aurora-dark-active #lyxial-pa .pred-all-link:hover,
 body.aurora-dark-active #lyxial-pa .pred-all-link:hover,
-body[data-lyx-theme="dark"] #lyxial-pa .pred-all-link:hover {
+html[data-lyx-theme="dark"] #lyxial-pa .pred-all-link:hover,
+body[data-lyx-theme="dark"] #lyxial-pa .pred-all-link:hover,
+html[data-theme="dark"] #lyxial-pa .pred-all-link:hover,
+body[data-theme="dark"] #lyxial-pa .pred-all-link:hover,
+html.dark #lyxial-pa .pred-all-link:hover,
+body.dark #lyxial-pa .pred-all-link:hover,
+html.dark-mode #lyxial-pa .pred-all-link:hover,
+body.dark-mode #lyxial-pa .pred-all-link:hover {
   background: linear-gradient(135deg, #d8b56f, #7d558f) !important;
   border-color: #d8b56f !important;
   color: #160d1d !important;
