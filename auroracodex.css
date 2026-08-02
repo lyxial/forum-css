@@ -19590,3 +19590,170 @@ body.theme-dark .profile-links a:hover {
   background: rgba(216, 181, 111, 0.18) !important;
   color: #d8b56f !important;
 }
+
+/* AURORA - Navigation : menu profil en mode sombre
+   A coller tout en bas du CSS.
+   Version robuste : cible data-lyx-theme="dark" + theme-dark. */
+
+html[data-lyx-theme="dark"],
+body[data-lyx-theme="dark"],
+html.theme-dark,
+body.theme-dark,
+html.aurora-dark-active,
+body.aurora-dark-active {
+  --nav-profile-dark-bg: #0e0913;
+  --nav-profile-dark-card: #1b1023;
+  --nav-profile-dark-card-2: #25172f;
+  --nav-profile-dark-border: rgba(216, 181, 111, 0.22);
+  --nav-profile-dark-text: #f6edf8;
+  --nav-profile-dark-muted: rgba(246, 237, 248, 0.68);
+  --nav-profile-dark-gold: #d8b56f;
+}
+
+html[data-lyx-theme="dark"] .profile-switch-card .profile-dropdown.profile-maquette,
+body[data-lyx-theme="dark"] .profile-switch-card .profile-dropdown.profile-maquette,
+html.theme-dark .profile-switch-card .profile-dropdown.profile-maquette,
+body.theme-dark .profile-switch-card .profile-dropdown.profile-maquette,
+html.aurora-dark-active .profile-switch-card .profile-dropdown.profile-maquette,
+body.aurora-dark-active .profile-switch-card .profile-dropdown.profile-maquette,
+html[data-lyx-theme="dark"] .profile-dropdown.profile-maquette,
+body[data-lyx-theme="dark"] .profile-dropdown.profile-maquette,
+html.theme-dark .profile-dropdown.profile-maquette,
+body.theme-dark .profile-dropdown.profile-maquette,
+html.aurora-dark-active .profile-dropdown.profile-maquette,
+body.aurora-dark-active .profile-dropdown.profile-maquette {
+  background: var(--nav-profile-dark-bg) !important;
+  border-color: var(--nav-profile-dark-border) !important;
+  color: var(--nav-profile-dark-text) !important;
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.36) !important;
+}
+
+html[data-lyx-theme="dark"] .profile-dropdown .profile-stat-card,
+body[data-lyx-theme="dark"] .profile-dropdown .profile-stat-card,
+html.theme-dark .profile-dropdown .profile-stat-card,
+body.theme-dark .profile-dropdown .profile-stat-card,
+html.aurora-dark-active .profile-dropdown .profile-stat-card,
+body.aurora-dark-active .profile-dropdown .profile-stat-card {
+  background: linear-gradient(145deg, var(--nav-profile-dark-card-2), var(--nav-profile-dark-card)) !important;
+  border-color: var(--nav-profile-dark-border) !important;
+  color: var(--nav-profile-dark-text) !important;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.035) !important;
+}
+
+html[data-lyx-theme="dark"] .profile-dropdown .profile-stat-card strong,
+body[data-lyx-theme="dark"] .profile-dropdown .profile-stat-card strong,
+html.theme-dark .profile-dropdown .profile-stat-card strong,
+body.theme-dark .profile-dropdown .profile-stat-card strong,
+html.aurora-dark-active .profile-dropdown .profile-stat-card strong,
+body.aurora-dark-active .profile-dropdown .profile-stat-card strong {
+  color: var(--nav-profile-dark-gold) !important;
+}
+
+html[data-lyx-theme="dark"] .profile-dropdown .profile-stat-card span,
+body[data-lyx-theme="dark"] .profile-dropdown .profile-stat-card span,
+html.theme-dark .profile-dropdown .profile-stat-card span,
+body.theme-dark .profile-dropdown .profile-stat-card span,
+html.aurora-dark-active .profile-dropdown .profile-stat-card span,
+body.aurora-dark-active .profile-dropdown .profile-stat-card span {
+  color: var(--nav-profile-dark-muted) !important;
+}
+
+html[data-lyx-theme="dark"] .profile-dropdown .switcheroo-title,
+body[data-lyx-theme="dark"] .profile-dropdown .switcheroo-title,
+html.theme-dark .profile-dropdown .switcheroo-title,
+body.theme-dark .profile-dropdown .switcheroo-title,
+html.aurora-dark-active .profile-dropdown .switcheroo-title,
+body.aurora-dark-active .profile-dropdown .switcheroo-title {
+  color: var(--nav-profile-dark-gold) !important;
+}
+
+html[data-lyx-theme="dark"] .profile-dropdown .switcheroo__squircles,
+body[data-lyx-theme="dark"] .profile-dropdown .switcheroo__squircles,
+html.theme-dark .profile-dropdown .switcheroo__squircles,
+body.theme-dark .profile-dropdown .switcheroo__squircles,
+html.aurora-dark-active .profile-dropdown .switcheroo__squircles,
+body.aurora-dark-active .profile-dropdown .switcheroo__squircles {
+  background: transparent !important;
+}
+
+html[data-lyx-theme="dark"] .profile-dropdown .switcheroo__squircle,
+body[data-lyx-theme="dark"] .profile-dropdown .switcheroo__squircle,
+html.theme-dark .profile-dropdown .switcheroo__squircle,
+body.theme-dark .profile-dropdown .switcheroo__squircle,
+html.aurora-dark-active .profile-dropdown .switcheroo__squircle,
+body.aurora-dark-active .profile-dropdown .switcheroo__squircle {
+  background: var(--nav-profile-dark-card-2) !important;
+  border: 1px solid var(--nav-profile-dark-border) !important;
+  color: var(--nav-profile-dark-text) !important;
+}
+
+html[data-lyx-theme="dark"] .profile-dropdown .switcheroo__squircle.active,
+body[data-lyx-theme="dark"] .profile-dropdown .switcheroo__squircle.active,
+html.theme-dark .profile-dropdown .switcheroo__squircle.active,
+body.theme-dark .profile-dropdown .switcheroo__squircle.active,
+html.aurora-dark-active .profile-dropdown .switcheroo__squircle.active,
+body.aurora-dark-active .profile-dropdown .switcheroo__squircle.active {
+  background: linear-gradient(90deg, #6c4b7c, #3b2748) !important;
+}
+
+html[data-lyx-theme="dark"] .profile-dropdown .switcheroo__squircle--button,
+body[data-lyx-theme="dark"] .profile-dropdown .switcheroo__squircle--button,
+html.theme-dark .profile-dropdown .switcheroo__squircle--button,
+body.theme-dark .profile-dropdown .switcheroo__squircle--button,
+html[data-lyx-theme="dark"] .profile-dropdown [data-action="open-login"],
+body[data-lyx-theme="dark"] .profile-dropdown [data-action="open-login"],
+html.theme-dark .profile-dropdown [data-action="open-login"],
+body.theme-dark .profile-dropdown [data-action="open-login"],
+html.aurora-dark-active .profile-dropdown .switcheroo__squircle--button,
+body.aurora-dark-active .profile-dropdown .switcheroo__squircle--button,
+html.aurora-dark-active .profile-dropdown [data-action="open-login"],
+body.aurora-dark-active .profile-dropdown [data-action="open-login"] {
+  background: #2b1b36 !important;
+  border-color: rgba(216, 181, 111, 0.3) !important;
+  color: var(--nav-profile-dark-gold) !important;
+}
+
+html[data-lyx-theme="dark"] .profile-dropdown .profile-links,
+body[data-lyx-theme="dark"] .profile-dropdown .profile-links,
+html.theme-dark .profile-dropdown .profile-links,
+body.theme-dark .profile-dropdown .profile-links,
+html.aurora-dark-active .profile-dropdown .profile-links,
+body.aurora-dark-active .profile-dropdown .profile-links {
+  background: #1c1024 !important;
+  border-color: rgba(216, 181, 111, 0.14) !important;
+}
+
+html[data-lyx-theme="dark"] .profile-dropdown .profile-links a,
+body[data-lyx-theme="dark"] .profile-dropdown .profile-links a,
+html.theme-dark .profile-dropdown .profile-links a,
+body.theme-dark .profile-dropdown .profile-links a,
+html.aurora-dark-active .profile-dropdown .profile-links a,
+body.aurora-dark-active .profile-dropdown .profile-links a {
+  background: #24152e !important;
+  color: var(--nav-profile-dark-text) !important;
+}
+
+html[data-lyx-theme="dark"] .profile-dropdown .profile-links a:hover,
+body[data-lyx-theme="dark"] .profile-dropdown .profile-links a:hover,
+html.theme-dark .profile-dropdown .profile-links a:hover,
+body.theme-dark .profile-dropdown .profile-links a:hover,
+html.aurora-dark-active .profile-dropdown .profile-links a:hover,
+body.aurora-dark-active .profile-dropdown .profile-links a:hover {
+  background: rgba(216, 181, 111, 0.18) !important;
+  color: var(--nav-profile-dark-gold) !important;
+}
+
+html[data-lyx-theme="dark"] .profile-dropdown .profile-avatar-small,
+body[data-lyx-theme="dark"] .profile-dropdown .profile-avatar-small,
+html[data-lyx-theme="dark"] .profile-dropdown .profile-avatar-large,
+body[data-lyx-theme="dark"] .profile-dropdown .profile-avatar-large,
+html.theme-dark .profile-dropdown .profile-avatar-small,
+body.theme-dark .profile-dropdown .profile-avatar-small,
+html.theme-dark .profile-dropdown .profile-avatar-large,
+body.theme-dark .profile-dropdown .profile-avatar-large,
+html.aurora-dark-active .profile-dropdown .profile-avatar-small,
+body.aurora-dark-active .profile-dropdown .profile-avatar-small,
+html.aurora-dark-active .profile-dropdown .profile-avatar-large,
+body.aurora-dark-active .profile-dropdown .profile-avatar-large {
+  border-color: rgba(255, 255, 255, 0.82) !important;
+}
