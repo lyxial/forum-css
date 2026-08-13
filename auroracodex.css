@@ -20424,3 +20424,105 @@ html:not(.theme-dark) .tabs a {
     grid-column: 1 !important;
   }
 }
+
+/* ==========================================================
+   AURORA - page edition profil / preferences
+   ========================================================== */
+
+body:has(a[href*="mode=editprofile"]) #wrap,
+body:has(a[href*="mode=preferences"]) #wrap,
+body:has(a[href*="mode=signature"]) #wrap,
+body:has(a[href*="mode=avatar"]) #wrap {
+  max-width: 1200px;
+  margin-inline: auto;
+  padding-inline: 34px;
+  box-sizing: border-box;
+}
+
+/* Onglets profil */
+body:has(a[href*="mode=editprofile"]) .tabs,
+body:has(a[href*="mode=editprofile"]) .profile-tabs,
+body:has(a[href*="mode=editprofile"]) ul.linklist,
+body:has(a[href*="mode=preferences"]) .tabs,
+body:has(a[href*="mode=preferences"]) .profile-tabs,
+body:has(a[href*="mode=preferences"]) ul.linklist,
+body:has(a[href*="mode=signature"]) .tabs,
+body:has(a[href*="mode=signature"]) .profile-tabs,
+body:has(a[href*="mode=signature"]) ul.linklist,
+body:has(a[href*="mode=avatar"]) .tabs,
+body:has(a[href*="mode=avatar"]) .profile-tabs,
+body:has(a[href*="mode=avatar"]) ul.linklist {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 8px !important;
+  justify-content: center !important;
+  width: 100% !important;
+  margin: 18px auto 16px !important;
+  padding: 12px !important;
+  background: rgba(255,255,255,.06) !important;
+  border: 1px solid rgba(216,181,111,.28) !important;
+  border-radius: 16px !important;
+  box-sizing: border-box !important;
+}
+
+body:has(a[href*="mode=editprofile"]) .tabs a,
+body:has(a[href*="mode=editprofile"]) .profile-tabs a,
+body:has(a[href*="mode=editprofile"]) ul.linklist a,
+body:has(a[href*="mode=preferences"]) .tabs a,
+body:has(a[href*="mode=preferences"]) .profile-tabs a,
+body:has(a[href*="mode=preferences"]) ul.linklist a,
+body:has(a[href*="mode=signature"]) .tabs a,
+body:has(a[href*="mode=signature"]) .profile-tabs a,
+body:has(a[href*="mode=signature"]) ul.linklist a,
+body:has(a[href*="mode=avatar"]) .tabs a,
+body:has(a[href*="mode=avatar"]) .profile-tabs a,
+body:has(a[href*="mode=avatar"]) ul.linklist a {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  min-height: 32px !important;
+  padding: 0 14px !important;
+  border-radius: 999px !important;
+  border: 1px solid rgba(216,181,111,.35) !important;
+  background: rgba(255,255,255,.08) !important;
+  color: #eadcf2 !important;
+  font-size: 11px !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  letter-spacing: .08em !important;
+  text-decoration: none !important;
+}
+
+body:has(a[href*="mode=editprofile"]) .tabs a:hover,
+body:has(a[href*="mode=editprofile"]) .profile-tabs a:hover,
+body:has(a[href*="mode=editprofile"]) ul.linklist a:hover,
+body:has(a[href*="mode=preferences"]) .tabs a:hover,
+body:has(a[href*="mode=preferences"]) .profile-tabs a:hover,
+body:has(a[href*="mode=preferences"]) ul.linklist a:hover,
+body:has(a[href*="mode=signature"]) .tabs a:hover,
+body:has(a[href*="mode=signature"]) .profile-tabs a:hover,
+body:has(a[href*="mode=signature"]) ul.linklist a:hover,
+body:has(a[href*="mode=avatar"]) .tabs a:hover,
+body:has(a[href*="mode=avatar"]) .profile-tabs a:hover,
+body:has(a[href*="mode=avatar"]) ul.linklist a:hover {
+  background: linear-gradient(135deg, #80508b, #d8b56f) !important;
+  color: #fff !important;
+}
+
+/* Formulaire : remettre les labels dans la page */
+body:has(a[href*="mode=editprofile"]) form dt,
+body:has(a[href*="mode=preferences"]) form dt,
+body:has(a[href*="mode=signature"]) form dt,
+body:has(a[href*="mode=avatar"]) form dt {
+  padding-left: 22px !important;
+  box-sizing: border-box !important;
+  overflow: visible !important;
+  text-indent: 0 !important;
+}
+
+body:has(a[href*="mode=editprofile"]) form dl,
+body:has(a[href*="mode=preferences"]) form dl,
+body:has(a[href*="mode=signature"]) form dl,
+body:has(a[href*="mode=avatar"]) form dl {
+  overflow: visible !important;
+}
