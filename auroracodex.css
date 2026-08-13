@@ -20259,295 +20259,168 @@ body.dark-mode #lyxial-pa .pred-all-link:hover {
 }
 
 /* ==========================================================
-   AURORA - Correction pages paramètres / édition profil
-   Empêche les labels d'être coupés à gauche
+   AURORA - Page paramètres / profil Forumactif
+   Onglets + formulaire corrigé
    ========================================================== */
 
-body:has(form[action*="/profile"]) .panel,
-body:has(form[action*="/profile"]) .block,
-body:has(form[action*="/profile"]) .frm-form,
-body:has(form[action*="/profile"]) form {
+/* Conteneur général de la page paramètres */
+form[action*="profile"],
+form[action*="profil"] {
+  width: min(1200px, calc(100% - 64px)) !important;
   max-width: 1200px !important;
-  width: calc(100% - 64px) !important;
-  margin-left: auto !important;
-  margin-right: auto !important;
+  margin: 22px auto 60px !important;
   overflow: visible !important;
+  box-sizing: border-box !important;
 }
 
-body:has(form[action*="/profile"]) fieldset,
-body:has(form[action*="/profile"]) dl,
-body:has(form[action*="/profile"]) dt,
-body:has(form[action*="/profile"]) dd {
+/* Onglets du haut */
+.tabs,
+ul.tabs {
+  width: min(1200px, calc(100% - 64px)) !important;
+  max-width: 1200px !important;
+  margin: 26px auto 12px !important;
+  padding: 10px !important;
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 8px !important;
+  border: 1px solid rgba(216, 181, 111, 0.25) !important;
+  border-radius: 18px !important;
+  background: rgba(36, 21, 46, 0.72) !important;
+  box-shadow: none !important;
+}
+
+.tabs ul {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 8px !important;
+  width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.tabs li {
   float: none !important;
-  position: static !important;
-  left: auto !important;
-  right: auto !important;
-  transform: none !important;
-  margin-left: 0 !important;
-  max-width: none !important;
-  overflow: visible !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  list-style: none !important;
 }
 
-body:has(form[action*="/profile"]) dl {
+.tabs a,
+.tabs li a {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  min-height: 32px !important;
+  padding: 0 13px !important;
+  border: 1px solid rgba(216, 181, 111, 0.25) !important;
+  border-radius: 999px !important;
+  background: rgba(20, 13, 26, 0.78) !important;
+  color: #f7edf8 !important;
+  font: 700 10px/1 Arial, sans-serif !important;
+  letter-spacing: 0.08em !important;
+  text-transform: uppercase !important;
+  text-decoration: none !important;
+}
+
+.tabs .activetab a,
+.tabs .active a,
+.tabs a:hover {
+  background: #7d558f !important;
+  border-color: #d8b56f !important;
+  color: #fff !important;
+}
+
+/* Bloc formulaire */
+form[action*="profile"] .panel,
+form[action*="profile"] fieldset,
+form[action*="profile"] .fields1,
+form[action*="profile"] .fields2 {
+  width: 100% !important;
+  max-width: 100% !important;
+  margin-left: 0 !important;
+  padding-left: 0 !important;
+  float: none !important;
+  overflow: visible !important;
+  box-sizing: border-box !important;
+}
+
+/* Lignes label + champ */
+form[action*="profile"] dl {
   display: grid !important;
-  grid-template-columns: minmax(220px, 38%) minmax(260px, 1fr) !important;
-  gap: 12px 28px !important;
+  grid-template-columns: 300px minmax(0, 1fr) !important;
+  gap: 8px 34px !important;
   align-items: start !important;
   width: 100% !important;
   margin: 0 0 16px !important;
-}
-
-body:has(form[action*="/profile"]) dt {
-  width: auto !important;
-  min-width: 0 !important;
-  padding-left: 0 !important;
-  text-align: left !important;
-  white-space: normal !important;
-}
-
-body:has(form[action*="/profile"]) dd {
-  width: auto !important;
-  min-width: 0 !important;
-  margin: 0 !important;
-}
-
-body:has(form[action*="/profile"]) input,
-body:has(form[action*="/profile"]) textarea,
-body:has(form[action*="/profile"]) select {
-  max-width: 100% !important;
-}
-
-@media (max-width: 760px) {
-  body:has(form[action*="/profile"]) form {
-    width: calc(100% - 28px) !important;
-  }
-
-  body:has(form[action*="/profile"]) dl {
-    grid-template-columns: 1fr !important;
-    gap: 6px !important;
-  }
-}
-
-/* ==========================================================
-   AURORA - Correction pages paramètres / édition profil
-   Empêche les labels d'être coupés à gauche
-   ========================================================== */
-
-body:has(form[action*="/profile"]) .panel,
-body:has(form[action*="/profile"]) .block,
-body:has(form[action*="/profile"]) .frm-form,
-body:has(form[action*="/profile"]) form {
-  max-width: 1200px !important;
-  width: calc(100% - 64px) !important;
-  margin-left: auto !important;
-  margin-right: auto !important;
-  overflow: visible !important;
-}
-
-body:has(form[action*="/profile"]) fieldset,
-body:has(form[action*="/profile"]) dl,
-body:has(form[action*="/profile"]) dt,
-body:has(form[action*="/profile"]) dd {
-  float: none !important;
-  position: static !important;
-  left: auto !important;
-  right: auto !important;
-  transform: none !important;
-  margin-left: 0 !important;
-  max-width: none !important;
-  overflow: visible !important;
-}
-
-body:has(form[action*="/profile"]) dl {
-  display: grid !important;
-  grid-template-columns: minmax(220px, 38%) minmax(260px, 1fr) !important;
-  gap: 12px 28px !important;
-  align-items: start !important;
-  width: 100% !important;
-  margin: 0 0 16px !important;
-}
-
-body:has(form[action*="/profile"]) dt {
-  width: auto !important;
-  min-width: 0 !important;
-  padding-left: 0 !important;
-  text-align: left !important;
-  white-space: normal !important;
-}
-
-body:has(form[action*="/profile"]) dd {
-  width: auto !important;
-  min-width: 0 !important;
-  margin: 0 !important;
-}
-
-body:has(form[action*="/profile"]) input,
-body:has(form[action*="/profile"]) textarea,
-body:has(form[action*="/profile"]) select {
-  max-width: 100% !important;
-}
-
-@media (max-width: 760px) {
-  body:has(form[action*="/profile"]) form {
-    width: calc(100% - 28px) !important;
-  }
-
-  body:has(form[action*="/profile"]) dl {
-    grid-template-columns: 1fr !important;
-    gap: 6px !important;
-  }
-}
-
-/* Correction paramètres profil : labels coupés à gauche */
-body.aurora-profile-settings-page #wrap,
-body.aurora-profile-settings-page .forum-wrapper,
-body.aurora-profile-settings-page #page-body,
-body.aurora-profile-settings-page #main-content,
-body.aurora-profile-settings-page .panel {
-  max-width: 1200px !important;
-  width: calc(100% - 80px) !important;
-  margin-left: auto !important;
-  margin-right: auto !important;
-  overflow: visible !important;
-}
-
-body.aurora-profile-settings-page form {
-  max-width: 100% !important;
-  width: 100% !important;
-  overflow: visible !important;
-}
-
-body.aurora-profile-settings-page fieldset,
-body.aurora-profile-settings-page dl {
-  width: 100% !important;
-  max-width: 100% !important;
-  overflow: visible !important;
-  margin-left: 0 !important;
-}
-
-body.aurora-profile-settings-page dl {
-  display: grid !important;
-  grid-template-columns: 320px minmax(0, 1fr) !important;
-  column-gap: 36px !important;
-  align-items: start !important;
-  clear: both !important;
-}
-
-body.aurora-profile-settings-page dt {
-  float: none !important;
-  width: auto !important;
-  min-width: 0 !important;
-  max-width: none !important;
-  margin: 0 !important;
-  padding: 0 !important;
-  text-align: left !important;
-  white-space: normal !important;
-  overflow: visible !important;
-  text-indent: 0 !important;
-}
-
-body.aurora-profile-settings-page dd {
-  float: none !important;
-  width: auto !important;
-  min-width: 0 !important;
-  max-width: none !important;
-  margin: 0 !important;
-  padding: 0 !important;
-  overflow: visible !important;
-}
-
-body.aurora-profile-settings-page input,
-body.aurora-profile-settings-page textarea,
-body.aurora-profile-settings-page select {
-  max-width: 100% !important;
-}
-
-@media (max-width: 760px) {
-  body.aurora-profile-settings-page #wrap,
-  body.aurora-profile-settings-page .forum-wrapper,
-  body.aurora-profile-settings-page #page-body,
-  body.aurora-profile-settings-page #main-content,
-  body.aurora-profile-settings-page .panel {
-    width: calc(100% - 28px) !important;
-  }
-
-  body.aurora-profile-settings-page dl {
-    grid-template-columns: 1fr !important;
-    row-gap: 6px !important;
-  }
-}
-
-/* ==========================================================
-   AURORA - Pages paramètres Forumactif
-   Corrige les textes coupés à gauche
-   ========================================================== */
-
-body:where([class]) .panel .fields1,
-body:where([class]) .panel fieldset,
-body:where([class]) fieldset.fields1,
-body:where([class]) fieldset.fields2,
-body:where([class]) fieldset.submit-buttons {
-  float: none !important;
-  width: auto !important;
-  min-width: 0 !important;
-  max-width: 100% !important;
-  margin-left: 0 !important;
-  padding-left: 0 !important;
-  overflow: visible !important;
-}
-
-body:where([class]) .panel dl,
-body:where([class]) form dl {
-  display: grid !important;
-  grid-template-columns: 260px minmax(0, 1fr) !important;
-  column-gap: 34px !important;
-  align-items: start !important;
-  width: 100% !important;
-  max-width: 100% !important;
-  margin: 0 0 16px 0 !important;
   padding: 0 !important;
   clear: both !important;
   overflow: visible !important;
 }
 
-body:where([class]) .panel dt,
-body:where([class]) form dt {
+/* Labels à gauche */
+form[action*="profile"] dt {
+  grid-column: 1 !important;
   float: none !important;
   width: auto !important;
-  min-width: 0 !important;
-  max-width: none !important;
   margin: 0 !important;
-  padding: 0 !important;
+  padding: 9px 0 0 !important;
+  position: static !important;
+  left: auto !important;
+  transform: none !important;
   text-indent: 0 !important;
   text-align: left !important;
   white-space: normal !important;
   overflow: visible !important;
+  color: #f7edf8 !important;
 }
 
-body:where([class]) .panel dd,
-body:where([class]) form dd {
+/* Champs à droite */
+form[action*="profile"] dd {
+  grid-column: 2 !important;
   float: none !important;
   width: auto !important;
-  min-width: 0 !important;
-  max-width: none !important;
+  max-width: 100% !important;
   margin: 0 !important;
   padding: 0 !important;
+  position: static !important;
+  left: auto !important;
+  transform: none !important;
   overflow: visible !important;
 }
 
-body:where([class]) .panel input,
-body:where([class]) .panel textarea,
-body:where([class]) .panel select,
-body:where([class]) form input,
-body:where([class]) form textarea,
-body:where([class]) form select {
+/* Inputs */
+form[action*="profile"] input,
+form[action*="profile"] textarea,
+form[action*="profile"] select {
   max-width: 100% !important;
+  box-sizing: border-box !important;
 }
 
+/* Mode clair */
+html:not(.theme-dark) .tabs,
+html:not(.aurora-dark-active) .tabs {
+  background: rgba(255, 249, 255, 0.88) !important;
+}
+
+html:not(.theme-dark) .tabs a {
+  background: #fff !important;
+  color: #7d558f !important;
+}
+
+/* Mobile */
 @media (max-width: 760px) {
-  body:where([class]) .panel dl,
-  body:where([class]) form dl {
+  form[action*="profile"],
+  form[action*="profil"],
+  .tabs,
+  ul.tabs {
+    width: calc(100% - 28px) !important;
+  }
+
+  form[action*="profile"] dl {
     grid-template-columns: 1fr !important;
-    gap: 6px !important;
+  }
+
+  form[action*="profile"] dd {
+    grid-column: 1 !important;
   }
 }
