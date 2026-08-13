@@ -20397,3 +20397,82 @@ body:has(form[action*="/profile"]) select {
     gap: 6px !important;
   }
 }
+
+/* Correction paramètres profil : labels coupés à gauche */
+body.aurora-profile-settings-page #wrap,
+body.aurora-profile-settings-page .forum-wrapper,
+body.aurora-profile-settings-page #page-body,
+body.aurora-profile-settings-page #main-content,
+body.aurora-profile-settings-page .panel {
+  max-width: 1200px !important;
+  width: calc(100% - 80px) !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  overflow: visible !important;
+}
+
+body.aurora-profile-settings-page form {
+  max-width: 100% !important;
+  width: 100% !important;
+  overflow: visible !important;
+}
+
+body.aurora-profile-settings-page fieldset,
+body.aurora-profile-settings-page dl {
+  width: 100% !important;
+  max-width: 100% !important;
+  overflow: visible !important;
+  margin-left: 0 !important;
+}
+
+body.aurora-profile-settings-page dl {
+  display: grid !important;
+  grid-template-columns: 320px minmax(0, 1fr) !important;
+  column-gap: 36px !important;
+  align-items: start !important;
+  clear: both !important;
+}
+
+body.aurora-profile-settings-page dt {
+  float: none !important;
+  width: auto !important;
+  min-width: 0 !important;
+  max-width: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  text-align: left !important;
+  white-space: normal !important;
+  overflow: visible !important;
+  text-indent: 0 !important;
+}
+
+body.aurora-profile-settings-page dd {
+  float: none !important;
+  width: auto !important;
+  min-width: 0 !important;
+  max-width: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow: visible !important;
+}
+
+body.aurora-profile-settings-page input,
+body.aurora-profile-settings-page textarea,
+body.aurora-profile-settings-page select {
+  max-width: 100% !important;
+}
+
+@media (max-width: 760px) {
+  body.aurora-profile-settings-page #wrap,
+  body.aurora-profile-settings-page .forum-wrapper,
+  body.aurora-profile-settings-page #page-body,
+  body.aurora-profile-settings-page #main-content,
+  body.aurora-profile-settings-page .panel {
+    width: calc(100% - 28px) !important;
+  }
+
+  body.aurora-profile-settings-page dl {
+    grid-template-columns: 1fr !important;
+    row-gap: 6px !important;
+  }
+}
