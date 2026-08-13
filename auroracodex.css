@@ -20425,3 +20425,212 @@ html:not(.theme-dark) .tabs a {
   }
 }
 
+/* ==========================================================
+   AURORA - Retouches restantes index / QEEL / footer
+   A coller tout EN BAS du CSS.
+   ========================================================== */
+
+/* Categories : remonte les stats sujets/messages dans les petits forums */
+.fa-forum .forum-stats,
+.fa-forum .fa-forum-stats,
+.fa-forum .forum-counts,
+.fa-forum .stats,
+.fa-forum .forum-stats-row,
+.fa-forum .fa-stats {
+  position: relative;
+  z-index: 5;
+  margin-bottom: 8px;
+}
+
+.fa-forum .last-rich {
+  margin-top: 10px;
+}
+
+.fa-forum .last-post-content {
+  min-width: 0;
+}
+
+/* Si un bloc dernier message grossit, il ne doit plus passer sur sujets/messages */
+.fa-forum.has-last-block {
+  overflow: hidden;
+}
+
+.fa-forum.has-last-block .last-rich {
+  max-width: calc(100% - 22px);
+}
+
+/* QEEL : liens utiles sans encadre parasite en mode sombre */
+.qeel-links,
+.qeel-useful,
+.qeel-useful-links,
+.online-links,
+.useful-links,
+[data-qeel-links],
+.qeel .links,
+.qeel .liens-utiles {
+  border: 0 !important;
+  box-shadow: none !important;
+}
+
+.qeel-links::before,
+.qeel-links::after,
+.qeel-useful::before,
+.qeel-useful::after,
+.qeel-useful-links::before,
+.qeel-useful-links::after,
+.online-links::before,
+.online-links::after,
+.useful-links::before,
+.useful-links::after,
+.qeel .liens-utiles::before,
+.qeel .liens-utiles::after {
+  display: none !important;
+}
+
+/* QEEL : supprime la petite ligne au-dessus des icones de groupes */
+.qeel-groups,
+.qeel-group-icons,
+.online-groups,
+.group-icons,
+[data-qeel-groups] {
+  border-top: 0 !important;
+}
+
+.qeel-groups::before,
+.qeel-group-icons::before,
+.online-groups::before,
+.group-icons::before,
+[data-qeel-groups]::before {
+  display: none !important;
+}
+
+/* QEEL : on cache les infobulles natives moches quand elles viennent du title */
+.qeel-groups a[title],
+.qeel-group-icons a[title],
+.online-groups a[title],
+.group-icons a[title],
+[data-qeel-groups] a[title] {
+  cursor: help;
+}
+
+/* Footer : partenaires plus grands */
+.aurora-footer .partner,
+.aurora-footer .footer-partner,
+.aurora-footer .footer-partners a,
+.footer-partners a,
+.partners a,
+.partenaires a {
+  width: 50px !important;
+  height: 50px !important;
+  min-width: 50px !important;
+  min-height: 50px !important;
+  background-size: cover !important;
+  background-position: center !important;
+}
+
+.aurora-footer .partner img,
+.aurora-footer .footer-partner img,
+.aurora-footer .footer-partners img,
+.footer-partners img,
+.partners img,
+.partenaires img {
+  width: 50px !important;
+  height: 50px !important;
+  object-fit: cover !important;
+}
+
+/* Infobulle globale, meme style que le reste du forum */
+.aurora-tooltip {
+  position: fixed;
+  z-index: 999999;
+  max-width: 240px;
+  padding: 8px 12px;
+  border-radius: 6px;
+  background: #5b3f6b;
+  color: #fff;
+  border: 1px solid rgba(216, 181, 111, 0.65);
+  box-shadow: 0 10px 24px rgba(15, 8, 22, 0.25);
+  font: 700 11px/1.25 Arial, sans-serif;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-align: center;
+  pointer-events: none;
+  opacity: 0;
+  transform: translate(-50%, -8px);
+  transition: opacity 0.12s ease, transform 0.12s ease;
+}
+
+.aurora-tooltip.is-visible {
+  opacity: 1;
+  transform: translate(-50%, -14px);
+}
+
+.aurora-tooltip::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -6px;
+  width: 10px;
+  height: 10px;
+  background: #5b3f6b;
+  border-right: 1px solid rgba(216, 181, 111, 0.65);
+  border-bottom: 1px solid rgba(216, 181, 111, 0.65);
+  transform: translateX(-50%) rotate(45deg);
+}
+
+/* Bas de page Forumactif en une seule ligne */
+#page-footer,
+.page-footer,
+#pun-foot,
+#footer,
+.footerbar,
+.copyright,
+.gen,
+.gensmall {
+  text-align: center;
+}
+
+#page-footer .linklist,
+.page-footer .linklist,
+#pun-foot .linklist,
+#footer .linklist,
+.footerbar .linklist {
+  display: flex !important;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 10px 18px;
+  margin: 0 auto !important;
+  padding: 0 !important;
+  list-style: none !important;
+}
+
+#page-footer .linklist li,
+.page-footer .linklist li,
+#pun-foot .linklist li,
+#footer .linklist li,
+.footerbar .linklist li {
+  display: inline-flex !important;
+  margin: 0 !important;
+}
+
+#page-footer a,
+.page-footer a,
+#pun-foot a,
+#footer a,
+.footerbar a,
+.copyright a {
+  display: inline-block !important;
+  margin: 0 7px !important;
+  color: inherit;
+}
+
+/* Si Forumactif place les liens directement sans liste */
+#page-footer br,
+.page-footer br,
+#pun-foot br,
+#footer br,
+.footerbar br,
+.copyright br {
+  display: none !important;
+}
