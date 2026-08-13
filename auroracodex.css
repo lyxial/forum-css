@@ -20476,3 +20476,78 @@ body.aurora-profile-settings-page select {
     row-gap: 6px !important;
   }
 }
+
+/* ==========================================================
+   AURORA - Pages paramètres Forumactif
+   Corrige les textes coupés à gauche
+   ========================================================== */
+
+body:where([class]) .panel .fields1,
+body:where([class]) .panel fieldset,
+body:where([class]) fieldset.fields1,
+body:where([class]) fieldset.fields2,
+body:where([class]) fieldset.submit-buttons {
+  float: none !important;
+  width: auto !important;
+  min-width: 0 !important;
+  max-width: 100% !important;
+  margin-left: 0 !important;
+  padding-left: 0 !important;
+  overflow: visible !important;
+}
+
+body:where([class]) .panel dl,
+body:where([class]) form dl {
+  display: grid !important;
+  grid-template-columns: 260px minmax(0, 1fr) !important;
+  column-gap: 34px !important;
+  align-items: start !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  margin: 0 0 16px 0 !important;
+  padding: 0 !important;
+  clear: both !important;
+  overflow: visible !important;
+}
+
+body:where([class]) .panel dt,
+body:where([class]) form dt {
+  float: none !important;
+  width: auto !important;
+  min-width: 0 !important;
+  max-width: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  text-indent: 0 !important;
+  text-align: left !important;
+  white-space: normal !important;
+  overflow: visible !important;
+}
+
+body:where([class]) .panel dd,
+body:where([class]) form dd {
+  float: none !important;
+  width: auto !important;
+  min-width: 0 !important;
+  max-width: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow: visible !important;
+}
+
+body:where([class]) .panel input,
+body:where([class]) .panel textarea,
+body:where([class]) .panel select,
+body:where([class]) form input,
+body:where([class]) form textarea,
+body:where([class]) form select {
+  max-width: 100% !important;
+}
+
+@media (max-width: 760px) {
+  body:where([class]) .panel dl,
+  body:where([class]) form dl {
+    grid-template-columns: 1fr !important;
+    gap: 6px !important;
+  }
+}
