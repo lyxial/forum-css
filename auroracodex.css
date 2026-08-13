@@ -20634,3 +20634,179 @@ html:not(.theme-dark) .tabs a {
 .copyright br {
   display: none !important;
 }
+
+
+/* ==========================================================
+   AURORA - Retouches restantes index / QEEL / footer - V2
+   A coller tout EN BAS du CSS.
+   ========================================================== */
+
+/* Categories : Zone administrative, stats sujets/messages au-dessus du bloc dernier post */
+.fa-category-1 .fa-forum:not(:first-child) .fa-forum-meta {
+  position: relative !important;
+  z-index: 8 !important;
+  margin: 0 0 10px !important;
+  transform: translateY(-8px) !important;
+}
+
+.fa-category-1 .fa-forum:not(:first-child) .last-rich {
+  position: relative !important;
+  z-index: 4 !important;
+  min-height: 58px !important;
+  max-height: 66px !important;
+  margin-top: -4px !important;
+  overflow: hidden !important;
+}
+
+.fa-category-1 .fa-forum:not(:first-child) .last-post-content {
+  min-width: 0 !important;
+  overflow: hidden !important;
+}
+
+/* QEEL : retire l'encadre autour des liens utiles en mode sombre */
+.qeel-content .qeel-toolbar,
+.qeel-toolbar {
+  border: 0 !important;
+  outline: 0 !important;
+  box-shadow: none !important;
+  background: transparent !important;
+}
+
+.qeel-toolbar::before,
+.qeel-toolbar::after {
+  display: none !important;
+  content: none !important;
+}
+
+body.theme-dark .qeel-toolbar,
+body.aurora-dark-active .qeel-toolbar {
+  border-color: transparent !important;
+  box-shadow: none !important;
+  background: transparent !important;
+}
+
+/* QEEL : enleve la petite ligne au-dessus des icones de groupes */
+.groups.groups-icons.qeel-groups,
+.qeel-groups {
+  border-top: 0 !important;
+  box-shadow: none !important;
+  background-image: none !important;
+}
+
+.groups.groups-icons.qeel-groups::before,
+.groups.groups-icons.qeel-groups::after,
+.qeel-groups::before,
+.qeel-groups::after {
+  display: none !important;
+  content: none !important;
+}
+
+/* Footer maquette : partenaires en 50x50 */
+.footer .partners {
+  display: grid !important;
+  grid-template-columns: repeat(7, 50px) !important;
+  gap: 10px !important;
+  align-items: center !important;
+}
+
+.footer .partners .partner {
+  width: 50px !important;
+  height: 50px !important;
+  min-width: 50px !important;
+  min-height: 50px !important;
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+}
+
+.footer .partners .partner img {
+  width: 50px !important;
+  height: 50px !important;
+  object-fit: cover !important;
+  display: block !important;
+}
+
+.footer .hearts .heart,
+.footer .partners .partner {
+  cursor: help;
+}
+
+/* Infobulle Aurora commune */
+.aurora-retouche-tooltip {
+  position: fixed;
+  z-index: 999999;
+  max-width: 230px;
+  padding: 8px 12px;
+  border-radius: 6px;
+  background: #5b3f6b;
+  color: #fff;
+  border: 1px solid rgba(216, 181, 111, 0.72);
+  box-shadow: 0 10px 24px rgba(15, 8, 22, 0.28);
+  font: 700 11px/1.25 Arial, sans-serif;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-align: center;
+  pointer-events: none;
+  opacity: 0;
+  transform: translate(-50%, -10px);
+  transition: opacity 0.12s ease, transform 0.12s ease;
+}
+
+.aurora-retouche-tooltip.is-visible {
+  opacity: 1;
+  transform: translate(-50%, -16px);
+}
+
+.aurora-retouche-tooltip::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -6px;
+  width: 10px;
+  height: 10px;
+  background: #5b3f6b;
+  border-right: 1px solid rgba(216, 181, 111, 0.72);
+  border-bottom: 1px solid rgba(216, 181, 111, 0.72);
+  transform: translateX(-50%) rotate(45deg);
+}
+
+/* Bas de page Forumactif natif : une seule ligne */
+.forumactif-system-footer {
+  display: flex !important;
+  width: min(1200px, calc(100% - 40px)) !important;
+  height: auto !important;
+  min-height: 0 !important;
+  margin: 18px auto 36px !important;
+  padding: 0 !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-align: center !important;
+}
+
+.forumactif-system-footer-line {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 8px 14px !important;
+  width: 100% !important;
+  color: inherit !important;
+  font: 600 11px/1.4 Arial, sans-serif !important;
+}
+
+.forumactif-system-footer-line a,
+.forumactif-system-footer-line span {
+  display: inline-flex !important;
+  align-items: center !important;
+  margin: 0 !important;
+  color: inherit !important;
+  text-decoration: none !important;
+}
+
+.forumactif-system-footer-line a:hover {
+  color: var(--gold, #d8b56f) !important;
+}
+
+[data-aurora-native-footer-hidden="1"] {
+  display: none !important;
+}
