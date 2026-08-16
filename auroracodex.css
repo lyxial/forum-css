@@ -54,7 +54,8 @@
   --qeel-character-img: var(--qeel-deco-img);
   --footer-partner-img: var(--fa-img-temp);
   --footer-heart-img: var(--fa-img-temp-dark);
-  --footer-winner-img: url("https://zupimages.net/up/26/34/5gia.png");
+  --footer-winner1-img: url("https://zupimages.net/up/26/29/zx96.png");
+   --footer-winner2-img: url("https://zupimages.net/up/26/34/5gia.png");
 
   /* Couleurs et dimensions */
   --bg: #eee8f2;
@@ -144,7 +145,7 @@ html.theme-dark{--fa-img-temp:var(--fa-img-temp-dark)}
 .qeel{margin-top:80px;background:var(--night);border-radius:34px;padding:34px;color:white;position:relative;overflow:hidden}.qeel:before{content:"";position:absolute;inset:0;background:var(--fa-img-temp) center/cover;opacity:.12}.qeel h2{position:relative;font:48px Georgia;margin:0 0 24px}.qgrid{position:relative;display:grid;grid-template-columns:1.25fr 1fr .8fr;gap:16px}.qbox{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);border-radius:18px;padding:20px}.qbox h3{font:19px Georgia;margin:0 0 12px}.names{line-height:2;font:17px Georgia;color:#eadff0}
 .newmember{display:flex;align-items:center;gap:14px}.newmember .av{width:70px;height:70px}
 .groups{margin-top:18px;display:grid;grid-template-columns:repeat(6,1fr);gap:10px}.group{height:88px;border-radius:16px;position:relative;overflow:hidden;background:var(--fa-img-temp) center/cover;border:1px solid rgba(255,255,255,.2)}.group:nth-child(2){background-image:var(--fa-img-temp)}.group:nth-child(3){background-image:var(--fa-img-temp)}.group:nth-child(4){background-image:var(--fa-img-temp)}.group:nth-child(5){background-image:var(--fa-img-temp)}.group:nth-child(6){background-image:var(--fa-img-temp)}.group:after{content:attr(data-name);position:absolute;left:0;right:0;bottom:0;padding:8px;background:rgba(26,19,34,.7);font-size:10px;text-align:center}
-.footer{margin-top:28px;background:#211927;color:white;border-radius:28px;padding:28px;display:grid;grid-template-columns:1.8fr 1fr .8fr .8fr;gap:22px}.footer h3{font:20px Georgia;margin:0 0 15px}.partners{display:grid;grid-template-columns:repeat(8,50px);gap:8px}.partner{width:50px;height:50px;border-radius:8px;background:var(--fa-img-temp) center/cover}.partner:nth-child(3n){background-image:var(--fa-img-temp)}.partner:nth-child(4n){background-image:var(--fa-img-temp)}.hearts{display:grid;gap:8px}.heart{height:38px;border-radius:8px;background:var(--fa-img-temp) center/cover}.winner{font-size:12px}.winner .av{width:74px;height:74px;margin-bottom:10px}
+.footer{margin-top:28px;background:#211927;color:white;border-radius:28px;padding:28px;display:grid;grid-template-columns:1.8fr 1fr .8fr .8fr;gap:22px}.footer h3{font:20px Georgia;margin:0 0 15px}.partners{display:grid;grid-template-columns:repeat(8,50px);gap:8px}.partner{width:50px;height:50px;border-radius:8px;background:var(--fa-img-temp) center/cover}.partner:nth-child(3n){background-image:var(--fa-img-temp)}.partner:nth-child(4n){background-image:var(--fa-img-temp)}.hearts{display:grid;gap:8px}.heart{height:38px;border-radius:8px;background:var(--fa-img-temp) center/cover}.winner1{font-size:12px}.winner1 .av{width:74px;height:74px;margin-bottom:10px}.winner2{font-size:12px}.winner2 .av{width:74px;height:74px;margin-bottom:10px}
 .credit{text-align:center;color:var(--muted);font-size:10px;padding:18px}
 
 .pa.pa-complete{
@@ -4621,7 +4622,7 @@ button,
    AURORA V65I  MEILLEUR MEMBRE / MEILLEUR RP CENTRS
    ========================================================= */
 
-.footer .winner{
+.footer .winner1{
   display:flex!important;
   flex-direction:column!important;
   align-items:center!important;
@@ -4629,23 +4630,47 @@ button,
   text-align:center!important;
 }
 
-.footer .winner h3{
+.footer .winner1 h3{
   width:100%!important;
   text-align:center!important;
 }
 
-.footer .winner .av{
+.footer .winner1 .av{
   margin-left:auto!important;
   margin-right:auto!important;
   margin-bottom:10px!important;
 }
 
-.footer .winner b,
-.footer .winner > div:not(.av){
+.footer .winner1 b,
+.footer .winner1 > div:not(.av){
   width:100%!important;
   text-align:center!important;
 }
 
+.footer .winner2{
+  display:flex!important;
+  flex-direction:column!important;
+  align-items:center!important;
+  justify-content:flex-start!important;
+  text-align:center!important;
+}
+
+.footer .winner2 h3{
+  width:100%!important;
+  text-align:center!important;
+}
+
+.footer .winner2 .av{
+  margin-left:auto!important;
+  margin-right:auto!important;
+  margin-bottom:10px!important;
+}
+
+.footer .winner2 b,
+.footer .winner2 > div:not(.av){
+  width:100%!important;
+  text-align:center!important;
+}
 
 /* =========================================================
    AURORA V65K  VRAIE LIGNE SPARATRICE SOUS LES MEILLEURS
