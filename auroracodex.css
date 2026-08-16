@@ -54,7 +54,7 @@
   --qeel-character-img: var(--qeel-deco-img);
   --footer-partner-img: var(--fa-img-temp);
   --footer-heart-img: var(--fa-img-temp-dark);
-  --footer-winner-img: var(--fa-img-temp);
+  --footer-winner-img: url("https://zupimages.net/up/26/34/5gia.png");
 
   /* Couleurs et dimensions */
   --bg: #eee8f2;
