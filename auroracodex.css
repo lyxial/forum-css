@@ -20936,3 +20936,262 @@ border: 6px solid transparent;
     grid-template-columns: repeat(4, 50px);
   }
 }
+
+
+/* ==========================================================
+   AURORA - restauration footer esthetique V2
+   A mettre TOUT EN BAS du CSS.
+
+   Objectifs :
+   - remettre Partenaires / Coups de coeur / Membre du mois / RP du mois
+     dans la mise en page jolie, pas en grande colonne ;
+   - garder le footer immersif avec Aurora ;
+   - supprimer la 2e ligne de liens Forumactif qui apparait en doublon.
+   ========================================================== */
+
+html body .aurora-footer-showcase.aurora-footer-manual-images {
+  width: min(1180px, calc(100% - 48px)) !important;
+  margin: 48px auto 0 !important;
+  padding: 34px 38px !important;
+  display: grid !important;
+  grid-template-columns: 1.05fr 0.72fr 0.52fr 0.52fr !important;
+  grid-template-areas:
+    "partners hearts member rp"
+    "partners hearts member rp"
+    "credits line line line" !important;
+  gap: 22px 28px !important;
+  border-radius: 24px !important;
+  background: #1d1225 !important;
+  border: 1px solid rgba(255, 255, 255, 0.12) !important;
+  box-shadow: 0 26px 60px rgba(31, 19, 39, 0.22) !important;
+  color: #fff !important;
+}
+
+html body .aurora-footer-showcase .footer-partners-block {
+  grid-area: partners !important;
+}
+
+html body .aurora-footer-showcase .footer-hearts-block {
+  grid-area: hearts !important;
+}
+
+html body .aurora-footer-showcase .winner-member {
+  grid-area: member !important;
+}
+
+html body .aurora-footer-showcase .winner-rp {
+  grid-area: rp !important;
+}
+
+html body .aurora-footer-showcase .footer-credits:not(.footer-credits-note) {
+  grid-area: credits !important;
+  align-self: end !important;
+}
+
+html body .aurora-footer-showcase .footer-winners-line {
+  grid-area: line !important;
+}
+
+html body .aurora-footer-showcase .footer-credits-note {
+  display: none !important;
+}
+
+html body .aurora-footer-showcase h3 {
+  margin: 0 0 14px !important;
+  padding: 0 0 9px !important;
+  border: 0 !important;
+  border-bottom: 1px solid rgba(216, 181, 111, 0.58) !important;
+  color: #fff !important;
+  font-family: var(--font-title, "Cinzel Decorative", Georgia, serif) !important;
+  font-size: 24px !important;
+  line-height: 1 !important;
+  font-weight: 500 !important;
+  text-transform: uppercase !important;
+}
+
+html body .aurora-footer-showcase .partners {
+  width: auto !important;
+  display: grid !important;
+  grid-template-columns: repeat(8, 50px) !important;
+  gap: 10px 12px !important;
+}
+
+html body .aurora-footer-showcase .partner {
+  width: 50px !important;
+  height: 50px !important;
+  min-width: 50px !important;
+  min-height: 50px !important;
+  display: block !important;
+  border-radius: 8px !important;
+  background: var(--img) center/cover no-repeat, linear-gradient(135deg, #d9b6ec, #6e4a82) !important;
+  border: 1px solid rgba(216, 181, 111, 0.55) !important;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.18) !important;
+}
+
+html body .aurora-footer-showcase .hearts {
+  display: grid !important;
+  gap: 12px !important;
+}
+
+html body .aurora-footer-showcase .heart {
+  width: 100% !important;
+  min-height: 48px !important;
+  display: block !important;
+  border-radius: 8px !important;
+  background: var(--img) center/cover no-repeat, linear-gradient(135deg, rgba(132, 85, 151, 0.78), rgba(216, 181, 111, 0.16)) !important;
+  border: 1px solid rgba(216, 181, 111, 0.25) !important;
+}
+
+html body .aurora-footer-showcase .winner {
+  display: grid !important;
+  justify-items: center !important;
+  align-content: start !important;
+  text-align: center !important;
+  color: #fff !important;
+}
+
+html body .aurora-footer-showcase .winner .av {
+  width: 58px !important;
+  height: 58px !important;
+  margin: 0 auto 12px !important;
+  border-radius: 50% !important;
+  border: 3px solid #fff !important;
+  background: var(--img) center/cover no-repeat, linear-gradient(135deg, #d9b6ec, #6e4a82) !important;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.22) !important;
+}
+
+html body .aurora-footer-showcase .winner b,
+html body .aurora-footer-showcase .footer-credits,
+html body .aurora-footer-showcase .footer-credits * {
+  color: #fff !important;
+}
+
+html body .aurora-footer-showcase .footer-winners-line {
+  display: flex !important;
+  align-items: center !important;
+  gap: 14px !important;
+  color: #d8b56f !important;
+}
+
+html body .aurora-footer-showcase .footer-winners-line::before,
+html body .aurora-footer-showcase .footer-winners-line::after {
+  content: "" !important;
+  flex: 1 1 auto !important;
+  height: 1px !important;
+  background: rgba(216, 181, 111, 0.75) !important;
+}
+
+html body .aurora-footer-showcase [data-tooltip] {
+  position: relative !important;
+}
+
+html body .aurora-footer-showcase [data-tooltip]::after {
+  content: attr(data-tooltip) !important;
+  position: absolute !important;
+  left: 50% !important;
+  bottom: calc(100% + 10px) !important;
+  transform: translateX(-50%) !important;
+  z-index: 9999 !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+  white-space: nowrap !important;
+  padding: 8px 12px !important;
+  border-radius: 6px !important;
+  background: #6a4778 !important;
+  color: #fff !important;
+  border: 1px solid #d8b56f !important;
+  font-size: 11px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.04em !important;
+  text-transform: uppercase !important;
+}
+
+html body .aurora-footer-showcase [data-tooltip]::before {
+  content: "" !important;
+  position: absolute !important;
+  left: 50% !important;
+  bottom: calc(100% + 4px) !important;
+  transform: translateX(-50%) !important;
+  border: 6px solid transparent !important;
+  border-top-color: #d8b56f !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+
+html body .aurora-footer-showcase [data-tooltip]:hover::after,
+html body .aurora-footer-showcase [data-tooltip]:hover::before {
+  opacity: 1 !important;
+}
+
+/* Garde le beau footer immersif en dessous. */
+html body .aurora-footer-immersive {
+  display: block !important;
+  width: 100% !important;
+  min-height: 410px !important;
+  margin: 42px auto 0 !important;
+  position: relative !important;
+  overflow: hidden !important;
+  border-radius: 36px 36px 0 0 !important;
+  background:
+    radial-gradient(circle at 50% 12%, rgba(132, 85, 151, 0.55), transparent 22%),
+    linear-gradient(180deg, #3a2948, #1d1624 72%) !important;
+  color: #fff !important;
+  text-align: center !important;
+}
+
+html body .aurora-footer-immersive a,
+html body .aurora-footer-immersive span,
+html body .aurora-footer-immersive .footer-brand,
+html body .aurora-footer-immersive .admin-panel-link a {
+  color: #fff !important;
+  opacity: 1 !important;
+  text-decoration: none !important;
+}
+
+/* Supprime la ligne native brute, en gardant la ligne propre injectee juste au-dessus. */
+html body .forum-wrapper main.index-content > a[href*="forumactif.com"],
+html body .forum-wrapper main.index-content > a[name="bottom"],
+html body .forum-wrapper main.index-content > a[href="/abuse"],
+html body .forum-wrapper main.index-content > a[href^="javascript:window.Sddan"],
+html body .forum-wrapper main.index-content > strong {
+  display: none !important;
+}
+
+html body #aurora-forumactif-footer-line-wrap {
+  width: 100% !important;
+  margin: 0 auto !important;
+  padding: 18px 0 26px !important;
+  text-align: center !important;
+}
+
+html body #aurora-forumactif-footer-line {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  flex-wrap: wrap !important;
+  gap: 12px !important;
+  color: #8a5aa0 !important;
+}
+
+html body #aurora-forumactif-footer-line a,
+html body #aurora-forumactif-footer-line span {
+  color: #8a5aa0 !important;
+  font-size: 12px !important;
+}
+
+@media (max-width: 980px) {
+  html body .aurora-footer-showcase.aurora-footer-manual-images {
+    grid-template-columns: 1fr !important;
+    grid-template-areas:
+      "partners"
+      "hearts"
+      "member"
+      "rp"
+      "credits"
+      "line" !important;
+  }
+
+  html body .aurora-footer-showcase .partners {
+    grid-template-columns: repeat(4, 50px) !important;
+  }
+}
