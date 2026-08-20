@@ -20808,80 +20808,131 @@ body.aurora-dark-active .qeel-toolbar {
   display: none !important;
 }
 
-/* ==========================================================
-   AURORA - footer images manuelles
-   A ajouter au CSS, tout en bas.
-   ========================================================== */
-
-.aurora-footer-manual-images .partners {
-  display: grid;
-  grid-template-columns: repeat(8, 50px);
-  gap: 10px 12px;
-}
-
-.aurora-footer-manual-images .partner {
-  width: 50px;
-  height: 50px;
-  display: block;
-  border-radius: 8px;
-  background: var(--img) center/cover no-repeat, rgba(132, 85, 151, 0.35);
-  border: 1px solid rgba(216, 181, 111, 0.45);
-  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.16);
-}
-
-.aurora-footer-manual-images .hearts {
-  display: grid;
-  gap: 12px;
-}
-
-.aurora-footer-manual-images .heart {
-  min-height: 48px;
-  display: block;
-  border-radius: 8px;
-  background: var(--img) center/cover no-repeat, linear-gradient(135deg, rgba(132, 85, 151, 0.75), rgba(216, 181, 111, 0.18));
-  border: 1px solid rgba(216, 181, 111, 0.25);
-}
-
-.aurora-footer-manual-images [data-tooltip] {
-  position: relative;
-}
-
-.aurora-footer-manual-images [data-tooltip]::after {
-  content: attr(data-tooltip);
-  position: absolute;
-  left: 50%;
-  bottom: calc(100% + 10px);
-  transform: translateX(-50%);
-  z-index: 20;
-  opacity: 0;
-  pointer-events: none;
-  white-space: nowrap;
-  padding: 8px 12px;
-  border-radius: 6px;
-  background: #6a4778;
-  color: #fff;
-  border: 1px solid #d8b56f;
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  transition: opacity 0.2s ease, transform 0.2s ease;
-}
-
-.aurora-footer-manual-images [data-tooltip]::before {
-  content: "";
-  position: absolute;
-  left: 50%;
-  bottom: calc(100% + 4px);
-  transform: translateX(-50%);
-  border: 6px solid transparent;
+border: 6px solid transparent;
   border-top-color: #d8b56f;
   opacity: 0;
   pointer-events: none;
-  transition: opacity 0.2s ease;
 }
 
-.aurora-footer-manual-images [data-tooltip]:hover::after,
-.aurora-footer-manual-images [data-tooltip]:hover::before {
+.aurora-footer-showcase [data-tooltip]:hover::after,
+.aurora-footer-showcase [data-tooltip]:hover::before {
   opacity: 1;
+}
+
+.aurora-footer-immersive {
+  width: 100%;
+  min-height: 410px;
+  margin: 42px auto 0;
+  position: relative;
+  overflow: hidden;
+  border-radius: 36px 36px 0 0;
+  background:
+    radial-gradient(circle at 50% 12%, rgba(132, 85, 151, 0.55), transparent 22%),
+    linear-gradient(180deg, #3a2948, #1d1624 72%);
+  color: #fff;
+  text-align: center;
+}
+
+.aurora-footer-immersive .footer-moon-wrap {
+  position: absolute;
+  top: -54px;
+  left: 50%;
+  width: 152px;
+  height: 152px;
+  transform: translateX(-50%);
+  border-radius: 50%;
+  background: #ead28b;
+  box-shadow: 0 0 48px rgba(234, 210, 139, 0.55);
+}
+
+.aurora-footer-immersive .footer-gold-line {
+  width: min(540px, 62%);
+  margin: 156px auto 34px;
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+.aurora-footer-immersive .footer-gold-line span {
+  height: 1px;
+  flex: 1;
+  background: rgba(216, 181, 111, 0.8);
+}
+
+.aurora-footer-immersive .footer-brand {
+  font-family: var(--font-title, serif);
+  font-size: clamp(42px, 6vw, 68px);
+  color: #fff;
+  text-transform: uppercase;
+}
+
+.aurora-footer-immersive .footer-navigation,
+.aurora-footer-immersive .footer-bottom {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 22px;
+}
+
+.aurora-footer-immersive a,
+.aurora-footer-immersive span,
+.aurora-footer-immersive .admin-panel-link a {
+  color: #fff !important;
+  text-decoration: none !important;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+.aurora-footer-immersive .footer-navigation {
+  margin-top: 20px;
+}
+
+.aurora-footer-immersive .footer-bottom {
+  width: min(720px, 78%);
+  margin: 52px auto 0;
+  padding-top: 28px;
+  border-top: 1px solid rgba(255, 255, 255, 0.16);
+  font-size: 12px;
+}
+
+.aurora-footer-immersive .admin-panel-link a {
+  display: inline-flex;
+  padding: 9px 16px;
+  border: 1px solid rgba(216, 181, 111, 0.55);
+  border-radius: 999px;
+}
+
+/* Liens obligatoires Forumactif sous le footer : une ligne propre. */
+#page-footer,
+#page-footer .navbar,
+#page-footer .linklist,
+#pun-foot,
+#pun-foot .linklist,
+.copyright {
+  text-align: center !important;
+}
+
+#page-footer a,
+#pun-foot a,
+.copyright a {
+  display: inline-block !important;
+  margin: 0 8px !important;
+  color: #8a5aa0 !important;
+}
+
+@media (max-width: 900px) {
+  .aurora-footer-showcase {
+    grid-template-columns: 1fr;
+  }
+
+  .aurora-footer-showcase .footer-winners-line,
+  .aurora-footer-showcase .footer-credits-note {
+    grid-column: auto;
+  }
+
+  .aurora-footer-showcase .partners {
+    grid-template-columns: repeat(4, 50px);
+  }
 }
