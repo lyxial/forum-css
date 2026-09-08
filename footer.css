@@ -1,0 +1,360 @@
+/* ==========================================================
+   AURORA - BLOC FOOTER PROPRE : partenaires / coups de coeur
+   A coller tout en bas de la feuille CSS.
+
+   Ce CSS ne touche pas au footer obligatoire Forumactif.
+   ========================================================== */
+
+.aurora-showcase-footer,
+.aurora-showcase-footer *,
+.aurora-showcase-footer *::before,
+.aurora-showcase-footer *::after {
+  box-sizing: border-box;
+}
+
+.aurora-showcase-footer {
+  --asf-bg: #151019;
+  --asf-panel: #1f1726;
+  --asf-panel-soft: #2b2033;
+  --asf-purple: #855996;
+  --asf-purple-deep: #3c2848;
+  --asf-gold: #d8b56f;
+  --asf-white: #ffffff;
+  --asf-muted: rgba(255, 255, 255, 0.72);
+  --asf-line: rgba(216, 181, 111, 0.62);
+  --asf-border: rgba(255, 255, 255, 0.14);
+  --asf-title-font: var(--font-title, "Cinzel Decorative", Georgia, serif);
+  --asf-body-font: var(--font-body, Arial, sans-serif);
+
+  width: min(1180px, calc(100% - 48px));
+  margin: 42px auto 0;
+  padding: 28px 30px 34px;
+  display: grid;
+  grid-template-columns: minmax(420px, 1.18fr) minmax(260px, 0.78fr) minmax(190px, 0.55fr) minmax(190px, 0.55fr);
+  grid-template-areas:
+    "partners hearts member rp"
+    "partners hearts member rp"
+    "credits line line line"
+    "credits note note note";
+  gap: 20px 24px;
+  overflow: visible;
+  border: 1px solid var(--asf-border);
+  border-radius: 28px;
+  background:
+    radial-gradient(circle at 78% -20%, rgba(133, 89, 150, 0.18), transparent 34%),
+    linear-gradient(180deg, rgba(31, 23, 38, 0.98), var(--asf-bg));
+  box-shadow: 0 24px 60px rgba(16, 9, 20, 0.22);
+  color: var(--asf-white);
+  font-family: var(--asf-body-font);
+}
+
+.aurora-showcase-footer a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.aurora-showcase-footer h3 {
+  margin: 0 0 14px;
+  padding: 0 0 9px;
+  border: 0;
+  border-bottom: 1px solid var(--asf-line);
+  color: var(--asf-white);
+  font-family: var(--asf-title-font);
+  font-size: 24px;
+  line-height: 1;
+  font-weight: 500;
+  letter-spacing: 0;
+  text-transform: uppercase;
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.45);
+}
+
+.asf-partners {
+  grid-area: partners;
+  min-width: 0;
+}
+
+.asf-partners-grid {
+  display: grid;
+  grid-template-columns: repeat(8, 50px);
+  gap: 10px 12px;
+  align-items: center;
+}
+
+.asf-partner {
+  width: 50px;
+  height: 50px;
+  min-width: 50px;
+  min-height: 50px;
+  display: block;
+  position: relative;
+  overflow: visible;
+  border-radius: 8px;
+  background-image:
+    var(--asf-img),
+    linear-gradient(135deg, rgba(224, 193, 239, 0.88), rgba(111, 72, 133, 0.95));
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  box-shadow:
+    inset 0 0 0 1px rgba(255, 255, 255, 0.12),
+    0 8px 18px rgba(0, 0, 0, 0.20);
+  font-size: 0;
+  line-height: 0;
+  color: transparent;
+  transition: transform 180ms ease, box-shadow 180ms ease, filter 180ms ease;
+}
+
+.asf-partner:hover,
+.asf-partner:focus-visible {
+  transform: translateY(-2px);
+  filter: brightness(1.08);
+  box-shadow:
+    inset 0 0 0 1px var(--asf-gold),
+    0 12px 26px rgba(216, 181, 111, 0.18);
+}
+
+.asf-hearts {
+  grid-area: hearts;
+  min-width: 0;
+}
+
+.asf-hearts-list {
+  display: grid;
+  gap: 12px;
+}
+
+.asf-heart {
+  min-height: 48px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  overflow: visible;
+  border-radius: 8px;
+  background:
+    linear-gradient(135deg, rgba(91, 58, 109, 0.70), rgba(216, 181, 111, 0.12)),
+    var(--asf-img) center / cover no-repeat,
+    linear-gradient(135deg, var(--asf-purple-deep), var(--asf-panel-soft));
+  box-shadow:
+    inset 0 0 0 1px rgba(255, 255, 255, 0.08),
+    0 10px 24px rgba(0, 0, 0, 0.12);
+  transition: transform 180ms ease, box-shadow 180ms ease, filter 180ms ease;
+}
+
+.asf-heart span {
+  max-width: calc(100% - 22px);
+  margin-left: 14px;
+  overflow: hidden;
+  color: rgba(255, 255, 255, 0.84);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-overflow: ellipsis;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.asf-heart:hover,
+.asf-heart:focus-visible {
+  transform: translateX(3px);
+  filter: brightness(1.08);
+  box-shadow:
+    inset 0 0 0 1px rgba(216, 181, 111, 0.55),
+    0 12px 26px rgba(216, 181, 111, 0.14);
+}
+
+.asf-pick {
+  display: grid;
+  justify-items: center;
+  align-content: start;
+  min-width: 0;
+  text-align: center;
+}
+
+.asf-pick-member {
+  grid-area: member;
+}
+
+.asf-pick-rp {
+  grid-area: rp;
+}
+
+.asf-pick-avatar {
+  width: 62px;
+  height: 62px;
+  display: block;
+  position: relative;
+  overflow: visible;
+  margin: 0 auto 10px;
+  border: 3px solid var(--asf-white);
+  border-radius: 50%;
+  background-image:
+    var(--asf-img),
+    linear-gradient(135deg, rgba(224, 193, 239, 0.88), rgba(111, 72, 133, 0.95));
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.24);
+  transition: transform 180ms ease, box-shadow 180ms ease, filter 180ms ease;
+}
+
+.asf-pick-avatar:hover,
+.asf-pick-avatar:focus-visible {
+  transform: translateY(-2px);
+  filter: brightness(1.08);
+  box-shadow:
+    0 0 0 1px rgba(216, 181, 111, 0.55),
+    0 12px 26px rgba(216, 181, 111, 0.15);
+}
+
+.asf-pick .asf-pick-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 28px;
+  color: var(--asf-white);
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1.2;
+  text-align: center;
+}
+
+.asf-pick .asf-pick-link:hover,
+.asf-pick .asf-pick-link:focus-visible {
+  color: var(--asf-gold);
+}
+
+.asf-credits {
+  grid-area: credits;
+  align-self: end;
+  display: grid;
+  gap: 8px;
+  margin-top: 42px;
+  color: var(--asf-white);
+}
+
+.asf-credits strong {
+  color: var(--asf-white);
+  font-family: var(--asf-title-font);
+  font-size: 19px;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.asf-credits span {
+  color: var(--asf-muted);
+  font-size: 11px;
+}
+
+.asf-center-line {
+  grid-area: line;
+  align-self: center;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  color: var(--asf-gold);
+}
+
+.asf-center-line::before,
+.asf-center-line::after {
+  content: "";
+  flex: 1 1 auto;
+  height: 1px;
+  background: var(--asf-line);
+}
+
+.asf-center-line span {
+  color: var(--asf-gold);
+  font-size: 12px;
+  line-height: 1;
+}
+
+.asf-note {
+  grid-area: note;
+  justify-self: end;
+  margin: 0;
+  color: var(--asf-muted);
+  font-size: 10px;
+}
+
+.aurora-showcase-footer [data-asf-tip]::before,
+.aurora-showcase-footer [data-asf-tip]::after {
+  position: absolute;
+  left: 50%;
+  z-index: 99999;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 160ms ease, transform 160ms ease;
+}
+
+.aurora-showcase-footer [data-asf-tip]::before {
+  content: attr(data-asf-tip);
+  bottom: calc(100% + 10px);
+  min-width: max-content;
+  max-width: 220px;
+  padding: 8px 12px;
+  transform: translate(-50%, 4px);
+  border: 1px solid rgba(216, 181, 111, 0.78);
+  border-radius: 6px;
+  background: #6b477a;
+  box-shadow: 0 12px 22px rgba(13, 8, 18, 0.26);
+  color: #fff;
+  font-family: var(--asf-body-font);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  line-height: 1.1;
+  text-align: center;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.aurora-showcase-footer [data-asf-tip]::after {
+  content: "";
+  bottom: calc(100% + 4px);
+  transform: translate(-50%, 4px);
+  border: 6px solid transparent;
+  border-top-color: rgba(216, 181, 111, 0.90);
+}
+
+.aurora-showcase-footer [data-asf-tip]:hover::before,
+.aurora-showcase-footer [data-asf-tip]:hover::after,
+.aurora-showcase-footer [data-asf-tip]:focus-visible::before,
+.aurora-showcase-footer [data-asf-tip]:focus-visible::after {
+  opacity: 1;
+  transform: translate(-50%, 0);
+}
+
+@media (max-width: 1050px) {
+  .aurora-showcase-footer {
+    grid-template-columns: minmax(320px, 1fr) minmax(240px, 0.9fr);
+    grid-template-areas:
+      "partners hearts"
+      "member rp"
+      "credits line"
+      "note note";
+  }
+}
+
+@media (max-width: 720px) {
+  .aurora-showcase-footer {
+    width: min(100% - 28px, 520px);
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "partners"
+      "hearts"
+      "member"
+      "rp"
+      "line"
+      "credits"
+      "note";
+    padding: 24px 20px 28px;
+  }
+
+  .asf-partners-grid {
+    grid-template-columns: repeat(4, 50px);
+  }
+
+  .asf-note {
+    justify-self: start;
+  }
+}
