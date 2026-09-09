@@ -20975,3 +20975,38 @@ border: 6px solid transparent;
   box-sizing: border-box;
   padding-right: 60px;
 }
+
+
+/* Statut du forum : grande image en haut à gauche */
+#top .fa-forum {
+  position: relative;
+}
+
+#top .fa-forum > .aurora-forum-state {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  right: auto;
+  bottom: auto;
+  z-index: 25;
+
+  display: block;
+  width: 56px;
+  height: 56px;
+  margin: 0;
+  padding: 0;
+
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  border: 0;
+  box-shadow: none;
+  pointer-events: none;
+}
+
+/* Libérer la droite et réserver la place à gauche */
+#top .fa-forum .fa-forum-title {
+  box-sizing: border-box;
+  padding-right: 0 !important;
+  padding-left: 58px !important;
+}
