@@ -21042,6 +21042,17 @@ body#top .fa-forum .aurora-forum-state {
 
 /* Place réservée à l’image devant le titre */
 body#top .fa-forum .fa-forum-title {
-  padding-left: 58px !important;
+  padding-right: 58px !important;
   padding-right: 0 !important;
+}
+
+/* Icône en haut à droite */
+body#top .fa-forum .aurora-forum-state {
+  inset: 12px 12px auto auto !important;
+}
+
+/* Réserver la place à droite du titre */
+body#top .fa-forum .fa-forum-title {
+  padding-left: 0 !important;
+  padding-right: 58px !important;
 }
