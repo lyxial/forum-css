@@ -358,3 +358,111 @@
     justify-self: start;
   }
 }
+
+
+
+/* AURORA — Ajouter APRES le CSS actuel. Conserver le template fourni.
+   Remplacer les URL_IMAGE_... du template par les URL directes des images.
+   Remplacer les href="#" par les liens des partenaires et coups de coeur. */
+
+.aurora-showcase-footer,
+.aurora-footer-immersive {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.aurora-showcase-footer {
+  grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr) minmax(0, .7fr) minmax(0, .7fr);
+  grid-template-areas:
+    "partners hearts member rp"
+    "line line line line"
+    "note note note note";
+  gap: 24px;
+}
+
+.aurora-showcase-footer > * { min-width: 0; }
+
+.aurora-showcase-footer .asf-partners-grid {
+  grid-template-columns: repeat(auto-fill, 50px);
+  gap: 10px;
+  max-width: 290px;
+  width: 100%;
+  justify-content: start;
+}
+
+.aurora-showcase-footer h3 {
+  font-size: clamp(17px, 1.7vw, 23px);
+  line-height: 1.25;
+  overflow-wrap: anywhere;
+}
+
+.aurora-showcase-footer .asf-credits {
+  margin-top: 24px;
+}
+
+.aurora-showcase-footer .asf-heart {
+  min-width: 0;
+  min-height: 64px;
+  padding: 8px;
+  background: linear-gradient(135deg, var(--asf-purple-deep), var(--asf-panel-soft));
+}
+
+.aurora-showcase-footer .asf-heart span {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  margin: 0;
+  overflow: visible;
+  white-space: normal;
+  overflow-wrap: anywhere;
+  line-height: 1.4;
+  letter-spacing: .03em;
+}
+
+/* La vignette reprend l'image --asf-img deja definie sur le lien. */
+.aurora-showcase-footer .asf-heart span::before {
+  content: "";
+  display: block;
+  flex: 0 0 64px;
+  width: 64px;
+  height: 48px;
+  border-radius: 5px;
+  background-color: var(--asf-purple);
+  background-image: var(--asf-img, none);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,.15);
+}
+
+.aurora-showcase-footer .asf-pick-link,
+.aurora-showcase-footer .asf-note {
+  max-width: 100%;
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 1050px) {
+  .aurora-showcase-footer {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-areas:
+      "partners hearts"
+      "member rp"
+      "line line"
+      "note note";
+  }
+}
+
+@media (max-width: 720px) {
+  .aurora-showcase-footer {
+    width: 100%;
+    padding: 24px 20px 28px;
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-areas: "partners" "hearts" "member" "rp" "line" "note";
+  }
+}
