@@ -715,3 +715,37 @@ section.aurora-showcase-footer > .asf-center-line {
     grid-area: auto;
   }
 }
+
+
+/* Masquer la barre personnalisée en double */
+#aurora-forumactif-footer-line {
+  display: none !important;
+}
+
+/* Présenter les liens d'origine sur une seule barre */
+#aurora-footer-officiel {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 18px 20px;
+  color: #b58ac7;
+  font-size: 11px;
+  line-height: 1.8;
+  text-align: center;
+}
+
+#aurora-footer-officiel a,
+#aurora-footer-officiel strong {
+  font-size: inherit !important;
+  font-weight: normal;
+}
+
+#aurora-footer-officiel a {
+  display: inline-block;
+  margin: 0 5px;
+  color: #b58ac7 !important;
+  text-decoration: none;
+}
+
+#aurora-footer-officiel a:hover {
+  color: #d8b56f !important;
+}
