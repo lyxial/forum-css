@@ -21056,3 +21056,102 @@ body#top .fa-forum .fa-forum-title {
   padding-left: 0 !important;
   padding-right: 58px !important;
 }
+
+
+/* Ajouter a la fin du CSS actuel. Le cadre Aurora existant est conserve. */
+body.aurora-notifications-ready #fa_toolbar #notif_list {
+  display: none !important;
+}
+#notification-panel {
+  --and-text: #34293a;
+  --and-link: #765789;
+  --and-muted: #8e8294;
+  --and-border: rgba(118,87,137,.12);
+  --and-hover: rgba(118,87,137,.055);
+}
+html.theme-dark #notification-panel {
+  --and-text: #eee5f2;
+  --and-link: #c5a4d8;
+  --and-muted: #b8a8c1;
+  --and-border: rgba(197,164,216,.16);
+  --and-hover: rgba(197,164,216,.08);
+}
+#aurora-notifications-detaillees {
+  max-height: 340px;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+#notification-panel #aurora-notifications-detaillees,
+#notification-panel #aurora-notifications-detaillees * {
+  box-sizing: border-box;
+  font-family: Arial, sans-serif !important;
+  text-transform: none !important;
+  letter-spacing: normal !important;
+}
+#notification-panel .and-item {
+  display: grid;
+  grid-template-columns: 8px minmax(0,1fr) 24px;
+  gap: 10px;
+  padding: 14px 16px;
+  border-bottom: 1px solid var(--and-border);
+  color: var(--and-text);
+}
+#notification-panel .and-item:last-child { border-bottom: 0; }
+#notification-panel .and-item:hover { background: var(--and-hover); }
+#notification-panel .and-content {
+  min-width: 0;
+  font-size: 12px !important;
+  line-height: 1.6 !important;
+  overflow-wrap: anywhere;
+  white-space: normal !important;
+}
+#notification-panel .and-content a {
+  display: inline !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  color: var(--and-link) !important;
+  font-size: inherit !important;
+  font-weight: 700;
+  text-decoration: none;
+  background: none !important;
+}
+#notification-panel .and-content a.and-topic { display: block !important; }
+#notification-panel .and-content a:hover { text-decoration: underline; }
+#notification-panel .and-content .and-date,
+#notification-panel .and-content small {
+  display: block;
+  margin-top: 4px;
+  color: var(--and-muted);
+  font-size: 10px !important;
+  font-weight: 400;
+}
+#notification-panel .and-item.is-unread .notification-dot {
+  background: #8d6aa3 !important;
+  box-shadow: 0 0 0 4px rgba(141,106,163,.11);
+}
+#notification-panel .and-delete {
+  display: grid;
+  place-items: center;
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  color: var(--and-link);
+  font-size: 20px !important;
+  cursor: pointer;
+}
+#notification-panel .and-delete:hover { background: var(--and-hover); }
+#notification-panel .and-delete:focus-visible,
+#notification-panel .and-content a:focus-visible { outline: 2px solid var(--and-link); outline-offset: 2px; }
+#notification-panel .and-empty {
+  padding: 18px;
+  margin: 0;
+  color: var(--and-muted);
+  font-size: 12px;
+  line-height: 1.6;
+}
+html.theme-dark #notification-panel .notification-footer-link {
+  color: var(--and-link) !important;
+}
