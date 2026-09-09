@@ -783,3 +783,12 @@ section.aurora-showcase-footer > .asf-center-line {
 #top #aurora-footer-officiel a:hover {
   color: #d8b56f !important;
 }
+
+
+
+/* Masquer aussi directement la barre dupliquée */
+#top #aurora-forumactif-footer-line-wrap[data-aurora-regroupe="1"],
+#top #aurora-forumactif-footer-line-wrap[data-aurora-regroupe="1"]
+#aurora-forumactif-footer-line {
+  display: none !important;
+}
