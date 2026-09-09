@@ -20938,3 +20938,40 @@ border: 6px solid transparent;
 }
 
 
+/* Icône nouveau / aucun nouveau / verrouillé */
+.fa-forum {
+  position: relative;
+}
+
+.fa-forum > .aurora-category-status {
+  position: absolute;
+  inset: 12px 12px auto auto;
+  z-index: 25;
+  display: block;
+  width: 44px;
+  height: 44px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+.fa-forum > .aurora-category-status img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  max-height: none;
+  object-fit: contain;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+/* Réserver de la place à droite du titre */
+.fa-forum .fa-forum-title {
+  box-sizing: border-box;
+  padding-right: 60px;
+}
