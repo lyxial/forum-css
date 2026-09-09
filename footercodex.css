@@ -749,3 +749,37 @@ section.aurora-showcase-footer > .asf-center-line {
 #aurora-footer-officiel a:hover {
   color: #d8b56f !important;
 }
+
+
+/* Masquer le doublon seulement après regroupement */
+#top #aurora-forumactif-footer-line-wrap[data-aurora-regroupe="1"] {
+  display: none !important;
+}
+
+#top #aurora-footer-officiel {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 18px 20px;
+  text-align: center;
+  font-size: 11px;
+  line-height: 1.8;
+  color: #b58ac7;
+}
+
+#top #aurora-footer-officiel a,
+#top #aurora-footer-officiel strong,
+#top #aurora-footer-officiel span {
+  font-size: inherit !important;
+  font-weight: normal;
+}
+
+#top #aurora-footer-officiel a {
+  display: inline-block;
+  margin: 0 5px;
+  color: #b58ac7 !important;
+  text-decoration: none;
+}
+
+#top #aurora-footer-officiel a:hover {
+  color: #d8b56f !important;
+}
