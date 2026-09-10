@@ -799,3 +799,29 @@ body#top .aurora-forum-state::after {
   content: none !important;
   display: none !important;
 }
+
+
+
+
+/* Le cadre et le titre Derniers posts existants sont conserves. */
+#lyxial-pa #aurora-pa-posts-v2 { display:grid; gap:0; width:100%; min-width:0; }
+#lyxial-pa #aurora-pa-posts-v2 .ap2-row {
+  display:grid !important;
+  grid-template-columns:10px minmax(0,1fr) auto !important;
+  align-items:center; gap:10px;
+  width:100%; min-width:0; min-height:40px;
+  padding:10px 6px; box-sizing:border-box;
+  border-bottom:1px solid rgba(133,89,150,.18);
+  border-radius:0 0 12px 12px;
+  color:#9469ad; text-decoration:none;
+  font-family:Arial,sans-serif;
+}
+#lyxial-pa #aurora-pa-posts-v2 .ap2-row:hover { background:rgba(133,89,150,.07); }
+#lyxial-pa #aurora-pa-posts-v2 .ap2-star { color:#d8b56f; font-size:10px; }
+#lyxial-pa #aurora-pa-posts-v2 .ap2-title { font-size:12px; line-height:1.4; overflow-wrap:anywhere; }
+#lyxial-pa #aurora-pa-posts-v2 .ap2-meta { display:flex; flex-wrap:wrap; justify-content:flex-end; gap:0 4px; font-size:9px; line-height:1.5; text-align:right; }
+html.theme-dark #lyxial-pa #aurora-pa-posts-v2 .ap2-row { color:#c7a6dc; border-color:rgba(199,166,220,.2); }
+@media(max-width:600px) {
+  #lyxial-pa #aurora-pa-posts-v2 .ap2-row { grid-template-columns:10px minmax(0,1fr) !important; }
+  #lyxial-pa #aurora-pa-posts-v2 .ap2-meta { grid-column:2; justify-content:flex-start; text-align:left; }
+}
