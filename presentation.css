@@ -555,3 +555,125 @@
     max-width:none!important;
     max-height:none!important;
 }
+
+
+
+/* Couleurs de la fiche independantes du theme du forum.
+   Le double #top renforce volontairement la priorite face au CSS global. */
+html body#top#top .apv2-fiche {
+  --apv2-texte-fixe: #17164e !important;
+}
+html body#top#top .apv2-fiche,
+html body#top#top .apv2-fiche *,
+html body#top#top .apv2-fiche *::before,
+html body#top#top .apv2-fiche *::after {
+  color: var(--apv2-texte-fixe) !important;
+  -webkit-text-fill-color: var(--apv2-texte-fixe) !important;
+}
+html body#top#top @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+@import url("https://lyxial.github.io/forum-css/predefinis.css?v=20260707-2");
+
+
+.apv2-fiche {
+  --apv2-texte-fixe: #17164e !important;
+}
+
+html body#top#top .apv2-label {
+  --apv2-texte-fixe: #817bc8 !important;
+}
+
+html body#top#top .apv2-name {
+  --apv2-texte-fixe: #111047 !important;
+}
+
+html body#top#top .apv2-citation {
+  --apv2-texte-fixe: #111047 !important;
+}
+
+html body#top#top .apv2-nav label {
+  --apv2-texte-fixe: #5f59a9 !important;
+}
+
+html body#top#top #apv2-info:checked ~ .apv2-nav label[for="apv2-info"],
+html body#top#top #apv2-facts:checked ~ .apv2-nav label[for="apv2-facts"],
+html body#top#top #apv2-story:checked ~ .apv2-nav label[for="apv2-story"] {
+  --apv2-texte-fixe: #ffffff !important;
+}
+
+html body#top#top .apv2-title {
+  --apv2-texte-fixe: #111047 !important;
+}
+
+html body#top#top .apv2-title span:before,
+html body#top#top .apv2-title span:after {
+  --apv2-texte-fixe: #918bd3 !important;
+}
+
+html body#top#top .apv2-intro {
+  --apv2-texte-fixe: #4f4aa0 !important;
+}
+
+html body#top#top .apv2-imgbox {
+  --apv2-texte-fixe: #817bc8 !important;
+}
+
+html body#top#top .apv2-imgbox small {
+  --apv2-texte-fixe: #6e68b5 !important;
+}
+
+html body#top#top .apv2-field {
+  --apv2-texte-fixe: #514ca0 !important;
+}
+
+html body#top#top .apv2-field i {
+  --apv2-texte-fixe: #817bc8 !important;
+}
+
+html body#top#top .apv2-field b {
+  --apv2-texte-fixe: #111047 !important;
+}
+
+html body#top#top .apv2-lines {
+  --apv2-texte-fixe: #514ca0 !important;
+}
+
+html body#top#top .apv2-quote-box {
+  --apv2-texte-fixe: #514ca0 !important;
+}
+
+html body#top#top .apv2-quote-box:before,
+html body#top#top .apv2-quote-box:after {
+  --apv2-texte-fixe: #918bd3 !important;
+}
+
+html body#top#top .apv2-list li {
+  --apv2-texte-fixe: #514ca0 !important;
+}
+
+html body#top#top .apv2-list li:before {
+  --apv2-texte-fixe: #817bc8 !important;
+}
+
+html body#top#top .apv2-bar-icon {
+  --apv2-texte-fixe: #ffffff !important;
+}
+
+html body#top#top .apv2-bar-label {
+  --apv2-texte-fixe: #111047 !important;
+}
+
+html body#top#top .apv2-about {
+  --apv2-texte-fixe: #514ca0 !important;
+}
+
+html body#top#top .apv2-about-heading {
+  --apv2-texte-fixe: #111047 !important;
+}
+
+html body#top#top .apv2-about-text {
+  --apv2-texte-fixe: #514ca0 !important;
+}
+
+html body#top#top .apv2-footer {
+  --apv2-texte-fixe: #b7b2e7 !important;
+}
