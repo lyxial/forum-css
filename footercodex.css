@@ -881,3 +881,9 @@ body#top .fa-category:not(.category-admin-character)
   flex-shrink: 1 !important;
   overflow: auto !important;
 }
+
+
+body#top .fa-category:not(.category-admin-character)
+.fa-forum .fa-forum-links {
+  margin-bottom: 8px !important;
+}
