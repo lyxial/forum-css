@@ -21155,3 +21155,15 @@ html.theme-dark #notification-panel {
 html.theme-dark #notification-panel .notification-footer-link {
   color: var(--and-link) !important;
 }
+
+
+/* Illustrations de gauche : un peu plus à gauche */
+.fa-category-1 > .aurora-cat-side-figure,
+.fa-category-6 > .aurora-cat-side-figure {
+  translate: -20px 0 !important;
+}
+
+/* Illustration de droite : un peu plus à droite */
+.fa-category-2 > .aurora-cat-side-figure {
+  translate: 20px 0 !important;
+}
