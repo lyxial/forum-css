@@ -1935,3 +1935,32 @@ body.theme-dark .halley-profile-links .halley-contact-link .bi {
 .halley-message-footer .halley-edited:empty {
   display: none !important;
 }
+
+
+
+/* Fil d’Ariane des sujets : liens cliquables */
+body#top .halley-topic-header {
+  position: relative !important;
+  z-index: 2 !important;
+}
+
+body#top .halley-breadcrumb {
+  position: relative !important;
+  z-index: 10 !important;
+  pointer-events: auto !important;
+}
+
+body#top .halley-breadcrumb a {
+  position: relative !important;
+  z-index: 1 !important;
+  pointer-events: auto !important;
+  cursor: pointer !important;
+}
+
+/* Les décorations ne doivent pas intercepter les clics */
+body#top .halley-topic-header::before,
+body#top .halley-topic-header::after,
+body#top .halley-breadcrumb::before,
+body#top .halley-breadcrumb::after {
+  pointer-events: none !important;
+}
