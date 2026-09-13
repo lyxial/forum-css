@@ -519,3 +519,72 @@
     height: 190px;
   }
 }
+
+
+
+/* Predefinis : conserver les couleurs dans les deux themes.
+   Le double #top donne priorite a la fiche sur les styles globaux. */
+html body#top#top .apf-sheet {
+  --apf-texte-fixe: var(--apf-purple, #514ca0) !important;
+}
+html body#top#top .apf-sheet,
+html body#top#top .apf-sheet *,
+html body#top#top .apf-sheet *::before,
+html body#top#top .apf-sheet *::after {
+  color: var(--apf-texte-fixe) !important;
+  -webkit-text-fill-color: var(--apf-texte-fixe) !important;
+}
+html body#top#top .apf-sheet {
+  --apf-texte-fixe: var(--apf-purple) !important;
+}
+
+html body#top#top .apf-name {
+  --apf-texte-fixe: var(--apf-purple) !important;
+}
+
+html body#top#top .apf-heading-line span {
+  --apf-texte-fixe: var(--apf-blue) !important;
+}
+
+html body#top#top .apf-tabbar label {
+  --apf-texte-fixe: #514ca0 !important;
+}
+
+html body#top#top .apf-tab-icon {
+  --apf-texte-fixe: #514ca0 !important;
+}
+
+html body#top#top .apf-tabs input[id^="apf-information"]:checked
+~ .apf-tabbar label[for^="apf-information"],
+html body#top#top .apf-tabs input[id^="apf-character"]:checked
+~ .apf-tabbar label[for^="apf-character"],
+html body#top#top .apf-tabs input[id^="apf-links"]:checked
+~ .apf-tabbar label[for^="apf-links"] {
+  --apf-texte-fixe: #fff !important;
+}
+
+html body#top#top .apf-tabs input[id^="apf-information"]:checked
+~ .apf-tabbar label[for^="apf-information"] .apf-tab-icon,
+html body#top#top .apf-tabs input[id^="apf-character"]:checked
+~ .apf-tabbar label[for^="apf-character"] .apf-tab-icon,
+html body#top#top .apf-tabs input[id^="apf-links"]:checked
+~ .apf-tabbar label[for^="apf-links"] .apf-tab-icon {
+  --apf-texte-fixe: #fff !important;
+}
+
+html body#top#top .apf-panel {
+  --apf-texte-fixe: #514ca0 !important;
+}
+
+html body#top#top .apf-section-title {
+  --apf-texte-fixe: var(--apf-purple) !important;
+}
+
+html body#top#top .apf-section-title span::before,
+html body#top#top .apf-section-title span::after {
+  --apf-texte-fixe: var(--apf-blue) !important;
+}
+
+html body#top#top .apf-writing-box {
+  --apf-texte-fixe: var(--apf-purple) !important;
+}
