@@ -825,3 +825,59 @@ html.theme-dark #lyxial-pa #aurora-pa-posts-v2 .ap2-row { color:#c7a6dc; border-
   #lyxial-pa #aurora-pa-posts-v2 .ap2-row { grid-template-columns:10px minmax(0,1fr) !important; }
   #lyxial-pa #aurora-pa-posts-v2 .ap2-meta { grid-column:2; justify-content:flex-start; text-align:left; }
 }
+
+
+/* ADMINISTRATION : sous-forums masqués */
+body#top .fa-category.category-admin-character .fa-forum-links {
+  display: none !important;
+}
+
+/* AUTRES CATÉGORIES : deux lignes maximum */
+body#top .fa-category:not(.category-admin-character)
+.fa-forum .fa-forum-links {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  align-items: flex-start !important;
+  align-content: flex-start !important;
+  gap: 6px !important;
+
+  flex: 0 0 auto !important;
+  min-height: 0 !important;
+  max-height: 54px !important;
+  min-width: 0 !important;
+  max-width: 100% !important;
+  box-sizing: border-box !important;
+
+  overflow-x: hidden !important;
+  overflow-y: auto !important;
+  scrollbar-width: thin;
+  scrollbar-color: #9672a5 transparent;
+}
+
+/* Boutons compacts, y compris les noms longs */
+body#top .fa-category:not(.category-admin-character)
+.fa-forum .fa-forum-links a {
+  display: block !important;
+  box-sizing: border-box !important;
+  flex: 0 0 auto !important;
+  min-width: 0 !important;
+  max-width: 100% !important;
+  height: 24px !important;
+  min-height: 24px !important;
+  margin: 0 !important;
+  padding: 0 10px !important;
+  line-height: 22px !important;
+  font-size: 10px !important;
+  white-space: nowrap !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  box-shadow: none !important;
+}
+
+/* La description laisse de la place aux sous-forums */
+body#top .fa-category:not(.category-admin-character)
+.fa-forum .fa-forum-description {
+  min-height: 0 !important;
+  flex-shrink: 1 !important;
+  overflow: auto !important;
+}
