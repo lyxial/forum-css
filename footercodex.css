@@ -887,3 +887,16 @@ body#top .fa-category:not(.category-admin-character)
 .fa-forum .fa-forum-links {
   margin-bottom: 8px !important;
 }
+
+
+/* Côté Est : remonter les sous-forums de Bâtiment administratif */
+body#top .fa-category-3 .fa-forums > .fa-forum:first-of-type
+.fa-forum-links {
+  translate: 0 -28px !important;
+}
+
+/* Premiers pas : masquer les sous-forums de 04. Les fiches */
+body#top .fa-category-2 .fa-forums > .fa-forum:nth-of-type(4)
+.fa-forum-links {
+  display: none !important;
+}
