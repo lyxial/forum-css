@@ -1964,3 +1964,28 @@ body#top .halley-breadcrumb::before,
 body#top .halley-breadcrumb::after {
   pointer-events: none !important;
 }
+
+
+/* Prévisualisation en mode sombre */
+:is(.theme-dark, .aurora-dark-active, [data-lyx-theme="dark"]) #preview {
+  background: #1c1523 !important;
+  color: #f1e9f4 !important;
+  border: 1px solid #51405e !important;
+  border-radius: 12px !important;
+}
+
+/* Conteneurs du message */
+:is(.theme-dark, .aurora-dark-active, [data-lyx-theme="dark"])
+#preview .postbody,
+:is(.theme-dark, .aurora-dark-active, [data-lyx-theme="dark"])
+#preview .postbody > .content {
+  background: transparent !important;
+  color: #f1e9f4 !important;
+}
+
+/* Titre Prévisualisation */
+:is(.theme-dark, .aurora-dark-active, [data-lyx-theme="dark"])
+#preview > .h3 {
+  color: #e6c6ee !important;
+  border-color: #695275 !important;
+}
