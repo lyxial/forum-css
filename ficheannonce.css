@@ -1,0 +1,54 @@
+/* AURORA — Annexe et bottin. Ajouter dans le CSS du forum.
+   Utilise les variables --aurora-* heritees du theme, sans JavaScript. */
+
+html body#top#top .aab-page{
+  --aab-color: var(--aurora-text, #291f31);
+  width:920px!important; max-width:100%!important; min-width:0!important;
+  margin:28px auto!important; padding:0!important;
+  font:14px/1.65 Arial,sans-serif!important; text-align:left!important;
+  float:none!important; clear:both!important;
+}
+html body#top#top .aab-page, html body#top#top .aab-page *, html body#top#top .aab-page *::before, html body#top#top .aab-page *::after{
+  box-sizing:border-box!important;
+  color:var(--aab-color)!important;
+  -webkit-text-fill-color:var(--aab-color)!important;
+}
+html body#top#top .aab-page div{min-width:0!important;}
+html body#top#top .aab-page h2, html body#top#top .aab-page h3{border:0!important;padding:0!important;background:none!important;}
+html body#top#top .aab-sheet{overflow:hidden!important;background:var(--aurora-surface,#fff)!important;border:1px solid var(--aurora-border,#d9cfe0)!important;border-radius:26px!important;box-shadow:var(--aurora-shadow,0 18px 42px rgba(54,36,65,.12))!important;}
+html body#top#top .aab-hero{--aab-color:var(--aurora-text,#291f31);position:relative!important;min-height:260px!important;display:flex!important;align-items:flex-end!important;justify-content:center!important;padding:34px!important;text-align:center!important;background:linear-gradient(135deg,var(--aurora-surface-3,#eee4f2),var(--aurora-surface-2,#f7f2f9))!important;overflow:hidden!important;}
+html body#top#top .aab-hero::before, html body#top#top .aab-hero::after{content:"";position:absolute;width:220px;height:220px;border:1px solid var(--aurora-border,#d9cfe0);border-radius:50%;pointer-events:none;}
+html body#top#top .aab-hero::before{left:-80px;top:-100px;}
+html body#top#top .aab-hero::after{right:-70px;bottom:-130px;}
+html body#top#top .aab-hero-inner{position:relative!important;z-index:1!important;}
+html body#top#top .aab-eyebrow{--aab-color:var(--aurora-text-soft,#776b7d);letter-spacing:4px!important;text-transform:uppercase!important;font:10px/1.6 Arial,sans-serif!important;margin-bottom:10px!important;}
+html body#top#top .aab-hero h2{--aab-color:var(--aurora-purple,#6c4b7c);margin:0!important;font:46px/1.05 Georgia,serif!important;letter-spacing:.5px!important;text-shadow:none!important;overflow-wrap:anywhere!important;}
+html body#top#top .aab-line{width:92px!important;height:2px!important;margin:18px auto 0!important;background:linear-gradient(90deg,transparent,var(--aurora-gold,#b98b50),transparent)!important;}
+html body#top#top .aab-intro{padding:34px 80px!important;text-align:center!important;background:var(--aurora-surface-2,#f7f2f9)!important;border-bottom:1px solid var(--aurora-border,#d9cfe0)!important;}
+html body#top#top .aab-intro p{--aab-color:var(--aurora-text-soft,#776b7d);max-width:680px!important;margin:0 auto!important;font:italic 15px/1.9 Georgia,serif!important;}
+html body#top#top .aab-content{padding:44px 58px 52px!important;}
+html body#top#top .aab-section-title{display:flex!important;align-items:center!important;gap:16px!important;margin:0 0 22px!important;}
+html body#top#top .aab-text + .aab-section-title{margin-top:34px!important;}
+html body#top#top .aab-section-title h3{--aab-color:var(--aurora-purple,#6c4b7c);margin:0!important;font:26px/1.2 Georgia,serif!important;overflow-wrap:anywhere!important;}
+html body#top#top .aab-rule{flex:1!important;min-width:24px!important;height:1px!important;background:linear-gradient(90deg,var(--aurora-border,#d9cfe0),transparent)!important;}
+html body#top#top .aab-text{margin-bottom:30px!important;line-height:1.8!important;overflow-wrap:anywhere!important;}
+html body#top#top .aab-bottin{display:grid!important;gap:12px!important;}
+html body#top#top .aab-entry{display:grid!important;grid-template-columns:minmax(0,1fr) auto!important;gap:20px!important;align-items:center!important;padding:16px 18px!important;border:1px solid var(--aurora-border,#d9cfe0)!important;border-radius:15px!important;background:var(--aurora-surface-2,#f7f2f9)!important;}
+html body#top#top .aab-entry strong{--aab-color:var(--aurora-purple,#6c4b7c);font:normal 17px/1.5 Georgia,serif!important;overflow-wrap:anywhere!important;}
+html body#top#top .aab-entry span{--aab-color:var(--aurora-text-soft,#776b7d);display:block!important;margin-top:2px!important;font-size:12px!important;overflow-wrap:anywhere!important;}
+html body#top#top .aab-tag{--aab-color:var(--aurora-text,#291f31);padding:7px 10px!important;border-radius:999px!important;background:var(--aurora-surface-3,#eee4f2)!important;border:1px solid var(--aurora-border,#d9cfe0)!important;font:10px/1.4 Arial,sans-serif!important;letter-spacing:1px!important;text-transform:uppercase!important;white-space:nowrap!important;}
+html body#top#top .aab-note{margin-top:28px!important;padding:17px 20px!important;border-left:3px solid var(--aurora-gold,#b98b50)!important;border-radius:10px!important;background:var(--aurora-surface-2,#f7f2f9)!important;overflow-wrap:anywhere!important;}
+html body#top#top .aab-footer{padding:22px 28px!important;text-align:center!important;border-top:1px solid var(--aurora-border,#d9cfe0)!important;background:var(--aurora-surface-2,#f7f2f9)!important;}
+html body#top#top .aab-symbol{--aab-color:var(--aurora-purple,#6c4b7c);font-size:16px!important;letter-spacing:10px!important;margin-bottom:6px!important;}
+html body#top#top .aab-brand{--aab-color:var(--aurora-text-soft,#776b7d);font:10px/1.6 Arial,sans-serif!important;letter-spacing:4px!important;text-transform:uppercase!important;}
+html body#top#top .aab-page a{text-decoration:underline!important;text-underline-offset:3px;}
+html body#top#top .aab-page a:focus-visible{outline:2px solid var(--aurora-gold,#b98b50)!important;outline-offset:3px!important;}
+html body#top#top .aab-page > br, html body#top#top .aab-sheet > br, html body#top#top .aab-hero > br, html body#top#top .aab-hero-inner > br, html body#top#top .aab-content > br, html body#top#top .aab-section-title > br, html body#top#top .aab-bottin > br, html body#top#top .aab-entry > br, html body#top#top .aab-footer > br{display:none!important;}
+@media(max-width:700px) {
+  html body#top#top .aab-hero{min-height:220px!important;padding:26px 20px!important;}
+  html body#top#top .aab-hero h2{font-size:34px!important;}
+  html body#top#top .aab-intro{padding:28px!important;}
+  html body#top#top .aab-content{padding:34px 26px 40px!important;}
+  html body#top#top .aab-entry{grid-template-columns:minmax(0,1fr)!important;gap:10px!important;}
+  html body#top#top .aab-tag{justify-self:start!important;}
+}
