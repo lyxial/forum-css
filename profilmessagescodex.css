@@ -1966,26 +1966,34 @@ body#top .halley-breadcrumb::after {
 }
 
 
-/* Prévisualisation en mode sombre */
-:is(.theme-dark, .aurora-dark-active, [data-lyx-theme="dark"]) #preview {
+
+
+/* Prévisualisation : fond sombre */
+:is(.theme-dark, .aurora-dark-active, [data-lyx-theme="dark"])
+body#top form #preview.post {
   background: #1c1523 !important;
-  color: #f1e9f4 !important;
   border: 1px solid #51405e !important;
-  border-radius: 12px !important;
-}
-
-/* Conteneurs du message */
-:is(.theme-dark, .aurora-dark-active, [data-lyx-theme="dark"])
-#preview .postbody,
-:is(.theme-dark, .aurora-dark-active, [data-lyx-theme="dark"])
-#preview .postbody > .content {
-  background: transparent !important;
   color: #f1e9f4 !important;
 }
 
-/* Titre Prévisualisation */
-:is(.theme-dark, .aurora-dark-active, [data-lyx-theme="dark"])
-#preview > .h3 {
-  color: #e6c6ee !important;
-  border-color: #695275 !important;
+body#top:is(.theme-dark, .aurora-dark-active, [data-lyx-theme="dark"])
+form #preview.post {
+  background: #1c1523 !important;
+  border: 1px solid #51405e !important;
+  color: #f1e9f4 !important;
+}
+
+/* Les conteneurs internes suivent le cadre */
+body#top form #preview.post > .inner,
+body#top form #preview.post > .inner > .postbody {
+  background: transparent !important;
+  color: inherit !important;
+}
+
+/* Texte standard et titre, sans toucher aux fiches imbriquées */
+body#top form #preview.post > .inner > .postbody > .content,
+body#top form #preview.post > .inner > .postbody > h3,
+body#top form #preview.post > .inner > .postbody > .h3 {
+  color: inherit !important;
+  -webkit-text-fill-color: currentColor !important;
 }
