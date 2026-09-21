@@ -52,3 +52,7 @@ html body#top#top .aab-page > br, html body#top#top .aab-sheet > br, html body#t
   html body#top#top .aab-entry{grid-template-columns:minmax(0,1fr)!important;gap:10px!important;}
   html body#top#top .aab-tag{justify-self:start!important;}
 }
+
+html body#top#top .aab-content > .aab-bottin {
+  margin-bottom: 32px !important;
+}
